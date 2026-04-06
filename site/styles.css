@@ -1,0 +1,546 @@
+:root {
+  --bg: #f5efe4;
+  --bg-soft: #fbf8f1;
+  --ink: #1f2430;
+  --muted: #5f6472;
+  --line: rgba(31, 36, 48, 0.12);
+  --card: rgba(255, 255, 255, 0.72);
+  --shadow: 0 22px 54px rgba(58, 46, 28, 0.12);
+  --accent: #cb5d32;
+  --accent-deep: #8d2f12;
+  --olive: #556b2f;
+  --navy: #21425f;
+  --gold: #bf8b2e;
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans KR", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(203, 93, 50, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(33, 66, 95, 0.16), transparent 26%),
+    linear-gradient(180deg, #f3ecdf 0%, #f8f4eb 52%, #f1e8d7 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 85%);
+  pointer-events: none;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 60px;
+}
+
+.hero,
+.section,
+.story-card,
+.team-card,
+.comm-item,
+.day-card,
+.option-card,
+.budget-panel,
+.food-card,
+.guide-card,
+.source-card {
+  backdrop-filter: blur(12px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 24px;
+  padding: 36px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, rgba(255, 248, 235, 0.9), rgba(248, 239, 221, 0.66));
+  border: 1px solid rgba(141, 47, 18, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.section-label,
+.meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.hero h1,
+.section h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  margin: 10px 0 16px;
+  font-size: clamp(2.4rem, 4.6vw, 4.7rem);
+  line-height: 0.97;
+}
+
+.hero-summary,
+.section-subcopy,
+.story-card p,
+.budget-line,
+.guide-card p,
+.source-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: grid;
+  gap: 14px;
+}
+
+.hero-meta strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.hero-panel {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.stat-card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+}
+
+.stat-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.stat-card strong {
+  font-size: 1.35rem;
+}
+
+.stat-card.accent {
+  background: linear-gradient(145deg, rgba(203, 93, 50, 0.14), rgba(191, 139, 46, 0.18));
+}
+
+.section {
+  margin-top: 24px;
+  padding: 30px;
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  border: 1px solid rgba(31, 36, 48, 0.08);
+  box-shadow: 0 18px 40px rgba(31, 36, 48, 0.06);
+}
+
+.section-head {
+  margin-bottom: 20px;
+}
+
+.section-head.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+}
+
+.section h2 {
+  margin: 6px 0 10px;
+  font-size: clamp(1.85rem, 3vw, 3rem);
+}
+
+.intro-grid,
+.food-columns,
+.option-grid,
+.guide-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.intro-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.story-card,
+.food-card,
+.guide-card,
+.option-card,
+.day-card,
+.budget-panel,
+.team-card,
+.comm-item,
+.source-card {
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+
+.story-card {
+  padding: 24px;
+}
+
+.story-card.warm {
+  background: linear-gradient(145deg, rgba(255, 248, 240, 0.86), rgba(249, 235, 212, 0.72));
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+.bullet-list.compact li + li {
+  margin-top: 10px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.team-card {
+  padding: 22px;
+}
+
+.team-card .role {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(33, 66, 95, 0.08);
+  color: var(--navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.team-card h3,
+.food-card h3,
+.budget-summary h3,
+.guide-card h3,
+.option-card h3,
+.day-card h3 {
+  margin: 14px 0 8px;
+  font-size: 1.1rem;
+}
+
+.team-card p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(203, 93, 50, 0.08);
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.comm-feed {
+  display: grid;
+  gap: 12px;
+}
+
+.comm-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 16px 18px;
+}
+
+.comm-route {
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.comm-body {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.day-card,
+.option-card {
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.day-card::after,
+.option-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -30px -30px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(203, 93, 50, 0.14), transparent 70%);
+}
+
+.day-top,
+.option-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.day-label,
+.option-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.day-time,
+.option-pill {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(33, 66, 95, 0.08);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.day-card p,
+.option-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.route-list,
+.micro-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.route-list span,
+.micro-list span {
+  display: block;
+  padding: 11px 13px;
+  border-radius: 14px;
+  background: rgba(245, 239, 228, 0.95);
+  border: 1px solid rgba(31, 36, 48, 0.06);
+  font-size: 0.95rem;
+}
+
+.option-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.alt-section {
+  background: linear-gradient(145deg, rgba(250, 245, 237, 0.88), rgba(241, 236, 225, 0.76));
+}
+
+.budget-switch {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.budget-switch button {
+  border: 0;
+  background: rgba(31, 36, 48, 0.08);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.budget-switch button:hover,
+.budget-switch button.active {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.budget-panel {
+  padding: 24px;
+}
+
+.budget-summary {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 22px;
+}
+
+.price-display {
+  display: inline-flex;
+  align-items: end;
+  gap: 10px;
+  margin: 8px 0 18px;
+}
+
+.price-display strong {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.price-display span {
+  color: var(--muted);
+}
+
+.budget-lines {
+  display: grid;
+  gap: 10px;
+}
+
+.budget-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(31, 36, 48, 0.12);
+}
+
+.budget-line strong {
+  color: var(--ink);
+}
+
+.food-columns,
+.guide-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.food-card,
+.guide-card {
+  padding: 24px;
+}
+
+.verified-list {
+  display: grid;
+  gap: 12px;
+}
+
+.verified-item {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(245, 239, 228, 0.95);
+  border: 1px solid rgba(31, 36, 48, 0.06);
+}
+
+.verified-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.verified-item p,
+.verified-item a,
+.source-card a {
+  color: var(--muted);
+}
+
+.verified-item a,
+.source-card a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.verified-item a:hover,
+.source-card a:hover {
+  text-decoration: underline;
+}
+
+.sources-list {
+  display: grid;
+  gap: 12px;
+}
+
+.source-card {
+  padding: 18px;
+}
+
+.recheck-note {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .budget-summary,
+  .intro-grid,
+  .itinerary-grid,
+  .option-grid,
+  .food-columns,
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comm-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+    padding-top: 14px;
+  }
+
+  .hero,
+  .section {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head.split {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .budget-line,
+  .day-top,
+  .option-top {
+    flex-direction: column;
+  }
+}

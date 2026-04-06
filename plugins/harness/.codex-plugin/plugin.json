@@ -1,0 +1,40 @@
+{
+  "name": "harness",
+  "version": "1.0.0-codex",
+  "description": "Agent Team & Skill Architect for Codex. Designs agent teams, Codex skills, orchestration prompts, and repository harness structure for a domain or project.",
+  "author": {
+    "name": "revfactory port for Codex",
+    "url": "https://github.com/revfactory/harness"
+  },
+  "homepage": "https://github.com/revfactory/harness",
+  "repository": "https://github.com/revfactory/harness",
+  "license": "Apache-2.0",
+  "keywords": [
+    "harness",
+    "agent-team",
+    "skill-architect",
+    "codex",
+    "orchestration"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness",
+    "shortDescription": "Build a Codex-ready agent harness for this repo.",
+    "longDescription": "Ports revfactory/harness into Codex conventions. It designs specialized agent roles, maps them onto Codex delegation patterns, and scaffolds reusable skills and orchestration docs for the current project.",
+    "developerName": "revfactory / local Codex port",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/revfactory/harness",
+    "privacyPolicyURL": "https://github.com/revfactory/harness",
+    "termsOfServiceURL": "https://github.com/revfactory/harness",
+    "defaultPrompt": [
+      "Build a harness for this project",
+      "Design an agent team for this domain",
+      "Set up a Codex harness here"
+    ],
+    "brandColor": "#1F6FEB"
+  }
+}

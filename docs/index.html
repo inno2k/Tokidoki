@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tokyo Family Memory Trip 2026</title>
+    <meta
+      name="description"
+      content="도쿄에 살았던 기억을 다시 걷는 가족 3인의 2026년 5월 도쿄 여행 설계 사이트"
+    />
+    <meta property="og:title" content="Tokyo Family Memory Trip 2026" />
+    <meta
+      property="og:description"
+      content="4개 AI 전문가 에이전트가 협업해 설계한 도쿄 가족 여행 정적 사이트"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" id="hero-kicker"></p>
+          <h1 id="hero-title"></h1>
+          <p class="hero-summary" id="hero-summary"></p>
+          <div class="hero-meta" id="hero-meta"></div>
+        </div>
+        <div class="hero-panel" id="hero-stats"></div>
+      </header>
+
+      <main>
+        <section class="section intro-grid">
+          <article class="story-card">
+            <p class="section-label">Trip Lens</p>
+            <h2>이번 여행의 핵심 판단</h2>
+            <ul class="bullet-list" id="trip-lens"></ul>
+          </article>
+          <article class="story-card warm">
+            <p class="section-label">Memory Angle</p>
+            <h2>이 여행이 일반 도쿄 여행과 다른 점</h2>
+            <p id="memory-angle"></p>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">AI Team</p>
+            <h2>4명의 전문가 에이전트</h2>
+          </div>
+          <div class="team-grid" id="team-grid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Live Collaboration</p>
+            <h2>에이전트 간 실시간 통신</h2>
+          </div>
+          <div class="comm-feed" id="comm-feed"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Photo Journal</p>
+            <h2>사진으로 보는 이번 여행의 분위기</h2>
+            <p class="section-subcopy">
+              대표 목적지의 공개 라이선스 이미지를 묶어, 메인 일정의 무드보드처럼 볼 수 있게 구성했습니다.
+            </p>
+          </div>
+          <div class="photo-grid" id="photo-grid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Core Plan</p>
+            <h2>메인 일정</h2>
+            <p class="section-subcopy">
+              도착일과 출국일의 제약을 반영해, 도시형 핵심 일정을 중심으로 구성했습니다.
+            </p>
+          </div>
+          <div class="itinerary-grid" id="itinerary-grid"></div>
+        </section>
+
+        <section class="section alt-section">
+          <div class="section-head">
+            <p class="section-label">Swap Day</p>
+            <h2>Day 4 분기안</h2>
+          </div>
+          <div class="option-grid" id="option-grid"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Map Layer</p>
+            <h2>지도와 동선 앵커</h2>
+            <p class="section-subcopy">
+              지도는 전체 도쿄권 개요와 핵심 목적지 카드로 분리했습니다. 클릭하면 외부 지도에서 바로 열 수 있습니다.
+            </p>
+          </div>
+          <div class="map-shell">
+            <div class="map-frame">
+              <iframe
+                title="Tokyo overview map"
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=139.55%2C35.52%2C139.95%2C35.84&amp;layer=mapnik"
+              ></iframe>
+            </div>
+            <div class="map-grid" id="map-grid"></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head split">
+            <div>
+              <p class="section-label">Budget</p>
+              <h2>가족 3인 현지 체류비 시뮬레이션</h2>
+            </div>
+            <div class="budget-switch" id="budget-switch"></div>
+          </div>
+          <div class="budget-panel" id="budget-panel"></div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Food Strategy</p>
+            <h2>추억의 체인 + 운영 확인 후보</h2>
+          </div>
+          <div class="food-columns">
+            <article class="food-card">
+              <h3>추억 회복 라인업</h3>
+              <ul id="nostalgia-list" class="bullet-list compact"></ul>
+            </article>
+            <article class="food-card">
+              <h3>최근 운영 정보 확인 후보</h3>
+              <div id="verified-list" class="verified-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="section-label">Local Guide</p>
+            <h2>현지 가이드 메모</h2>
+          </div>
+          <div class="guide-grid" id="guide-grid"></div>
+        </section>
+
+        <section class="section sources">
+          <div class="section-head">
+            <p class="section-label">Verification</p>
+            <h2>출처와 재확인 포인트</h2>
+          </div>
+          <div id="sources-list" class="sources-list"></div>
+          <p class="recheck-note" id="recheck-note"></p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

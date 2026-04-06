@@ -1,0 +1,20 @@
+{
+  "name": "tokidoki-local",
+  "interface": {
+    "displayName": "Tokidoki Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "harness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/harness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
