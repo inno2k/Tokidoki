@@ -1,14 +1,16 @@
 :root {
-  --bg: #f5efe4;
-  --bg-soft: #fbf8f1;
-  --ink: #1f2430;
-  --muted: #5f6472;
-  --line: rgba(31, 36, 48, 0.12);
-  --card: rgba(255, 255, 255, 0.74);
-  --shadow: 0 22px 54px rgba(58, 46, 28, 0.12);
-  --accent: #cb5d32;
-  --accent-deep: #8d2f12;
-  --navy: #21425f;
+  --bg: #f6f3e7;
+  --bg-soft: #fbfaf3;
+  --ink: #213029;
+  --muted: #5d6a63;
+  --line: rgba(33, 48, 41, 0.12);
+  --card: rgba(255, 255, 255, 0.76);
+  --shadow: 0 22px 54px rgba(69, 74, 49, 0.12);
+  --accent: #d26a42;
+  --accent-deep: #944123;
+  --navy: #3c5d53;
+  --matcha: #6f8c61;
+  --gold: #ba9a52;
   --radius-xl: 32px;
   --radius-lg: 24px;
 }
@@ -21,9 +23,9 @@ body {
   font-family: "IBM Plex Sans KR", "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(203, 93, 50, 0.18), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(33, 66, 95, 0.16), transparent 26%),
-    linear-gradient(180deg, #f3ecdf 0%, #f8f4eb 52%, #f1e8d7 100%);
+    radial-gradient(circle at top left, rgba(210, 106, 66, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(111, 140, 97, 0.16), transparent 26%),
+    linear-gradient(180deg, #f5f3e8 0%, #faf8f1 52%, #eef2e5 100%);
 }
 
 body::before {
@@ -42,6 +44,37 @@ body::before {
   width: min(1220px, calc(100% - 32px));
   margin: 0 auto;
   padding: 28px 0 60px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  padding: 10px 4px;
+}
+
+.brand,
+.topbar-links a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.topbar-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.topbar-links a {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .hero,
@@ -66,8 +99,8 @@ body::before {
   gap: 24px;
   padding: 36px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(145deg, rgba(255, 248, 235, 0.9), rgba(248, 239, 221, 0.66));
-  border: 1px solid rgba(141, 47, 18, 0.1);
+  background: linear-gradient(145deg, rgba(253, 250, 241, 0.92), rgba(239, 245, 229, 0.72));
+  border: 1px solid rgba(148, 65, 35, 0.08);
   box-shadow: var(--shadow);
 }
 
@@ -232,7 +265,7 @@ body::before {
   display: inline-flex;
   padding: 7px 10px;
   border-radius: 999px;
-  background: rgba(203, 93, 50, 0.08);
+  background: rgba(111, 140, 97, 0.12);
   color: var(--accent-deep);
   font-size: 0.82rem;
   font-weight: 600;
@@ -305,6 +338,28 @@ body::before {
 .alt-section { background: linear-gradient(145deg, rgba(250, 245, 237, 0.88), rgba(241, 236, 225, 0.76)); }
 
 .map-shell { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+.map-column { display: grid; gap: 12px; }
+.map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.map-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 13px;
+  background: rgba(111, 140, 97, 0.12);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.map-toolbar button.active {
+  background: var(--matcha);
+  color: white;
+}
+
 .map-frame {
   min-height: 520px;
   border-radius: var(--radius-lg);
@@ -313,7 +368,11 @@ body::before {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.map-frame iframe { width: 100%; height: 100%; min-height: 520px; border: 0; }
+.map-frame iframe,
+#trip-map { width: 100%; height: 100%; min-height: 520px; border: 0; }
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip { background: rgba(255, 252, 247, 0.96); }
+.leaflet-container a { color: var(--accent-deep); }
 .map-card small { color: var(--accent-deep); font-weight: 700; }
 
 .budget-switch { display: inline-flex; gap: 8px; flex-wrap: wrap; }
@@ -367,6 +426,7 @@ body::before {
   .page-shell { width: min(100% - 20px, 1200px); padding-top: 14px; }
   .hero,
   .section { padding: 22px; border-radius: 24px; }
+  .topbar { flex-direction: column; align-items: start; }
   .team-grid { grid-template-columns: 1fr; }
   .section-head.split { align-items: start; flex-direction: column; }
   .budget-line,

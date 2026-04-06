@@ -6,6 +6,10 @@ async function loadTrip() {
   return response.json();
 }
 
+let tripMap;
+let mapMarkers = [];
+let routeLine;
+
 function fillHero(data) {
   document.getElementById("hero-kicker").textContent = data.hero.kicker;
   document.getElementById("hero-title").textContent = data.hero.title;
@@ -104,6 +108,24 @@ function renderOptions(data) {
   `).join("");
 }
 
+function renderMapToolbar(data) {
+  const root = document.getElementById("map-toolbar");
+  const days = ["all", ...new Set(data.mapPoints.map((point) => point.day))];
+  root.innerHTML = days.map((day, index) => `
+    <button class="${index === 0 ? "active" : ""}" data-day="${day}">
+      ${day === "all" ? "전체" : day}
+    </button>
+  `).join("");
+
+  root.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      root.querySelectorAll("button").forEach((el) => el.classList.remove("active"));
+      button.classList.add("active");
+      drawMapPoints(data, button.dataset.day);
+    });
+  });
+}
+
 function renderMaps(data) {
   document.getElementById("map-grid").innerHTML = data.mapAnchors.map((item) => `
     <article class="map-card">
@@ -116,6 +138,76 @@ function renderMaps(data) {
       </div>
     </article>
   `).join("");
+}
+
+function initMap(data) {
+  if (!window.L) {
+    return;
+  }
+
+  tripMap = L.map("trip-map", {
+    zoomControl: true,
+    scrollWheelZoom: false
+  }).setView(data.mapCenter, data.mapZoom);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(tripMap);
+
+  renderMapToolbar(data);
+  drawMapPoints(data, "all");
+}
+
+function drawMapPoints(data, selectedDay) {
+  if (!tripMap) {
+    return;
+  }
+
+  mapMarkers.forEach((marker) => tripMap.removeLayer(marker));
+  mapMarkers = [];
+
+  if (routeLine) {
+    tripMap.removeLayer(routeLine);
+  }
+
+  const points = selectedDay === "all"
+    ? data.mapPoints
+    : data.mapPoints.filter((point) => point.day === selectedDay);
+
+  const latlngs = [];
+
+  points.forEach((point) => {
+    const marker = L.circleMarker(point.coords, {
+      radius: 8,
+      weight: 2,
+      color: "#944123",
+      fillColor: point.highlight ? "#d26a42" : "#6f8c61",
+      fillOpacity: 0.9
+    }).addTo(tripMap);
+
+    marker.bindPopup(`
+      <strong>${point.name}</strong><br/>
+      ${point.day}<br/>
+      ${point.note}<br/>
+      <a href="${point.google}" target="_blank" rel="noreferrer">Google Maps</a>
+    `);
+
+    mapMarkers.push(marker);
+    latlngs.push(point.coords);
+  });
+
+  if (latlngs.length > 1) {
+    routeLine = L.polyline(latlngs, {
+      color: "#3c5d53",
+      weight: 4,
+      opacity: 0.7,
+      dashArray: "7 8"
+    }).addTo(tripMap);
+    tripMap.fitBounds(routeLine.getBounds(), { padding: [30, 30] });
+  } else if (latlngs.length === 1) {
+    tripMap.setView(latlngs[0], 12);
+  }
 }
 
 function renderBudgetSwitch(data) {
@@ -207,6 +299,7 @@ async function main() {
     renderItinerary(data);
     renderOptions(data);
     renderMaps(data);
+    initMap(data);
     renderBudgetSwitch(data);
     renderBudgetPanel(data, "balanced");
     renderFood(data);

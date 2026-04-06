@@ -11,6 +11,17 @@ This repository now includes a GitHub Pages-ready static site in `docs/`.
 5. Select your main branch and `/docs` folder.
 6. Save and wait for GitHub Pages to publish.
 
+## Custom domain
+
+When you have the exact domain name:
+
+1. Copy `docs/CNAME.example` to `docs/CNAME`
+2. Replace the placeholder with your actual domain
+3. In your DNS provider, point the domain to GitHub Pages
+4. In GitHub Pages settings, set the same custom domain
+
+This repository is already organized so `docs/` can remain the Pages source.
+
 ## Site structure
 
 - `docs/index.html`: Pages entry point

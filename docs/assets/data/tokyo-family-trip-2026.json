@@ -254,6 +254,108 @@
       ]
     }
   ],
+  "mapCenter": [35.6764, 139.7490],
+  "mapZoom": 11,
+  "mapPoints": [
+    {
+      "day": "Day 1",
+      "name": "New Otani Inn Tokyo / Osaki",
+      "note": "숙소 베이스. 첫날 짐을 풀고 이동 동선을 가볍게 만드는 중심점입니다.",
+      "coords": [35.6197, 139.7288],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=New+Otani+Inn+Tokyo"
+    },
+    {
+      "day": "Day 1",
+      "name": "Ikebukuro",
+      "note": "첫날 짧게 감각을 되살리기 좋은 중간 경유지.",
+      "coords": [35.7295, 139.7109],
+      "google": "https://www.google.com/maps/search/?api=1&query=Ikebukuro+Station"
+    },
+    {
+      "day": "Day 1",
+      "name": "Akabane Station",
+      "note": "이번 여행의 감정적 중심지.",
+      "coords": [35.7778, 139.7206],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Akabane+Station+Tokyo"
+    },
+    {
+      "day": "Day 2",
+      "name": "Tsukiji Outer Market",
+      "note": "아침 식사 또는 이른 점심 출발점.",
+      "coords": [35.6655, 139.7708],
+      "google": "https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo"
+    },
+    {
+      "day": "Day 2",
+      "name": "Senso-ji",
+      "note": "전통 도쿄의 핵심 상징.",
+      "coords": [35.7148, 139.7967],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Senso-ji+Tokyo"
+    },
+    {
+      "day": "Day 2",
+      "name": "Ueno",
+      "note": "공원과 아메요코를 묶는 산책 구간.",
+      "coords": [35.7138, 139.7773],
+      "google": "https://www.google.com/maps/search/?api=1&query=Ueno+Station"
+    },
+    {
+      "day": "Day 2",
+      "name": "Akihabara",
+      "note": "아들의 서브컬처 체험 구간.",
+      "coords": [35.6984, 139.7730],
+      "google": "https://www.google.com/maps/search/?api=1&query=Akihabara+Station"
+    },
+    {
+      "day": "Day 3",
+      "name": "Shibuya Scramble Crossing",
+      "note": "현재형 도쿄를 가장 강하게 느끼는 장면.",
+      "coords": [35.6595, 139.7005],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing"
+    },
+    {
+      "day": "Day 3",
+      "name": "Shinjuku",
+      "note": "쇼핑과 도시 산책 구간.",
+      "coords": [35.6896, 139.7006],
+      "google": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Station"
+    },
+    {
+      "day": "Day 3",
+      "name": "Tokyo Tower",
+      "note": "Day 3의 야경 피크.",
+      "coords": [35.6586, 139.7454],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Tokyo+Tower"
+    },
+    {
+      "day": "Day 4",
+      "name": "The Gundam Base Tokyo",
+      "note": "아들의 체험 만족도가 높은 핵심 목적지.",
+      "coords": [35.6248, 139.7755],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=THE+GUNDAM+BASE+TOKYO"
+    },
+    {
+      "day": "Day 4",
+      "name": "Yokohama Minato Mirai",
+      "note": "체력이 남을 때 넣는 저녁 연장안.",
+      "coords": [35.4549, 139.6316],
+      "google": "https://www.google.com/maps/search/?api=1&query=Minato+Mirai+Yokohama"
+    },
+    {
+      "day": "Option",
+      "name": "Fuji-Q Highland",
+      "note": "Day 4 전체 교체형 원정안.",
+      "coords": [35.4875, 138.7804],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland"
+    }
+  ],
   "mapAnchors": [
     {
       "day": "Day 1",
