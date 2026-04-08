@@ -6,7 +6,7 @@ The goal is not generic trip writing. The goal is collaborative planning by a sp
 
 ## Team
 
-The default team has eight specialist roles:
+The default team has nine specialist roles:
 
 1. `destination-analyst`
    Researches seasonality, neighborhoods, attractions, access, closures, crowd patterns, safety, and traveler-fit.
@@ -24,6 +24,8 @@ The default team has eight specialist roles:
    Tunes the plan for child stamina, snack timing, restroom access, weather fatigue, and recovery buffers.
 8. `memory-curator`
    Turns the trip into a lived-memory journey by adding recollection prompts, then-vs-now comparison moments, and photo reenactment ideas.
+9. `weather-risk-agent`
+   Builds rainy-day, fatigue-day, and comfort-preserving fallback plans so the trip still feels good when conditions shift.
 
 ## Operating Model
 
@@ -32,7 +34,7 @@ Use a Producer-Reviewer style flow with light fan-out:
 1. `destination-analyst` produces the destination brief.
 2. `itinerary-designer` produces the draft itinerary and accommodation suggestion.
 3. `attraction-agent` inserts short refresh stops that fit the route.
-4. `budget-manager`, `local-guide`, `reservation-concierge`, and `family-comfort-agent` review in parallel.
+4. `budget-manager`, `local-guide`, `reservation-concierge`, `family-comfort-agent`, and `weather-risk-agent` review in parallel.
 5. `memory-curator` adds emotional anchors and family prompts after the route is stable.
 6. Any specialist may request itinerary adjustments if timing, fatigue, reservation, or weather assumptions break down.
 7. The main agent integrates everything into one traveler-facing answer.

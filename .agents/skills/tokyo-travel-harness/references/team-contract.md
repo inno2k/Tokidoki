@@ -1,6 +1,6 @@
 # Tokyo Travel Team Contract
 
-This repository uses an eight-role travel planning team.
+This repository uses a nine-role travel planning team.
 
 ## Role responsibilities
 
@@ -121,6 +121,21 @@ Returns:
 - photo reenactment ideas
 - emotional anchor moments
 
+### weather-risk-agent
+
+Inputs:
+
+- itinerary draft
+- season and weather context
+- attraction mix
+
+Returns:
+
+- rain-safe swaps
+- fatigue-safe reduced plans
+- weather-triggered warnings
+- day-before recheck notes
+
 ## Handoff rules
 
 - `destination-analyst -> itinerary-designer`: district fit, seasonality, attraction priorities
@@ -132,6 +147,7 @@ Returns:
 - `reservation-concierge -> itinerary-designer`: what must be timed, reserved, or rechecked
 - `family-comfort-agent -> itinerary-designer`: where rest, snacks, or indoor backup should be added
 - `memory-curator -> main agent`: emotional and family narrative beats for the final presentation
+- `weather-risk-agent -> itinerary-designer`: which outdoor blocks should be swapped, shortened, or moved
 
 ## Traveler-facing promise
 

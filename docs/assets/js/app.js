@@ -471,6 +471,7 @@ async function main() {
     renderOpsCards(data, "reservationOps", "reservation-grid");
     renderOpsCards(data, "familyComfortOps", "comfort-grid");
     renderOpsCards(data, "memoryMissions", "memory-grid");
+    renderOpsCards(data, "weatherFallbacks", "weather-grid");
     renderOptions(data);
     renderMaps(data);
     initMap(data);
