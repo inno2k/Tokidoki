@@ -268,7 +268,8 @@ body::before {
 .guide-grid,
 .photo-grid,
 .itinerary-grid,
-.map-grid {
+.map-grid,
+.phrase-grid {
   display: grid;
   gap: 16px;
 }
@@ -282,6 +283,7 @@ body::before {
 
 .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .itinerary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.phrase-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .story-card,
 .food-card,
@@ -293,7 +295,8 @@ body::before {
 .comm-item,
 .source-card,
 .photo-card,
-.map-card {
+.map-card,
+.phrase-card {
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
@@ -304,7 +307,8 @@ body::before {
 .guide-card,
 .budget-panel,
 .photo-card,
-.map-card {
+.map-card,
+.phrase-card {
   padding: 24px;
 }
 
@@ -332,9 +336,54 @@ body::before {
 .option-card h3,
 .day-card h3,
 .photo-card h3,
-.map-card h3 {
+.map-card h3,
+.phrase-card h3 {
   margin: 14px 0 8px;
   font-size: 1.1rem;
+}
+
+.phrase-card {
+  background: linear-gradient(145deg, rgba(255, 253, 247, 0.94), rgba(239, 245, 229, 0.76));
+}
+
+.phrase-card .day-badge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(210, 106, 66, 0.1);
+  color: var(--accent-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.phrase-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.phrase-item {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(248, 246, 238, 0.96);
+  border: 1px solid rgba(33, 48, 41, 0.08);
+}
+
+.phrase-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.phrase-jp {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.phrase-ko,
+.phrase-romaji {
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .tag-row,

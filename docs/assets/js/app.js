@@ -244,6 +244,31 @@ function renderMapToolbar(data) {
   });
 }
 
+function renderPhrases(data) {
+  const root = document.getElementById("phrase-grid");
+  if (!root || !data.phrasesByDay) {
+    return;
+  }
+
+  root.innerHTML = data.phrasesByDay.map((group) => `
+    <article class="phrase-card">
+      <span class="day-badge">${group.day}</span>
+      <h3>${group.title}</h3>
+      <p>${group.summary}</p>
+      <div class="phrase-list">
+        ${group.phrases.map((phrase) => `
+          <div class="phrase-item">
+            <strong>${phrase.scene}</strong>
+            <div class="phrase-jp">${phrase.jp}</div>
+            <div class="phrase-romaji">${phrase.romaji}</div>
+            <div class="phrase-ko">${phrase.ko}</div>
+          </div>
+        `).join("")}
+      </div>
+    </article>
+  `).join("");
+}
+
 function renderMaps(data) {
   document.getElementById("map-grid").innerHTML = data.mapAnchors.map((item) => `
     <article class="map-card">
@@ -416,6 +441,7 @@ async function main() {
     renderComms(data);
     renderPhotos(data);
     renderItinerary(data);
+    renderPhrases(data);
     renderOptions(data);
     renderMaps(data);
     initMap(data);
