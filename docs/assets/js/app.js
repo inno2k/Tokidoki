@@ -10,6 +10,89 @@ let tripMap;
 let mapMarkers = [];
 let routeLine;
 
+function transitUrl(from, to) {
+  return `https://transit.yahoo.co.jp/search/result/${encodeURIComponent(`${from}-${to}`)}`;
+}
+
+function mapRouteUrl(from, to) {
+  return `https://map.yahoo.co.jp/route/train?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
+}
+
+function todoKey(day, index) {
+  return `tokidoki-todo-${day}-${index}`;
+}
+
+function renderTodoList(dayLabel, todos = []) {
+  if (!todos.length) {
+    return "";
+  }
+
+  return `
+    <div class="todo-list">
+      ${todos.map((todo, index) => {
+        const checked = localStorage.getItem(todoKey(dayLabel, index)) === "1";
+        return `
+          <label class="todo-item ${checked ? "done" : ""}">
+            <input type="checkbox" data-day="${dayLabel}" data-index="${index}" ${checked ? "checked" : ""}/>
+            <span>${todo}</span>
+          </label>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderTimelineItem(item) {
+  const typeLabel = item.type === "meal"
+    ? "Meal"
+    : item.type === "attraction"
+      ? "Attraction"
+      : "Move";
+
+  const links = item.from && item.to ? `
+    <div class="timeline-links">
+      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map 루트</a>
+      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>
+    </div>
+  ` : "";
+
+  const meta = [];
+  if (item.meal) {
+    meta.push(`식사: ${item.meal.name}`);
+    meta.push(`예산: ${item.meal.budget}`);
+    meta.push(`추천: ${item.meal.picks}`);
+  }
+  if (item.attraction) {
+    meta.push(`어트렉션: ${item.attraction.name}`);
+    meta.push(`포인트: ${item.attraction.why}`);
+    if (item.attraction.budget) {
+      meta.push(`예산: ${item.attraction.budget}`);
+    }
+  }
+
+  return `
+    <article class="timeline-item">
+      <div class="timeline-head">
+        <span class="timeline-time">${item.time}</span>
+        <span class="timeline-type">${typeLabel}</span>
+      </div>
+      <h4 class="timeline-title">${item.title}</h4>
+      <p>${item.detail}</p>
+      ${meta.length ? `<div class="timeline-meta">${meta.map((line) => `<span>${line}</span>`).join("")}</div>` : ""}
+      ${links}
+    </article>
+  `;
+}
+
+function attachTodoHandlers() {
+  document.querySelectorAll(".todo-item input").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(todoKey(checkbox.dataset.day, checkbox.dataset.index), checkbox.checked ? "1" : "0");
+      checkbox.closest(".todo-item").classList.toggle("done", checkbox.checked);
+    });
+  });
+}
+
 /**
  * Adds a decorative sakura overlay that stays behind content and respects reduced motion.
  */
@@ -118,8 +201,11 @@ function renderItinerary(data) {
       <div class="micro-list">
         ${item.notes.map((note) => `<span>${note}</span>`).join("")}
       </div>
+      ${renderTodoList(item.day, item.todos)}
+      ${item.timeline ? `<div class="timeline-list">${item.timeline.map(renderTimelineItem).join("")}</div>` : ""}
     </article>
   `).join("");
+  attachTodoHandlers();
 }
 
 function renderOptions(data) {

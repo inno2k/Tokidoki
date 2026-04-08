@@ -409,6 +409,93 @@ body::before {
   margin-top: 14px;
 }
 
+.todo-list,
+.timeline-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.todo-item {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(248, 246, 238, 0.96);
+  border: 1px solid rgba(33, 48, 41, 0.08);
+}
+
+.todo-item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--matcha);
+  margin-top: 2px;
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: #7f8b83;
+}
+
+.timeline-item {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(248, 246, 238, 0.96);
+  border: 1px solid rgba(33, 48, 41, 0.08);
+}
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.timeline-time {
+  color: var(--accent-deep);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.timeline-type {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(210, 106, 66, 0.1);
+  color: var(--accent-deep);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.timeline-links,
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.timeline-link,
+.timeline-meta span {
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(111, 140, 97, 0.12);
+  color: var(--navy);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.timeline-link:hover {
+  text-decoration: underline;
+}
+
 .route-list span,
 .micro-list span,
 .verified-item {

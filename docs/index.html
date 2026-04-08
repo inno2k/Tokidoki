@@ -11,7 +11,7 @@
     <meta property="og:title" content="Tokyo Family Memory Trip 2026" />
     <meta
       property="og:description"
-      content="4개 AI 전문가 에이전트가 협업해 설계한 도쿄 가족 여행 정적 사이트"
+      content="5개 AI 전문가 에이전트가 협업해 설계한 도쿄 가족 여행 정적 사이트"
     />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    <div class="sakura-layer" id="sakura-layer" aria-hidden="true"></div>
     <div class="page-shell">
       <nav class="topbar">
         <a class="brand" href="#top">Tokyo Memory Trip</a>
@@ -40,7 +39,8 @@
           <a href="#verify">검증</a>
         </div>
       </nav>
-      <header class="hero">
+
+      <header class="hero" id="top">
         <div class="hero-copy">
           <p class="eyebrow" id="hero-kicker"></p>
           <h1 id="hero-title"></h1>
@@ -64,10 +64,10 @@
           </article>
         </section>
 
-        <section class="section" id="plan">
+        <section class="section">
           <div class="section-head">
             <p class="section-label">AI Team</p>
-            <h2>4명의 전문가 에이전트</h2>
+            <h2>5명의 전문가 에이전트</h2>
           </div>
           <div class="team-grid" id="team-grid"></div>
         </section>
@@ -91,12 +91,12 @@
           <div class="photo-grid" id="photo-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" id="plan">
           <div class="section-head">
             <p class="section-label">Core Plan</p>
-            <h2>메인 일정</h2>
+            <h2>메인 일정과 실행 체크리스트</h2>
             <p class="section-subcopy">
-              도착일과 출국일의 제약을 반영해, 도시형 핵심 일정을 중심으로 구성했습니다.
+              큰 덩어리 추천이 아니라, 시간대별 타임라인과 현장 체크박스 중심으로 재구성했습니다.
             </p>
           </div>
           <div class="itinerary-grid" id="itinerary-grid"></div>
@@ -129,7 +129,7 @@
           </div>
         </section>
 
-        <section class="section" id="food">
+        <section class="section">
           <div class="section-head split">
             <div>
               <p class="section-label">Budget</p>
@@ -140,7 +140,7 @@
           <div class="budget-panel" id="budget-panel"></div>
         </section>
 
-        <section class="section">
+        <section class="section" id="food">
           <div class="section-head">
             <p class="section-label">Food Strategy</p>
             <h2>추억의 체인 + 운영 확인 후보</h2>
