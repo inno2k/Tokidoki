@@ -46,22 +46,22 @@
       </header>
 
       <main>
-        <nav class="content-tabs" aria-label="Content sections">
-          <button type="button" class="active" data-content-tab="overview">Overview</button>
-          <button type="button" data-content-tab="itinerary">Itinerary</button>
-          <button type="button" data-content-tab="ops">Ops</button>
-          <button type="button" data-content-tab="explore">Explore</button>
-          <button type="button" data-content-tab="verify">Verify</button>
+        <nav class="content-tabs" aria-label="콘텐츠 구분">
+          <button type="button" class="active" data-content-tab="overview">개요</button>
+          <button type="button" data-content-tab="itinerary">일정</button>
+          <button type="button" data-content-tab="ops">운영</button>
+          <button type="button" data-content-tab="explore">탐색</button>
+          <button type="button" data-content-tab="verify">검증</button>
         </nav>
 
         <section class="section intro-grid" data-tab-panel="overview">
           <article class="story-card">
-            <p class="section-label">Trip Lens</p>
+            <p class="section-label">여행 시선</p>
             <h2>이번 여행의 핵심 판단</h2>
             <ul class="bullet-list" id="trip-lens"></ul>
           </article>
           <article class="story-card warm">
-            <p class="section-label">Memory Angle</p>
+            <p class="section-label">추억 각도</p>
             <h2>이 여행이 일반 도쿄 여행과 다른 점</h2>
             <p id="memory-angle"></p>
           </article>
@@ -69,15 +69,15 @@
 
         <section class="section" data-tab-panel="overview">
           <div class="section-head">
-            <p class="section-label">AI Team</p>
-            <h2>10 Specialist Agents</h2>
+            <p class="section-label">AI 팀</p>
+            <h2>10명의 전문 에이전트</h2>
           </div>
           <div class="team-grid" id="team-grid"></div>
         </section>
 
         <section class="section" data-tab-panel="overview">
           <div class="section-head">
-            <p class="section-label">Live Collaboration</p>
+            <p class="section-label">실시간 협업</p>
             <h2>에이전트 간 실시간 통신</h2>
           </div>
           <div class="comm-feed" id="comm-feed"></div>
@@ -85,7 +85,7 @@
 
         <section class="section" data-tab-panel="overview">
           <div class="section-head">
-            <p class="section-label">Photo Journal</p>
+            <p class="section-label">사진 기록</p>
             <h2>사진으로 보는 이번 여행의 분위기</h2>
             <p class="section-subcopy">
               대표 목적지의 공개 라이선스 이미지를 묶어, 메인 일정의 무드보드처럼 볼 수 있게 구성했습니다.
@@ -97,7 +97,7 @@
         <section class="section" id="plan" data-tab-panel="itinerary">
           <div class="section-head split">
             <div>
-              <p class="section-label">Core Plan</p>
+              <p class="section-label">핵심 일정</p>
               <h2>메인 일정과 실행 체크리스트</h2>
               <p class="section-subcopy">
                 큰 덩어리 추천이 아니라, 시간대별 타임라인과 현장 체크박스 중심으로 재구성했습니다.
@@ -110,7 +110,7 @@
 
         <section class="section" data-tab-panel="ops">
           <div class="section-head">
-            <p class="section-label">Reservation Ops</p>
+            <p class="section-label">예약 운영</p>
             <h2>예약 및 재확인 오퍼레이션</h2>
           </div>
           <div class="ops-grid" id="reservation-grid"></div>
@@ -118,7 +118,7 @@
 
         <section class="section" data-tab-panel="ops">
           <div class="section-head">
-            <p class="section-label">Family Comfort</p>
+            <p class="section-label">가족 컨디션</p>
             <h2>가족 컨디션 관리 포인트</h2>
           </div>
           <div class="ops-grid" id="comfort-grid"></div>
@@ -126,7 +126,7 @@
 
         <section class="section" data-tab-panel="ops">
           <div class="section-head">
-            <p class="section-label">Memory Missions</p>
+            <p class="section-label">추억 미션</p>
             <h2>추억 큐레이션 미션</h2>
           </div>
           <div class="ops-grid" id="memory-grid"></div>
@@ -134,7 +134,7 @@
 
         <section class="section" data-tab-panel="ops">
           <div class="section-head">
-            <p class="section-label">Weather Fallbacks</p>
+            <p class="section-label">날씨 대체안</p>
             <h2>맑음 · 비 · 피곤 3종 대체 플랜</h2>
           </div>
           <div class="ops-grid" id="weather-grid"></div>
@@ -142,7 +142,7 @@
 
         <section class="section" data-tab-panel="itinerary">
           <div class="section-head">
-            <p class="section-label">Useful Phrases</p>
+            <p class="section-label">일정별 현장회화</p>
             <h2>일정별 현장 회화</h2>
             <p class="section-subcopy">
               역, 식당, 가챠샵, 게임장, 호텔, 전망대에서 바로 꺼내 쓸 수 있는 짧은 표현을 일정 흐름에 맞춰 정리했습니다.
@@ -153,7 +153,7 @@
 
         <section class="section alt-section" data-tab-panel="itinerary">
           <div class="section-head">
-            <p class="section-label">Swap Day</p>
+            <p class="section-label">분기안</p>
             <h2>Day 4 분기안</h2>
           </div>
           <div class="option-grid" id="option-grid"></div>
@@ -161,7 +161,7 @@
 
         <section class="section" id="map" data-tab-panel="explore">
           <div class="section-head">
-            <p class="section-label">Map Layer</p>
+            <p class="section-label">지도 레이어</p>
             <h2>Leaflet 지도로 보는 이동 축</h2>
             <p class="section-subcopy">
               실제 핀과 일자별 경로를 켜고 끌 수 있게 구성했습니다. 카드 링크를 누르면 외부 지도에서 바로 열 수 있습니다.
@@ -181,7 +181,7 @@
         <section class="section" data-tab-panel="explore">
           <div class="section-head split">
             <div>
-              <p class="section-label">Budget</p>
+              <p class="section-label">예산</p>
               <h2>가족 3인 현지 체류비 시뮬레이션</h2>
             </div>
             <div class="budget-switch" id="budget-switch"></div>
@@ -191,7 +191,7 @@
 
         <section class="section" id="food" data-tab-panel="explore">
           <div class="section-head">
-            <p class="section-label">Food Strategy</p>
+            <p class="section-label">식사 전략</p>
             <h2>추억의 체인 + 운영 확인 후보</h2>
           </div>
           <div class="food-columns">
@@ -208,10 +208,10 @@
 
         <section class="section" data-tab-panel="explore">
           <div class="section-head">
-            <p class="section-label">Shopping Agent</p>
-            <h2>Route-Friendly Shopping Stops</h2>
+            <p class="section-label">쇼핑 에이전트</p>
+            <h2>동선형 쇼핑 포인트</h2>
             <p class="section-subcopy">
-              Hands, Yodobashi, Bic Camera, Don Quijote, sports stores, figure shops, and family shopping stops are treated as short route-side boosts.
+              Hands, 요도바시카메라, 비쿠카메라, 돈키호테, 스포츠 매장, 피규어샵, 가족형 대형매장을 짧은 동선형 정차로 다룹니다.
             </p>
           </div>
           <div class="ops-grid" id="shopping-grid"></div>
@@ -219,10 +219,10 @@
 
         <section class="section" data-tab-panel="explore">
           <div class="section-head">
-            <p class="section-label">Value Food</p>
-            <h2>Depachika and Supermarket Value Meals</h2>
+            <p class="section-label">가성비 먹거리</p>
+            <h2>백화점 지하와 마트 가성비 식사</h2>
             <p class="section-subcopy">
-              Department-store food halls and evening deli markdown windows can work as quality-first backup meals, picnic picks, or hotel-room suppers.
+              백화점 식품관과 저녁 델리 할인 시간대를 활용해 품질 대비 만족도가 높은 대체 식사, 호텔 객실식, 간식 전략을 구성합니다.
             </p>
           </div>
           <div class="ops-grid" id="value-food-grid"></div>
@@ -230,7 +230,7 @@
 
         <section class="section" data-tab-panel="explore">
           <div class="section-head">
-            <p class="section-label">Local Guide</p>
+            <p class="section-label">현지 가이드</p>
             <h2>현지 가이드 메모</h2>
           </div>
           <div class="guide-grid" id="guide-grid"></div>
@@ -238,7 +238,7 @@
 
         <section class="section sources" id="verify" data-tab-panel="verify">
           <div class="section-head">
-            <p class="section-label">Verification</p>
+            <p class="section-label">검증</p>
             <h2>출처와 재확인 포인트</h2>
           </div>
           <div id="sources-list" class="sources-list"></div>
@@ -252,6 +252,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="./assets/js/app.js?v=fontfix1"></script>
+    <script src="./assets/js/app.js?v=kofix1"></script>
   </body>
 </html>

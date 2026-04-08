@@ -1,4 +1,4 @@
-const APP_VERSION = "fontfix1";
+const APP_VERSION = "kofix1";
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -91,9 +91,9 @@ function attachOpsHandlers() {
 }
 
 function weatherModeLabel(mode) {
-  if (mode === "rain") return "Rain Plan";
-  if (mode === "fatigue") return "Fatigue Plan";
-  return "Clear Plan";
+  if (mode === "rain") return "비 플랜";
+  if (mode === "fatigue") return "피곤 플랜";
+  return "맑음 플랜";
 }
 
 function weatherVariantFor(item) {
@@ -107,7 +107,7 @@ function timelineFor(item) {
   return item.timeline || [];
 }
 
-function copyButton(value, label = "Copy") {
+function copyButton(value, label = "복사") {
   return `<button class="action-chip" type="button" data-copy="${value}">${label}</button>`;
 }
 
@@ -121,24 +121,24 @@ function renderTimelineItem(item, dayLabel, index) {
 
   const links = item.from && item.to ? `
     <div class="timeline-links">
-      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map Route</a>
+      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map 루트</a>
       ${copyButton(mapRouteUrl(item.from, item.to))}
-      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Transit</a>
+      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>
       ${copyButton(transitUrl(item.from, item.to))}
     </div>
   ` : "";
 
   const meta = [];
   if (item.meal) {
-    meta.push(`Meal: ${item.meal.name}`);
-    meta.push(`Budget: ${item.meal.budget}`);
-    meta.push(`Order: ${item.meal.picks}`);
+    meta.push(`식사: ${item.meal.name}`);
+    meta.push(`예산: ${item.meal.budget}`);
+    meta.push(`추천 주문: ${item.meal.picks}`);
   }
   if (item.attraction) {
-    meta.push(`Attraction: ${item.attraction.name}`);
-    meta.push(`Why: ${item.attraction.why}`);
+    meta.push(`어트렉션: ${item.attraction.name}`);
+    meta.push(`포인트: ${item.attraction.why}`);
     if (item.attraction.budget) {
-      meta.push(`Budget: ${item.attraction.budget}`);
+      meta.push(`예산: ${item.attraction.budget}`);
     }
   }
 
@@ -154,7 +154,7 @@ function renderTimelineItem(item, dayLabel, index) {
       ${links}
       <div class="timeline-actions">
         <button class="action-chip ${done ? "active" : ""}" type="button" data-timeline-day="${dayLabel}" data-timeline-index="${index}">
-          ${done ? "Done" : "Mark Done"}
+          ${done ? "완료됨" : "완료 표시"}
         </button>
       </div>
     </article>
@@ -175,7 +175,7 @@ async function copyText(value, button) {
     await navigator.clipboard.writeText(value);
     if (button) {
       const original = button.textContent;
-      button.textContent = "Copied";
+      button.textContent = "복사됨";
       window.setTimeout(() => {
         button.textContent = original;
       }, 1200);
@@ -476,8 +476,8 @@ function renderMaps(data) {
       <h3>${item.name}</h3>
       <p>${item.note}</p>
       <div class="map-links">
-        <a class="map-link" href="${item.google}" target="_blank" rel="noreferrer">Google Maps</a>
-        <a class="map-link" href="${item.osm}" target="_blank" rel="noreferrer">OpenStreetMap</a>
+        <a class="map-link" href="${item.google}" target="_blank" rel="noreferrer">구글 지도</a>
+        <a class="map-link" href="${item.osm}" target="_blank" rel="noreferrer">오픈스트리트맵</a>
       </div>
     </article>
   `).join("");
@@ -533,7 +533,7 @@ function drawMapPoints(data, selectedDay) {
       <strong>${point.name}</strong><br/>
       ${point.day}<br/>
       ${point.note}<br/>
-      <a href="${point.google}" target="_blank" rel="noreferrer">Google Maps</a>
+      <a href="${point.google}" target="_blank" rel="noreferrer">구글 지도</a>
     `);
 
     mapMarkers.push(marker);
@@ -607,7 +607,7 @@ function renderFood(data) {
       <strong>${item.name}</strong>
       <p>${item.detail}</p>
       <div class="timeline-links">
-        <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">Open Link</a>
+        <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">운영 정보 보기</a>
         ${copyButton(item.link)}
       </div>
     </div>
