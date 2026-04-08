@@ -23,17 +23,17 @@ function createSakuraLayer() {
   const fragment = document.createDocumentFragment();
 
   for (let index = 0; index < petalCount; index += 1) {
-    const petal = document.createElement("span");
+    const petal = document.createElement("div");
     petal.className = "sakura-petal";
     petal.style.setProperty("--start-x", `${Math.random() * 100}%`);
-    petal.style.setProperty("--petal-size", `${14 + Math.random() * 16}px`);
-    petal.style.setProperty("--petal-opacity", `${0.45 + Math.random() * 0.35}`);
-    petal.style.setProperty("--fall-duration", `${11 + Math.random() * 10}s`);
+    petal.style.setProperty("--petal-size", `${18 + Math.random() * 20}px`);
+    petal.style.setProperty("--petal-opacity", `${0.72 + Math.random() * 0.24}`);
+    petal.style.setProperty("--fall-duration", `${10 + Math.random() * 8}s`);
     petal.style.setProperty("--fall-delay", `${Math.random() * -22}s`);
     petal.style.setProperty("--spin-duration", `${2.8 + Math.random() * 2.4}s`);
-    petal.style.setProperty("--drift", `${18 + Math.random() * 16}vw`);
+    petal.style.setProperty("--drift", `${22 + Math.random() * 18}vw`);
 
-    const blossom = document.createElement("span");
+    const blossom = document.createElement("div");
     blossom.className = "sakura-blossom";
     petal.appendChild(blossom);
     fragment.appendChild(petal);
