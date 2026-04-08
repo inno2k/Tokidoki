@@ -84,45 +84,59 @@ function attachOpsHandlers() {
 }
 
 function weatherModeLabel(mode) {
-  if (mode === "rain") return "비 플랜";
-  if (mode === "fatigue") return "피곤 플랜";
-  return "맑음 플랜";
+  if (mode === "rain") return "? ??";
+  if (mode === "fatigue") return "?? ??";
+  return "?? ??";
 }
 
 function weatherVariantFor(item) {
   return item.weatherVariants?.[currentWeatherMode] || null;
 }
 
-function renderTimelineItem(item) {
+function timelineFor(item) {
+  if (currentWeatherMode !== "clear" && item.timelineVariants?.[currentWeatherMode]?.length) {
+    return item.timelineVariants[currentWeatherMode];
+  }
+  return item.timeline || [];
+}
+
+function copyButton(value, label = "??") {
+  return `<button class="action-chip" type="button" data-copy="${value}">${label}</button>`;
+}
+
+function renderTimelineItem(item, dayLabel, index) {
   const typeLabel = item.type === "meal"
     ? "Meal"
     : item.type === "attraction"
       ? "Attraction"
       : "Move";
+  const done = localStorage.getItem(timelineKey(dayLabel, index)) === "1";
 
   const links = item.from && item.to ? `
     <div class="timeline-links">
-      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map 루트</a>
-      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>
+      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map ??</a>
+      ${copyButton(mapRouteUrl(item.from, item.to))}
+      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo ????</a>
+      ${copyButton(transitUrl(item.from, item.to))}
     </div>
   ` : "";
 
   const meta = [];
   if (item.meal) {
-    meta.push(`식사: ${item.meal.name}`);
-    meta.push(`예산: ${item.meal.budget}`);
-    meta.push(`추천: ${item.meal.picks}`);
+    meta.push(`??: ${item.meal.name}`);
+    meta.push(`??: ${item.meal.budget}`);
+    meta.push(`??: ${item.meal.picks}`);
   }
   if (item.attraction) {
-    meta.push(`어트렉션: ${item.attraction.name}`);
-    meta.push(`포인트: ${item.attraction.why}`);
+    meta.push(`????: ${item.attraction.name}`);
+    meta.push(`???: ${item.attraction.why}`);
     if (item.attraction.budget) {
-      meta.push(`예산: ${item.attraction.budget}`);
+      meta.push(`??: ${item.attraction.budget}`);
     }
   }
 
   return `
-    <article class="timeline-item">
+    <article class="timeline-item ${done ? "done" : ""}">
       <div class="timeline-head">
         <span class="timeline-time">${item.time}</span>
         <span class="timeline-type">${typeLabel}</span>
@@ -131,6 +145,11 @@ function renderTimelineItem(item) {
       <p>${item.detail}</p>
       ${meta.length ? `<div class="timeline-meta">${meta.map((line) => `<span>${line}</span>`).join("")}</div>` : ""}
       ${links}
+      <div class="timeline-actions">
+        <button class="action-chip ${done ? "active" : ""}" type="button" data-timeline-day="${dayLabel}" data-timeline-index="${index}">
+          ${done ? "???" : "?? ??"}
+        </button>
+      </div>
     </article>
   `;
 }
@@ -140,6 +159,39 @@ function attachTodoHandlers() {
     checkbox.addEventListener("change", () => {
       localStorage.setItem(todoKey(checkbox.dataset.day, checkbox.dataset.index), checkbox.checked ? "1" : "0");
       checkbox.closest(".todo-item").classList.toggle("done", checkbox.checked);
+    });
+  });
+}
+
+async function copyText(value, button) {
+  try {
+    await navigator.clipboard.writeText(value);
+    if (button) {
+      const original = button.textContent;
+      button.textContent = "???";
+      window.setTimeout(() => {
+        button.textContent = original;
+      }, 1200);
+    }
+  } catch (error) {
+    console.error("Clipboard copy failed", error);
+  }
+}
+
+function attachTimelineHandlers() {
+  document.querySelectorAll("[data-timeline-day]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const { timelineDay, timelineIndex } = button.dataset;
+      const key = timelineKey(timelineDay, timelineIndex);
+      const next = localStorage.getItem(key) === "1" ? "0" : "1";
+      localStorage.setItem(key, next);
+      renderItinerary(window.__TOKIDOKI_DATA__);
+    });
+  });
+
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    button.addEventListener("click", () => {
+      copyText(button.dataset.copy, button);
     });
   });
 }
@@ -262,10 +314,11 @@ function renderItinerary(data) {
         </div>
       ` : ""}
       ${renderTodoList(item.day, item.todos)}
-      ${item.timeline ? `<div class="timeline-list">${item.timeline.map(renderTimelineItem).join("")}</div>` : ""}
+      ${timelineFor(item).length ? `<div class="timeline-list">${timelineFor(item).map((entry, index) => renderTimelineItem(entry, item.day, index)).join("")}</div>` : ""}
     </article>
   `).join("");
   attachTodoHandlers();
+  attachTimelineHandlers();
 }
 
 function renderWeatherSwitch(data) {
@@ -510,9 +563,13 @@ function renderFood(data) {
     <div class="verified-item">
       <strong>${item.name}</strong>
       <p>${item.detail}</p>
-      <a href="${item.link}" target="_blank" rel="noreferrer">운영 정보 보기</a>
+      <div class="timeline-links">
+        <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">?? ?? ??</a>
+        ${copyButton(item.link)}
+      </div>
     </div>
   `).join("");
+  attachTimelineHandlers();
 }
 
 function renderGuide(data) {
@@ -538,6 +595,7 @@ function renderSources(data) {
 async function main() {
   try {
     const data = await loadTrip();
+    window.__TOKIDOKI_DATA__ = data;
     createSakuraLayer();
     fillHero(data);
     fillIntro(data);

@@ -270,6 +270,71 @@
           }
         }
       ],
+      "timelineVariants": {
+        "rain": [
+          {
+            "time": "10:10-13:30",
+            "title": "나리타 도착 후 오사키 체크인과 휴식 우선",
+            "detail": "비 오는 첫날은 이동과 체크인 안정성을 먼저 확보하고, 외부 경유지는 과감히 줄입니다.",
+            "type": "move",
+            "from": "Narita Airport Terminal 2･3 Station",
+            "to": "Osaki Station"
+          },
+          {
+            "time": "14:00-15:00",
+            "title": "오사키 역권 실내 식사",
+            "detail": "오오토야·야요이켄 같은 정식 계열로 첫 끼를 안정적으로 해결합니다.",
+            "type": "meal",
+            "meal": {
+              "name": "오사키 역권 정식집",
+              "budget": "가족 3인 약 ¥3,000-4,500",
+              "picks": "생선정식, 치킨난반, 아동이 먹기 쉬운 카레"
+            }
+          },
+          {
+            "time": "17:00-19:00",
+            "title": "아카바네 짧은 회상 산책과 저녁",
+            "detail": "비가 약해진 시간에만 짧게 걷고, 실내 식사 비중을 높입니다.",
+            "type": "meal",
+            "from": "Osaki Station",
+            "to": "Akabane Station",
+            "meal": {
+              "name": "아카바네 역권 저녁",
+              "budget": "가족 3인 약 ¥5,000-7,000",
+              "picks": "야키토리, 정식, 아이와 나눠먹기 쉬운 메뉴"
+            }
+          }
+        ],
+        "fatigue": [
+          {
+            "time": "10:10-13:00",
+            "title": "공항에서 호텔로 바로 이동",
+            "detail": "환승 최소 루트로 이동하고, 체크인 전후 휴식을 확보합니다.",
+            "type": "move",
+            "from": "Narita Airport Terminal 2･3 Station",
+            "to": "Osaki Station"
+          },
+          {
+            "time": "13:10-15:00",
+            "title": "호텔 적응, 간단 식사, 낮 휴식",
+            "detail": "첫날 피로가 강하면 이 블록만으로도 충분합니다.",
+            "type": "meal",
+            "meal": {
+              "name": "호텔 근처 간단 식사",
+              "budget": "가족 3인 약 ¥2,500-4,000",
+              "picks": "소바, 덮밥, 정식"
+            }
+          },
+          {
+            "time": "17:30-19:00",
+            "title": "아카바네 90분 회상 코스",
+            "detail": "핵심 지점만 짧게 돌아보고 무리 없이 복귀합니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Akabane Station"
+          }
+        ]
+      },
       "weatherVariants": {
         "rain": {
           "summary": "이케부쿠로 경유를 생략하고 호텔 적응과 아카바네 회상에 집중하는 편이 좋습니다.",
@@ -375,6 +440,78 @@
           }
         }
       ],
+      "timelineVariants": {
+        "rain": [
+          {
+            "time": "08:30-10:00",
+            "title": "츠키지 식사만 빠르게 소화",
+            "detail": "비 오는 날은 시장 체류를 줄이고, 대표 식사 후 바로 다음 실내 구간으로 이동합니다.",
+            "type": "meal",
+            "from": "Osaki Station",
+            "to": "Tsukiji Outer Market",
+            "meal": {
+              "name": "츠키지 아침 식사",
+              "budget": "가족 3인 약 ¥4,500-7,000",
+              "picks": "스시, 카이센동, 계란말이"
+            }
+          },
+          {
+            "time": "11:00-13:00",
+            "title": "아사쿠사 핵심 포인트만 짧게 확인",
+            "detail": "센소지와 나카미세는 짧게 보고, 사진 포인트만 챙깁니다.",
+            "type": "move",
+            "from": "Tsukiji Outer Market",
+            "to": "Asakusa Station"
+          },
+          {
+            "time": "14:00-18:00",
+            "title": "아키하바라 실내 어트렉션 중심 운영",
+            "detail": "GiGO와 가챠샵, 캐릭터 숍 위주로 실내 시간을 늘립니다.",
+            "type": "attraction",
+            "from": "Asakusa Station",
+            "to": "Akihabara Station",
+            "attraction": {
+              "name": "아키하바라 실내 리프레시 코스",
+              "why": "비를 피하면서 아들이 좋아할 포인트가 많음",
+              "budget": "가족 체험비 약 ¥2,000-5,000"
+            }
+          }
+        ],
+        "fatigue": [
+          {
+            "time": "09:30-11:00",
+            "title": "츠키지 또는 아사쿠사 한 축만 선택",
+            "detail": "컨디션이 처지면 오전의 대표 목적지 하나만 깊게 즐깁니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Tsukiji Outer Market"
+          },
+          {
+            "time": "12:00-14:00",
+            "title": "우에노 공원 대신 실내 점심과 휴식",
+            "detail": "걷는 양을 줄이고 점심 후 카페나 역내 휴식으로 리듬을 회복합니다.",
+            "type": "meal",
+            "meal": {
+              "name": "우에노 역권 점심",
+              "budget": "가족 3인 약 ¥3,500-5,500",
+              "picks": "정식, 텐동, 소바"
+            }
+          },
+          {
+            "time": "15:00-16:30",
+            "title": "아키하바라 90분만 가볍게",
+            "detail": "게임장과 캐릭터 숍 1~2곳만 들르고 저녁을 앞당깁니다.",
+            "type": "attraction",
+            "from": "Ueno Station",
+            "to": "Akihabara Station",
+            "attraction": {
+              "name": "짧은 아키하바라 코스",
+              "why": "피곤한 날에도 만족도가 높음",
+              "budget": "약 ¥1,000-3,000"
+            }
+          }
+        ]
+      },
       "weatherVariants": {
         "rain": {
           "summary": "츠키지 체류를 짧게 하고 우에노 또는 아키하바라의 실내 비중을 늘리는 쪽이 낫습니다.",
@@ -465,6 +602,68 @@
           }
         }
       ],
+      "timelineVariants": {
+        "rain": [
+          {
+            "time": "10:00-12:00",
+            "title": "시부야 실내 중심 산책",
+            "detail": "스크램블 주변 실내 공간, 전망 포인트, 카페 위주로 구성합니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Shibuya Station"
+          },
+          {
+            "time": "12:30-15:00",
+            "title": "시부야 점심 후 신주쿠로 짧게 이동",
+            "detail": "이동 횟수를 줄이기 위해 한 축당 핵심 1~2개만 남깁니다.",
+            "type": "meal",
+            "from": "Shibuya Station",
+            "to": "Shinjuku Station",
+            "meal": {
+              "name": "시부야 또는 신주쿠 정식/라멘",
+              "budget": "가족 3인 약 ¥3,500-6,000",
+              "picks": "정식, 츠케멘, 돈코츠 라멘"
+            }
+          },
+          {
+            "time": "16:00-18:00",
+            "title": "도쿄타워는 비 강도 보고 선택",
+            "detail": "비가 거세면 오사키 복귀 후 저녁을 안정적으로 해결합니다.",
+            "type": "move",
+            "from": "Shinjuku Station",
+            "to": "Tokyo Tower"
+          }
+        ],
+        "fatigue": [
+          {
+            "time": "10:30-13:00",
+            "title": "시부야 단일 집중 코스",
+            "detail": "신주쿠를 줄이고 시부야만 천천히 걷는 방식으로 체력을 아낍니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Shibuya Station"
+          },
+          {
+            "time": "13:00-14:30",
+            "title": "늦은 점심과 긴 카페 휴식",
+            "detail": "중간 회복 슬롯을 길게 잡아 저녁 만족도를 지킵니다.",
+            "type": "meal",
+            "meal": {
+              "name": "시부야 카페 또는 정식집",
+              "budget": "가족 3인 약 ¥3,000-5,000",
+              "picks": "오므라이스, 카레, 정식"
+            }
+          },
+          {
+            "time": "16:30-19:30",
+            "title": "도쿄타워 야경만 보고 조기 복귀",
+            "detail": "핵심 야경 포인트만 남기고 동선 확장을 멈춥니다.",
+            "type": "move",
+            "from": "Shibuya Station",
+            "to": "Tokyo Tower"
+          }
+        ]
+      },
       "weatherVariants": {
         "rain": {
           "summary": "시부야와 신주쿠의 실내 쇼핑/카페 비중을 높이고, 이동 횟수를 줄이는 편이 좋습니다.",
@@ -557,6 +756,74 @@
           "to": "Minato Mirai Station"
         }
       ],
+      "timelineVariants": {
+        "rain": [
+          {
+            "time": "10:00-11:00",
+            "title": "오다이바로 이동 후 실내 중심 전환",
+            "detail": "비 오는 날은 오다이바가 오히려 운영하기 편합니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Tokyo Teleport Station"
+          },
+          {
+            "time": "11:00-14:00",
+            "title": "건담베이스와 다이버시티 집중",
+            "detail": "실내 쇼핑과 전시를 중심으로 천천히 이동합니다.",
+            "type": "attraction",
+            "attraction": {
+              "name": "THE GUNDAM BASE TOKYO + DiverCity",
+              "why": "비를 피하면서도 몰입도가 높음",
+              "budget": "쇼핑 제외 체류비 약 ¥0-2,000"
+            }
+          },
+          {
+            "time": "14:30-17:00",
+            "title": "조이폴리스 또는 실내 체험 1곳",
+            "detail": "비가 계속 오면 해변 산책과 요코하마 연장은 생략합니다.",
+            "type": "attraction",
+            "attraction": {
+              "name": "도쿄 조이폴리스",
+              "why": "실내 기분전환용 대표 선택지",
+              "budget": "티켓 정책은 출발 직전 재확인"
+            }
+          }
+        ],
+        "fatigue": [
+          {
+            "time": "10:30-12:30",
+            "title": "오다이바 핵심 1곳만 깊게",
+            "detail": "건담베이스를 메인으로 두고 나머지는 과감히 줄입니다.",
+            "type": "attraction",
+            "from": "Osaki Station",
+            "to": "Tokyo Teleport Station",
+            "attraction": {
+              "name": "THE GUNDAM BASE TOKYO",
+              "why": "아들 만족도가 가장 높을 가능성이 큼",
+              "budget": "쇼핑 예산 별도"
+            }
+          },
+          {
+            "time": "12:30-14:00",
+            "title": "다이버시티에서 점심과 휴식",
+            "detail": "쇼핑몰 내 식사로 이동 부담을 줄입니다.",
+            "type": "meal",
+            "meal": {
+              "name": "다이버시티 푸드코트 또는 정식집",
+              "budget": "가족 3인 약 ¥3,000-5,500",
+              "picks": "돈카츠, 우동, 덮밥"
+            }
+          },
+          {
+            "time": "15:00-16:30",
+            "title": "오사키로 조기 복귀",
+            "detail": "요코하마 연장은 완전히 빼고 저녁 회복에 투자합니다.",
+            "type": "move",
+            "from": "Tokyo Teleport Station",
+            "to": "Osaki Station"
+          }
+        ]
+      },
       "weatherVariants": {
         "rain": {
           "summary": "오다이바는 오히려 비 오는 날 실내 비중으로 재구성하기 쉬운 편입니다.",
@@ -617,6 +884,47 @@
           "to": "Narita Airport Terminal 2･3 Station"
         }
       ],
+      "timelineVariants": {
+        "rain": [
+          {
+            "time": "07:00-07:40",
+            "title": "역내 간단 식사와 우산 정리",
+            "detail": "출국일은 날씨보다 안정적인 이동이 더 중요합니다.",
+            "type": "meal",
+            "meal": {
+              "name": "오사키 역내 카페 또는 소바",
+              "budget": "가족 3인 약 ¥2,000-3,500",
+              "picks": "아침 소바, 샌드위치, 카레"
+            }
+          },
+          {
+            "time": "07:50-10:00",
+            "title": "조금 더 이른 나리타 이동",
+            "detail": "미끄러운 이동과 플랫폼 변수를 고려해 여유를 늘립니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Narita Airport Terminal 2･3 Station"
+          }
+        ],
+        "fatigue": [
+          {
+            "time": "07:00-07:30",
+            "title": "체크아웃 준비와 짐 정리만 집중",
+            "detail": "아침 관광은 완전히 제외하고 출국 리듬만 유지합니다.",
+            "type": "move",
+            "from": "New Otani Inn Tokyo",
+            "to": "Osaki Station"
+          },
+          {
+            "time": "07:40-10:00",
+            "title": "나리타로 바로 이동",
+            "detail": "간식은 역이나 공항에서 조달하고 추가 일정은 넣지 않습니다.",
+            "type": "move",
+            "from": "Osaki Station",
+            "to": "Narita Airport Terminal 2･3 Station"
+          }
+        ]
+      },
       "weatherVariants": {
         "rain": {
           "summary": "출국일은 원래도 날씨 영향을 적게 받는 구조라, 이동 여유만 더 확보하면 됩니다.",

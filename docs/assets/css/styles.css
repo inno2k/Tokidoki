@@ -520,6 +520,17 @@ body::before {
   border-radius: 16px;
   background: rgba(248, 246, 238, 0.96);
   border: 1px solid rgba(33, 48, 41, 0.08);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.timeline-item.done {
+  background: rgba(238, 244, 231, 0.96);
+  border-color: rgba(111, 140, 97, 0.26);
+}
+
+.timeline-item.done .timeline-title,
+.timeline-item.done p {
+  color: #6f7a72;
 }
 
 .timeline-head {
@@ -571,6 +582,35 @@ body::before {
 
 .timeline-link:hover {
   text-decoration: underline;
+}
+
+.timeline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.action-chip {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(60, 93, 83, 0.08);
+  color: var(--navy);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.action-chip:hover {
+  background: rgba(60, 93, 83, 0.16);
+  transform: translateY(-1px);
+}
+
+.action-chip.active {
+  background: var(--matcha);
+  color: white;
 }
 
 .route-list span,
