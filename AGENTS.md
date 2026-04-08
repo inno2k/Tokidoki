@@ -6,7 +6,7 @@ The goal is not generic trip writing. The goal is collaborative planning by a sp
 
 ## Team
 
-The default team has nine specialist roles:
+The default team has ten specialist roles:
 
 1. `destination-analyst`
    Researches seasonality, neighborhoods, attractions, access, closures, crowd patterns, safety, and traveler-fit.
@@ -26,6 +26,8 @@ The default team has nine specialist roles:
    Turns the trip into a lived-memory journey by adding recollection prompts, then-vs-now comparison moments, and photo reenactment ideas.
 9. `weather-risk-agent`
    Builds rainy-day, fatigue-day, and comfort-preserving fallback plans so the trip still feels good when conditions shift.
+10. `shopping-agent`
+   Places route-friendly shopping stops such as Hands, camera stores, hobby shops, depachika, supermarkets, and discount stores without turning the trip into a mall crawl.
 
 ## Operating Model
 
@@ -34,10 +36,11 @@ Use a Producer-Reviewer style flow with light fan-out:
 1. `destination-analyst` produces the destination brief.
 2. `itinerary-designer` produces the draft itinerary and accommodation suggestion.
 3. `attraction-agent` inserts short refresh stops that fit the route.
-4. `budget-manager`, `local-guide`, `reservation-concierge`, `family-comfort-agent`, and `weather-risk-agent` review in parallel.
-5. `memory-curator` adds emotional anchors and family prompts after the route is stable.
-6. Any specialist may request itinerary adjustments if timing, fatigue, reservation, or weather assumptions break down.
-7. The main agent integrates everything into one traveler-facing answer.
+4. `budget-manager`, `local-guide`, `reservation-concierge`, `family-comfort-agent`, `weather-risk-agent`, and `shopping-agent` review in parallel.
+5. `shopping-agent` inserts route-safe shopping and value-food opportunities after the main attraction sequence is stable.
+6. `memory-curator` adds emotional anchors and family prompts after the route is stable.
+7. Any specialist may request itinerary adjustments if timing, fatigue, reservation, weather, or shopping overload assumptions break down.
+8. The main agent integrates everything into one traveler-facing answer.
 
 ## Deliverables
 
@@ -49,6 +52,7 @@ For a full travel-planning request, aim to produce:
 - day-by-day itinerary
 - reservation checklist and booking deadlines
 - family comfort and weather fallback guidance
+- shopping strategy and value-food opportunities
 - memory moments and photo mission prompts
 - budget table or tiered budget summary
 - local practical guide

@@ -1,6 +1,6 @@
 # Tokyo Travel Team Contract
 
-This repository uses a nine-role travel planning team.
+This repository uses a ten-role travel planning team.
 
 ## Role responsibilities
 
@@ -136,6 +136,22 @@ Returns:
 - weather-triggered warnings
 - day-before recheck notes
 
+### shopping-agent
+
+Inputs:
+
+- itinerary draft
+- district sequence
+- shopper interests
+- budget sensitivity
+
+Returns:
+
+- route-friendly shopping stops
+- hobby, electronics, sports, discount, and depachika candidates
+- stop duration guidance
+- value-food and supermarket-sale ideas
+
 ## Handoff rules
 
 - `destination-analyst -> itinerary-designer`: district fit, seasonality, attraction priorities
@@ -148,6 +164,9 @@ Returns:
 - `family-comfort-agent -> itinerary-designer`: where rest, snacks, or indoor backup should be added
 - `memory-curator -> main agent`: emotional and family narrative beats for the final presentation
 - `weather-risk-agent -> itinerary-designer`: which outdoor blocks should be swapped, shortened, or moved
+- `itinerary-designer -> shopping-agent`: where shopping can fit without breaking pacing
+- `shopping-agent -> budget-manager`: likely discretionary spend points and low-risk alternatives
+- `shopping-agent -> local-guide`: store cluster logic, food hall, supermarket, and tax-free practicality
 
 ## Traveler-facing promise
 

@@ -419,6 +419,7 @@ function renderOpsCards(data, key, targetId) {
       ${key === "reservationOps"
         ? renderOpsChecklist(key, item.label, item.items)
         : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`}
+      ${item.links?.length ? `<div class="timeline-links">${item.links.map((link) => `<a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}</div>` : ""}
     </article>
   `).join("");
   if (key === "reservationOps") {
@@ -615,6 +616,8 @@ async function main() {
     renderBudgetSwitch(data);
     renderBudgetPanel(data, "balanced");
     renderFood(data);
+    renderOpsCards(data, "shoppingOps", "shopping-grid");
+    renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderGuide(data);
     renderSources(data);
   } catch (error) {

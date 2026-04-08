@@ -41,9 +41,18 @@
     "이미 예약된 항공과 숙소는 고정 자산으로 보고, 예산은 현지 체류비 중심으로 계산했습니다."
   ],
   "weatherModes": [
-    ["clear", "맑음"],
-    ["rain", "비"],
-    ["fatigue", "피곤"]
+    [
+      "clear",
+      "맑음"
+    ],
+    [
+      "rain",
+      "비"
+    ],
+    [
+      "fatigue",
+      "피곤"
+    ]
   ],
   "memoryAngle": "이 일정은 명소를 많이 찍는 관광보다 예전의 생활감과 지금의 새로움이 겹쳐지는 경험을 우선합니다. 그래서 신주쿠, 시부야, 우에노, 센소지 같은 대표 동선 사이에 아카바네 회상, 오사키 기반 숙소 활용, 추억의 정식집과 서민식 체인을 함께 묶었습니다.",
   "team": [
@@ -51,55 +60,111 @@
       "role": "destination-analyst",
       "title": "목적지 분석가",
       "summary": "오사키 호텔을 기준점으로 두고, 아카바네의 추억 회복 가치와 아들 기준 체험 강도가 높은 오다이바·건담베이스를 메인 축으로 선정했습니다.",
-      "tags": ["계절성", "지역 적합도", "혼잡도", "가족 적합성"]
+      "tags": [
+        "계절성",
+        "지역 적합도",
+        "혼잡도",
+        "가족 적합성"
+      ]
     },
     {
       "role": "itinerary-designer",
       "title": "일정 설계사",
       "summary": "첫날과 마지막 날의 짧은 시간을 감안해 도시형 코어 플랜과 Day 4 스왑 플랜을 나눴습니다. 아카바네는 저녁 감성 산책용으로 배치했습니다.",
-      "tags": ["동선 최적화", "체력 안배", "호텔 활용", "대체안 설계"]
+      "tags": [
+        "동선 최적화",
+        "체력 안배",
+        "호텔 활용",
+        "대체안 설계"
+      ]
     },
     {
       "role": "budget-manager",
       "title": "예산 관리자",
       "summary": "이미 예약된 항공·숙박은 별도로 보고, 현지 체류비 중심으로 계산했습니다. 후지큐는 메인 플랜에 넣지 않고 추가비용 옵션으로 처리했습니다.",
-      "tags": ["현지비", "가족 3인", "옵션 비용", "지출 압박도"]
+      "tags": [
+        "현지비",
+        "가족 3인",
+        "옵션 비용",
+        "지출 압박도"
+      ]
     },
     {
       "role": "local-guide",
       "title": "현지 가이드",
       "summary": "오사키역 직결 숙소의 장점을 살려 야마노테선 기동성을 최대한 활용하고, 추억의 체인과 최근 운영 확인 식당 후보를 지역별로 맞물리게 배치했습니다.",
-      "tags": ["교통 팁", "맛집 후보", "현지 에티켓", "조정 요청"]
+      "tags": [
+        "교통 팁",
+        "맛집 후보",
+        "현지 에티켓",
+        "조정 요청"
+      ]
     },
     {
       "role": "attraction-agent",
       "title": "어트렉션 에이전트",
       "summary": "가챠샵, 게임장, 체험형 실내 놀이시설을 과하게 밀어 넣지 않고 이동 동선 중간의 기분전환 포인트로 배치합니다.",
-      "tags": ["가챠샵", "게임장", "실내 체험", "기분 전환"]
+      "tags": [
+        "가챠샵",
+        "게임장",
+        "실내 체험",
+        "기분 전환"
+      ]
     },
     {
       "role": "reservation-concierge",
       "title": "예약 컨시어지",
       "summary": "영업시간, 입장 방식, 예약 필요 여부, 출발 전 재확인 항목을 관리해 일정이 현장에서 무너지지 않게 지켜줍니다.",
-      "tags": ["예약", "입장정책", "운영시간", "재확인"]
+      "tags": [
+        "예약",
+        "입장정책",
+        "운영시간",
+        "재확인"
+      ]
     },
     {
       "role": "family-comfort-agent",
       "title": "가족 컨디션 에이전트",
       "summary": "아들의 집중력, 부모 체력, 간식과 화장실, 비 오는 날 실내 대체안을 기준으로 일정의 체감 난이도를 조절합니다.",
-      "tags": ["체력", "간식", "화장실", "회복"]
+      "tags": [
+        "체력",
+        "간식",
+        "화장실",
+        "회복"
+      ]
     },
     {
       "role": "memory-curator",
       "title": "추억 큐레이터",
       "summary": "아카바네와 예전 생활권의 감정을 살리고, 가족 대화와 사진 미션을 넣어 이번 여행을 더 오래 남는 기억으로 바꿉니다.",
-      "tags": ["회상", "대화", "사진 미션", "감정선"]
+      "tags": [
+        "회상",
+        "대화",
+        "사진 미션",
+        "감정선"
+      ]
     },
     {
       "role": "weather-risk-agent",
       "title": "날씨 리스크 에이전트",
       "summary": "비, 바람, 피곤함이 생겨도 여행 만족도가 무너지지 않도록 맑음·비·피곤 3종 대체 플랜을 유지합니다.",
-      "tags": ["비 플랜", "체력 저하", "실내 대체", "리스크"]
+      "tags": [
+        "비 플랜",
+        "체력 저하",
+        "실내 대체",
+        "리스크"
+      ]
+    },
+    {
+      "role": "shopping-agent",
+      "title": "?? ????",
+      "summary": "????, ????, ???????, ?????, ????, ??????, ??? ??, ????? ?? ?? ?? ????? ?? ????.",
+      "tags": [
+        "Hands",
+        "Electronics",
+        "Figure",
+        "Depachika"
+      ]
     }
   ],
   "comms": [
@@ -142,6 +207,14 @@
     {
       "route": "날씨 리스크 → 설계사",
       "body": "츠키지-센소지-우에노 축과 오다이바 날은 날씨 민감도가 높으므로, 비와 피곤 상태를 가정한 축소 버전 일정을 함께 유지할 필요가 있음."
+    },
+    {
+      "route": "shopping-agent -> itinerary-designer",
+      "body": "Day 2 ???????? ???? Akiba? ???/???? ??, Day 3 ?????????? Hands?Gallery2?Don Quijote? ?? ?? ??? ?? ?? ?? ??? ????."
+    },
+    {
+      "route": "shopping-agent -> budget-manager",
+      "body": "????, ???, ??, ??? ??? ???? ??? ??? ?? ???? ?? ??, ??? ??? ?? ?? ???? ?? ?? ??? ?? ?????."
     }
   ],
   "photos": [
@@ -1258,14 +1331,20 @@
       ]
     }
   ],
-  "mapCenter": [35.6764, 139.7490],
+  "mapCenter": [
+    35.6764,
+    139.749
+  ],
   "mapZoom": 11,
   "mapPoints": [
     {
       "day": "Day 1",
       "name": "New Otani Inn Tokyo / Osaki",
       "note": "숙소 베이스. 첫날 짐을 풀고 이동 동선을 가볍게 만드는 중심점입니다.",
-      "coords": [35.6197, 139.7288],
+      "coords": [
+        35.6197,
+        139.7288
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=New+Otani+Inn+Tokyo"
     },
@@ -1273,14 +1352,20 @@
       "day": "Day 1",
       "name": "Ikebukuro",
       "note": "첫날 짧게 감각을 되살리기 좋은 중간 경유지.",
-      "coords": [35.7295, 139.7109],
+      "coords": [
+        35.7295,
+        139.7109
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Ikebukuro+Station"
     },
     {
       "day": "Day 1",
       "name": "Akabane Station",
       "note": "이번 여행의 감정적 중심지.",
-      "coords": [35.7778, 139.7206],
+      "coords": [
+        35.7778,
+        139.7206
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=Akabane+Station+Tokyo"
     },
@@ -1288,14 +1373,20 @@
       "day": "Day 2",
       "name": "Tsukiji Outer Market",
       "note": "아침 식사 또는 이른 점심 출발점.",
-      "coords": [35.6655, 139.7708],
+      "coords": [
+        35.6655,
+        139.7708
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo"
     },
     {
       "day": "Day 2",
       "name": "Senso-ji",
       "note": "전통 도쿄의 핵심 상징.",
-      "coords": [35.7148, 139.7967],
+      "coords": [
+        35.7148,
+        139.7967
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=Senso-ji+Tokyo"
     },
@@ -1303,21 +1394,30 @@
       "day": "Day 2",
       "name": "Ueno",
       "note": "공원과 아메요코를 묶는 산책 구간.",
-      "coords": [35.7138, 139.7773],
+      "coords": [
+        35.7138,
+        139.7773
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Ueno+Station"
     },
     {
       "day": "Day 2",
       "name": "Akihabara",
       "note": "아들의 서브컬처 체험 구간.",
-      "coords": [35.6984, 139.7730],
+      "coords": [
+        35.6984,
+        139.773
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Akihabara+Station"
     },
     {
       "day": "Day 3",
       "name": "Shibuya Scramble Crossing",
       "note": "현재형 도쿄를 가장 강하게 느끼는 장면.",
-      "coords": [35.6595, 139.7005],
+      "coords": [
+        35.6595,
+        139.7005
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing"
     },
@@ -1325,14 +1425,20 @@
       "day": "Day 3",
       "name": "Shinjuku",
       "note": "쇼핑과 도시 산책 구간.",
-      "coords": [35.6896, 139.7006],
+      "coords": [
+        35.6896,
+        139.7006
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Station"
     },
     {
       "day": "Day 3",
       "name": "Tokyo Tower",
       "note": "Day 3의 야경 피크.",
-      "coords": [35.6586, 139.7454],
+      "coords": [
+        35.6586,
+        139.7454
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=Tokyo+Tower"
     },
@@ -1340,7 +1446,10 @@
       "day": "Day 4",
       "name": "The Gundam Base Tokyo",
       "note": "아들의 체험 만족도가 높은 핵심 목적지.",
-      "coords": [35.6248, 139.7755],
+      "coords": [
+        35.6248,
+        139.7755
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=THE+GUNDAM+BASE+TOKYO"
     },
@@ -1348,14 +1457,20 @@
       "day": "Day 4",
       "name": "Yokohama Minato Mirai",
       "note": "체력이 남을 때 넣는 저녁 연장안.",
-      "coords": [35.4549, 139.6316],
+      "coords": [
+        35.4549,
+        139.6316
+      ],
       "google": "https://www.google.com/maps/search/?api=1&query=Minato+Mirai+Yokohama"
     },
     {
       "day": "Option",
       "name": "Fuji-Q Highland",
       "note": "Day 4 전체 교체형 원정안.",
-      "coords": [35.4875, 138.7804],
+      "coords": [
+        35.4875,
+        138.7804
+      ],
       "highlight": true,
       "google": "https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland"
     }
@@ -1410,11 +1525,26 @@
       "total": "¥110,000",
       "description": "가족 3인 현지 체류비 기준. 이미 예약한 항공·호텔을 제외하고, 체인 위주의 식사와 무료 산책 중심으로 운영하는 경우입니다.",
       "lines": [
-        ["교통", "¥18,000"],
-        ["식비", "¥42,000"],
-        ["입장/체험", "¥20,000"],
-        ["간식/카페", "¥8,000"],
-        ["예비비", "¥22,000"]
+        [
+          "교통",
+          "¥18,000"
+        ],
+        [
+          "식비",
+          "¥42,000"
+        ],
+        [
+          "입장/체험",
+          "¥20,000"
+        ],
+        [
+          "간식/카페",
+          "¥8,000"
+        ],
+        [
+          "예비비",
+          "¥22,000"
+        ]
       ],
       "note": "오다이바 중심 메인안에 적합합니다. 후지큐 전환 시 최소 4만 5천 엔 이상 추가를 보는 편이 안전합니다."
     },
@@ -1423,11 +1553,26 @@
       "total": "¥170,000",
       "description": "가족 3인이 무리 없이 움직이면서, 추억의 체인과 2~3회의 만족도 높은 식사를 섞는 기본 시나리오입니다.",
       "lines": [
-        ["교통", "¥22,000"],
-        ["식비", "¥68,000"],
-        ["입장/체험", "¥30,000"],
-        ["간식/쇼핑", "¥18,000"],
-        ["예비비", "¥32,000"]
+        [
+          "교통",
+          "¥22,000"
+        ],
+        [
+          "식비",
+          "¥68,000"
+        ],
+        [
+          "입장/체험",
+          "¥30,000"
+        ],
+        [
+          "간식/쇼핑",
+          "¥18,000"
+        ],
+        [
+          "예비비",
+          "¥32,000"
+        ]
       ],
       "note": "이번 프로젝트의 기본 추천안입니다. 도시형 일정과 아카바네 회상, 건담베이스, 도쿄타워를 가장 자연스럽게 소화합니다."
     },
@@ -1436,11 +1581,26 @@
       "total": "¥255,000",
       "description": "오다이바 실내 엔터테인먼트, 더 나은 식사 선택, 기념품 구매, 후지큐 전환 가능성까지 흡수하는 상위 여유 시나리오입니다.",
       "lines": [
-        ["교통", "¥35,000"],
-        ["식비", "¥92,000"],
-        ["입장/체험", "¥58,000"],
-        ["쇼핑", "¥35,000"],
-        ["예비비", "¥35,000"]
+        [
+          "교통",
+          "¥35,000"
+        ],
+        [
+          "식비",
+          "¥92,000"
+        ],
+        [
+          "입장/체험",
+          "¥58,000"
+        ],
+        [
+          "쇼핑",
+          "¥35,000"
+        ],
+        [
+          "예비비",
+          "¥35,000"
+        ]
       ],
       "note": "후지큐 버스/철도 패키지, 추가 놀이기구, 굿즈 쇼핑까지 고려할 때 맞는 구간입니다."
     }
@@ -1586,7 +1746,197 @@
       "title": "東京ジョイポリス 운영 캘린더",
       "note": "2026-04-08 기준 2026-05-10 이후 상세 운영시간은 추후 공지 예정",
       "url": "https://tokyo-joypolis.com/tjpoct/calendar/index.html"
+    },
+    {
+      "title": "Yodobashi Akiba official store page",
+      "note": "Akihabara electronics and toy stop, access and floor information checked.",
+      "url": "https://www.yodobashi.com/ec/store/0018/"
+    },
+    {
+      "title": "Hands Shibuya official page",
+      "note": "Shibuya lifestyle shopping stop, opening hours and access checked.",
+      "url": "https://shibuya.hands.net/"
+    },
+    {
+      "title": "Bic Camera Ikebukuro West Exit official page",
+      "note": "Ikebukuro electronics stop, opening hours and access checked.",
+      "url": "https://www.biccamera.com/bc/i/shop/shoplist/shop017.jsp"
+    },
+    {
+      "title": "Gallery2 Shibuya official page",
+      "note": "Shibuya sports store candidate, product scope and hours checked.",
+      "url": "https://www.gallery2.co.jp/shops/shibuya-2f/"
+    },
+    {
+      "title": "Don Quijote Shinjuku Tonanguchi official page",
+      "note": "Late-night discount shopping stop near Shinjuku, access and hours checked.",
+      "url": "https://www.donki.com/en/store/shop_detail.php?shop_id=449"
+    },
+    {
+      "title": "Shibuya Tokyu Foodshow official page",
+      "note": "Department-store food hall strategy verified from official tenant and hours page.",
+      "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+    },
+    {
+      "title": "Ito-Yokado Hikifune official page",
+      "note": "Family indoor retail fallback candidate with store details checked.",
+      "url": "https://stores.itoyokado.co.jp/detail/577/"
+    },
+    {
+      "title": "Ito-Yokado Ario Kameari official page",
+      "note": "Large family retail fallback candidate with hours and access checked.",
+      "url": "https://stores.itoyokado.co.jp/234"
     }
   ],
-  "recheckNote": "최신 운영시간, 휴무, 항공 스케줄, 식당 평점은 2026년 4월 7일 기준으로 일부 확인했습니다. 출발 직전에는 각 공식 사이트와 항공사에서 한 번 더 재확인하는 전제로 설계했습니다."
+  "recheckNote": "최신 운영시간, 휴무, 항공 스케줄, 식당 평점은 2026년 4월 7일 기준으로 일부 확인했습니다. 출발 직전에는 각 공식 사이트와 항공사에서 한 번 더 재확인하는 전제로 설계했습니다.",
+  "shoppingOps": [
+    {
+      "label": "Day 1 / Ikebukuro Relay",
+      "title": "????? ????? ?? ???? ?? ?? ????? ???",
+      "summary": "?? ????? 30~45? ?? ?? ??? ?????. ????, ???, ?? ???/?? ???? ??? ?????.",
+      "items": [
+        "?? ??: 30~45?",
+        "?? ??: ?? ??? ?? ???? ??? ??",
+        "?? ??: ???, ???, ???, ?? ??/??",
+        "???? ?? ???? ???? ?? ?? ??"
+      ],
+      "links": [
+        {
+          "label": "Bic Camera Ikebukuro West Exit",
+          "url": "https://www.biccamera.com/bc/i/shop/shoplist/shop017.jsp"
+        }
+      ]
+    },
+    {
+      "label": "Day 2 / Akihabara Stack",
+      "title": "???? Akiba + ???/?? ??? ? ?? ??",
+      "summary": "?????? ?? ?? ?? ?? ???? ?? ???? ??? ?? ?? ????. ????? ?? ???, ?? ??? ???? ?? ????? ?????.",
+      "items": [
+        "?? ??: 60~90?",
+        "?? ??: ????? ???? ??? ???",
+        "?? ??: ???/????, ???? ??, ???, ??? ??",
+        "??/??? ?? ??? ?? ?? ??? ??"
+      ],
+      "links": [
+        {
+          "label": "Yodobashi Akiba",
+          "url": "https://www.yodobashi.com/ec/store/0018/"
+        },
+        {
+          "label": "Yodobashi Akiba Floor Guide",
+          "url": "https://www.yodobashi.com/ec/store/floor/0018/"
+        }
+      ]
+    },
+    {
+      "label": "Day 3 / Shibuya-Shinjuku",
+      "title": "??? Hands?Gallery2, ??? Don Quijote? ?? ???",
+      "summary": "??????? ?? ?? ??? ???? ??? ?? ????? ??? ?? ????. Hands? ?????? ???, Gallery2? ??? ??, Donki? ?? ????? ?? ??????.",
+      "items": [
+        "Hands Shibuya: ??, ????, ???, ??/?? ???",
+        "Gallery2 Shibuya: ???????? ? ????? ??",
+        "Don Quijote Shinjuku Southeast Exit: ?? ??, ????, ?? ??",
+        "?? ?? ??? 90? ?? ??"
+      ],
+      "links": [
+        {
+          "label": "Hands Shibuya",
+          "url": "https://shibuya.hands.net/"
+        },
+        {
+          "label": "Gallery2 Shibuya",
+          "url": "https://www.gallery2.co.jp/shops/shibuya-2f/"
+        },
+        {
+          "label": "Don Quijote Shinjuku Tonanguchi",
+          "url": "https://www.donki.com/en/store/shop_detail.php?shop_id=449"
+        }
+      ]
+    },
+    {
+      "label": "Rain / Family Retail Backup",
+      "title": "????? ??? ?? ?? ??? ??? ?? ??",
+      "summary": "?? ??? ??? ?? ?? ??????? ??? ????. ???, ??, ????, ?? ??? ? ?? ??? ? ?? ?? ???? ??? ????.",
+      "items": [
+        "?? ??: ??? ?? ??, ???/??/???? ??",
+        "?? ??: ?? ?? ?? ?? ???? ??",
+        "?????? ???? ??, ??? ????? ??? ???? ??",
+        "?? ?? ??? 10:00-21:00 ??? ?? ?? ?? ??? ??"
+      ],
+      "links": [
+        {
+          "label": "Ito-Yokado Hikifune",
+          "url": "https://stores.itoyokado.co.jp/detail/577/"
+        },
+        {
+          "label": "Ito-Yokado Ario Kameari",
+          "url": "https://stores.itoyokado.co.jp/234"
+        }
+      ]
+    }
+  ],
+  "valueFoodOps": [
+    {
+      "label": "Shibuya",
+      "title": "?? ???? Day 3 ?????? ?? ??? ??",
+      "summary": "???? ???? ??? ?? ??? ??? ?, ???/???? ???? ?? ?? ???? ????. ??, ??, ???, ???? ? ?? ?? ? ????.",
+      "items": [
+        "?? ??: ???-??? ?? ? ??? ??? ????? ?? ?",
+        "?? ??: ??, ?? ???, ????, ???, ???",
+        "?? ????? ???? ?? ??? ??? ??",
+        "?? ??? ??? ??? ? ? ??? ?? ?? ?? ??"
+      ],
+      "links": [
+        {
+          "label": "Shibuya Tokyu Foodshow",
+          "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+        }
+      ]
+    },
+    {
+      "label": "Ikebukuro",
+      "title": "????? ??? ??? ?? ?? ??? ??? ??",
+      "summary": "?? ? ?? ??? ??? ???, ????? ??? ?? ???? ?? ??? ????. ??, ??, ??, ??? ???? ????.",
+      "items": [
+        "?? ??: Day 1 ????? ?? ?? ?",
+        "?? ??: ??, ????, ???, ??, ?? ???",
+        "?? ??? ?? ? ?? ?? ??? ?? ?? ??",
+        "??? ??? ??? ??, ??? ?? ??? ? ?"
+      ],
+      "links": []
+    },
+    {
+      "label": "Supermarket Markdown",
+      "title": "?? 19:00-20:30 ?? ?? ?? ??? ?? ??? ???",
+      "summary": "?? ????? ??? ?? ?? ?? ?? ??? ??? ??? ??? ?? ?? ? ????. ?? ??? ?? ?? ? ????? ???? ????.",
+      "items": [
+        "?? ???: ??? 19:00 ??, ?? ??? ??? ?? ??? ??",
+        "?? ??: ?? ?, ??, ???, ???, ??, ??? ?",
+        "??: ?? ??? ??? ??? ?? ?? ???? ?? ? ?",
+        "?? ?? ??: ?? ?? ???, ?? ?? ??, ??? ?? ?? ?? ??"
+      ],
+      "links": []
+    },
+    {
+      "label": "Ito-Yokado Family Meal",
+      "title": "????? ???? ? ?? ? ??? ???-??? ??",
+      "summary": "???? ???? ??, ??, ??, ????, ?? ??? ? ?? ?? ?? ?? ???? ???? ????.",
+      "items": [
+        "?? ??: ??, ??, ??? ?? ??? ???? ?",
+        "?? ??: ???, ???, ????, ??, ??, ??",
+        "??? ???? ?? ?? ??",
+        "??? + ???? ??? ? ?? ???? ?? ?? ??"
+      ],
+      "links": [
+        {
+          "label": "Ito-Yokado Hikifune",
+          "url": "https://stores.itoyokado.co.jp/detail/577/"
+        },
+        {
+          "label": "Ito-Yokado Ario Kameari",
+          "url": "https://stores.itoyokado.co.jp/234"
+        }
+      ]
+    }
+  ]
 }
