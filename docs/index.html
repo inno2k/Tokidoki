@@ -52,7 +52,15 @@
       </header>
 
       <main>
-        <section class="section intro-grid">
+        <nav class="content-tabs" aria-label="Content sections">
+          <button type="button" class="active" data-content-tab="overview">개요</button>
+          <button type="button" data-content-tab="itinerary">일정</button>
+          <button type="button" data-content-tab="ops">운영</button>
+          <button type="button" data-content-tab="explore">탐색</button>
+          <button type="button" data-content-tab="verify">검증</button>
+        </nav>
+
+        <section class="section intro-grid" data-tab-panel="overview">
           <article class="story-card">
             <p class="section-label">Trip Lens</p>
             <h2>이번 여행의 핵심 판단</h2>
@@ -65,7 +73,7 @@
           </article>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="overview">
           <div class="section-head">
             <p class="section-label">AI Team</p>
             <h2>10 Specialist Agents</h2>
@@ -73,7 +81,7 @@
           <div class="team-grid" id="team-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="overview">
           <div class="section-head">
             <p class="section-label">Live Collaboration</p>
             <h2>에이전트 간 실시간 통신</h2>
@@ -81,7 +89,7 @@
           <div class="comm-feed" id="comm-feed"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="overview">
           <div class="section-head">
             <p class="section-label">Photo Journal</p>
             <h2>사진으로 보는 이번 여행의 분위기</h2>
@@ -92,7 +100,7 @@
           <div class="photo-grid" id="photo-grid"></div>
         </section>
 
-        <section class="section" id="plan">
+        <section class="section" id="plan" data-tab-panel="itinerary">
           <div class="section-head split">
             <div>
               <p class="section-label">Core Plan</p>
@@ -106,7 +114,7 @@
           <div class="itinerary-grid" id="itinerary-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="ops">
           <div class="section-head">
             <p class="section-label">Reservation Ops</p>
             <h2>예약 및 재확인 오퍼레이션</h2>
@@ -114,7 +122,7 @@
           <div class="ops-grid" id="reservation-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="ops">
           <div class="section-head">
             <p class="section-label">Family Comfort</p>
             <h2>가족 컨디션 관리 포인트</h2>
@@ -122,7 +130,7 @@
           <div class="ops-grid" id="comfort-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="ops">
           <div class="section-head">
             <p class="section-label">Memory Missions</p>
             <h2>추억 큐레이션 미션</h2>
@@ -130,7 +138,7 @@
           <div class="ops-grid" id="memory-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="ops">
           <div class="section-head">
             <p class="section-label">Weather Fallbacks</p>
             <h2>맑음 · 비 · 피곤 3종 대체 플랜</h2>
@@ -138,7 +146,7 @@
           <div class="ops-grid" id="weather-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="itinerary">
           <div class="section-head">
             <p class="section-label">Useful Phrases</p>
             <h2>일정별 현장 회화</h2>
@@ -149,7 +157,7 @@
           <div class="phrase-grid" id="phrase-grid"></div>
         </section>
 
-        <section class="section alt-section">
+        <section class="section alt-section" data-tab-panel="itinerary">
           <div class="section-head">
             <p class="section-label">Swap Day</p>
             <h2>Day 4 분기안</h2>
@@ -157,7 +165,7 @@
           <div class="option-grid" id="option-grid"></div>
         </section>
 
-        <section class="section" id="map">
+        <section class="section" id="map" data-tab-panel="explore">
           <div class="section-head">
             <p class="section-label">Map Layer</p>
             <h2>Leaflet 지도로 보는 이동 축</h2>
@@ -176,7 +184,7 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="explore">
           <div class="section-head split">
             <div>
               <p class="section-label">Budget</p>
@@ -187,7 +195,7 @@
           <div class="budget-panel" id="budget-panel"></div>
         </section>
 
-        <section class="section" id="food">
+        <section class="section" id="food" data-tab-panel="explore">
           <div class="section-head">
             <p class="section-label">Food Strategy</p>
             <h2>추억의 체인 + 운영 확인 후보</h2>
@@ -204,7 +212,7 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="explore">
           <div class="section-head">
             <p class="section-label">Shopping Agent</p>
             <h2>Route-Friendly Shopping Stops</h2>
@@ -215,7 +223,7 @@
           <div class="ops-grid" id="shopping-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="explore">
           <div class="section-head">
             <p class="section-label">Value Food</p>
             <h2>Depachika and Supermarket Value Meals</h2>
@@ -226,7 +234,7 @@
           <div class="ops-grid" id="value-food-grid"></div>
         </section>
 
-        <section class="section">
+        <section class="section" data-tab-panel="explore">
           <div class="section-head">
             <p class="section-label">Local Guide</p>
             <h2>현지 가이드 메모</h2>
@@ -234,7 +242,7 @@
           <div class="guide-grid" id="guide-grid"></div>
         </section>
 
-        <section class="section sources" id="verify">
+        <section class="section sources" id="verify" data-tab-panel="verify">
           <div class="section-head">
             <p class="section-label">Verification</p>
             <h2>출처와 재확인 포인트</h2>

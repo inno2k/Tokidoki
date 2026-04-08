@@ -10,6 +10,7 @@ let tripMap;
 let mapMarkers = [];
 let routeLine;
 let currentWeatherMode = localStorage.getItem("tokidoki-weather-mode") || "clear";
+let currentContentTab = localStorage.getItem("tokidoki-content-tab") || "overview";
 
 function normalizeStationName(value) {
   return value.replace(/\s+Station$/i, "").trim();
@@ -194,6 +195,41 @@ function attachTimelineHandlers() {
       copyText(button.dataset.copy, button);
     });
   });
+}
+
+function setContentTab(tab) {
+  currentContentTab = tab;
+  localStorage.setItem("tokidoki-content-tab", currentContentTab);
+
+  document.querySelectorAll("[data-content-tab]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.contentTab === currentContentTab);
+  });
+
+  document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
+    panel.classList.toggle("tab-panel-hidden", panel.dataset.tabPanel !== currentContentTab);
+  });
+}
+
+function initContentTabs() {
+  const buttons = document.querySelectorAll("[data-content-tab]");
+  const panels = document.querySelectorAll("[data-tab-panel]");
+  if (!buttons.length || !panels.length) {
+    return;
+  }
+
+  const validTabs = new Set(Array.from(buttons, (button) => button.dataset.contentTab));
+  if (!validTabs.has(currentContentTab)) {
+    currentContentTab = "overview";
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setContentTab(button.dataset.contentTab);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  setContentTab(currentContentTab);
 }
 
 /**
@@ -620,6 +656,7 @@ async function main() {
     renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderGuide(data);
     renderSources(data);
+    initContentTabs();
   } catch (error) {
     document.body.innerHTML = `<main style="padding:40px;font-family:sans-serif;"><h1>여행 데이터를 불러오지 못했습니다.</h1><p>${error.message}</p></main>`;
   }
