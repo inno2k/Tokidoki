@@ -36,6 +36,10 @@ function opsKey(group, label, index) {
   return `tokidoki-ops-${group}-${label}-${index}`;
 }
 
+function timelineKey(day, index, mode = currentWeatherMode) {
+  return `tokidoki-timeline-${day}-${mode}-${index}`;
+}
+
 function renderTodoList(dayLabel, todos = []) {
   if (!todos.length) {
     return "";
