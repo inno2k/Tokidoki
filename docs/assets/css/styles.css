@@ -269,7 +269,8 @@ body::before {
 .photo-grid,
 .itinerary-grid,
 .map-grid,
-.phrase-grid {
+.phrase-grid,
+.ops-grid {
   display: grid;
   gap: 16px;
 }
@@ -284,6 +285,7 @@ body::before {
 .photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .itinerary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .phrase-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ops-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .story-card,
 .food-card,
@@ -296,7 +298,8 @@ body::before {
 .source-card,
 .photo-card,
 .map-card,
-.phrase-card {
+.phrase-card,
+.ops-card {
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
@@ -308,7 +311,8 @@ body::before {
 .budget-panel,
 .photo-card,
 .map-card,
-.phrase-card {
+.phrase-card,
+.ops-card {
   padding: 24px;
 }
 
@@ -337,9 +341,20 @@ body::before {
 .day-card h3,
 .photo-card h3,
 .map-card h3,
-.phrase-card h3 {
+.phrase-card h3,
+.ops-card h3 {
   margin: 14px 0 8px;
   font-size: 1.1rem;
+}
+
+.ops-card {
+  background: linear-gradient(145deg, rgba(255, 255, 252, 0.94), rgba(242, 247, 236, 0.8));
+}
+
+.ops-card ul {
+  margin: 12px 0 0;
+  padding-left: 1.2rem;
+  line-height: 1.7;
 }
 
 .phrase-card {

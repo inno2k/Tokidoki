@@ -277,6 +277,24 @@ function renderPhrases(data) {
   `).join("");
 }
 
+function renderOpsCards(data, key, targetId) {
+  const root = document.getElementById(targetId);
+  if (!root || !data[key]) {
+    return;
+  }
+
+  root.innerHTML = data[key].map((item) => `
+    <article class="ops-card">
+      <span class="day-badge">${item.label}</span>
+      <h3>${item.title}</h3>
+      <p>${item.summary}</p>
+      <ul>
+        ${item.items.map((line) => `<li>${line}</li>`).join("")}
+      </ul>
+    </article>
+  `).join("");
+}
+
 function renderMaps(data) {
   document.getElementById("map-grid").innerHTML = data.mapAnchors.map((item) => `
     <article class="map-card">
@@ -450,6 +468,9 @@ async function main() {
     renderPhotos(data);
     renderItinerary(data);
     renderPhrases(data);
+    renderOpsCards(data, "reservationOps", "reservation-grid");
+    renderOpsCards(data, "familyComfortOps", "comfort-grid");
+    renderOpsCards(data, "memoryMissions", "memory-grid");
     renderOptions(data);
     renderMaps(data);
     initMap(data);
