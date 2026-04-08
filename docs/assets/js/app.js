@@ -1,4 +1,4 @@
-const APP_VERSION = "kofix1";
+const APP_VERSION = "kofix2";
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -78,6 +78,15 @@ function renderOpsChecklist(groupKey, label, items = []) {
   `;
 }
 
+function attachTodoHandlers() {
+  document.querySelectorAll(".todo-item input[data-day]").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(todoKey(checkbox.dataset.day, checkbox.dataset.index), checkbox.checked ? "1" : "0");
+      checkbox.closest(".todo-item").classList.toggle("done", checkbox.checked);
+    });
+  });
+}
+
 function attachOpsHandlers() {
   document.querySelectorAll(".ops-checklist input").forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
@@ -113,10 +122,10 @@ function copyButton(value, label = "복사") {
 
 function renderTimelineItem(item, dayLabel, index) {
   const typeLabel = item.type === "meal"
-    ? "Meal"
+    ? "식사"
     : item.type === "attraction"
-      ? "Attraction"
-      : "Move";
+      ? "어트렉션"
+      : "이동";
   const done = localStorage.getItem(timelineKey(dayLabel, index)) === "1";
 
   const links = item.from && item.to ? `
@@ -159,15 +168,6 @@ function renderTimelineItem(item, dayLabel, index) {
       </div>
     </article>
   `;
-}
-
-function attachTodoHandlers() {
-  document.querySelectorAll(".todo-item input").forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      localStorage.setItem(todoKey(checkbox.dataset.day, checkbox.dataset.index), checkbox.checked ? "1" : "0");
-      checkbox.closest(".todo-item").classList.toggle("done", checkbox.checked);
-    });
-  });
 }
 
 async function copyText(value, button) {
@@ -238,9 +238,6 @@ function initContentTabs() {
   setContentTab(currentContentTab);
 }
 
-/**
- * Adds a decorative sakura overlay that stays behind content and respects reduced motion.
- */
 function createSakuraLayer() {
   const root = document.getElementById("sakura-layer");
   if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -464,6 +461,7 @@ function renderOpsCards(data, key, targetId) {
       ${item.links?.length ? `<div class="timeline-links">${item.links.map((link) => `<a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}</div>` : ""}
     </article>
   `).join("");
+
   if (key === "reservationOps") {
     attachOpsHandlers();
   }
@@ -576,11 +574,11 @@ function renderBudgetPanel(data, key) {
   document.getElementById("budget-panel").innerHTML = `
     <div class="budget-summary">
       <div>
-        <p class="section-label">Family Local Spend</p>
+        <p class="section-label">현지 체류비</p>
         <h3>${budget.name}</h3>
         <div class="price-display">
           <strong>${budget.total}</strong>
-          <span>가족 3인 현지 체류비</span>
+          <span>가족 3인 기준 체류비</span>
         </div>
         <p>${budget.description}</p>
         <p class="budget-line" style="border-bottom: 0; padding-bottom: 0;">
