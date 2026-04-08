@@ -19,19 +19,19 @@ function createSakuraLayer() {
     return;
   }
 
-  const petalCount = window.innerWidth < 720 ? 12 : 18;
+  const petalCount = window.innerWidth < 720 ? 24 : 36;
   const fragment = document.createDocumentFragment();
 
   for (let index = 0; index < petalCount; index += 1) {
     const petal = document.createElement("div");
     petal.className = "sakura-petal";
     petal.style.setProperty("--start-x", `${Math.random() * 100}%`);
-    petal.style.setProperty("--petal-size", `${18 + Math.random() * 20}px`);
-    petal.style.setProperty("--petal-opacity", `${0.72 + Math.random() * 0.24}`);
-    petal.style.setProperty("--fall-duration", `${10 + Math.random() * 8}s`);
+    petal.style.setProperty("--petal-size", `${7 + Math.random() * 7}px`);
+    petal.style.setProperty("--petal-opacity", `${0.64 + Math.random() * 0.2}`);
+    petal.style.setProperty("--fall-duration", `${16 + Math.random() * 10}s`);
     petal.style.setProperty("--fall-delay", `${Math.random() * -22}s`);
-    petal.style.setProperty("--spin-duration", `${2.8 + Math.random() * 2.4}s`);
-    petal.style.setProperty("--drift", `${22 + Math.random() * 18}vw`);
+    petal.style.setProperty("--spin-duration", `${4.2 + Math.random() * 2.8}s`);
+    petal.style.setProperty("--drift", `${14 + Math.random() * 10}vw`);
 
     const blossom = document.createElement("div");
     blossom.className = "sakura-blossom";
