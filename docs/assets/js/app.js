@@ -1,4 +1,4 @@
-const APP_VERSION = "b4ccb08";
+const APP_VERSION = "fontfix1";
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -91,9 +91,9 @@ function attachOpsHandlers() {
 }
 
 function weatherModeLabel(mode) {
-  if (mode === "rain") return "? ??";
-  if (mode === "fatigue") return "?? ??";
-  return "?? ??";
+  if (mode === "rain") return "Rain Plan";
+  if (mode === "fatigue") return "Fatigue Plan";
+  return "Clear Plan";
 }
 
 function weatherVariantFor(item) {
@@ -107,7 +107,7 @@ function timelineFor(item) {
   return item.timeline || [];
 }
 
-function copyButton(value, label = "??") {
+function copyButton(value, label = "Copy") {
   return `<button class="action-chip" type="button" data-copy="${value}">${label}</button>`;
 }
 
@@ -121,24 +121,24 @@ function renderTimelineItem(item, dayLabel, index) {
 
   const links = item.from && item.to ? `
     <div class="timeline-links">
-      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map ??</a>
+      <a class="timeline-link" href="${mapRouteUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Map Route</a>
       ${copyButton(mapRouteUrl(item.from, item.to))}
-      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo ????</a>
+      <a class="timeline-link" href="${transitUrl(item.from, item.to)}" target="_blank" rel="noreferrer">Yahoo Transit</a>
       ${copyButton(transitUrl(item.from, item.to))}
     </div>
   ` : "";
 
   const meta = [];
   if (item.meal) {
-    meta.push(`??: ${item.meal.name}`);
-    meta.push(`??: ${item.meal.budget}`);
-    meta.push(`??: ${item.meal.picks}`);
+    meta.push(`Meal: ${item.meal.name}`);
+    meta.push(`Budget: ${item.meal.budget}`);
+    meta.push(`Order: ${item.meal.picks}`);
   }
   if (item.attraction) {
-    meta.push(`????: ${item.attraction.name}`);
-    meta.push(`???: ${item.attraction.why}`);
+    meta.push(`Attraction: ${item.attraction.name}`);
+    meta.push(`Why: ${item.attraction.why}`);
     if (item.attraction.budget) {
-      meta.push(`??: ${item.attraction.budget}`);
+      meta.push(`Budget: ${item.attraction.budget}`);
     }
   }
 
@@ -154,7 +154,7 @@ function renderTimelineItem(item, dayLabel, index) {
       ${links}
       <div class="timeline-actions">
         <button class="action-chip ${done ? "active" : ""}" type="button" data-timeline-day="${dayLabel}" data-timeline-index="${index}">
-          ${done ? "???" : "?? ??"}
+          ${done ? "Done" : "Mark Done"}
         </button>
       </div>
     </article>
@@ -175,7 +175,7 @@ async function copyText(value, button) {
     await navigator.clipboard.writeText(value);
     if (button) {
       const original = button.textContent;
-      button.textContent = "???";
+      button.textContent = "Copied";
       window.setTimeout(() => {
         button.textContent = original;
       }, 1200);
@@ -607,7 +607,7 @@ function renderFood(data) {
       <strong>${item.name}</strong>
       <p>${item.detail}</p>
       <div class="timeline-links">
-        <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">?? ?? ??</a>
+        <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">Open Link</a>
         ${copyButton(item.link)}
       </div>
     </div>
