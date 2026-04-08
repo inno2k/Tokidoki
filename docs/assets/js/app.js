@@ -9,6 +9,7 @@ async function loadTrip() {
 let tripMap;
 let mapMarkers = [];
 let routeLine;
+let currentWeatherMode = localStorage.getItem("tokidoki-weather-mode") || "clear";
 
 function normalizeStationName(value) {
   return value.replace(/\s+Station$/i, "").trim();
@@ -30,6 +31,10 @@ function todoKey(day, index) {
   return `tokidoki-todo-${day}-${index}`;
 }
 
+function opsKey(group, label, index) {
+  return `tokidoki-ops-${group}-${label}-${index}`;
+}
+
 function renderTodoList(dayLabel, todos = []) {
   if (!todos.length) {
     return "";
@@ -48,6 +53,44 @@ function renderTodoList(dayLabel, todos = []) {
       }).join("")}
     </div>
   `;
+}
+
+function renderOpsChecklist(groupKey, label, items = []) {
+  return `
+    <div class="ops-checklist">
+      ${items.map((item, index) => {
+        const checked = localStorage.getItem(opsKey(groupKey, label, index)) === "1";
+        return `
+          <label class="todo-item ${checked ? "done" : ""}">
+            <input type="checkbox" data-group="${groupKey}" data-label="${label}" data-index="${index}" ${checked ? "checked" : ""}/>
+            <span>${item}</span>
+          </label>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function attachOpsHandlers() {
+  document.querySelectorAll(".ops-checklist input").forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(
+        opsKey(checkbox.dataset.group, checkbox.dataset.label, checkbox.dataset.index),
+        checkbox.checked ? "1" : "0"
+      );
+      checkbox.closest(".todo-item").classList.toggle("done", checkbox.checked);
+    });
+  });
+}
+
+function weatherModeLabel(mode) {
+  if (mode === "rain") return "비 플랜";
+  if (mode === "fatigue") return "피곤 플랜";
+  return "맑음 플랜";
+}
+
+function weatherVariantFor(item) {
+  return item.weatherVariants?.[currentWeatherMode] || null;
 }
 
 function renderTimelineItem(item) {
@@ -209,11 +252,43 @@ function renderItinerary(data) {
       <div class="micro-list">
         ${item.notes.map((note) => `<span>${note}</span>`).join("")}
       </div>
+      ${weatherVariantFor(item) ? `
+        <div class="variant-panel">
+          <strong>${weatherModeLabel(currentWeatherMode)}</strong>
+          <p>${weatherVariantFor(item).summary}</p>
+          <div class="micro-list">
+            ${weatherVariantFor(item).items.map((line) => `<span>${line}</span>`).join("")}
+          </div>
+        </div>
+      ` : ""}
       ${renderTodoList(item.day, item.todos)}
       ${item.timeline ? `<div class="timeline-list">${item.timeline.map(renderTimelineItem).join("")}</div>` : ""}
     </article>
   `).join("");
   attachTodoHandlers();
+}
+
+function renderWeatherSwitch(data) {
+  const root = document.getElementById("weather-switch");
+  if (!root) return;
+  const modes = data.weatherModes || [
+    ["clear", "맑음"],
+    ["rain", "비"],
+    ["fatigue", "피곤"]
+  ];
+
+  root.innerHTML = modes.map(([key, label]) => `
+    <button class="${currentWeatherMode === key ? "active" : ""}" data-weather="${key}">${label}</button>
+  `).join("");
+
+  root.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      currentWeatherMode = button.dataset.weather;
+      localStorage.setItem("tokidoki-weather-mode", currentWeatherMode);
+      renderWeatherSwitch(data);
+      renderItinerary(data);
+    });
+  });
 }
 
 function renderOptions(data) {
@@ -288,11 +363,14 @@ function renderOpsCards(data, key, targetId) {
       <span class="day-badge">${item.label}</span>
       <h3>${item.title}</h3>
       <p>${item.summary}</p>
-      <ul>
-        ${item.items.map((line) => `<li>${line}</li>`).join("")}
-      </ul>
+      ${key === "reservationOps"
+        ? renderOpsChecklist(key, item.label, item.items)
+        : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`}
     </article>
   `).join("");
+  if (key === "reservationOps") {
+    attachOpsHandlers();
+  }
 }
 
 function renderMaps(data) {
@@ -466,6 +544,7 @@ async function main() {
     renderTeam(data);
     renderComms(data);
     renderPhotos(data);
+    renderWeatherSwitch(data);
     renderItinerary(data);
     renderPhrases(data);
     renderOpsCards(data, "reservationOps", "reservation-grid");

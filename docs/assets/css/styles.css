@@ -473,6 +473,19 @@ body::before {
   margin-top: 14px;
 }
 
+.variant-panel {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(240, 247, 236, 0.96), rgba(250, 248, 241, 0.92));
+  border: 1px solid rgba(111, 140, 97, 0.18);
+}
+
+.variant-panel strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
 .todo-list,
 .timeline-list {
   display: grid;
@@ -612,7 +625,18 @@ body::before {
 .map-card small { color: var(--accent-deep); font-weight: 700; }
 
 .budget-switch { display: inline-flex; gap: 8px; flex-wrap: wrap; }
+.weather-switch { display: inline-flex; gap: 8px; flex-wrap: wrap; }
 .budget-switch button {
+  border: 0;
+  background: rgba(31, 36, 48, 0.08);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.weather-switch button {
   border: 0;
   background: rgba(31, 36, 48, 0.08);
   color: var(--ink);
@@ -624,6 +648,8 @@ body::before {
 
 .budget-switch button:hover,
 .budget-switch button.active { background: var(--accent); color: white; }
+.weather-switch button:hover,
+.weather-switch button.active { background: var(--matcha); color: white; }
 
 .budget-summary { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; }
 .price-display { display: inline-flex; align-items: end; gap: 10px; margin: 8px 0 18px; }
