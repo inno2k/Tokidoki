@@ -10,6 +10,38 @@ let tripMap;
 let mapMarkers = [];
 let routeLine;
 
+/**
+ * Adds a decorative sakura overlay that stays behind content and respects reduced motion.
+ */
+function createSakuraLayer() {
+  const root = document.getElementById("sakura-layer");
+  if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const petalCount = window.innerWidth < 720 ? 12 : 18;
+  const fragment = document.createDocumentFragment();
+
+  for (let index = 0; index < petalCount; index += 1) {
+    const petal = document.createElement("span");
+    petal.className = "sakura-petal";
+    petal.style.setProperty("--start-x", `${Math.random() * 100}%`);
+    petal.style.setProperty("--petal-size", `${14 + Math.random() * 16}px`);
+    petal.style.setProperty("--petal-opacity", `${0.45 + Math.random() * 0.35}`);
+    petal.style.setProperty("--fall-duration", `${11 + Math.random() * 10}s`);
+    petal.style.setProperty("--fall-delay", `${Math.random() * -22}s`);
+    petal.style.setProperty("--spin-duration", `${2.8 + Math.random() * 2.4}s`);
+    petal.style.setProperty("--drift", `${18 + Math.random() * 16}vw`);
+
+    const blossom = document.createElement("span");
+    blossom.className = "sakura-blossom";
+    petal.appendChild(blossom);
+    fragment.appendChild(petal);
+  }
+
+  root.replaceChildren(fragment);
+}
+
 function fillHero(data) {
   document.getElementById("hero-kicker").textContent = data.hero.kicker;
   document.getElementById("hero-title").textContent = data.hero.title;
@@ -291,6 +323,7 @@ function renderSources(data) {
 async function main() {
   try {
     const data = await loadTrip();
+    createSakuraLayer();
     fillHero(data);
     fillIntro(data);
     renderTeam(data);
