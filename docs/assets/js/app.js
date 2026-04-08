@@ -10,12 +10,20 @@ let tripMap;
 let mapMarkers = [];
 let routeLine;
 
+function normalizeStationName(value) {
+  return value.replace(/\s+Station$/i, "").trim();
+}
+
 function transitUrl(from, to) {
-  return `https://transit.yahoo.co.jp/search/result/${encodeURIComponent(`${from}-${to}`)}`;
+  const normalizedFrom = normalizeStationName(from);
+  const normalizedTo = normalizeStationName(to);
+  return `https://transit.yahoo.co.jp/search/result/${encodeURIComponent(`${normalizedFrom}-${normalizedTo}`)}`;
 }
 
 function mapRouteUrl(from, to) {
-  return `https://map.yahoo.co.jp/route/train?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
+  const normalizedFrom = normalizeStationName(from);
+  const normalizedTo = normalizeStationName(to);
+  return `https://map.yahoo.co.jp/route/train?from=${encodeURIComponent(normalizedFrom)}&to=${encodeURIComponent(normalizedTo)}`;
 }
 
 function todoKey(day, index) {
