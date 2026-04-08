@@ -189,6 +189,24 @@ body::before {
   box-shadow: var(--shadow);
 }
 
+.hero-copy,
+.hero-panel,
+.section > *,
+.story-card,
+.food-card,
+.guide-card,
+.option-card,
+.day-card,
+.ops-card,
+.team-card,
+.photo-card,
+.map-card,
+.source-card,
+.budget-panel,
+.map-column {
+  min-width: 0;
+}
+
 .content-tabs {
   position: sticky;
   top: 10px;
@@ -204,9 +222,12 @@ body::before {
   border: 1px solid rgba(33, 48, 41, 0.08);
   box-shadow: 0 16px 34px rgba(69, 74, 49, 0.1);
   backdrop-filter: blur(16px);
+  overflow-x: auto;
+  scrollbar-width: thin;
 }
 
 .content-tabs button {
+  flex: 0 0 auto;
   border: 0;
   border-radius: 999px;
   padding: 10px 14px;
@@ -764,6 +785,52 @@ body::before {
   .photo-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .comm-item { grid-template-columns: 1fr; }
+  .ops-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .phrase-grid { grid-template-columns: 1fr; }
+  #trip-map,
+  .map-frame iframe { min-height: 440px; }
+}
+
+@media (max-width: 900px) {
+  .page-shell {
+    width: min(100% - 24px, 1200px);
+  }
+
+  .hero {
+    padding: 28px;
+    gap: 18px;
+  }
+
+  .content-tabs {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .content-tabs button {
+    padding: 9px 12px;
+    font-size: 0.92rem;
+  }
+
+  .section {
+    padding: 24px;
+  }
+
+  .ops-grid,
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timeline-links,
+  .timeline-meta,
+  .timeline-actions {
+    gap: 6px;
+  }
+
+  .timeline-link,
+  .timeline-meta span,
+  .action-chip {
+    font-size: 0.78rem;
+  }
 }
 
 @media (max-width: 720px) {
@@ -771,12 +838,101 @@ body::before {
   .hero,
   .section { padding: 22px; border-radius: 24px; }
   .topbar { flex-direction: column; align-items: start; }
-  .content-tabs { top: 8px; }
+  .content-tabs {
+    top: 8px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding: 10px;
+  }
+  .content-tabs button {
+    min-width: max-content;
+  }
   .team-grid { grid-template-columns: 1fr; }
+  .ops-grid { grid-template-columns: 1fr; }
   .section-head.split { align-items: start; flex-direction: column; }
   .budget-line,
   .day-top,
   .option-top { flex-direction: column; }
+  .hero h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+  .section h2 {
+    font-size: clamp(1.45rem, 6vw, 2rem);
+  }
+  .hero-summary,
+  .section-subcopy,
+  .story-card p,
+  .guide-card p,
+  .source-card p,
+  .photo-card p,
+  .map-card p {
+    line-height: 1.6;
+  }
+  #trip-map,
+  .map-frame iframe {
+    min-height: 360px;
+  }
+  .map-toolbar,
+  .budget-switch,
+  .weather-switch {
+    width: 100%;
+  }
+  .budget-switch button,
+  .weather-switch button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    width: min(100% - 16px, 1200px);
+  }
+
+  .hero,
+  .section {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .content-tabs {
+    border-radius: 18px;
+  }
+
+  .content-tabs button {
+    padding: 8px 11px;
+    font-size: 0.88rem;
+  }
+
+  .timeline-item,
+  .todo-item,
+  .verified-item,
+  .ops-card {
+    padding: 12px;
+  }
+
+  .timeline-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-time,
+  .timeline-type {
+    font-size: 0.82rem;
+  }
+
+  .timeline-link,
+  .timeline-meta span,
+  .action-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #trip-map,
+  .map-frame iframe {
+    min-height: 300px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
