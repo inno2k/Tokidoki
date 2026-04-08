@@ -1,5 +1,7 @@
+const APP_VERSION = "b4ccb08";
+
 async function loadTrip() {
-  const response = await fetch("./assets/data/tokyo-family-trip-2026.json");
+  const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
   if (!response.ok) {
     throw new Error(`Failed to load trip data: ${response.status}`);
   }
