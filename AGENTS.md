@@ -2,6 +2,8 @@
 
 This repository is configured as a Tokyo travel planning harness for Codex.
 
+It also includes a Codex-optimized ECC layer inspired by Everything Claude Code. That layer is for operating discipline, not for changing the domain focus of the repo.
+
 The goal is not generic trip writing. The goal is collaborative planning by a specialist AI team that designs high-quality Tokyo itineraries with clear assumptions, realistic pacing, budget choices, and local guidance.
 
 ## Team
@@ -76,6 +78,27 @@ For a full travel-planning request, aim to produce:
 - Delegate independent specialist tasks only when parallel work adds value.
 - Use short task contracts. Each specialist should return structured findings, not a full duplicated final answer.
 - The main agent is responsible for reconciliation, coherence, and the final traveler-facing plan.
+
+## ECC Overlay
+
+Use the local `ecc-codex` layer when work benefits from a stronger operating loop:
+
+- `ecc-codex-harness`
+  For ECC-style research-first, quality-gated execution in Codex.
+- `research-first`
+  For discovery before implementation when uncertainty is high.
+- `quality-gate`
+  For tasks that should not be called done before validation.
+- `memory-capture-lite`
+  For capturing stable lessons back into repo docs or skill references.
+
+Treat this as an execution overlay on top of the Tokyo travel harness:
+
+1. Discover before editing when uncertainty is real.
+2. Keep blocking work on the main thread.
+3. Delegate only bounded, independent work.
+4. Validate before closing.
+5. Capture only reusable lessons, not transient noise.
 
 ## Trigger Prompts
 

@@ -1,0 +1,41 @@
+{
+  "name": "ecc-codex",
+  "version": "0.1.0",
+  "description": "Codex-optimized port of Everything Claude Code. Adds research-first, quality-gated, memory-aware operating skills for repo-local Codex work.",
+  "author": {
+    "name": "local Codex port inspired by affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code"
+  },
+  "homepage": "https://github.com/affaan-m/everything-claude-code",
+  "repository": "https://github.com/affaan-m/everything-claude-code",
+  "license": "MIT",
+  "keywords": [
+    "ecc",
+    "everything-claude-code",
+    "codex",
+    "harness",
+    "research-first",
+    "quality-gate"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ECC Codex",
+    "shortDescription": "Use ECC-style operating loops in Codex.",
+    "longDescription": "Ports the high-value parts of Everything Claude Code into Codex-native operating skills: research-first planning, quality gates, lightweight memory capture, and Codex-oriented orchestration.",
+    "developerName": "local Codex port",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/affaan-m/everything-claude-code",
+    "privacyPolicyURL": "https://github.com/affaan-m/everything-claude-code",
+    "termsOfServiceURL": "https://github.com/affaan-m/everything-claude-code",
+    "defaultPrompt": [
+      "Use the ECC Codex operating loop for this task",
+      "Audit this repo with ECC Codex quality gates",
+      "Set up ECC-style Codex workflow here"
+    ],
+    "brandColor": "#2563EB"
+  }
+}
