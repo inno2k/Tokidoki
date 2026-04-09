@@ -6,7 +6,7 @@
     <title>Tokyo Family Memory Trip 2026</title>
     <meta
       name="description"
-      content="도쿄에서의 추억과 가족의 새로운 여행을 함께 설계한 2026년 5월 가족여행 안내 사이트"
+      content="아카바네의 추억을 다시 걷고, 가족의 첫 도쿄를 함께 설계한 2026년 5월 도쿄 가족여행 운영 사이트"
     />
     <meta property="og:title" content="Tokyo Family Memory Trip 2026" />
     <meta
@@ -31,7 +31,7 @@
   <body>
     <div class="sakura-layer" id="sakura-layer" aria-hidden="true"></div>
     <div class="page-shell">
-      <nav class="topbar">
+      <nav class="topbar" aria-label="상단">
         <a class="brand" href="#top">Tokyo Memory Trip</a>
       </nav>
 
@@ -42,210 +42,425 @@
           <p class="hero-summary" id="hero-summary"></p>
           <div class="hero-meta" id="hero-meta"></div>
         </div>
-        <div class="hero-panel" id="hero-stats"></div>
+        <aside class="hero-panel" id="hero-stats" aria-label="여행 핵심 지표"></aside>
       </header>
 
       <main>
-        <nav class="content-tabs" aria-label="콘텐츠 구분">
-          <button type="button" class="active" data-content-tab="overview">개요</button>
-          <button type="button" data-content-tab="itinerary">일정</button>
-          <button type="button" data-content-tab="ops">운영</button>
-          <button type="button" data-content-tab="explore">탐색</button>
-          <button type="button" data-content-tab="budget">예산</button>
-          <button type="button" data-content-tab="food">식사 전략</button>
-          <button type="button" data-content-tab="shopping">쇼핑</button>
-          <button type="button" data-content-tab="verify">검증</button>
+        <nav class="content-tabs" aria-label="콘텐츠 구분" role="tablist">
+          <button
+            type="button"
+            id="tab-overview"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-overview"
+            class="active"
+            data-content-tab="overview"
+          >
+            개요
+          </button>
+          <button
+            type="button"
+            id="tab-itinerary"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-itinerary"
+            tabindex="-1"
+            data-content-tab="itinerary"
+          >
+            일정
+          </button>
+          <button
+            type="button"
+            id="tab-ops"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-ops"
+            tabindex="-1"
+            data-content-tab="ops"
+          >
+            운영
+          </button>
+          <button
+            type="button"
+            id="tab-explore"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-explore"
+            tabindex="-1"
+            data-content-tab="explore"
+          >
+            탐색
+          </button>
+          <button
+            type="button"
+            id="tab-budget"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-budget"
+            tabindex="-1"
+            data-content-tab="budget"
+          >
+            예산
+          </button>
+          <button
+            type="button"
+            id="tab-food"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-food"
+            tabindex="-1"
+            data-content-tab="food"
+          >
+            식사 전략
+          </button>
+          <button
+            type="button"
+            id="tab-shopping"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-shopping"
+            tabindex="-1"
+            data-content-tab="shopping"
+          >
+            쇼핑
+          </button>
+          <button
+            type="button"
+            id="tab-verify"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-verify"
+            tabindex="-1"
+            data-content-tab="verify"
+          >
+            검증
+          </button>
         </nav>
 
-        <section class="section intro-grid" data-tab-panel="overview">
-          <article class="story-card">
-            <p class="section-label">여행 시선</p>
-            <h2>이번 여행의 설계 원칙</h2>
-            <ul class="bullet-list" id="trip-lens"></ul>
-          </article>
-          <article class="story-card warm">
-            <p class="section-label">추억 각도</p>
-            <h2>이번 여행이 일반 도쿄 관광과 다른 이유</h2>
-            <p id="memory-angle"></p>
-          </article>
-        </section>
+        <section
+          id="panel-overview"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-overview"
+          data-tab-panel="overview"
+        >
+          <section class="section intro-grid">
+            <article class="story-card">
+              <p class="section-label">여행 시선</p>
+              <h2>이번 여행을 어떻게 읽어야 하는가</h2>
+              <ul class="bullet-list" id="trip-lens"></ul>
+            </article>
+            <article class="story-card warm">
+              <p class="section-label">추억의 각도</p>
+              <h2>이번 여행이 일반적인 도쿄 관광과 다른 이유</h2>
+              <p id="memory-angle"></p>
+            </article>
+          </section>
 
-        <section class="section" data-tab-panel="overview">
-          <div class="section-head">
-            <p class="section-label">AI 팀</p>
-            <h2>전문 에이전트 팀</h2>
-          </div>
-          <div class="team-grid" id="team-grid"></div>
-        </section>
-
-        <section class="section" data-tab-panel="overview">
-          <div class="section-head">
-            <p class="section-label">실시간 협업</p>
-            <h2>에이전트 간 협업 로그</h2>
-          </div>
-          <div class="comm-feed" id="comm-feed"></div>
-        </section>
-
-        <section class="section" data-tab-panel="overview">
-          <div class="section-head">
-            <p class="section-label">사진 기록</p>
-            <h2>사진으로 보는 여행 분위기</h2>
-            <p class="section-subcopy">
-              주요 목적지의 공개 이미지를 바탕으로 이번 여행의 무드보드를 먼저 확인할 수 있게 구성했습니다.
-            </p>
-          </div>
-          <div class="photo-grid" id="photo-grid"></div>
-        </section>
-
-        <section class="section" id="plan" data-tab-panel="itinerary">
-          <div class="section-head split">
-            <div>
-              <p class="section-label">핵심 일정</p>
-              <h2>메인 일정과 현장 체크리스트</h2>
+          <section class="section harness-bridge">
+            <div class="section-head">
+              <p class="section-label">하네스 흐름</p>
+              <h2>팀이 판단을 여행 운영으로 연결하는 방식</h2>
               <p class="section-subcopy">
-                시간대별 동선과 체크박스를 함께 두어 현장에서 바로 운영할 수 있게 정리했습니다.
+                이 사이트는 단순한 여행 소개가 아니라, 전문가 에이전트가 판단하고 서로 검토한 결과를
+                실제 일정과 운영 카드에 연결해 보여주는 운영판입니다.
               </p>
             </div>
-            <div class="weather-switch" id="weather-switch"></div>
-          </div>
-          <div class="itinerary-grid" id="itinerary-grid"></div>
+            <div class="harness-flow">
+              <article class="bridge-card">
+                <strong>1. 팀 구성</strong>
+                <p>누가 어떤 관점으로 여행을 설계했는지 먼저 보여줍니다.</p>
+              </article>
+              <article class="bridge-card">
+                <strong>2. 판단 로그</strong>
+                <p>에이전트 간 전달과 조정 내용을 통해 일정의 근거를 드러냅니다.</p>
+              </article>
+              <article class="bridge-card">
+                <strong>3. 실행 결과</strong>
+                <p>일정, 운영, 식사, 쇼핑 카드에 판단 결과가 반영됩니다.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">전문가 팀</p>
+              <h2>이번 계획을 만든 에이전트 팀</h2>
+              <p class="section-subcopy">
+                각 역할은 독립적으로 판단하지만, 최종 화면에서는 하나의 가족 여행 운영안으로 통합됩니다.
+              </p>
+            </div>
+            <div class="team-grid" id="team-grid"></div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">협업 로그</p>
+              <h2>입력에서 조정, 결과까지 이어지는 통신</h2>
+              <p class="section-subcopy">
+                장식용 로그가 아니라 실제 일정 조정의 이유를 보여주는 흐름으로 정리했습니다.
+              </p>
+            </div>
+            <div class="comm-feed" id="comm-feed"></div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">무드보드</p>
+              <h2>사진으로 미리 보는 여행 분위기</h2>
+              <p class="section-subcopy">
+                아카바네의 기억, 도쿄 핵심 관광, 아들의 체험 포인트가 어떤 감정선으로 이어지는지 한눈에
+                잡을 수 있게 구성했습니다.
+              </p>
+            </div>
+            <div class="photo-grid" id="photo-grid"></div>
+          </section>
         </section>
 
-        <section class="section" data-tab-panel="ops">
-          <div class="section-head">
-            <p class="section-label">예약 운영</p>
-            <h2>예약 및 재확인 오퍼레이션</h2>
-          </div>
-          <div class="ops-grid" id="reservation-grid"></div>
-        </section>
-
-        <section class="section" data-tab-panel="ops">
-          <div class="section-head">
-            <p class="section-label">가족 컨디션</p>
-            <h2>가족 컨디션 관리 포인트</h2>
-          </div>
-          <div class="ops-grid" id="comfort-grid"></div>
-        </section>
-
-        <section class="section" data-tab-panel="ops">
-          <div class="section-head">
-            <p class="section-label">추억 미션</p>
-            <h2>추억 큐레이션 미션</h2>
-          </div>
-          <div class="ops-grid" id="memory-grid"></div>
-        </section>
-
-        <section class="section" data-tab-panel="ops">
-          <div class="section-head">
-            <p class="section-label">날씨 대체안</p>
-            <h2>맑음 · 비 · 피곤 3종 운영 플랜</h2>
-          </div>
-          <div class="ops-grid" id="weather-grid"></div>
-        </section>
-
-        <section class="section" data-tab-panel="itinerary">
-          <div class="section-head">
-            <p class="section-label">일정별 현장회화</p>
-            <h2>일정별 현장 회화</h2>
-            <p class="section-subcopy">
-              공항, 식당, 가챠샵, 게임장, 호텔, 관광지에서 바로 꺼내 쓸 수 있는 표현을 일정 흐름에 맞춰 정리했습니다.
-            </p>
-          </div>
-          <div class="phrase-grid" id="phrase-grid"></div>
-        </section>
-
-        <section class="section alt-section" data-tab-panel="itinerary">
-          <div class="section-head">
-            <p class="section-label">분기안</p>
-            <h2>Day 4 분기 옵션</h2>
-          </div>
-          <div class="option-grid" id="option-grid"></div>
-        </section>
-
-        <section class="section" id="map" data-tab-panel="explore">
-          <div class="section-head">
-            <p class="section-label">지도 레이어</p>
-            <h2>Leaflet 지도로 보는 이동 흐름</h2>
-            <p class="section-subcopy">
-              주요 목적지와 이동 축을 한눈에 보고, 카드 링크를 통해 외부 지도도 바로 열 수 있게 구성했습니다.
-            </p>
-          </div>
-          <div class="map-shell">
-            <div class="map-column">
-              <div class="map-toolbar" id="map-toolbar"></div>
-              <div class="map-frame">
-                <div id="trip-map" aria-label="Tokyo trip map"></div>
+        <section
+          id="panel-itinerary"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-itinerary"
+          data-tab-panel="itinerary"
+          hidden
+        >
+          <section class="section" id="plan">
+            <div class="section-head split">
+              <div>
+                <p class="section-label">핵심 일정</p>
+                <h2>메인 일정과 현장 체크리스트</h2>
+                <p class="section-subcopy">
+                  시간대별 타임라인, 체크박스, 날씨별 운영안까지 같이 묶어 현장에서 바로 보기 좋게
+                  정리했습니다.
+                </p>
               </div>
+              <div class="weather-switch" id="weather-switch" aria-label="날씨 운영안 선택"></div>
             </div>
-            <div class="map-grid" id="map-grid"></div>
-          </div>
-        </section>
+            <div class="itinerary-grid" id="itinerary-grid"></div>
+          </section>
 
-        <section class="section" data-tab-panel="budget">
-          <div class="section-head split">
-            <div>
-              <p class="section-label">예산</p>
-              <h2>가족 3인 현지 체류비 시나리오</h2>
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">일정별 현장회화</p>
+              <h2>상황에 맞게 바로 꺼내 쓰는 표현</h2>
+              <p class="section-subcopy">
+                공항, 호텔, 식당, 가챠샵, 게임장, 전망대처럼 실제로 입이 먼저 필요한 순간만 따로 모았습니다.
+              </p>
             </div>
-            <div class="budget-switch" id="budget-switch"></div>
-          </div>
-          <div class="budget-panel" id="budget-panel"></div>
+            <div class="phrase-grid" id="phrase-grid"></div>
+          </section>
+
+          <section class="section alt-section">
+            <div class="section-head">
+              <p class="section-label">분기안</p>
+              <h2>Day 4 선택형 운영안</h2>
+              <p class="section-subcopy">
+                오다이바를 기본으로 하되, 체력과 날씨가 좋을 때만 외부 확장안을 고려하도록 설계했습니다.
+              </p>
+            </div>
+            <div class="option-grid" id="option-grid"></div>
+          </section>
         </section>
 
-        <section class="section" id="food" data-tab-panel="food">
-          <div class="section-head">
-            <p class="section-label">식사 전략</p>
-            <h2>추억의 체인과 운영 검증 식당</h2>
-          </div>
-          <div class="food-columns">
-            <article class="food-card">
-              <h3>추억 회복 식사 라인업</h3>
-              <ul id="nostalgia-list" class="bullet-list compact"></ul>
-            </article>
-            <article class="food-card">
-              <h3>최신 운영 정보 확인 식당</h3>
-              <div id="verified-list" class="verified-list"></div>
-            </article>
-          </div>
+        <section
+          id="panel-ops"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-ops"
+          data-tab-panel="ops"
+          hidden
+        >
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">예약 운영</p>
+              <h2>출발 전과 현장에서 확인할 항목</h2>
+              <p class="section-subcopy">
+                예약과 영업 정보는 여행 품질을 무너뜨리기 쉬운 변수라서 일정과 분리해 운영 체크리스트로
+                관리합니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="reservation-grid"></div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">가족 컨디션</p>
+              <h2>11살 아이와 함께 가는 페이스 조절</h2>
+              <p class="section-subcopy">
+                일정 밀도보다 휴식 타이밍, 간식, 화장실, 회복 시간을 먼저 관리하는 흐름으로 정리했습니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="comfort-grid"></div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">추억 미션</p>
+              <h2>기억을 남기는 행동 단위</h2>
+              <p class="section-subcopy">
+                단순 방문보다, 그때와 지금을 연결하는 사진과 대화 미션이 실제 만족도를 올리는 역할을 합니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="memory-grid"></div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">날씨 대체안</p>
+              <h2>맑음, 비, 피곤 세 가지 운영 모드</h2>
+              <p class="section-subcopy">
+                같은 일정을 고집하지 않고, 조건에 따라 줄이고 바꾸는 기준을 먼저 정리했습니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="weather-grid"></div>
+          </section>
         </section>
 
-        <section class="section" data-tab-panel="shopping">
-          <div class="section-head">
-            <p class="section-label">쇼핑 에이전트</p>
-            <h2>동선형 쇼핑 포인트</h2>
-            <p class="section-subcopy">
-              도큐핸즈, 요도바시카메라, 비쿠카메라, 돈키호테, 스포츠 매장, 가족형 대형매장까지 이동 동선에 맞춰 배치했습니다.
-            </p>
-          </div>
-          <div class="ops-grid" id="shopping-grid"></div>
+        <section
+          id="panel-explore"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-explore"
+          data-tab-panel="explore"
+          hidden
+        >
+          <section class="section" id="map">
+            <div class="section-head">
+              <p class="section-label">지도 흐름</p>
+              <h2>Leaflet 지도에서 보는 이동 축</h2>
+              <p class="section-subcopy">
+                날짜별 동선과 핵심 거점을 한눈에 보고, 개별 카드로 외부 지도 링크까지 바로 이어지게 했습니다.
+              </p>
+            </div>
+            <div class="map-shell">
+              <div class="map-column">
+                <div class="map-toolbar" id="map-toolbar" aria-label="지도 날짜 필터"></div>
+                <div class="map-frame">
+                  <div id="trip-map" aria-label="도쿄 여행 지도"></div>
+                </div>
+              </div>
+              <div class="map-grid" id="map-grid"></div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">현지 가이드</p>
+              <h2>현장에서 체감되는 실전 팁</h2>
+              <p class="section-subcopy">
+                이동, 식사, 결제, 휴식, 아이 동반 운영처럼 실제 현장에서 바로 체감되는 정보만 남겼습니다.
+              </p>
+            </div>
+            <div class="guide-grid" id="guide-grid"></div>
+          </section>
         </section>
 
-        <section class="section" data-tab-panel="food">
-          <div class="section-head">
-            <p class="section-label">가성비 먹거리</p>
-            <h2>백화점 지하와 마트의 실속 식사</h2>
-            <p class="section-subcopy">
-              데파치카, 슈퍼마켓 저녁 할인, 호텔 복귀 후 간식 운영까지 가격 대비 만족도가 높은 선택지를 함께 담았습니다.
-            </p>
-          </div>
-          <div class="ops-grid" id="value-food-grid"></div>
+        <section
+          id="panel-budget"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-budget"
+          data-tab-panel="budget"
+          hidden
+        >
+          <section class="section">
+            <div class="section-head split">
+              <div>
+                <p class="section-label">예산 운영</p>
+                <h2>가족 3인 기준 체류비 시나리오</h2>
+                <p class="section-subcopy">
+                  식사, 교통, 쇼핑, 어트랙션을 하나로 묶어 보는 대신, 실제 선택이 필요한 항목 위주로 나눴습니다.
+                </p>
+              </div>
+              <div class="budget-switch" id="budget-switch" aria-label="예산 모드 선택"></div>
+            </div>
+            <div class="budget-panel" id="budget-panel"></div>
+          </section>
         </section>
 
-        <section class="section" data-tab-panel="explore">
-          <div class="section-head">
-            <p class="section-label">현지 가이드</p>
-            <h2>현지 가이드 메모</h2>
-          </div>
-          <div class="guide-grid" id="guide-grid"></div>
+        <section
+          id="panel-food"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-food"
+          data-tab-panel="food"
+          hidden
+        >
+          <section class="section" id="food">
+            <div class="section-head">
+              <p class="section-label">식사 전략</p>
+              <h2>추억의 체인과 운영 검증 식당</h2>
+              <p class="section-subcopy">
+                실패 가능성이 낮은 체인과, 동선상 품질 확인이 가능한 식당/푸드홀을 함께 묶어 식사 난이도를
+                낮췄습니다.
+              </p>
+            </div>
+            <div class="food-columns">
+              <article class="food-card">
+                <h3>추억 복원 식사 라인업</h3>
+                <ul id="nostalgia-list" class="bullet-list compact"></ul>
+              </article>
+              <article class="food-card">
+                <h3>운영 검증 식사 포인트</h3>
+                <div id="verified-list" class="verified-list"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">가성비 먹거리</p>
+              <h2>백화점 식품관, 마트, 저녁 세일 활용</h2>
+              <p class="section-subcopy">
+                외식과 체인만으로 채우지 않고, 품질 대비 만족도가 높은 데파치카와 슈퍼마켓 선택지도 함께
+                넣었습니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="value-food-grid"></div>
+          </section>
         </section>
 
-        <section class="section sources" id="verify" data-tab-panel="verify">
-          <div class="section-head">
-            <p class="section-label">검증</p>
-            <h2>출처와 재확인 포인트</h2>
-          </div>
-          <div id="sources-list" class="sources-list"></div>
-          <p class="recheck-note" id="recheck-note"></p>
+        <section
+          id="panel-shopping"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-shopping"
+          data-tab-panel="shopping"
+          hidden
+        >
+          <section class="section">
+            <div class="section-head">
+              <p class="section-label">쇼핑 에이전트</p>
+              <h2>동선에 얹는 짧고 효율적인 쇼핑</h2>
+              <p class="section-subcopy">
+                Hands, 요도바시, 비쿠카메라, 돈키호테, 스포츠 매장, 식품관을 이동 흐름 안에 넣어 몰입을 깨지
+                않게 설계했습니다.
+              </p>
+            </div>
+            <div class="ops-grid" id="shopping-grid"></div>
+          </section>
+        </section>
+
+        <section
+          id="panel-verify"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-verify"
+          data-tab-panel="verify"
+          hidden
+        >
+          <section class="section sources" id="verify">
+            <div class="section-head">
+              <p class="section-label">검증과 재확인</p>
+              <h2>어디까지 확인했고 무엇을 다시 봐야 하는가</h2>
+              <p class="section-subcopy">
+                출발 직전 다시 확인해야 하는 항목을 분리해, 계획의 신뢰도와 운영 리스크를 함께 보게 합니다.
+              </p>
+            </div>
+            <div id="sources-list" class="sources-list"></div>
+            <p class="recheck-note" id="recheck-note"></p>
+          </section>
         </section>
       </main>
     </div>
@@ -255,6 +470,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="./assets/js/app.js?v=kofix2"></script>
+    <script src="./assets/js/app.js?v=designfix1"></script>
   </body>
 </html>

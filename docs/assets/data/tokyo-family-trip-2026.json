@@ -1,53 +1,812 @@
-{
-  "hero":{"kicker":"Tokyo Memory Trip 2026","title":"추억을 다시 걷고, 아들과 처음 보는 도쿄를 함께 설계한 가족여행","summary":"2008년부터 2011년까지 도쿄 아카바네에서 살았던 부부가 11살 아들과 함께 떠나는 2026년 5월 22일부터 5월 26일까지의 4박 5일 가족여행입니다.","meta":[{"label":"항공","value":"에어부산 ICN 07:10 -> NRT 10:10 / NRT 11:10 -> ICN 13:55"},{"label":"숙소","value":"뉴 오타니 인 도쿄, 오사키역 북개찰구 직결"},{"label":"테마","value":"아카바네 회상 · 도쿄 핵심 관광 · 아들 체험"}],"stats":[{"label":"여행 기간","value":"4박 5일"},{"label":"핵심 관광일","value":"3.5일"},{"label":"설계 원칙","value":"무리한 압축보다 만족도 우선","accent":true}]},
-  "tripLens":["첫날은 회복과 적응을 우선합니다.","아카바네는 반드시 포함합니다.","오다이바와 건담베이스는 아들 중심 하이라이트입니다.","쇼핑과 식사는 동선 중간에 짧게 넣습니다."],
-  "weatherModes":[["clear","맑음"],["rain","비"],["fatigue","피곤"]],
-  "memoryAngle":"이번 여행은 명소 수집보다 예전 생활감과 지금의 도쿄를 함께 느끼는 데 초점을 둡니다.",
-  "team":[
-    {"role":"destination-analyst","title":"목적지 분석가","summary":"아카바네와 오다이바를 메인 축으로 선정했습니다.","tags":["지역","계절","혼잡","가족"]},
-    {"role":"itinerary-designer","title":"일정 설계사","summary":"오사키 숙소를 기준으로 이동 부담이 적은 동선을 만들었습니다.","tags":["동선","체력","분기안","일정"]},
-    {"role":"budget-manager","title":"예산 관리자","summary":"현지 체류비 중심으로 예산을 구성했습니다.","tags":["식비","교통","쇼핑","예비비"]},
-    {"role":"local-guide","title":"현지 가이드","summary":"교통과 식당, 현장 운영 팁을 보강합니다.","tags":["교통","식사","에티켓","현장"]},
-    {"role":"attraction-agent","title":"어트렉션 에이전트","summary":"가챠샵, 게임장, 실내 체험 포인트를 넣습니다.","tags":["가챠","게임장","실내","휴식"]},
-    {"role":"shopping-agent","title":"쇼핑 에이전트","summary":"핸즈, 요도바시, 비쿠카메라, 돈키호테, 백화점 식품관을 동선 안에 넣습니다.","tags":["핸즈","전자상가","피규어","가성비"]}
+﻿{
+  "hero": {
+    "kicker": "Tokyo Memory Trip 2026",
+    "title": "추억을 다시 걷고, 아들과 처음 보는 도쿄를 함께 설계하다",
+    "summary": "2008년부터 2011년까지 도쿄 키타구 아카바네에서 살았던 부부가, 11살 아들과 함께 2026년 5월 22일부터 5월 26일까지 4박 5일 동안 다시 도쿄를 찾는 가족 여행입니다.",
+    "meta": [
+      {
+        "label": "항공편",
+        "value": "에어부산 인천 07:10 -> 나리타 10:10 / 나리타 11:10 -> 인천 13:55"
+      },
+      {
+        "label": "숙소",
+        "value": "뉴 오타니 인 도쿄, 오사키역 직결"
+      },
+      {
+        "label": "여행 콘셉트",
+        "value": "아카바네 추억 복원 + 아들 체험 + 무리 없는 핵심 관광"
+      }
+    ],
+    "stats": [
+      {
+        "label": "여행 기간",
+        "value": "4박 5일"
+      },
+      {
+        "label": "실질 관광일",
+        "value": "3.5일"
+      },
+      {
+        "label": "운영 원칙",
+        "value": "과욕보다 회복과 만족을 우선",
+        "accent": true
+      }
+    ]
+  },
+  "tripLens": [
+    "첫날은 체크인과 적응에 집중하고, 밤늦게까지 무리하지 않습니다.",
+    "아카바네는 관광지가 아니라 가족의 감정선과 기억을 되살리는 핵심 거점으로 다룹니다.",
+    "오다이바와 건담베이스는 아들의 체험 만족도를 끌어올리는 하이라이트로 배치합니다.",
+    "쇼핑과 식사는 메인 관광을 방해하지 않도록 이동 사이의 짧은 정차 방식으로 넣습니다."
   ],
-  "comms":[
-    {"route":"분석가 -> 설계사","body":"아카바네는 정서 가치가 커서 짧아도 핵심 방문지로 유지합니다."},
-    {"route":"설계사 -> 예산","body":"도심 이동 중심으로 예산을 짜고 원정안은 분리합니다."},
-    {"route":"쇼핑 에이전트 -> 설계사","body":"아키하바라와 시부야-신주쿠에 쇼핑 포인트를 짧게 배치합니다."},
-    {"route":"가이드 -> 설계사","body":"요코하마는 체력과 날씨가 좋을 때만 연장 옵션으로 둡니다."}
+  "weatherModes": [
+    ["clear", "맑음"],
+    ["rain", "비"],
+    ["fatigue", "피곤"]
   ],
-  "photos":[
-    {"label":"추억 앵커","title":"아카바네","description":"이번 여행의 감정적 중심점입니다.","image":"https://commons.wikimedia.org/wiki/Special:FilePath/Akabane%20Station%20-%202025%20Dec%2026%20various%2001.jpg","alt":"Akabane Station","credit":"Nesnad / Wikimedia Commons","creditUrl":"https://commons.wikimedia.org/wiki/File:Akabane_Station_-_2025_Dec_26_various_01.jpg"},
-    {"label":"고전 도쿄","title":"센소지","description":"도쿄의 상징적 전통 포인트입니다.","image":"https://commons.wikimedia.org/wiki/Special:FilePath/Kaminarimon%2C%20Sensoji%20%282521999969%29.jpg","alt":"Senso-ji","credit":"kimon / Wikimedia Commons","creditUrl":"https://commons.wikimedia.org/wiki/File:Kaminarimon,_Sensoji_(2521999969).jpg"},
-    {"label":"아들 하이라이트","title":"오다이바","description":"건담베이스와 실내 체험이 겹치는 핵심 구간입니다.","image":"https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20Bridge%2C%20Odaiba%2C%20Tokyo.jpg","alt":"Odaiba","credit":"Lawsonstu / Wikimedia Commons","creditUrl":"https://commons.wikimedia.org/wiki/File:Rainbow_Bridge,_Odaiba,_Tokyo.jpg"}
+  "memoryAngle": "이번 여행은 유명 장소를 많이 찍는 것보다, 아카바네에서 살던 시절의 기억을 지금의 가족 구성으로 다시 걸어보는 데 의미가 있습니다. 그래서 일정은 관광 밀도보다 감정선, 체력, 회복, 사진 미션이 함께 작동하도록 설계했습니다.",
+  "team": [
+    {
+      "role": "destination-analyst",
+      "title": "목적지 분석가",
+      "summary": "아카바네, 아사쿠사, 아키하바라, 시부야, 오다이바를 가족 성향과 5월 조건에 맞춰 묶었습니다.",
+      "tags": ["지역 적합성", "계절성", "혼잡도", "가족 동선"]
+    },
+    {
+      "role": "itinerary-designer",
+      "title": "일정 설계사",
+      "summary": "오사키 숙소를 기준으로 동선이 엉키지 않게 날짜별 축과 회복 슬롯을 설계했습니다.",
+      "tags": ["일자 흐름", "체력 관리", "분기안", "이동 압축"]
+    },
+    {
+      "role": "budget-manager",
+      "title": "예산 관리자",
+      "summary": "식사, 교통, 쇼핑, 체험비를 가족 3인 기준으로 나누어 선택지가 보이도록 정리했습니다.",
+      "tags": ["체류비", "가족 예산", "선택지", "지출 균형"]
+    },
+    {
+      "role": "local-guide",
+      "title": "현지 가이드",
+      "summary": "이동, 현장 회화, 결제, 체인 식당, 식품관 활용법을 실제 운영 관점에서 보강했습니다.",
+      "tags": ["교통", "식사", "결제", "현장 운영"]
+    },
+    {
+      "role": "attraction-agent",
+      "title": "어트랙션 에이전트",
+      "summary": "가챠샵, 게임장, 실내 체험을 메인 일정 사이에 짧고 효율적으로 끼워 넣었습니다.",
+      "tags": ["가챠", "게임장", "실내 체험", "기분 전환"]
+    },
+    {
+      "role": "reservation-concierge",
+      "title": "예약 컨시어지",
+      "summary": "건담베이스, 전망대, 운영시간 변동 가능성이 있는 장소를 따로 관리합니다.",
+      "tags": ["예약", "영업시간", "재확인", "대기 리스크"]
+    },
+    {
+      "role": "family-comfort-agent",
+      "title": "가족 컨디션 에이전트",
+      "summary": "11살 아들과 부모 모두가 버틸 수 있는 보행량과 쉬는 타이밍을 우선으로 조정합니다.",
+      "tags": ["휴식", "간식", "화장실", "회복"]
+    },
+    {
+      "role": "memory-curator",
+      "title": "추억 큐레이터",
+      "summary": "예전의 생활감과 지금의 가족 사진을 연결하는 미션을 일정 안에 심었습니다.",
+      "tags": ["사진 미션", "회상", "가족 대화", "감정선"]
+    },
+    {
+      "role": "weather-risk-agent",
+      "title": "날씨 리스크 에이전트",
+      "summary": "비나 피곤함이 생겨도 여행 만족도가 떨어지지 않도록 대체 운영안을 붙였습니다.",
+      "tags": ["비 플랜", "피곤 플랜", "실내 대체", "밀도 조정"]
+    },
+    {
+      "role": "shopping-agent",
+      "title": "쇼핑 에이전트",
+      "summary": "Hands, 요도바시, 비쿠카메라, 돈키호테, 데파치카를 일정 흐름에 맞춰 넣었습니다.",
+      "tags": ["핸즈", "전자상가", "마트", "가성비 먹거리"]
+    }
   ],
-  "itinerary":[
-    {"day":"Day 1","label":"2026.05.22 금요일","time":"입국 · 적응","title":"오사키 체크인 후 아카바네 회상","summary":"첫날은 무리하지 않고 호텔 적응과 아카바네 산책에 집중합니다.","route":["나리타 -> 오사키","오사키 점심","아카바네 산책","가벼운 저녁"],"notes":["첫날은 많이 보기보다 회복이 우선","아카바네는 감정선의 시작점"],"todos":["교통카드 준비 확인","호텔 체크인 시간 확인","아카바네 가족 사진 남기기"],"weatherVariants":{"rain":{"summary":"비가 오면 아카바네를 짧게 보고 호텔 휴식을 늘립니다.","items":["이케부쿠로 경유 생략","역 주변 위주로 이동"]},"fatigue":{"summary":"피곤하면 오사키 주변만 둘러보는 편이 좋습니다.","items":["아카바네 1시간 이내","호텔 조기 복귀"]}},"timeline":[{"time":"10:10-12:40","title":"나리타공항에서 오사키 이동","detail":"입국 후 호텔로 바로 이동합니다.","type":"move","from":"Narita Airport Terminal 2","to":"Osaki"},{"time":"13:00-14:00","title":"오사키 점심","detail":"첫 식사는 정식 계열이 안정적입니다.","type":"meal","meal":{"name":"오오토야 또는 야요이켄","budget":"1인 900-1,500엔","picks":"생선정식, 가라아게 정식"}},{"time":"17:00-19:00","title":"아카바네 산책","detail":"예전 생활권을 천천히 걸으며 사진을 남깁니다.","type":"move","from":"Osaki","to":"Akabane"}]},
-    {"day":"Day 2","label":"2026.05.23 토요일","time":"시장 · 전통 · 아키하바라","title":"츠키지, 센소지, 아키하바라","summary":"아침 시장과 전통 공간, 전자상가를 한 날에 묶습니다.","route":["오사키 -> 츠키지","센소지","아키하바라"],"notes":["주말 혼잡이 크므로 오전 출발이 유리","아키하바라 예산선을 먼저 정하기"],"todos":["츠키지 대기 여부 확인","센소지 사진 남기기","쇼핑 상한 정하기"],"weatherVariants":{"rain":{"summary":"비가 오면 아키하바라 실내 비중을 높입니다.","items":["츠키지 체류 단축","실내 쇼핑 확대"]},"fatigue":{"summary":"피곤하면 우에노를 생략해도 충분합니다.","items":["센소지까지만 운영","아키하바라 2시간 한정"]}},"timeline":[{"time":"08:00-09:00","title":"츠키지 아침 식사","detail":"회전 빠른 식사로 시작합니다.","type":"meal","meal":{"name":"츠키지 덮밥 또는 초밥","budget":"가족 3인 5,000-8,000엔","picks":"참치덮밥, 계란말이, 소량 초밥"},"from":"Osaki","to":"Tsukiji"},{"time":"10:00-11:00","title":"센소지 산책","detail":"전통 도쿄의 상징과 간식을 함께 즐깁니다.","type":"attraction","attraction":{"name":"센소지","why":"전통 도쿄 상징","budget":"간식 1,000-2,000엔"},"from":"Tsukiji","to":"Asakusa"},{"time":"14:00-17:00","title":"아키하바라 전자상가와 게임장","detail":"요도바시, 피규어샵, GiGO를 중심으로 봅니다.","type":"attraction","attraction":{"name":"요도바시 Akiba · GiGO","why":"전자·취미·게임의 집중 구간","budget":"가족 합산 5,000-15,000엔"},"from":"Asakusa","to":"Akihabara"}]},
-    {"day":"Day 3","label":"2026.05.24 일요일","time":"신주쿠 · 시부야 · 야경","title":"시부야 쇼핑과 도쿄타워","summary":"신주쿠와 시부야를 둘러보고 도쿄타워로 마무리합니다.","route":["오사키 -> 신주쿠","시부야 쇼핑","도쿄타워"],"notes":["쇼핑과 식사는 우선순위가 중요","주말 혼잡 대비 필요"],"todos":["Hands와 Gallery2 우선품목 정하기","도쿄타워 입장 여부 판단"],"timeline":[{"time":"11:30-12:30","title":"정식 또는 라멘 점심","detail":"회전 빠른 식당이 유리합니다.","type":"meal","meal":{"name":"오오토야 또는 돈코츠 라멘","budget":"가족 3인 3,000-5,500엔","picks":"정식류, 라멘, 교자"}},{"time":"13:00-16:00","title":"시부야 쇼핑과 휴식","detail":"Hands, Gallery2, 가챠 포인트를 짧게 섞습니다.","type":"attraction","attraction":{"name":"Hands Shibuya · Gallery2","why":"쇼핑과 리프레시 동시 해결","budget":"가족 합산 3,000-12,000엔"},"from":"Shinjuku","to":"Shibuya"},{"time":"17:30-19:30","title":"도쿄타워 야경","detail":"도쿄의 밤을 상징적으로 느끼는 마무리입니다.","type":"attraction","attraction":{"name":"도쿄타워","why":"가족 사진과 야경 포인트","budget":"전망대 선택 시 추가 비용"},"from":"Shibuya","to":"Tokyo Tower"}]},
-    {"day":"Day 4","label":"2026.05.25 월요일","time":"오다이바 메인","title":"건담베이스와 오다이바 체험 데이","summary":"이번 여행의 아들 중심 하이라이트 데이입니다.","route":["오사키 -> 오다이바","건담베이스","실내 체험","오사키 복귀"],"notes":["요코하마는 체력 좋을 때만 연장","오다이바 자체로도 충분히 꽉 찬 하루"],"todos":["건담베이스 운영 정보 재확인","조이폴리스 운영시간 확인","연장 여부는 오후 2시 전에 결정"],"timeline":[{"time":"10:00-11:00","title":"오다이바 이동","detail":"너무 이른 출발보다 적당한 여유가 좋습니다.","type":"move","from":"Osaki","to":"Odaiba"},{"time":"11:00-13:00","title":"건담베이스","detail":"이번 여행의 상징적 하이라이트입니다.","type":"attraction","attraction":{"name":"건담베이스 도쿄","why":"아들 중심 만족도 최고","budget":"굿즈 구매 별도"}},{"time":"14:00-17:00","title":"실내 체험과 바다 산책","detail":"날씨와 체력에 따라 비중을 조정합니다.","type":"attraction","attraction":{"name":"조이폴리스 또는 실내 체험","why":"기분 전환과 백업 플랜","budget":"입장 선택 시 추가 비용"}}]},
-    {"day":"Day 5","label":"2026.05.26 화요일","time":"귀국일","title":"오사키 정리 후 나리타 이동","summary":"마지막 날은 시간 버퍼와 안정성을 우선합니다.","route":["체크아웃","가벼운 식사","나리타 이동"],"notes":["귀국일은 쇼핑보다 버퍼가 중요"],"todos":["체크아웃 시간 확인","여권과 충전기 최종 확인"],"timeline":[{"time":"09:30-10:30","title":"오사키에서 마지막 식사","detail":"정식 또는 소바처럼 기동감 좋은 메뉴가 적합합니다.","type":"meal","meal":{"name":"후지소바 또는 정식집","budget":"가족 3인 2,500-4,500엔","picks":"소바, 정식, 가벼운 덮밥"}},{"time":"11:00-13:00","title":"나리타공항 이동","detail":"시간 버퍼를 넉넉히 두고 이동합니다.","type":"move","from":"Osaki","to":"Narita Airport Terminal 2"}]}
+  "comms": [
+    {
+      "route": "목적지 분석가 -> 일정 설계사",
+      "body": "아카바네는 반드시 포함하되 첫날 밤에 짧게 넣고, 오다이바는 하루 메인 축으로 분리해 감정선과 체험 만족도를 함께 살리자고 전달했습니다."
+    },
+    {
+      "route": "일정 설계사 -> 예산 관리자",
+      "body": "둘째 날과 넷째 날의 지출이 커질 수 있으니, 체인 식당과 식품관 활용으로 식비를 조절할 수 있게 시나리오를 요청했습니다."
+    },
+    {
+      "route": "어트랙션 에이전트 -> 일정 설계사",
+      "body": "아키하바라 GiGO, 가샤폰, 오다이바 실내 체험은 짧은 회복 포인트로 넣고 메인 관광보다 앞서지 않게 조정해 달라고 요청했습니다."
+    },
+    {
+      "route": "쇼핑 에이전트 -> 현지 가이드",
+      "body": "시부야와 아키하바라에서는 쇼핑 시간이 길어질 수 있으니, 피곤해지기 전에 빠르게 빠질 기준과 식품관 대체 식사안을 같이 붙였습니다."
+    },
+    {
+      "route": "예약 컨시어지 -> 일정 설계사",
+      "body": "건담베이스와 실내 체험, 전망대 운영시간은 출발 직전 재확인이 필요하므로 일정 카드 안에는 고정 정보처럼 쓰지 말고 검증 탭과 운영 탭에 분리하자고 전달했습니다."
+    },
+    {
+      "route": "가족 컨디션 에이전트 -> 날씨 리스크 에이전트",
+      "body": "비가 오거나 아이가 피곤해지는 날에는 목표를 줄이는 것이 우선이므로, 같은 일정을 억지로 유지하지 않는 완화 모드를 기준으로 잡자고 조정했습니다."
+    }
   ],
-  "phrasesByDay":[
-    {"day":"Day 1","title":"공항과 호텔 도착","summary":"입국 후 이동과 체크인 표현입니다.","phrases":[{"scene":"체크인 가능 여부 문의","jp":"チェックインできますか。","romaji":"Chekkuin dekimasu ka.","ko":"체크인할 수 있나요?"},{"scene":"짐 보관 부탁","jp":"荷物を預かってもらえますか。","romaji":"Nimotsu o azukatte moraemasu ka.","ko":"짐을 맡아주실 수 있나요?"}]},
-    {"day":"Day 2","title":"시장과 관광지","summary":"츠키지와 아키하바라에서 유용한 표현입니다.","phrases":[{"scene":"추천 메뉴 문의","jp":"おすすめは何ですか。","romaji":"Osusume wa nan desu ka.","ko":"추천 메뉴가 무엇인가요?"},{"scene":"가챠 재고 문의","jp":"このガチャはまだありますか。","romaji":"Kono gacha wa mada arimasu ka.","ko":"이 가챠는 아직 있나요?"}]}
+  "photos": [
+    {
+      "label": "추억 축",
+      "title": "아카바네",
+      "description": "이번 여행의 감정선이 시작되는 장소입니다. 예전의 생활감을 다시 걷는 시간이 됩니다.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Akabane%20Station%20-%202025%20Dec%2026%20various%2001.jpg",
+      "alt": "아카바네역",
+      "credit": "Nesnad / Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Akabane_Station_-_2025_Dec_26_various_01.jpg"
+    },
+    {
+      "label": "도쿄 핵심",
+      "title": "센소지와 아사쿠사",
+      "description": "오랜만의 도쿄를 가장 직관적으로 체감하기 좋은 전통 관광 축입니다.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kaminarimon%2C%20Sensoji%20%282521999969%29.jpg",
+      "alt": "센소지와 가미나리몬",
+      "credit": "kimon / Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Kaminarimon,_Sensoji_(2521999969).jpg"
+    },
+    {
+      "label": "아들 하이라이트",
+      "title": "오다이바",
+      "description": "건담베이스와 실내 체험을 묶어 이번 여행의 체험 만족도를 높이는 날입니다.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20Bridge%2C%20Odaiba%2C%20Tokyo.jpg",
+      "alt": "오다이바",
+      "credit": "Lawsonstu / Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Rainbow_Bridge,_Odaiba,_Tokyo.jpg"
+    }
   ],
-  "reservationOps":[{"label":"출발 전","title":"핵심 운영 정보 재확인","summary":"운영시간과 예약 정책이 변동될 수 있는 장소를 먼저 점검합니다.","items":["건담베이스 운영 정보 확인","조이폴리스 운영 캘린더 확인","항공편 시간 재확인"],"links":[]}],
-  "familyComfortOps":[{"label":"휴식 슬롯","title":"매일 오후 1회 이상 회복 시간 확보","summary":"아들과 부모 모두 오후 1회는 앉아서 쉬는 시간을 확보하는 것이 중요합니다.","items":["카페 또는 벤치 휴식 20~30분","물과 간식은 오전 중 미리 확보"]}],
-  "memoryMissions":[{"label":"아카바네","title":"그때와 지금을 비교하는 사진 남기기","summary":"예전에 자주 지나던 방향과 비슷한 시선으로 현재 풍경을 남깁니다.","items":["부부 사진 1장","세 가족 사진 1장"]}],
-  "weatherFallbacks":[{"label":"맑은 날","title":"맑은 날 운영 원칙","summary":"야외 산책과 전망 포인트 비중을 유지합니다.","items":["Day 2 기본 유지","Day 4 오다이바 바다 산책 포함"]},{"label":"비 오는 날","title":"비 오는 날 대체 원칙","summary":"실내 상업시설과 체험 시설 비중을 높입니다.","items":["아키하바라 실내 비중 확대","오다이바 실내 체험 중심"]},{"label":"피곤한 날","title":"피곤할 때 축소 원칙","summary":"이동량과 체류 지점을 줄입니다.","items":["한 지역만 깊게 보기","호텔 복귀 시간을 앞당기기"]}],
-  "options":[{"label":"기본안","title":"오다이바 집중 운영","pill":"추천","summary":"건담베이스와 실내 체험 중심의 기본안입니다.","list":["가족 체력 부담 적음","아들 만족도 높음"]},{"label":"연장안","title":"요코하마 짧은 연장","pill":"체력 좋을 때","summary":"오다이바를 일찍 마치면 가볍게 이어 붙일 수 있습니다.","list":["오후 2시 이전 판단","피곤하면 즉시 취소"]}],
-  "mapCenter":[35.6764,139.749],
-  "mapZoom":11,
-  "mapPoints":[{"day":"Day 1","name":"오사키","note":"숙소와 여행의 기준점","coords":[35.6197,139.7288],"highlight":true,"google":"https://www.google.com/maps/search/?api=1&query=New+Otani+Inn+Tokyo"},{"day":"Day 1","name":"아카바네","note":"추억 회복 포인트","coords":[35.7778,139.7211],"google":"https://www.google.com/maps/search/?api=1&query=Akabane+Station"},{"day":"Day 2","name":"아키하바라","note":"전자상가와 게임장","coords":[35.6984,139.773],"google":"https://www.google.com/maps/search/?api=1&query=Akihabara+Station"},{"day":"Day 3","name":"시부야","note":"쇼핑 중심지","coords":[35.6595,139.7005],"google":"https://www.google.com/maps/search/?api=1&query=Shibuya+Station"},{"day":"Day 4","name":"오다이바","note":"가족 체험 하이라이트","coords":[35.6272,139.7768],"highlight":true,"google":"https://www.google.com/maps/search/?api=1&query=Odaiba"}],
-  "mapAnchors":[{"day":"Day 1","name":"오사키 / 아카바네","note":"회복과 추억 복원","google":"https://www.google.com/maps/search/?api=1&query=Akabane+Station","osm":"https://www.openstreetmap.org/search?query=Akabane%20Station"},{"day":"Day 2","name":"아키하바라","note":"전자상가와 취미 동선","google":"https://www.google.com/maps/search/?api=1&query=Akihabara+Station","osm":"https://www.openstreetmap.org/search?query=Akihabara%20Station"},{"day":"Day 4","name":"오다이바","note":"건담베이스 중심","google":"https://www.google.com/maps/search/?api=1&query=Odaiba","osm":"https://www.openstreetmap.org/search?query=Odaiba"}],
-  "budgets":{"light":{"name":"절약형","total":"약 125,000엔","description":"체인 식당과 실속 먹거리 중심 예산입니다.","note":"유료 입장 최소화","lines":[["식비","45,000엔"],["교통","18,000엔"],["쇼핑/가챠","25,000엔"],["예비비","37,000엔"]]},"balanced":{"name":"균형형","total":"약 170,000엔","description":"이번 일정의 기본 추천 예산입니다.","note":"식사와 쇼핑을 균형 있게 반영","lines":[["식비","60,000엔"],["교통","18,000엔"],["쇼핑/가챠","45,000엔"],["어트렉션","20,000엔"],["예비비","27,000엔"]]}}
-  ,"nostalgiaFoods":["오오토야 정식","야요이켄 정식","후지소바","텐야","교자노 오쇼","스시잔마이"],
-  "verifiedFoods":[{"name":"요도바시 Akiba 식당가 후보","detail":"아키하바라 체류 중 회전 빠른 식사를 해결하기 좋은 대안입니다.","link":"https://www.yodobashi.com/ec/store/0018/"},{"name":"시부야 도큐 푸드쇼","detail":"백화점 식품관 전략을 검토할 때 기준이 되는 공식 페이지입니다.","link":"https://www.tokyu-dept.co.jp/shibuya_foodshow/"}],
-  "shoppingOps":[{"label":"1일차 / 이케부쿠로 경유","title":"비쿠카메라를 짧게 들르는 전자 쇼핑 동선","summary":"체력 상황이 괜찮다면 30~45분 정도 짧게 보는 것이 좋습니다.","items":["권장 체류: 30~45분","필요한 충전기나 보조 배터리 확인","피곤하면 바로 생략"],"links":[{"label":"비쿠카메라 이케부쿠로 서쪽출구점","url":"https://www.biccamera.com/bc/i/shop/shoplist/shop017.jsp"}]},{"label":"2일차 / 아키하바라","title":"요도바시 Akiba와 피규어샵 중심 구간","summary":"전자제품과 피규어, 가챠를 한 번에 보기 좋은 날입니다.","items":["권장 체류: 60~90분","층별 이동 전 우선순위 정하기","예산 상한 먼저 정하기"],"links":[{"label":"요도바시 Akiba","url":"https://www.yodobashi.com/ec/store/0018/"}]},{"label":"3일차 / 시부야-신주쿠","title":"Hands와 Gallery2, Don Quijote를 짧게 묶기","summary":"시부야와 신주쿠를 모두 도는 날이라 짧고 효율적인 쇼핑이 중요합니다.","items":["Hands는 생활잡화","Gallery2는 스포츠 굿즈","Donki는 야간 할인 구매"],"links":[{"label":"Hands Shibuya","url":"https://shibuya.hands.net/"},{"label":"Gallery2 Shibuya","url":"https://www.gallery2.co.jp/shops/shibuya-2f/"},{"label":"Don Quijote Shinjuku Tonanguchi","url":"https://www.donki.com/en/store/shop_detail.php?shop_id=449"}]}],
-  "valueFoodOps":[{"label":"데파치카","title":"백화점 식품관을 저녁 대체안으로 활용","summary":"품질 좋은 도시락과 반찬을 한 번에 해결할 수 있습니다.","items":["시부야-신주쿠 일정 후 복귀 전에 활용","초밥, 도시락, 디저트가 무난함"],"links":[{"label":"시부야 도큐 푸드쇼","url":"https://www.tokyu-dept.co.jp/shibuya_foodshow/"}]},{"label":"마트 활용","title":"슈퍼마켓 저녁 할인 시간대를 노린 실속 먹거리","summary":"늦은 귀환일에 가격 대비 만족도가 좋습니다.","items":["초밥, 가라아게, 샐러드 추천","호텔에서 부담 없이 먹기 좋음"],"links":[]}],
-  "guideNotes":[{"title":"교통 운영 팁","text":"오사키는 JR 이동 기준으로 핵심 지역 접근성이 좋습니다."},{"title":"식사 운영 팁","text":"정식집, 소바집, 데파치카, 슈퍼마켓을 섞으면 가성비와 만족도를 함께 잡을 수 있습니다."}],
-  "sources":[{"title":"Yahoo! 노선정보","note":"노선 검색 결과와 링크 형식 확인용 기준 페이지","url":"https://transit.yahoo.co.jp/"},{"title":"요도바시 Akiba 공식 정보","note":"아키하바라 전자·장난감 쇼핑 포인트 확인","url":"https://www.yodobashi.com/ec/store/0018/"},{"title":"Hands 시부야점 공식 정보","note":"시부야 생활형 쇼핑 포인트 확인","url":"https://shibuya.hands.net/"},{"title":"시부야 도큐 푸드쇼 공식 정보","note":"백화점 식품관 전략 검증용 공식 페이지","url":"https://www.tokyu-dept.co.jp/shibuya_foodshow/"}],
-  "recheckNote":"최신 운영시간, 휴무, 항공 스케줄, 식당 평점은 2026년 4월 9일 기준으로 일부 확인했습니다. 출발 직전에는 각 공식 사이트와 항공사에서 한 번 더 재확인하는 전제로 설계했습니다."
+  "itinerary": [
+    {
+      "day": "Day 1",
+      "label": "2026.05.22 금요일",
+      "time": "입국과 적응",
+      "title": "오사키 체크인 후 아카바네 회상 산책",
+      "summary": "첫날은 이동 피로를 먼저 흡수하고, 무리 없는 범위에서 아카바네에 짧게 다녀와 감정선을 열어 둡니다.",
+      "owner": "일정 설계사 + 추억 큐레이터",
+      "decision": "체력 소모가 큰 신주쿠나 시부야 대신, 감정 가치가 높은 아카바네를 첫날 밤의 짧은 핵심 일정으로 선택했습니다.",
+      "outcome": "여행의 출발을 관광보다 기억 복원으로 시작하고, 이후 일정에 심리적 안정감을 줍니다.",
+      "route": ["나리타공항", "오사키 호텔 체크인", "아카바네 산책", "간단한 저녁", "숙소 복귀"],
+      "notes": ["첫날은 사진보다 적응과 정리 우선", "아카바네 체류는 2시간 안쪽으로 제한", "숙소 근처 편의점과 식사 동선 파악"],
+      "todos": ["교통카드 또는 모바일 결제 준비 확인", "호텔 체크인 시간과 짐 보관 가능 여부 확인", "아카바네에서 가족 사진 1장 남기기"],
+      "weatherVariants": {
+        "rain": {
+          "summary": "비가 오면 아카바네 체류 시간을 줄이고 역 주변 위주로 짧게 걷습니다.",
+          "items": ["장거리 산책 대신 역 주변 회상 포인트만 확인", "저녁은 오사키 역권 식당으로 조기 복귀"]
+        },
+        "fatigue": {
+          "summary": "피곤하면 아카바네를 과감히 짧게 보고 호텔 회복 시간을 늘립니다.",
+          "items": ["아카바네는 60분 이내", "편의점 간식과 호텔 휴식 우선"]
+        }
+      },
+      "timeline": [
+        {
+          "time": "10:10-12:40",
+          "title": "나리타공항에서 오사키 이동",
+          "detail": "입국 후 바로 호텔 쪽으로 이동해 이동 피로를 먼저 정리합니다.",
+          "type": "move",
+          "from": "Narita Airport Terminal 2",
+          "to": "Osaki"
+        },
+        {
+          "time": "13:00-14:00",
+          "title": "오사키역권 첫 점심",
+          "detail": "부담 없는 정식집으로 시작해 컨디션을 안정시키는 것이 좋습니다.",
+          "type": "meal",
+          "meal": {
+            "name": "오오토야 또는 야요이켄",
+            "budget": "가족 3인 약 3,300~4,800엔",
+            "picks": "고등어 정식, 치킨 남반, 아이가 먹기 쉬운 생강구이 정식"
+          }
+        },
+        {
+          "time": "16:30-18:30",
+          "title": "아카바네 회상 산책",
+          "detail": "예전 생활권을 천천히 걸으며 그때와 지금을 비교하는 사진과 대화를 남깁니다.",
+          "type": "move",
+          "from": "Osaki",
+          "to": "Akabane"
+        },
+        {
+          "time": "18:40-19:20",
+          "title": "아카바네역권 저녁 또는 간단한 면식사",
+          "detail": "첫날 저녁은 대기 시간이 짧고 실패 확률이 낮은 곳이 좋습니다.",
+          "type": "meal",
+          "meal": {
+            "name": "후지소바 또는 역권 정식집",
+            "budget": "가족 3인 약 2,200~3,800엔",
+            "picks": "소바, 카츠동 세트, 아이용 단품 추가"
+          }
+        }
+      ]
+    },
+    {
+      "day": "Day 2",
+      "label": "2026.05.23 토요일",
+      "time": "도쿄 핵심 관광",
+      "title": "츠키지, 센소지, 우에노, 아키하바라",
+      "summary": "도쿄다운 풍경과 시장 감각, 전통 관광, 전자상가와 게임장을 한 축으로 묶는 핵심 탐색일입니다.",
+      "owner": "목적지 분석가 + 어트랙션 에이전트",
+      "decision": "오전은 시장과 전통, 오후는 전자와 게임으로 성격을 분리해 가족 모두가 지루하지 않게 설계했습니다.",
+      "outcome": "부모는 도쿄 감각을, 아들은 아키하바라 체험을, 가족 전체는 리듬감 있는 하루를 얻게 됩니다.",
+      "route": ["오사키", "츠키지", "센소지", "우에노 공원 주변", "아키하바라", "숙소 복귀"],
+      "notes": ["주말 혼잡이 강한 날이라 오전 출발을 빠르게 가져가기", "아키하바라 쇼핑과 게임은 상한 시간 정하기", "식사는 대기보다 회전이 빠른 곳 우선"],
+      "todos": ["츠키지 첫 식사 대기 상황 확인", "센소지에서 가족 사진 1장 남기기", "아키하바라 쇼핑 상한 예산 정하기"],
+      "timeline": [
+        {
+          "time": "08:00-09:10",
+          "title": "츠키지로 이동 후 아침 식사",
+          "detail": "도쿄 첫 본격 식사는 시장의 생동감을 느끼되, 긴 대기는 피하는 방식이 좋습니다.",
+          "type": "meal",
+          "meal": {
+            "name": "츠키지 시장 내 초밥 또는 해산물 덮밥",
+            "budget": "가족 3인 약 5,000~8,500엔",
+            "picks": "참치 초밥, 계란말이, 연어동 또는 참치동"
+          },
+          "from": "Osaki",
+          "to": "Tsukiji"
+        },
+        {
+          "time": "10:00-11:20",
+          "title": "센소지와 가미나리몬 산책",
+          "detail": "오랜만의 도쿄를 가장 확실하게 느끼는 관광 포인트입니다.",
+          "type": "attraction",
+          "attraction": {
+            "name": "센소지",
+            "why": "전통 도쿄의 분위기와 가족 사진 포인트가 확실함",
+            "budget": "간식 및 소원 부적 정도 추가 가능"
+          },
+          "from": "Tsukiji",
+          "to": "Asakusa"
+        },
+        {
+          "time": "12:00-13:00",
+          "title": "우에노 또는 아사쿠사권 점심",
+          "detail": "대기 스트레스가 적은 정식 또는 면식으로 중간 체력을 회복합니다.",
+          "type": "meal",
+          "meal": {
+            "name": "텐야, 정식집, 우동/소바 계열",
+            "budget": "가족 3인 약 2,800~4,500엔",
+            "picks": "텐동, 우동, 튀김 정식"
+          },
+          "from": "Asakusa",
+          "to": "Ueno"
+        },
+        {
+          "time": "14:20-17:10",
+          "title": "아키하바라 전자상가와 게임장",
+          "detail": "요도바시, 가샤폰, GiGO를 짧게 순환해 집중력을 잃기 전에 마무리합니다.",
+          "type": "attraction",
+          "attraction": {
+            "name": "요도바시 Akiba + 가샤폰 + GiGO",
+            "why": "전자와 게임을 한 번에 경험할 수 있고 아들의 만족도가 높음",
+            "budget": "가족 체험 및 소액 쇼핑 약 5,000~15,000엔"
+          },
+          "from": "Ueno",
+          "to": "Akihabara"
+        }
+      ]
+    },
+    {
+      "day": "Day 3",
+      "label": "2026.05.24 일요일",
+      "time": "서쪽 도쿄 체험",
+      "title": "신주쿠, 시부야, 도쿄타워",
+      "summary": "대도시 풍경, 쇼핑 동선, 스포츠 매장, 야경까지 한 축으로 묶되 과도한 보행은 피합니다.",
+      "owner": "일정 설계사 + 쇼핑 에이전트",
+      "decision": "쇼핑은 메인이 아니라 짧은 정차이므로, 신주쿠와 시부야를 모두 훑되 깊게 파지 않도록 밀도를 조정했습니다.",
+      "outcome": "부모는 익숙한 도심 감각을, 아들은 짧은 쇼핑과 관찰의 재미를, 가족은 야경 마무리를 얻게 됩니다.",
+      "route": ["오사키", "신주쿠", "시부야", "도쿄타워", "숙소 복귀"],
+      "notes": ["쇼핑 시간은 각 매장별로 상한을 둔다", "점심과 간식을 적절히 나눠 과식 피하기", "야경은 체력 좋을 때만 길게 머물기"],
+      "todos": ["Hands 또는 Gallery2 우선순위 정하기", "도쿄타워 입장 여부 당일 판단", "저녁 귀가 시간 20시 전후 목표"],
+      "timeline": [
+        {
+          "time": "10:30-11:40",
+          "title": "신주쿠 도착 후 가벼운 탐색",
+          "detail": "백화점과 역권 흐름을 먼저 파악하고 식사 대기 상황을 봅니다.",
+          "type": "move",
+          "from": "Osaki",
+          "to": "Shinjuku"
+        },
+        {
+          "time": "11:40-12:40",
+          "title": "신주쿠 점심",
+          "detail": "대기 스트레스가 적은 정식 또는 교자 계열이 적합합니다.",
+          "type": "meal",
+          "meal": {
+            "name": "야요이켄, 오오토야, 교자노 오쇼",
+            "budget": "가족 3인 약 3,200~5,200엔",
+            "picks": "정식, 교자 세트, 볶음밥"
+          }
+        },
+        {
+          "time": "13:20-16:00",
+          "title": "시부야 쇼핑과 짧은 체험",
+          "detail": "Hands, Gallery2, 캐릭터 샵이나 가챠 포인트를 짧게 순환합니다.",
+          "type": "attraction",
+          "attraction": {
+            "name": "Hands Shibuya + Gallery2 + 가벼운 가챠",
+            "why": "쇼핑과 기분 전환을 동시에 처리하기 좋음",
+            "budget": "가족 쇼핑 약 3,000~12,000엔"
+          },
+          "from": "Shinjuku",
+          "to": "Shibuya"
+        }
+      ]
+    },
+    {
+      "day": "Day 4",
+      "label": "2026.05.25 월요일",
+      "time": "아들 하이라이트",
+      "title": "오다이바, 건담베이스, 실내 체험",
+      "summary": "이번 여행에서 가장 체험 중심인 날입니다. 건담베이스와 오다이바 실내 체험을 축으로 두고 과욕은 줄입니다.",
+      "owner": "어트랙션 에이전트 + 예약 컨시어지",
+      "decision": "후지큐 하이랜드처럼 큰 원정보다, 오다이바에서 건담과 실내 체험을 안정적으로 운영하는 편이 가족 만족도가 높다고 판단했습니다.",
+      "outcome": "아들의 핵심 만족도를 확보하면서도 부모의 체력 부담과 이동 리스크를 낮춘 하루가 됩니다.",
+      "route": ["오사키", "오다이바", "건담베이스", "실내 체험", "쇼핑 또는 휴식", "숙소 복귀"],
+      "notes": ["건담베이스 운영시간은 출발 직전 재확인", "실내 체험은 아이 컨디션 좋을 때만 확장", "오다이바 하루만으로도 충분히 차는 일정"],
+      "todos": ["건담베이스 입장 방식 재확인", "실내 체험 시설 운영시간 확인", "요코하마 또는 추가 외부 확장은 당일 오후에만 판단"],
+      "timeline": [
+        {
+          "time": "10:00-11:00",
+          "title": "오다이바 이동",
+          "detail": "너무 이른 출발보다 안정적인 오전 이동이 더 좋습니다.",
+          "type": "move",
+          "from": "Osaki",
+          "to": "Odaiba"
+        },
+        {
+          "time": "11:00-13:00",
+          "title": "건담베이스 중심 관람",
+          "detail": "이번 여행의 핵심 체험 포인트로, 사진과 굿즈 시간을 충분히 확보합니다.",
+          "type": "attraction",
+          "attraction": {
+            "name": "건담베이스 도쿄",
+            "why": "아들의 체험 만족도가 가장 높을 가능성이 큼",
+            "budget": "굿즈 구매 시 별도"
+          }
+        }
+      ]
+    },
+    {
+      "day": "Day 5",
+      "label": "2026.05.26 화요일",
+      "time": "귀국일",
+      "title": "오사키 마무리 후 나리타 이동",
+      "summary": "마지막 날은 버퍼가 가장 중요합니다. 무리한 쇼핑보다 짐 정리와 안정적인 공항 이동을 우선합니다.",
+      "owner": "현지 가이드 + 가족 컨디션 에이전트",
+      "decision": "출국일에는 추가 관광을 넣지 않고, 오사키 주변에서 가볍게 식사 후 여유 있게 공항으로 이동하는 흐름이 가장 안전합니다.",
+      "outcome": "공항 이동 스트레스를 줄이고 여행 마지막 인상을 안정적으로 마무리합니다.",
+      "route": ["호텔 체크아웃", "오사키역권 식사", "나리타공항 이동"],
+      "notes": ["공항 이동 버퍼를 넉넉하게 확보", "기념품 추가 쇼핑은 출국일에 넣지 않기", "충전기와 여권 최종 점검"],
+      "todos": ["체크아웃 시간 확인", "여권과 항공권 정보 최종 확인", "충전기와 기내 간식 최종 확인"],
+      "timeline": [
+        {
+          "time": "09:30-10:20",
+          "title": "오사키역권 마지막 식사",
+          "detail": "무리 없는 정식 또는 소바로 편하게 마무리합니다.",
+          "type": "meal",
+          "meal": {
+            "name": "후지소바, 오오토야 또는 호텔 주변 가벼운 식사",
+            "budget": "가족 3인 약 2,500~4,500엔",
+            "picks": "소바, 돈부리, 정식"
+          }
+        },
+        {
+          "time": "11:00-13:00",
+          "title": "나리타공항 이동",
+          "detail": "출국일은 교통 지연에 대비해 충분한 버퍼를 둡니다.",
+          "type": "move",
+          "from": "Osaki",
+          "to": "Narita Airport Terminal 2"
+        }
+      ]
+    }
+  ],
+  "phrasesByDay": [
+    {
+      "day": "Day 1",
+      "title": "공항과 호텔",
+      "summary": "입국, 짐 보관, 체크인에서 바로 쓸 표현입니다.",
+      "phrases": [
+        {
+          "scene": "체크인 가능 여부 문의",
+          "jp": "チェックインできますか。",
+          "romaji": "Chekkuin dekimasu ka.",
+          "ko": "체크인할 수 있나요?"
+        },
+        {
+          "scene": "짐 보관 요청",
+          "jp": "荷物を預かってもらえますか。",
+          "romaji": "Nimotsu o azukatte moraemasu ka.",
+          "ko": "짐을 맡아주실 수 있나요?"
+        }
+      ]
+    },
+    {
+      "day": "Day 2",
+      "title": "시장과 아키하바라",
+      "summary": "추천 메뉴, 가챠 재고, 게임장 이용에서 쓰기 좋습니다.",
+      "phrases": [
+        {
+          "scene": "추천 메뉴 문의",
+          "jp": "おすすめは何ですか。",
+          "romaji": "Osusume wa nan desu ka.",
+          "ko": "추천 메뉴가 무엇인가요?"
+        },
+        {
+          "scene": "가챠 재고 문의",
+          "jp": "このガチャはまだありますか。",
+          "romaji": "Kono gacha wa mada arimasu ka.",
+          "ko": "이 가챠는 아직 있나요?"
+        }
+      ]
+    }
+  ],
+  "reservationOps": [
+    {
+      "label": "출발 전 점검",
+      "title": "예약과 운영시간 재확인",
+      "summary": "건담베이스, 실내 체험 시설, 도쿄타워와 같은 변동 가능성이 있는 장소를 출발 직전에 다시 확인합니다.",
+      "owner": "예약 컨시어지",
+      "decision": "고정 정보로 믿지 않고 재확인 항목으로 분리합니다.",
+      "outcome": "현장에서 닫힘이나 대기 리스크를 줄입니다.",
+      "items": [
+        "건담베이스 도쿄 입장 방식과 운영시간 확인",
+        "실내 체험 시설 당일 영업 여부 확인",
+        "도쿄타워 전망대 운영시간과 입장 가능 여부 확인",
+        "나리타 출국편 터미널 및 체크인 동선 재확인"
+      ],
+      "links": []
+    }
+  ],
+  "familyComfortOps": [
+    {
+      "label": "회복 슬롯",
+      "title": "매일 오후 20~30분 회복 시간 확보",
+      "summary": "앉아서 쉬는 시간과 간식을 의도적으로 넣어야 아이와 부모의 저녁 텐션이 유지됩니다.",
+      "owner": "가족 컨디션 에이전트",
+      "decision": "식사 외의 순수 휴식 시간을 일정 안에 명시합니다.",
+      "outcome": "후반 일정이 무너지지 않고 감정 소비도 줄어듭니다.",
+      "items": [
+        "오후 3시 전후에는 앉는 시간 확보",
+        "물과 작은 간식은 오전에 미리 준비",
+        "지하철 환승이 길어지면 다음 목적지 하나를 줄이는 것도 허용"
+      ]
+    }
+  ],
+  "memoryMissions": [
+    {
+      "label": "아카바네",
+      "title": "그때와 지금을 비교하는 사진 2장 남기기",
+      "summary": "예전 생활 동선을 다시 걸으며 부부 사진 1장, 세 가족 사진 1장을 남기는 것이 이번 여행의 핵심 기록이 됩니다.",
+      "owner": "추억 큐레이터",
+      "decision": "명소 인증보다 생활감 회복이 중요한 장소를 우선합니다.",
+      "outcome": "이번 여행만의 정체성이 더 강하게 남습니다.",
+      "items": [
+        "부부만 찍는 사진 1장",
+        "세 가족이 함께 찍는 사진 1장",
+        "그때 자주 갔던 방향과 지금의 풍경 차이 이야기하기"
+      ]
+    }
+  ],
+  "weatherFallbacks": [
+    {
+      "label": "맑음 운영",
+      "title": "기본 플랜 유지",
+      "summary": "야외 산책과 사진 포인트를 충분히 살리고, 오다이바와 도쿄타워의 전망 요소를 적극 활용합니다.",
+      "owner": "날씨 리스크 에이전트",
+      "decision": "기본 플랜을 유지하되, 무리해서 장소 수를 늘리지는 않습니다.",
+      "outcome": "풍경과 이동 만족도를 가장 잘 살릴 수 있습니다.",
+      "items": [
+        "센소지와 아카바네는 산책 시간을 충분히 확보",
+        "도쿄타워와 오다이바 야외 포인트 적극 활용",
+        "쇼핑은 짧게 넣고 야외 체류를 우선"
+      ]
+    },
+    {
+      "label": "비 운영",
+      "title": "실내 밀도 상향",
+      "summary": "비 오는 날은 실내 체험과 쇼핑, 식품관, 게임장 중심으로 조정해 체력 소모를 줄입니다.",
+      "owner": "날씨 리스크 에이전트 + 쇼핑 에이전트",
+      "decision": "도심 감상보다 실내 만족도를 우선합니다.",
+      "outcome": "비가 와도 여행 만족도가 급격히 떨어지지 않습니다.",
+      "items": [
+        "우에노와 오다이바 야외 체류 축소",
+        "아키하바라와 오다이바 실내 체험 확대",
+        "식사는 데파치카와 푸드코트 활용"
+      ]
+    },
+    {
+      "label": "피곤 운영",
+      "title": "이동량과 목적지 수 축소",
+      "summary": "피곤할 때는 같은 날의 두 번째 목적지부터 과감히 줄이는 것이 만족도를 지키는 핵심입니다.",
+      "owner": "가족 컨디션 에이전트 + 날씨 리스크 에이전트",
+      "decision": "완주보다 회복을 우선하고, 다음 날의 만족도를 보호합니다.",
+      "outcome": "누적 피로로 전체 여행이 무너지는 것을 막습니다.",
+      "items": [
+        "오후 목적지 하나 삭제 가능",
+        "저녁은 숙소 근처에서 해결",
+        "오다이바는 건담베이스만 보고도 성공한 날로 간주"
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "기본안",
+      "title": "오다이바 하루 집중 운영",
+      "pill": "추천",
+      "summary": "건담베이스와 실내 체험 중심으로 오다이바 안에서 하루를 완성하는 기본안입니다.",
+      "list": ["가족 체력 부담이 가장 낮음", "아들의 만족도가 높음", "날씨 변수에 강함"]
+    },
+    {
+      "label": "확장안",
+      "title": "오후 컨디션 좋을 때만 외부 확장",
+      "pill": "선택형",
+      "summary": "오다이바 일정을 충분히 마친 뒤에도 체력이 남을 때만 추가 이동을 고려하는 안입니다.",
+      "list": ["오후 2시 이후에만 판단", "피곤하면 즉시 기본안 유지", "일정 성공 기준은 기본안 완주"]
+    }
+  ],
+  "mapCenter": [35.6764, 139.749],
+  "mapZoom": 11,
+  "mapPoints": [
+    {
+      "day": "Day 1",
+      "name": "오사키",
+      "note": "숙소와 이동의 기준축",
+      "coords": [35.6197, 139.7288],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=New+Otani+Inn+Tokyo"
+    },
+    {
+      "day": "Day 1",
+      "name": "아카바네",
+      "note": "추억 복원의 시작점",
+      "coords": [35.7778, 139.7211],
+      "google": "https://www.google.com/maps/search/?api=1&query=Akabane+Station"
+    },
+    {
+      "day": "Day 2",
+      "name": "츠키지",
+      "note": "시장 식사 포인트",
+      "coords": [35.6655, 139.7708],
+      "google": "https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market"
+    },
+    {
+      "day": "Day 2",
+      "name": "센소지",
+      "note": "전통 도쿄 핵심 관광",
+      "coords": [35.7148, 139.7967],
+      "google": "https://www.google.com/maps/search/?api=1&query=Senso-ji"
+    },
+    {
+      "day": "Day 2",
+      "name": "아키하바라",
+      "note": "전자상가와 게임장 축",
+      "coords": [35.6984, 139.773],
+      "google": "https://www.google.com/maps/search/?api=1&query=Akihabara+Station"
+    },
+    {
+      "day": "Day 3",
+      "name": "시부야",
+      "note": "쇼핑과 실내 체험 정차",
+      "coords": [35.6595, 139.7005],
+      "google": "https://www.google.com/maps/search/?api=1&query=Shibuya+Station"
+    },
+    {
+      "day": "Day 3",
+      "name": "도쿄타워",
+      "note": "야경 마무리 포인트",
+      "coords": [35.6586, 139.7454],
+      "google": "https://www.google.com/maps/search/?api=1&query=Tokyo+Tower"
+    },
+    {
+      "day": "Day 4",
+      "name": "오다이바",
+      "note": "가족 체험 하이라이트",
+      "coords": [35.6272, 139.7768],
+      "highlight": true,
+      "google": "https://www.google.com/maps/search/?api=1&query=Odaiba"
+    }
+  ],
+  "mapAnchors": [
+    {
+      "day": "Day 1",
+      "name": "오사키와 아카바네",
+      "note": "숙소 안정성과 추억 복원을 연결하는 첫날 축",
+      "google": "https://www.google.com/maps/search/?api=1&query=Akabane+Station",
+      "osm": "https://www.openstreetmap.org/search?query=Akabane%20Station"
+    },
+    {
+      "day": "Day 2",
+      "name": "츠키지, 센소지, 아키하바라",
+      "note": "전통과 전자 문화를 한날에 경험하는 핵심 축",
+      "google": "https://www.google.com/maps/search/?api=1&query=Akihabara+Station",
+      "osm": "https://www.openstreetmap.org/search?query=Akihabara%20Station"
+    },
+    {
+      "day": "Day 3",
+      "name": "시부야와 도쿄타워",
+      "note": "쇼핑과 야경을 무리 없이 잇는 도심 축",
+      "google": "https://www.google.com/maps/search/?api=1&query=Tokyo+Tower",
+      "osm": "https://www.openstreetmap.org/search?query=Tokyo%20Tower"
+    },
+    {
+      "day": "Day 4",
+      "name": "오다이바",
+      "note": "아들의 만족도를 가장 크게 끌어올리는 메인 체험축",
+      "google": "https://www.google.com/maps/search/?api=1&query=Odaiba",
+      "osm": "https://www.openstreetmap.org/search?query=Odaiba"
+    }
+  ],
+  "budgets": {
+    "light": {
+      "name": "절약형",
+      "total": "약 125,000엔",
+      "description": "체인 식당과 가성비 먹거리 비중을 높이고, 굿즈와 쇼핑을 최소화한 운영안입니다.",
+      "note": "유료 체험은 핵심 포인트만 선택",
+      "lines": [["식비", "45,000엔"], ["교통", "18,000엔"], ["쇼핑/가챠", "25,000엔"], ["비상비", "37,000엔"]]
+    },
+    "balanced": {
+      "name": "균형형",
+      "total": "약 170,000엔",
+      "description": "현재 일정 구조에 가장 잘 맞는 기본 예산안으로, 체험과 식사, 쇼핑의 균형을 맞춘 시나리오입니다.",
+      "note": "건담 굿즈와 전자상가 소액 쇼핑 포함",
+      "lines": [["식비", "60,000엔"], ["교통", "18,000엔"], ["쇼핑/가챠", "45,000엔"], ["어트랙션", "20,000엔"], ["비상비", "27,000엔"]]
+    },
+    "comfort": {
+      "name": "여유형",
+      "total": "약 220,000엔",
+      "description": "체험 선택 폭을 넓히고, 백화점 식품관과 전망대, 굿즈 구매에 좀 더 여유를 둔 시나리오입니다.",
+      "note": "현장 변동에 대한 버퍼가 큼",
+      "lines": [["식비", "75,000엔"], ["교통", "20,000엔"], ["쇼핑/가챠", "70,000엔"], ["어트랙션", "25,000엔"], ["비상비", "30,000엔"]]
+    }
+  },
+  "nostalgiaFoods": ["오오토야 정식", "야요이켄 정식", "야스베에 츠케멘", "톤코츠 라멘 체인", "후지소바", "텐야", "교자노 오쇼", "스시잔마이"],
+  "verifiedFoods": [
+    {
+      "name": "요도바시 Akiba 식당가",
+      "detail": "아키하바라 체류 중, 빠르게 식사하거나 가족 취향이 갈릴 때 대응하기 좋은 안전지대입니다.",
+      "link": "https://www.yodobashi.com/ec/store/0018/"
+    },
+    {
+      "name": "시부야 도큐 푸드쇼",
+      "detail": "식품관, 델리, 도시락, 디저트를 한 번에 볼 수 있어 식사와 간식, 호텔 복귀용 먹거리 선택지가 넓습니다.",
+      "link": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+    },
+    {
+      "name": "건담베이스 공식 정보",
+      "detail": "오다이바 핵심 체험 포인트의 최신 공지와 운영 방식 확인용입니다.",
+      "link": "https://www.gundam-base.net/"
+    }
+  ],
+  "shoppingOps": [
+    {
+      "label": "Day 2 / 아키하바라",
+      "title": "전자와 취미 쇼핑을 한 번에 묶는 핵심 구간",
+      "summary": "요도바시, 가샤폰, 게임장, 소형 피규어샵을 짧게 이어 보기 좋은 구간입니다.",
+      "owner": "쇼핑 에이전트",
+      "decision": "쇼핑 자체보다 아들의 흥미와 부모의 관찰 재미를 함께 얻는 쪽으로 밀도를 조정했습니다.",
+      "outcome": "과몰입 없이도 전자상가 감각과 구매 만족도를 챙길 수 있습니다.",
+      "items": ["권장 체류 시간 60~90분", "필수 구매 목록을 먼저 정하고 들어가기", "게임장과 가챠는 금액 상한을 먼저 정하기"],
+      "links": [
+        {
+          "label": "요도바시 Akiba",
+          "url": "https://www.yodobashi.com/ec/store/0018/"
+        }
+      ]
+    },
+    {
+      "label": "Day 3 / 시부야",
+      "title": "Hands, Gallery2, 생활형 쇼핑을 짧게 묶기",
+      "summary": "시부야는 체험형 쇼핑과 실용적인 구매를 함께 처리하기 좋은 구간입니다.",
+      "owner": "쇼핑 에이전트 + 현지 가이드",
+      "decision": "한 곳에 오래 머무르기보다 손에 잡히는 품목 중심으로 짧게 순환합니다.",
+      "outcome": "쇼핑 피로 없이 만족도가 남는 방식으로 운영할 수 있습니다.",
+      "items": ["Hands에서는 생활 잡화와 여행 소품 위주", "Gallery2에서는 스포츠 굿즈와 소형 아이템 위주", "돈키호테는 밤늦게 가지 않고 필요품만 빠르게 구매"],
+      "links": [
+        {
+          "label": "Hands Shibuya",
+          "url": "https://shibuya.hands.net/"
+        },
+        {
+          "label": "Gallery2 Shibuya",
+          "url": "https://www.gallery2.co.jp/shops/shibuya-2f/"
+        },
+        {
+          "label": "Don Quijote Shinjuku Tonanguchi",
+          "url": "https://www.donki.com/en/store/shop_detail.php?shop_id=449"
+        }
+      ]
+    }
+  ],
+  "valueFoodOps": [
+    {
+      "label": "데파치카 활용",
+      "title": "백화점 식품관으로 고품질 저녁 대체안 만들기",
+      "summary": "줄 서는 식당을 피하고 싶을 때, 식품관은 만족도와 선택 폭이 넓은 안전한 대체안이 됩니다.",
+      "owner": "현지 가이드 + 쇼핑 에이전트",
+      "decision": "외식 실패 리스크를 줄이기 위해 식품관을 식사 전략의 일부로 편입했습니다.",
+      "outcome": "피곤한 날에도 좋은 품질의 저녁을 안정적으로 확보할 수 있습니다.",
+      "items": ["시부야 일정 후 도큐 푸드쇼에서 도시락 또는 델리 구매", "초밥, 튀김, 샐러드, 디저트를 조합해 호텔 저녁으로 운영", "아이 취향과 부모 취향을 따로 맞추기 쉬움"],
+      "links": [
+        {
+          "label": "시부야 도큐 푸드쇼",
+          "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+        }
+      ]
+    },
+    {
+      "label": "마트 저녁 세일",
+      "title": "슈퍼마켓 저녁 할인 시간 활용",
+      "summary": "마트나 식품관의 저녁 할인은 가격 대비 만족도가 높은 선택지이며, 피곤한 날 대체안으로 특히 강합니다.",
+      "owner": "쇼핑 에이전트",
+      "decision": "매일 외식하지 않고 한두 번은 할인 먹거리로 회복성 있는 식사를 넣는 전략을 채택했습니다.",
+      "outcome": "예산을 아끼면서도 식사 품질을 유지할 수 있습니다.",
+      "items": ["회, 초밥, 가라아게, 샐러드 세트 위주로 보기", "호텔에서 먹기 편한 구성인지 먼저 확인", "출국 전날 밤처럼 체력이 떨어질 때 특히 유용"],
+      "links": []
+    }
+  ],
+  "guideNotes": [
+    {
+      "title": "교통 운영 메모",
+      "text": "오사키를 기준으로 JR 이동이 깔끔하게 이어지는 날이 많습니다. 환승이 길어지는 순간에는 다음 목적지 하나를 줄이는 것이 더 좋은 운영입니다."
+    },
+    {
+      "title": "식사 운영 메모",
+      "text": "정식집, 소바, 푸드코트, 데파치카, 마트를 적절히 섞으면 가격 대비 품질과 운영 안정성을 동시에 잡을 수 있습니다."
+    },
+    {
+      "title": "결제와 쇼핑 메모",
+      "text": "가챠와 게임장, 굿즈샵은 작은 지출이 누적되기 쉬우니 하루 예산 상한을 미리 정해 두는 편이 좋습니다."
+    },
+    {
+      "title": "가족 운영 메모",
+      "text": "사진 포인트가 2곳 연속으로 이어지면 다음에는 먹거리나 체험 포인트를 넣는 식으로 리듬을 맞추는 것이 좋습니다."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Yahoo! 노선정보",
+      "note": "노선 검색과 이동 링크의 기준 페이지",
+      "url": "https://transit.yahoo.co.jp/"
+    },
+    {
+      "title": "Yahoo! 지도",
+      "note": "역 간 루트 링크의 기준 페이지",
+      "url": "https://map.yahoo.co.jp/"
+    },
+    {
+      "title": "요도바시 Akiba 공식 정보",
+      "note": "아키하바라 전자상가와 식당가 운영 확인용",
+      "url": "https://www.yodobashi.com/ec/store/0018/"
+    },
+    {
+      "title": "Hands 시부야점 공식 정보",
+      "note": "시부야 생활형 쇼핑 포인트 확인용",
+      "url": "https://shibuya.hands.net/"
+    },
+    {
+      "title": "Gallery2 시부야점 공식 정보",
+      "note": "스포츠용품 쇼핑 포인트 확인용",
+      "url": "https://www.gallery2.co.jp/shops/shibuya-2f/"
+    },
+    {
+      "title": "시부야 도큐 푸드쇼 공식 정보",
+      "note": "데파치카 가성비 먹거리 검토용",
+      "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+    },
+    {
+      "title": "건담베이스 공식 정보",
+      "note": "오다이바 핵심 체험 포인트 운영 확인용",
+      "url": "https://www.gundam-base.net/"
+    }
+  ],
+  "recheckNote": "최신 운영시간, 입장 방식, 항공편, 매장 휴무, 체험 시설 상세 운영은 2026년 4월 9일 기준으로 한 번 정리한 내용입니다. 실제 출발 직전에는 각 공식 사이트와 항공사, 호텔 정보를 다시 확인하는 것을 전제로 설계했습니다."
 }

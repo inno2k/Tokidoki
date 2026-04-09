@@ -238,6 +238,14 @@ body::before {
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+.content-tabs button:focus-visible,
+.action-chip:focus-visible,
+.timeline-link:focus-visible,
+.map-link:focus-visible {
+  outline: 3px solid rgba(210, 106, 66, 0.32);
+  outline-offset: 2px;
+}
+
 .content-tabs button:hover {
   background: rgba(60, 93, 83, 0.16);
   transform: translateY(-1px);
@@ -250,6 +258,11 @@ body::before {
 
 .tab-panel-hidden {
   display: none;
+}
+
+.tab-panel {
+  display: grid;
+  gap: 24px;
 }
 
 .eyebrow,
@@ -383,6 +396,25 @@ body::before {
 .bullet-list { margin: 0; padding-left: 1.2rem; line-height: 1.7; }
 .bullet-list.compact li + li { margin-top: 10px; }
 
+.harness-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.bridge-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255, 252, 244, 0.92), rgba(238, 245, 232, 0.82));
+  border: 1px solid rgba(148, 65, 35, 0.12);
+}
+
+.bridge-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-deep);
+}
+
 .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .team-card { padding: 22px; }
 
@@ -485,7 +517,24 @@ body::before {
 }
 
 .comm-feed { display: grid; gap: 12px; }
-.comm-item { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 16px 18px; }
+.comm-item {
+  display: grid;
+  grid-template-columns: 64px 220px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px 20px;
+}
+.comm-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(210, 106, 66, 0.12);
+  color: var(--accent-deep);
+  font-weight: 700;
+}
 .comm-route { color: var(--accent-deep); font-weight: 700; }
 .comm-body { color: var(--muted); line-height: 1.65; }
 
@@ -547,6 +596,33 @@ body::before {
 .variant-panel strong {
   display: block;
   margin-bottom: 6px;
+}
+
+.trace-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(247, 242, 232, 0.96);
+  border: 1px solid rgba(148, 65, 35, 0.12);
+}
+
+.trace-line {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.trace-line strong {
+  color: var(--accent-deep);
+  font-size: 0.84rem;
+}
+
+.trace-line span {
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .todo-list,
@@ -770,6 +846,11 @@ body::before {
   border-bottom: 1px dashed rgba(31, 36, 48, 0.12);
 }
 
+.budget-line-note {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .source-card { padding: 18px; }
 .recheck-note { margin-top: 16px; color: var(--muted); }
 
@@ -777,6 +858,7 @@ body::before {
   .hero,
   .budget-summary,
   .intro-grid,
+  .harness-flow,
   .itinerary-grid,
   .option-grid,
   .food-columns,
@@ -784,7 +866,9 @@ body::before {
   .map-shell,
   .photo-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .comm-item { grid-template-columns: 1fr; }
+  .comm-item { grid-template-columns: 64px 1fr; }
+  .comm-route { grid-column: 2; }
+  .comm-body { grid-column: 2; }
   .ops-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .phrase-grid { grid-template-columns: 1fr; }
   #trip-map,
@@ -820,6 +904,11 @@ body::before {
     grid-template-columns: 1fr 1fr;
   }
 
+  .trace-line {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   .timeline-links,
   .timeline-meta,
   .timeline-actions {
@@ -851,6 +940,10 @@ body::before {
   .team-grid { grid-template-columns: 1fr; }
   .ops-grid { grid-template-columns: 1fr; }
   .section-head.split { align-items: start; flex-direction: column; }
+  .comm-item { grid-template-columns: 1fr; }
+  .comm-step,
+  .comm-route,
+  .comm-body { grid-column: auto; }
   .budget-line,
   .day-top,
   .option-top { flex-direction: column; }
