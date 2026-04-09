@@ -146,7 +146,28 @@ function copyButton(value, label = "복사") {
   return `<button class="action-chip" type="button" data-copy="${escapeHtml(value)}">${label}</button>`;
 }
 
-function setContentTab(tab, focusButton = false) {
+function scrollToTabPanel(tab) {
+  const panel = document.querySelector(`[data-tab-panel="${tab}"]`);
+  if (!panel) {
+    return;
+  }
+
+  const tabBar = document.querySelector(".content-tabs");
+  const offset = (tabBar?.offsetHeight || 0) + 24;
+  const targetTop = panel.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior: "smooth"
+  });
+}
+
+function revealAllTabPanels() {
+  document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
+    panel.hidden = false;
+  });
+}
+
+function setContentTab(tab, focusButton = false, shouldScroll = false) {
   currentContentTab = tab;
   localStorage.setItem("tokidoki-content-tab", currentContentTab);
 
@@ -160,10 +181,9 @@ function setContentTab(tab, focusButton = false) {
     }
   });
 
-  document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
-    const active = panel.dataset.tabPanel === currentContentTab;
-    panel.hidden = !active;
-  });
+  if (shouldScroll) {
+    scrollToTabPanel(tab);
+  }
 }
 
 function initContentTabs() {
@@ -177,9 +197,11 @@ function initContentTabs() {
     currentContentTab = "overview";
   }
 
+  revealAllTabPanels();
+
   buttons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      setContentTab(button.dataset.contentTab);
+      setContentTab(button.dataset.contentTab, false, true);
     });
 
     button.addEventListener("keydown", (event) => {
@@ -187,20 +209,20 @@ function initContentTabs() {
       if (event.key === "ArrowRight") {
         event.preventDefault();
         const next = buttons[(currentIndex + 1) % buttons.length];
-        setContentTab(next.dataset.contentTab, true);
+        setContentTab(next.dataset.contentTab, true, true);
       }
       if (event.key === "ArrowLeft") {
         event.preventDefault();
         const prev = buttons[(currentIndex - 1 + buttons.length) % buttons.length];
-        setContentTab(prev.dataset.contentTab, true);
+        setContentTab(prev.dataset.contentTab, true, true);
       }
       if (event.key === "Home") {
         event.preventDefault();
-        setContentTab(buttons[0].dataset.contentTab, true);
+        setContentTab(buttons[0].dataset.contentTab, true, true);
       }
       if (event.key === "End") {
         event.preventDefault();
-        setContentTab(buttons[buttons.length - 1].dataset.contentTab, true);
+        setContentTab(buttons[buttons.length - 1].dataset.contentTab, true, true);
       }
     });
   });
@@ -219,7 +241,7 @@ function bindContentTabEvents() {
       return;
     }
     event.preventDefault();
-    setContentTab(button.dataset.contentTab);
+    setContentTab(button.dataset.contentTab, false, true);
   });
 
   window.__TOKIDOKI_TABS_BOUND__ = true;
