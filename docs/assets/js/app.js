@@ -208,6 +208,23 @@ function initContentTabs() {
   setContentTab(currentContentTab);
 }
 
+function bindContentTabEvents() {
+  if (window.__TOKIDOKI_TABS_BOUND__) {
+    return;
+  }
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-content-tab]");
+    if (!button) {
+      return;
+    }
+    event.preventDefault();
+    setContentTab(button.dataset.contentTab);
+  });
+
+  window.__TOKIDOKI_TABS_BOUND__ = true;
+}
+
 function createSakuraLayer() {
   const root = document.getElementById("sakura-layer");
   if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -818,4 +835,6 @@ async function main() {
   }
 }
 
+bindContentTabEvents();
+initContentTabs();
 main();
