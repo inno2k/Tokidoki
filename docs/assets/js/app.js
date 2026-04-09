@@ -847,6 +847,7 @@ async function main() {
     renderBudgetSwitch(data);
     renderBudgetPanel(data, data.budgets.balanced ? "balanced" : Object.keys(data.budgets)[0]);
     renderFood(data);
+    renderOpsCards(data, "shoppingHighlights", "shopping-highlights-grid");
     renderOpsCards(data, "shoppingOps", "shopping-grid");
     renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderGuide(data);

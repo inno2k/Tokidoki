@@ -413,7 +413,7 @@
     {
       "day": "Day 1",
       "title": "공항과 호텔",
-      "summary": "입국, 짐 보관, 체크인에서 바로 쓸 표현입니다.",
+      "summary": "입국, 공항 이동, 짐 보관, 체크인, 첫 식사에서 바로 쓸 표현입니다.",
       "phrases": [
         {
           "scene": "체크인 가능 여부 문의",
@@ -426,13 +426,43 @@
           "jp": "荷物を預かってもらえますか。",
           "romaji": "Nimotsu o azukatte moraemasu ka.",
           "ko": "짐을 맡아주실 수 있나요?"
+        },
+        {
+          "scene": "나리타행/도심행 플랫폼 확인",
+          "jp": "この電車は大崎に行きますか。",
+          "romaji": "Kono densha wa Osaki ni ikimasu ka.",
+          "ko": "이 전철은 오사키로 가나요?"
+        },
+        {
+          "scene": "환승 방법 문의",
+          "jp": "乗り換えはどこですか。",
+          "romaji": "Norikae wa doko desu ka.",
+          "ko": "환승은 어디에서 하나요?"
+        },
+        {
+          "scene": "조용한 좌석 요청",
+          "jp": "静かな席をお願いできますか。",
+          "romaji": "Shizuka na seki o onegai dekimasu ka.",
+          "ko": "조용한 자리로 부탁드릴 수 있을까요?"
+        },
+        {
+          "scene": "아이용 수저 요청",
+          "jp": "子ども用の取り皿はありますか。",
+          "romaji": "Kodomo yo no torizara wa arimasu ka.",
+          "ko": "아이용 앞접시가 있나요?"
+        },
+        {
+          "scene": "근처 편의점 위치 문의",
+          "jp": "近くにコンビニはありますか。",
+          "romaji": "Chikaku ni konbini wa arimasu ka.",
+          "ko": "근처에 편의점이 있나요?"
         }
       ]
     },
     {
       "day": "Day 2",
       "title": "시장과 아키하바라",
-      "summary": "추천 메뉴, 가챠 재고, 게임장 이용에서 쓰기 좋습니다.",
+      "summary": "시장 식사, 전통 관광, 가챠샵, 게임장, 전자상가에서 쓰기 좋습니다.",
       "phrases": [
         {
           "scene": "추천 메뉴 문의",
@@ -445,6 +475,165 @@
           "jp": "このガチャはまだありますか。",
           "romaji": "Kono gacha wa mada arimasu ka.",
           "ko": "이 가챠는 아직 있나요?"
+        },
+        {
+          "scene": "포장 가능 여부 문의",
+          "jp": "持ち帰りできますか。",
+          "romaji": "Mochikaeri dekimasu ka.",
+          "ko": "포장할 수 있나요?"
+        },
+        {
+          "scene": "아이가 먹기 덜 매운 메뉴 문의",
+          "jp": "子どもでも食べやすいですか。",
+          "romaji": "Kodomo demo tabeyasui desu ka.",
+          "ko": "아이도 먹기 쉬운가요?"
+        },
+        {
+          "scene": "동전 교환 문의",
+          "jp": "両替できますか。",
+          "romaji": "Ryogae dekimasu ka.",
+          "ko": "잔돈 교환할 수 있나요?"
+        },
+        {
+          "scene": "게임장 카운터 위치 문의",
+          "jp": "カウンターはどこですか。",
+          "romaji": "Kaunta wa doko desu ka.",
+          "ko": "카운터는 어디인가요?"
+        },
+        {
+          "scene": "면세 가능 여부 문의",
+          "jp": "免税できますか。",
+          "romaji": "Menzei dekimasu ka.",
+          "ko": "면세가 되나요?"
+        }
+      ]
+    },
+    {
+      "day": "Day 3",
+      "title": "신주쿠, 시부야, 도쿄타워",
+      "summary": "쇼핑, 스포츠 매장, 백화점, 전망대, 길찾기 상황에서 쓰기 좋습니다.",
+      "phrases": [
+        {
+          "scene": "원하는 매장 위치 문의",
+          "jp": "ハンズは何階ですか。",
+          "romaji": "Hanzu wa nankai desu ka.",
+          "ko": "핸즈는 몇 층인가요?"
+        },
+        {
+          "scene": "스포츠용품 매장 문의",
+          "jp": "スポーツ用品売り場はどこですか。",
+          "romaji": "Supotsu yohin uriba wa doko desu ka.",
+          "ko": "스포츠용품 매장은 어디인가요?"
+        },
+        {
+          "scene": "지금 가장 덜 붐비는 식당 문의",
+          "jp": "今すぐ入りやすいお店はありますか。",
+          "romaji": "Ima sugu hairiyasui omise wa arimasu ka.",
+          "ko": "지금 바로 들어가기 쉬운 가게가 있나요?"
+        },
+        {
+          "scene": "전망대 입장 가능 여부",
+          "jp": "今から入れますか。",
+          "romaji": "Ima kara hairemasu ka.",
+          "ko": "지금부터 입장할 수 있나요?"
+        },
+        {
+          "scene": "엘리베이터 위치 문의",
+          "jp": "エレベーターはどこですか。",
+          "romaji": "Erebeta wa doko desu ka.",
+          "ko": "엘리베이터는 어디인가요?"
+        },
+        {
+          "scene": "사진 촬영 부탁",
+          "jp": "写真を撮ってもらえますか。",
+          "romaji": "Shashin o totte moraemasu ka.",
+          "ko": "사진을 찍어주실 수 있나요?"
+        }
+      ]
+    },
+    {
+      "day": "Day 4",
+      "title": "오다이바와 건담베이스",
+      "summary": "입장, 티켓, 굿즈, 재입장, 푸드코트, 휴식 공간 문의에 유용합니다.",
+      "phrases": [
+        {
+          "scene": "당일권 문의",
+          "jp": "当日券はありますか。",
+          "romaji": "Tojitsuken wa arimasu ka.",
+          "ko": "당일권이 있나요?"
+        },
+        {
+          "scene": "재입장 가능 여부 문의",
+          "jp": "再入場できますか。",
+          "romaji": "Sai-nyujo dekimasu ka.",
+          "ko": "재입장할 수 있나요?"
+        },
+        {
+          "scene": "한정 상품 재고 문의",
+          "jp": "この限定商品はまだありますか。",
+          "romaji": "Kono gentei shohin wa mada arimasu ka.",
+          "ko": "이 한정 상품은 아직 있나요?"
+        },
+        {
+          "scene": "푸드코트 좌석 확인",
+          "jp": "空いている席はありますか。",
+          "romaji": "Aite iru seki wa arimasu ka.",
+          "ko": "빈 자리가 있나요?"
+        },
+        {
+          "scene": "휴식 공간 문의",
+          "jp": "少し休める場所はありますか。",
+          "romaji": "Sukoshi yasumeru basho wa arimasu ka.",
+          "ko": "잠깐 쉴 수 있는 곳이 있나요?"
+        },
+        {
+          "scene": "아이 키 제한 문의",
+          "jp": "身長制限はありますか。",
+          "romaji": "Shincho seigen wa arimasu ka.",
+          "ko": "키 제한이 있나요?"
+        }
+      ]
+    },
+    {
+      "day": "Day 5",
+      "title": "귀국과 공항 이동",
+      "summary": "플랫폼 확인, 좌석, 짐, 보안검색 전후에서 쓰기 좋은 표현입니다.",
+      "phrases": [
+        {
+          "scene": "나리타공항행 플랫폼 확인",
+          "jp": "成田空港へ行く電車はどれですか。",
+          "romaji": "Narita kuko e iku densha wa dore desu ka.",
+          "ko": "나리타공항으로 가는 전철은 어느 것인가요?"
+        },
+        {
+          "scene": "지정석 여부 문의",
+          "jp": "指定席ですか。",
+          "romaji": "Shiteiseki desu ka.",
+          "ko": "지정석인가요?"
+        },
+        {
+          "scene": "큰 짐 놓는 곳 문의",
+          "jp": "大きい荷物を置く場所はありますか。",
+          "romaji": "Okii nimotsu o oku basho wa arimasu ka.",
+          "ko": "큰 짐 놓는 곳이 있나요?"
+        },
+        {
+          "scene": "체크인 카운터 위치 문의",
+          "jp": "チェックインカウンターはどこですか。",
+          "romaji": "Chekkuin kaunta wa doko desu ka.",
+          "ko": "체크인 카운터는 어디인가요?"
+        },
+        {
+          "scene": "보안검색 줄 확인",
+          "jp": "保安検査場はどこですか。",
+          "romaji": "Hoan kensa jo wa doko desu ka.",
+          "ko": "보안검색장은 어디인가요?"
+        },
+        {
+          "scene": "탑승구 재확인",
+          "jp": "搭乗口は変わっていませんか。",
+          "romaji": "Tojoguchi wa kawatte imasen ka.",
+          "ko": "탑승구가 바뀌지 않았나요?"
         }
       ]
     }
@@ -686,15 +875,107 @@
       "link": "https://www.gundam-base.net/"
     }
   ],
+  "shoppingHighlights": [
+    {
+      "label": "기념품과 먹거리",
+      "title": "나눠줄 선물과 숙소용 먹거리를 분리해서 고르기",
+      "summary": "기념품은 개별 포장 위주, 숙소용 먹거리는 당일 소비 위주로 나누면 구매 판단이 쉬워집니다.",
+      "owner": "쇼핑 에이전트 + 현지 가이드",
+      "decision": "데파치카와 돈키호테, 역 매장을 각각 다른 역할로 사용하도록 나눴습니다.",
+      "outcome": "시간을 많이 쓰지 않고도 선물용과 실사용 먹거리를 동시에 챙길 수 있습니다.",
+      "items": [
+        "회사와 지인용은 개별 포장 과자, 지역 한정 킷캣, 도쿄바나나류가 무난함",
+        "숙소용은 데파치카 델리, 디저트, 과일 컵, 마트 반찬처럼 바로 먹을 수 있는 것 위주",
+        "무거운 과자와 음료는 마지막 날 몰아서 사지 말고 중간 날에 분산 구매"
+      ],
+      "links": [
+        {
+          "label": "시부야 도큐 푸드쇼",
+          "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+        },
+        {
+          "label": "Don Quijote 면세 안내",
+          "url": "https://www.donki.com/en/tax_free/"
+        }
+      ]
+    },
+    {
+      "label": "주류",
+      "title": "사케, 일본 위스키, 한정 츄하이는 규정 확인 후 구매",
+      "summary": "주류는 만족도가 높지만 무게와 액체류 규정을 함께 생각해야 해, 즉흥 구매보다 마지막 이틀 안에 결정하는 편이 좋습니다.",
+      "owner": "쇼핑 에이전트",
+      "decision": "짐 상태와 위탁수하물 여유를 본 뒤 판단하는 방식으로 정리했습니다.",
+      "outcome": "파손과 중량 리스크를 줄이면서 일본 현지 느낌이 강한 품목을 챙길 수 있습니다.",
+      "items": [
+        "사케는 작은 병이나 지역 라벨 위주로 접근하면 부담이 적음",
+        "위스키는 재고 편차가 크므로 보이면 가격과 용량을 먼저 보고 판단",
+        "액체류는 기내 반입보다 위탁수하물 포장과 세관 한도를 먼저 확인"
+      ],
+      "links": [
+        {
+          "label": "Don Quijote 면세 안내",
+          "url": "https://www.donki.com/en/tax_free/"
+        }
+      ]
+    },
+    {
+      "label": "피규어와 프라모델",
+      "title": "아키하바라는 일반 피규어, 오다이바는 건담 한정 굿즈 중심",
+      "summary": "피규어와 프라모델은 충동 구매를 부르기 쉬워서, 첫 바퀴는 탐색, 두 번째에 예산 기준으로 결정하는 편이 좋습니다.",
+      "owner": "쇼핑 에이전트 + 어트랙션 에이전트",
+      "decision": "아키하바라는 일반 피규어와 취미품, 오다이바는 건담 한정 굿즈로 역할을 분리했습니다.",
+      "outcome": "중복 구매와 과소비를 줄이면서도 만족도가 큰 품목에 예산을 쓸 수 있습니다.",
+      "items": [
+        "건담베이스는 한정 굿즈와 프라모델 우선",
+        "아키하바라는 소형 피규어, 가샤폰, 게임 관련 굿즈 우선",
+        "박스가 큰 프라모델은 캐리어 공간과 파손 가능성을 바로 체크하기"
+      ],
+      "links": [
+        {
+          "label": "건담베이스 공식 정보",
+          "url": "https://www.gundam-base.net/"
+        },
+        {
+          "label": "TAMIYA PLAMODEL FACTORY TOKYO",
+          "url": "https://www.tamiya-plamodelfactory.co.jp/"
+        }
+      ]
+    },
+    {
+      "label": "미니카와 철도 장난감",
+      "title": "토미카, 프라레일은 일본 현지 라인업과 진열 재미가 큼",
+      "summary": "11살 아들과 함께 보기 좋은 카테고리이고, 일본 브랜드 특유의 모델 라인업과 매장 디스플레이를 즐기기 좋습니다.",
+      "owner": "쇼핑 에이전트",
+      "decision": "대형 전자상가 완구 코너와 브랜드 공식 정보를 함께 보도록 잡았습니다.",
+      "outcome": "기념품과 놀이 아이템을 동시에 만족시키는 선택지가 생깁니다.",
+      "items": [
+        "토미카는 일본 차량 모델과 매장 한정 굿즈를 우선 보기",
+        "프라레일은 기차를 좋아하면 매장 체험만으로도 만족도가 높음",
+        "작은 상자라도 수량이 늘면 부피가 커지므로 1차 상한을 정하고 보기"
+      ],
+      "links": [
+        {
+          "label": "타카라토미 토미카 정보",
+          "url": "https://www.takaratomy.co.jp/products/tomica/"
+        }
+      ]
+    }
+  ],
   "shoppingOps": [
     {
       "label": "Day 2 / 아키하바라",
       "title": "전자와 취미 쇼핑을 한 번에 묶는 핵심 구간",
-      "summary": "요도바시, 가샤폰, 게임장, 소형 피규어샵을 짧게 이어 보기 좋은 구간입니다.",
+      "summary": "요도바시, 가샤폰, 게임장, 소형 피규어샵을 짧게 이어 보기 좋은 구간입니다. 전자소품, 피규어, 미니카, 게임 굿즈를 한 번에 보기 쉽습니다.",
       "owner": "쇼핑 에이전트",
       "decision": "쇼핑 자체보다 아들의 흥미와 부모의 관찰 재미를 함께 얻는 쪽으로 밀도를 조정했습니다.",
       "outcome": "과몰입 없이도 전자상가 감각과 구매 만족도를 챙길 수 있습니다.",
-      "items": ["권장 체류 시간 60~90분", "필수 구매 목록을 먼저 정하고 들어가기", "게임장과 가챠는 금액 상한을 먼저 정하기"],
+      "items": [
+        "권장 체류 시간 60~90분",
+        "필수 구매 목록을 먼저 정하고 들어가기",
+        "게임장과 가챠는 금액 상한을 먼저 정하기",
+        "전자소품은 요도바시, 캐릭터 굿즈와 피규어는 거리 매장으로 분리해서 보기",
+        "토미카나 소형 완구는 완구 코너 가격과 전문점 가격을 빠르게 비교하기"
+      ],
       "links": [
         {
           "label": "요도바시 Akiba",
@@ -705,11 +986,17 @@
     {
       "label": "Day 3 / 시부야",
       "title": "Hands, Gallery2, 생활형 쇼핑을 짧게 묶기",
-      "summary": "시부야는 체험형 쇼핑과 실용적인 구매를 함께 처리하기 좋은 구간입니다.",
+      "summary": "시부야는 체험형 쇼핑과 실용적인 구매를 함께 처리하기 좋은 구간입니다. 여행 소품, 스포츠 굿즈, 선물용 기념품을 섞어 보기 좋습니다.",
       "owner": "쇼핑 에이전트 + 현지 가이드",
       "decision": "한 곳에 오래 머무르기보다 손에 잡히는 품목 중심으로 짧게 순환합니다.",
       "outcome": "쇼핑 피로 없이 만족도가 남는 방식으로 운영할 수 있습니다.",
-      "items": ["Hands에서는 생활 잡화와 여행 소품 위주", "Gallery2에서는 스포츠 굿즈와 소형 아이템 위주", "돈키호테는 밤늦게 가지 않고 필요품만 빠르게 구매"],
+      "items": [
+        "Hands에서는 생활 잡화와 여행 소품 위주",
+        "Gallery2에서는 스포츠 굿즈와 소형 아이템 위주",
+        "돈키호테는 밤늦게 가지 않고 필요품만 빠르게 구매",
+        "기념품은 대용량보다 나눠주기 쉬운 개별 포장 위주로 보기",
+        "시부야 일정 뒤 데파치카에서 먹거리 선물과 호텔 저녁을 같이 해결 가능"
+      ],
       "links": [
         {
           "label": "Hands Shibuya",
@@ -722,6 +1009,10 @@
         {
           "label": "Don Quijote Shinjuku Tonanguchi",
           "url": "https://www.donki.com/en/store/shop_detail.php?shop_id=449"
+        },
+        {
+          "label": "시부야 도큐 푸드쇼",
+          "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
         }
       ]
     }
@@ -806,6 +1097,21 @@
       "title": "건담베이스 공식 정보",
       "note": "오다이바 핵심 체험 포인트 운영 확인용",
       "url": "https://www.gundam-base.net/"
+    },
+    {
+      "title": "Don Quijote 면세 안내",
+      "note": "소비재와 일반품 면세 규정 확인용",
+      "url": "https://www.donki.com/en/tax_free/"
+    },
+    {
+      "title": "TAMIYA PLAMODEL FACTORY TOKYO",
+      "note": "프라모델과 미니카 계열 쇼핑 참고용",
+      "url": "https://www.tamiya-plamodelfactory.co.jp/"
+    },
+    {
+      "title": "타카라토미 토미카 정보",
+      "note": "토미카와 미니카 계열 상품군 참고용",
+      "url": "https://www.takaratomy.co.jp/products/tomica/"
     }
   ],
   "recheckNote": "최신 운영시간, 입장 방식, 항공편, 매장 휴무, 체험 시설 상세 운영은 2026년 4월 9일 기준으로 한 번 정리한 내용입니다. 실제 출발 직전에는 각 공식 사이트와 항공사, 호텔 정보를 다시 확인하는 것을 전제로 설계했습니다."
