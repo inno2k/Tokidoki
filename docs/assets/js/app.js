@@ -1,15 +1,16 @@
-const APP_VERSION = "designfix1";
+const APP_VERSION = "opsdetail2";
 
 let tripMap;
 let mapMarkers = [];
 let routeLine;
 let currentWeatherMode = localStorage.getItem("tokidoki-weather-mode") || "clear";
 let currentContentTab = localStorage.getItem("tokidoki-content-tab") || "overview";
+let tabObserver;
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
   if (!response.ok) {
-    throw new Error(`여행 데이터 로드 실패: ${response.status}`);
+    throw new Error(`여행 데이터를 불러오지 못했습니다: ${response.status}`);
   }
   return response.json();
 }
@@ -48,6 +49,27 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function weatherModeLabel(mode) {
+  if (mode === "rain") return "비 운영";
+  if (mode === "fatigue") return "피곤 운영";
+  return "맑음 운영";
+}
+
+function weatherVariantFor(item) {
+  return item.weatherVariants?.[currentWeatherMode] || null;
+}
+
+function timelineFor(item) {
+  if (currentWeatherMode !== "clear" && item.timelineVariants?.[currentWeatherMode]?.length) {
+    return item.timelineVariants[currentWeatherMode];
+  }
+  return item.timeline || [];
+}
+
+function copyButton(value, label = "복사") {
+  return `<button class="action-chip" type="button" data-copy="${escapeHtml(value)}">${label}</button>`;
 }
 
 function renderTrace(item) {
@@ -125,25 +147,31 @@ function attachOpsHandlers() {
   });
 }
 
-function weatherModeLabel(mode) {
-  if (mode === "rain") return "비 운영안";
-  if (mode === "fatigue") return "피곤 운영안";
-  return "맑음 운영안";
-}
-
-function weatherVariantFor(item) {
-  return item.weatherVariants?.[currentWeatherMode] || null;
-}
-
-function timelineFor(item) {
-  if (currentWeatherMode !== "clear" && item.timelineVariants?.[currentWeatherMode]?.length) {
-    return item.timelineVariants[currentWeatherMode];
+function renderRiskBadges(items = []) {
+  if (!items.length) {
+    return "";
   }
-  return item.timeline || [];
+
+  return `
+    <div class="badge-row">
+      ${items.map((item) => `<span class="risk-badge">${item}</span>`).join("")}
+    </div>
+  `;
 }
 
-function copyButton(value, label = "복사") {
-  return `<button class="action-chip" type="button" data-copy="${escapeHtml(value)}">${label}</button>`;
+function renderSupportList(title, items = [], className = "") {
+  if (!items.length) {
+    return "";
+  }
+
+  return `
+    <div class="support-box ${className}">
+      <strong>${title}</strong>
+      <div class="micro-list">
+        ${items.map((item) => `<span>${item}</span>`).join("")}
+      </div>
+    </div>
+  `;
 }
 
 function scrollToTabPanel(tab) {
@@ -186,6 +214,41 @@ function setContentTab(tab, focusButton = false, shouldScroll = false) {
   }
 }
 
+function initScrollSpy() {
+  if (tabObserver) {
+    tabObserver.disconnect();
+  }
+
+  const panels = document.querySelectorAll("[data-tab-panel]");
+  if (!panels.length) {
+    return;
+  }
+
+  tabObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) {
+        return;
+      }
+
+      const tab = visible.target.dataset.tabPanel;
+      if (tab && tab !== currentContentTab) {
+        setContentTab(tab, false, false);
+      }
+    },
+    {
+      root: null,
+      threshold: [0.2, 0.4, 0.6],
+      rootMargin: "-120px 0px -55% 0px"
+    }
+  );
+
+  panels.forEach((panel) => tabObserver.observe(panel));
+}
+
 function initContentTabs() {
   const buttons = Array.from(document.querySelectorAll("[data-content-tab]"));
   if (!buttons.length) {
@@ -199,7 +262,7 @@ function initContentTabs() {
 
   revealAllTabPanels();
 
-  buttons.forEach((button, index) => {
+  buttons.forEach((button) => {
     button.addEventListener("click", () => {
       setContentTab(button.dataset.contentTab, false, true);
     });
@@ -227,7 +290,8 @@ function initContentTabs() {
     });
   });
 
-  setContentTab(currentContentTab);
+  setContentTab(currentContentTab, false, false);
+  initScrollSpy();
 }
 
 function bindContentTabEvents() {
@@ -329,7 +393,7 @@ function renderComms(data) {
     .map(
       (item, index) => `
         <article class="comm-item">
-          <div class="comm-step">0${index + 1}</div>
+          <div class="comm-step">${String(index + 1).padStart(2, "0")}</div>
           <div class="comm-route">${item.route}</div>
           <div class="comm-body">${item.body}</div>
         </article>
@@ -374,16 +438,22 @@ function renderTimelineItem(item, dayLabel, index) {
 
   const meta = [];
   if (item.meal) {
-    meta.push(`식사: ${item.meal.name}`);
+    meta.push(`식당: ${item.meal.name}`);
     meta.push(`예산: ${item.meal.budget}`);
     meta.push(`추천 주문: ${item.meal.picks}`);
   }
   if (item.attraction) {
-    meta.push(`어트랙션: ${item.attraction.name}`);
+    meta.push(`장소: ${item.attraction.name}`);
     meta.push(`이유: ${item.attraction.why}`);
     if (item.attraction.budget) {
       meta.push(`예산: ${item.attraction.budget}`);
     }
+  }
+  if (item.cutline) {
+    meta.push(`복귀 기준: ${item.cutline}`);
+  }
+  if (item.fallback) {
+    meta.push(`대체안: ${item.fallback}`);
   }
 
   return `
@@ -407,8 +477,9 @@ function renderTimelineItem(item, dayLabel, index) {
 
 function renderItinerary(data) {
   document.getElementById("itinerary-grid").innerHTML = data.itinerary
-    .map(
-      (item) => `
+    .map((item) => {
+      const weatherVariant = weatherVariantFor(item);
+      return `
         <article class="day-card">
           <div class="day-top">
             <div>
@@ -418,21 +489,24 @@ function renderItinerary(data) {
             <div class="day-time">${item.time}</div>
           </div>
           <p>${item.summary}</p>
+          ${renderRiskBadges(item.riskBadges)}
           ${renderTrace(item)}
           <div class="route-list">
             ${item.route.map((step) => `<span>${step}</span>`).join("")}
           </div>
-          <div class="micro-list">
-            ${item.notes.map((note) => `<span>${note}</span>`).join("")}
-          </div>
+          ${renderSupportList("운영 포인트", item.notes)}
+          ${item.comfortStop ? renderSupportList("회복 포인트", [item.comfortStop]) : ""}
+          ${item.cutline ? renderSupportList("복귀 컷라인", [item.cutline], "support-strong") : ""}
+          ${item.dinnerFallbacks?.length ? renderSupportList("저녁 대체안", item.dinnerFallbacks) : ""}
+          ${item.mustRecheck?.length ? renderSupportList("당일 재확인", item.mustRecheck) : ""}
           ${
-            weatherVariantFor(item)
+            weatherVariant
               ? `
                 <div class="variant-panel">
                   <strong>${weatherModeLabel(currentWeatherMode)}</strong>
-                  <p>${weatherVariantFor(item).summary}</p>
+                  <p>${weatherVariant.summary}</p>
                   <div class="micro-list">
-                    ${weatherVariantFor(item).items.map((line) => `<span>${line}</span>`).join("")}
+                    ${weatherVariant.items.map((line) => `<span>${line}</span>`).join("")}
                   </div>
                 </div>
               `
@@ -447,8 +521,8 @@ function renderItinerary(data) {
               : ""
           }
         </article>
-      `
-    )
+      `;
+    })
     .join("");
   attachTodoHandlers();
   attachTimelineHandlers();
@@ -506,39 +580,6 @@ function renderOptions(data) {
     .join("");
 }
 
-function renderPhrases(data) {
-  const root = document.getElementById("phrase-grid");
-  if (!root || !data.phrasesByDay) {
-    return;
-  }
-
-  root.innerHTML = data.phrasesByDay
-    .map(
-      (group) => `
-        <article class="phrase-card">
-          <span class="day-badge">${group.day}</span>
-          <h3>${group.title}</h3>
-          <p>${group.summary}</p>
-          <div class="phrase-list">
-            ${group.phrases
-              .map(
-                (phrase) => `
-                  <div class="phrase-item">
-                    <strong>${phrase.scene}</strong>
-                    <div class="phrase-jp">${phrase.jp}</div>
-                    <div class="phrase-romaji">${phrase.romaji}</div>
-                    <div class="phrase-ko">${phrase.ko}</div>
-                  </div>
-                `
-              )
-              .join("")}
-          </div>
-        </article>
-      `
-    )
-    .join("");
-}
-
 function renderOpsCards(data, key, targetId) {
   const root = document.getElementById(targetId);
   if (!root || !data[key]) {
@@ -553,23 +594,19 @@ function renderOpsCards(data, key, targetId) {
           <h3>${item.title}</h3>
           <p>${item.summary}</p>
           ${renderTrace(item)}
-          ${
-            key === "reservationOps"
-              ? renderOpsChecklist(key, item.label, item.items)
-              : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`
-          }
-          ${
-            item.links?.length
-              ? `<div class="timeline-links">${item.links
-                  .map(
-                    (link) => `
-                      <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
-                      ${copyButton(link.url)}
-                    `
-                  )
-                  .join("")}</div>`
-              : ""
-          }
+          ${item.priority ? `<div class="timeline-meta"><span>우선순위: ${item.priority}</span></div>` : ""}
+          ${item.items ? (key === "reservationOps" ? renderOpsChecklist(key, item.label, item.items) : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`) : ""}
+          ${item.watchouts?.length ? renderSupportList("주의할 점", item.watchouts) : ""}
+          ${item.buyIf?.length ? renderSupportList("이럴 때 담기", item.buyIf) : ""}
+          ${item.skipIf?.length ? renderSupportList("이럴 때 보류", item.skipIf) : ""}
+          ${item.links?.length ? `<div class="timeline-links">${item.links
+            .map(
+              (link) => `
+                <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+                ${copyButton(link.url)}
+              `
+            )
+            .join("")}</div>` : ""}
         </article>
       `
     )
@@ -579,6 +616,149 @@ function renderOpsCards(data, key, targetId) {
     attachOpsHandlers();
   }
   attachTimelineHandlers();
+}
+
+function renderBudgetSwitch(data) {
+  const root = document.getElementById("budget-switch");
+  const keys = Object.keys(data.budgets);
+  const defaultKey = keys.includes("balanced") ? "balanced" : keys[0];
+  root.innerHTML = keys
+    .map(
+      (key) => `
+        <button class="${defaultKey === key ? "active" : ""}" type="button" data-budget="${key}">
+          ${data.budgets[key].name}
+        </button>
+      `
+    )
+    .join("");
+
+  root.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      root.querySelectorAll("button").forEach((el) => el.classList.remove("active"));
+      button.classList.add("active");
+      renderBudgetPanel(data, button.dataset.budget);
+    });
+  });
+}
+
+function renderBudgetPanel(data, key) {
+  const budget = data.budgets[key];
+  document.getElementById("budget-panel").innerHTML = `
+    <div class="budget-summary">
+      <div>
+        <p class="section-label">가족 체류비</p>
+        <h3>${budget.name}</h3>
+        <div class="price-display">
+          <strong>${budget.total}</strong>
+          <span>가족 3인 기준 총예산</span>
+        </div>
+        <p>${budget.description}</p>
+        <p class="budget-line budget-line-note">
+          <span>운영 메모</span>
+          <strong>${budget.note}</strong>
+        </p>
+      </div>
+      <div class="budget-lines">
+        ${budget.lines
+          .map(
+            ([label, price]) => `
+              <div class="budget-line">
+                <span>${label}</span>
+                <strong>${price}</strong>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderFoodPlanCards(data) {
+  const root = document.getElementById("day-meal-grid");
+  if (!root) return;
+
+  root.innerHTML = data.dayMealPlans
+    .map(
+      (item) => `
+        <article class="ops-card meal-plan-card">
+          <span class="day-badge">${item.day}</span>
+          <h3>${item.area}</h3>
+          <p>${item.summary}</p>
+          ${renderTrace(item)}
+          <div class="support-box">
+            <strong>1순위 식사</strong>
+            <div class="micro-list">
+              <span>${item.primary}</span>
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>대기 길 때 대체</strong>
+            <div class="micro-list">
+              ${item.backups.map((line) => `<span>${line}</span>`).join("")}
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>아이 메뉴 안전지대</strong>
+            <div class="micro-list">
+              <span>${item.childSafe}</span>
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>호텔 복귀용 백업</strong>
+            <div class="micro-list">
+              <span>${item.hotelFallback}</span>
+            </div>
+          </div>
+          ${item.links?.length ? `<div class="timeline-links">${item.links
+            .map(
+              (link) => `
+                <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+                ${copyButton(link.url)}
+              `
+            )
+            .join("")}</div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderFood(data) {
+  document.getElementById("nostalgia-list").innerHTML = data.nostalgiaFoods.map((item) => `<li>${item}</li>`).join("");
+  document.getElementById("verified-list").innerHTML = data.verifiedFoods
+    .map(
+      (item) => `
+        <div class="verified-item">
+          <strong>${item.name}</strong>
+          <p>${item.detail}</p>
+          <div class="timeline-meta">
+            <span>${item.area}</span>
+            <span>${item.use}</span>
+          </div>
+          <div class="timeline-links">
+            <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">공식 정보 보기</a>
+            ${copyButton(item.link)}
+          </div>
+        </div>
+      `
+    )
+    .join("");
+  renderFoodPlanCards(data);
+  attachTimelineHandlers();
+}
+
+function renderGuide(data) {
+  document.getElementById("guide-grid").innerHTML = data.guideNotes
+    .map(
+      (item) => `
+        <article class="guide-card">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderMapToolbar(data) {
@@ -612,8 +792,8 @@ function renderMaps(data) {
           <h3>${item.name}</h3>
           <p>${item.note}</p>
           <div class="map-links">
-            <a class="map-link" href="${item.google}" target="_blank" rel="noreferrer">구글 지도</a>
-            <a class="map-link" href="${item.osm}" target="_blank" rel="noreferrer">오픈스트리트맵</a>
+            <a class="map-link" href="${item.google}" target="_blank" rel="noreferrer">Google 지도</a>
+            <a class="map-link" href="${item.osm}" target="_blank" rel="noreferrer">OpenStreetMap</a>
           </div>
         </article>
       `
@@ -668,7 +848,7 @@ function drawMapPoints(data, selectedDay) {
       <strong>${point.name}</strong><br/>
       ${point.day}<br/>
       ${point.note}<br/>
-      <a href="${point.google}" target="_blank" rel="noreferrer">구글 지도</a>
+      <a href="${point.google}" target="_blank" rel="noreferrer">Google 지도</a>
     `);
 
     mapMarkers.push(marker);
@@ -686,94 +866,6 @@ function drawMapPoints(data, selectedDay) {
   } else if (latlngs.length === 1) {
     tripMap.setView(latlngs[0], 12);
   }
-}
-
-function renderBudgetSwitch(data) {
-  const root = document.getElementById("budget-switch");
-  const keys = Object.keys(data.budgets);
-  const defaultKey = keys.includes("balanced") ? "balanced" : keys[0];
-  root.innerHTML = keys
-    .map(
-      (key) => `
-        <button class="${defaultKey === key ? "active" : ""}" type="button" data-budget="${key}">
-          ${data.budgets[key].name}
-        </button>
-      `
-    )
-    .join("");
-
-  root.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", () => {
-      root.querySelectorAll("button").forEach((el) => el.classList.remove("active"));
-      button.classList.add("active");
-      renderBudgetPanel(data, button.dataset.budget);
-    });
-  });
-}
-
-function renderBudgetPanel(data, key) {
-  const budget = data.budgets[key];
-  document.getElementById("budget-panel").innerHTML = `
-    <div class="budget-summary">
-      <div>
-        <p class="section-label">가족 체류비</p>
-        <h3>${budget.name}</h3>
-        <div class="price-display">
-          <strong>${budget.total}</strong>
-          <span>가족 3인 기준 체류비</span>
-        </div>
-        <p>${budget.description}</p>
-        <p class="budget-line budget-line-note">
-          <span>운영 메모</span>
-          <strong>${budget.note}</strong>
-        </p>
-      </div>
-      <div class="budget-lines">
-        ${budget.lines
-          .map(
-            ([label, price]) => `
-              <div class="budget-line">
-                <span>${label}</span>
-                <strong>${price}</strong>
-              </div>
-            `
-          )
-          .join("")}
-      </div>
-    </div>
-  `;
-}
-
-function renderFood(data) {
-  document.getElementById("nostalgia-list").innerHTML = data.nostalgiaFoods.map((item) => `<li>${item}</li>`).join("");
-  document.getElementById("verified-list").innerHTML = data.verifiedFoods
-    .map(
-      (item) => `
-        <div class="verified-item">
-          <strong>${item.name}</strong>
-          <p>${item.detail}</p>
-          <div class="timeline-links">
-            <a class="timeline-link" href="${item.link}" target="_blank" rel="noreferrer">공식 정보 보기</a>
-            ${copyButton(item.link)}
-          </div>
-        </div>
-      `
-    )
-    .join("");
-  attachTimelineHandlers();
-}
-
-function renderGuide(data) {
-  document.getElementById("guide-grid").innerHTML = data.guideNotes
-    .map(
-      (item) => `
-        <article class="guide-card">
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-        </article>
-      `
-    )
-    .join("");
 }
 
 function renderSources(data) {
@@ -836,7 +928,6 @@ async function main() {
     renderPhotos(data);
     renderWeatherSwitch(data);
     renderItinerary(data);
-    renderPhrases(data);
     renderOpsCards(data, "reservationOps", "reservation-grid");
     renderOpsCards(data, "familyComfortOps", "comfort-grid");
     renderOpsCards(data, "memoryMissions", "memory-grid");
@@ -847,9 +938,9 @@ async function main() {
     renderBudgetSwitch(data);
     renderBudgetPanel(data, data.budgets.balanced ? "balanced" : Object.keys(data.budgets)[0]);
     renderFood(data);
+    renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderOpsCards(data, "shoppingHighlights", "shopping-highlights-grid");
     renderOpsCards(data, "shoppingOps", "shopping-grid");
-    renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderGuide(data);
     renderSources(data);
     initContentTabs();
