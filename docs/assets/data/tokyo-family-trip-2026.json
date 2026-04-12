@@ -1475,29 +1475,29 @@
   "mapAnchors": [
     {
       "day": "Day 1",
-      "name": "오사키, 아카바네, 신주쿠",
-      "note": "숙소 안정성, 추억 복원, 첫날 서쪽 도쿄 예열을 잇는 축",
+      "name": "오사키역 -> 아카바네 -> 신주쿠",
+      "note": "오사키역에서 출발해 추억 복원과 첫날 서쪽 도쿄 예열을 잇는 이동 축",
       "google": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Station",
       "osm": "https://www.openstreetmap.org/search?query=Shinjuku%20Station"
     },
     {
       "day": "Day 2",
-      "name": "츠키지, 센소지, 아키하바라, 시부야, 도쿄타워",
-      "note": "동쪽 도쿄에서 시부야와 야경으로 이어지는 핵심 종일 축",
+      "name": "오사키역 -> 츠키지 -> 센소지 -> 아키하바라 -> 시부야 -> 도쿄타워",
+      "note": "오사키역에서 출발해 동쪽 도쿄 핵심과 시부야, 야경까지 이어지는 종일 이동 축",
       "google": "https://www.google.com/maps/search/?api=1&query=Tokyo+Tower",
       "osm": "https://www.openstreetmap.org/search?query=Tokyo%20Tower"
     },
     {
       "day": "Day 3",
-      "name": "오다이바",
-      "note": "후지큐 전날 체력을 비축하는 메인 체험축",
+      "name": "오사키역 -> 오다이바",
+      "note": "오사키역에서 출발해 오다이바 실내 체험과 쇼핑을 안정적으로 묶는 이동 축",
       "google": "https://www.google.com/maps/search/?api=1&query=Odaiba",
       "osm": "https://www.openstreetmap.org/search?query=Odaiba"
     },
     {
       "day": "Day 4",
-      "name": "후지큐 하이랜드",
-      "note": "후지산권 전일 원정의 중심축",
+      "name": "오사키역 -> 바스타 신주쿠 -> 후지큐 하이랜드",
+      "note": "오사키역에서 출발해 바스타 신주쿠를 거쳐 후지큐 하이랜드로 가는 전일 원정 축",
       "google": "https://www.google.com/maps/search/?api=1&query=Fuji-Q+Highland",
       "osm": "https://www.openstreetmap.org/search?query=Fuji-Q%20Highland"
     }

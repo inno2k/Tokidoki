@@ -7,6 +7,7 @@ let currentWeatherMode = localStorage.getItem("tokidoki-weather-mode") || "clear
 let currentContentTab = localStorage.getItem("tokidoki-content-tab") || "overview";
 let tabObserver;
 let sectionObserver;
+let navSyncFrame = null;
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -207,6 +208,54 @@ function scrollToSection(sectionId) {
   });
 }
 
+function scheduleNavigationSync() {
+  if (navSyncFrame) {
+    return;
+  }
+
+  navSyncFrame = window.requestAnimationFrame(() => {
+    navSyncFrame = null;
+    syncNavigationFromScroll();
+  });
+}
+
+function syncNavigationFromScroll() {
+  const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+  if (!panels.length) {
+    return;
+  }
+
+  const line = window.scrollY + currentStickyOffset() + 16;
+  let activePanel = panels[0];
+
+  panels.forEach((panel) => {
+    const top = panel.getBoundingClientRect().top + window.scrollY;
+    if (top <= line) {
+      activePanel = panel;
+    }
+  });
+
+  const nextTab = activePanel.dataset.tabPanel;
+  if (nextTab && nextTab !== currentContentTab) {
+    setContentTab(nextTab, false, false);
+  }
+
+  const sections = panelSectionsFor(currentContentTab);
+  if (!sections.length) {
+    return;
+  }
+
+  let activeSection = sections[0];
+  sections.forEach((section) => {
+    const top = section.element.getBoundingClientRect().top + window.scrollY;
+    if (top <= line) {
+      activeSection = section;
+    }
+  });
+
+  setActiveSectionChip(activeSection.id);
+}
+
 function revealAllTabPanels() {
   document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
     panel.hidden = false;
@@ -331,6 +380,7 @@ function renderSectionJumpbar(tab) {
 
   setActiveSectionChip(sections[0].id);
   initSectionObserver(tab);
+  scheduleNavigationSync();
 }
 
 function setContentTab(tab, focusButton = false, shouldScroll = false) {
@@ -359,34 +409,16 @@ function initScrollSpy() {
     tabObserver.disconnect();
   }
 
-  const panels = document.querySelectorAll("[data-tab-panel]");
-  if (!panels.length) {
-    return;
+  if (sectionObserver) {
+    sectionObserver.disconnect();
   }
 
-  tabObserver = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (!visible) {
-        return;
-      }
-
-      const tab = visible.target.dataset.tabPanel;
-      if (tab && tab !== currentContentTab) {
-        setContentTab(tab, false, false);
-      }
-    },
-    {
-      root: null,
-      threshold: [0.2, 0.4, 0.6],
-      rootMargin: "-120px 0px -55% 0px"
-    }
-  );
-
-  panels.forEach((panel) => tabObserver.observe(panel));
+  if (!window.__TOKIDOKI_SCROLL_SYNC_BOUND__) {
+    window.addEventListener("scroll", scheduleNavigationSync, { passive: true });
+    window.addEventListener("resize", scheduleNavigationSync);
+    window.__TOKIDOKI_SCROLL_SYNC_BOUND__ = true;
+  }
+  scheduleNavigationSync();
 }
 
 function initContentTabs() {
@@ -1046,6 +1078,7 @@ function renderMaps(data) {
         <article class="map-card">
           <small>${item.day}</small>
           <h3>${item.name}</h3>
+          <p><strong>출발:</strong> 오사키역</p>
           <p>${item.note}</p>
           <div class="map-links">
             <a class="map-link" href="${item.google}" target="_blank" rel="noreferrer">Google 지도</a>
@@ -1088,7 +1121,19 @@ function drawMapPoints(data, selectedDay) {
     tripMap.removeLayer(routeLine);
   }
 
-  const points = selectedDay === "all" ? data.mapPoints : data.mapPoints.filter((point) => point.day === selectedDay);
+  const originPoint = data.mapPoints.find((point) => point.name === "오사키");
+  let points = selectedDay === "all" ? data.mapPoints : data.mapPoints.filter((point) => point.day === selectedDay);
+
+  if (selectedDay !== "all" && originPoint && !points.some((point) => point.name === originPoint.name)) {
+    points = [
+      {
+        ...originPoint,
+        day: selectedDay,
+        note: "오사키역 출발 기준"
+      },
+      ...points
+    ];
+  }
   const latlngs = [];
 
   points.forEach((point) => {
