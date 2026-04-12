@@ -1,4 +1,4 @@
-const APP_VERSION = "opsdetail2";
+const APP_VERSION = "fujiqdayflow2";
 
 let tripMap;
 let mapMarkers = [];
@@ -439,8 +439,14 @@ function renderTimelineItem(item, dayLabel, index) {
   const meta = [];
   if (item.meal) {
     meta.push(`식당: ${item.meal.name}`);
+    if (item.meal.genre) {
+      meta.push(`장르: ${item.meal.genre}`);
+    }
     meta.push(`예산: ${item.meal.budget}`);
     meta.push(`추천 주문: ${item.meal.picks}`);
+    if (item.meal.reason) {
+      meta.push(`선정 이유: ${item.meal.reason}`);
+    }
   }
   if (item.attraction) {
     meta.push(`장소: ${item.attraction.name}`);
@@ -494,6 +500,7 @@ function renderItinerary(data) {
           <div class="route-list">
             ${item.route.map((step) => `<span>${step}</span>`).join("")}
           </div>
+          ${item.mealFlow?.length ? renderSupportList("핵심 식사 흐름", item.mealFlow, "support-strong") : ""}
           ${renderSupportList("운영 포인트", item.notes)}
           ${item.comfortStop ? renderSupportList("회복 포인트", [item.comfortStop]) : ""}
           ${item.cutline ? renderSupportList("복귀 컷라인", [item.cutline], "support-strong") : ""}
@@ -580,13 +587,69 @@ function renderOptions(data) {
     .join("");
 }
 
-function renderOpsCards(data, key, targetId) {
+function renderOpsItems(items, targetId) {
   const root = document.getElementById(targetId);
-  if (!root || !data[key]) {
+  if (!root || !items?.length) {
     return;
   }
 
-  root.innerHTML = data[key]
+  const renderShoppingProducts = (products = []) => {
+    if (!products.length) return "";
+    return `
+      <div class="support-box support-strong">
+        <strong>대표 상품 리스트</strong>
+        <div class="product-grid">
+          ${products
+            .map(
+              (product) => `
+                <article class="product-card">
+                  <h4>${product.name}</h4>
+                  <div class="timeline-meta">
+                    ${product.price ? `<span>대략 ${product.price}</span>` : ""}
+                    ${product.store ? `<span>구매처: ${product.store}</span>` : ""}
+                  </div>
+                  ${product.note ? `<p>${product.note}</p>` : ""}
+                  ${product.link ? `<div class="timeline-links"><a class="timeline-link" href="${product.link}" target="_blank" rel="noreferrer">상품/브랜드 보기</a>${copyButton(product.link)}</div>` : ""}
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  const renderShoppingDestinations = (destinations = []) => {
+    if (!destinations.length) return "";
+    return `
+      <div class="support-box">
+        <strong>둘러볼 매장과 가는 방법</strong>
+        <div class="destination-grid">
+          ${destinations
+            .map(
+              (spot) => `
+                <article class="destination-card">
+                  <h4>${spot.name}</h4>
+                  <div class="timeline-meta">
+                    ${spot.area ? `<span>${spot.area}</span>` : ""}
+                    ${spot.station ? `<span>하차역: ${spot.station}</span>` : ""}
+                  </div>
+                  ${spot.note ? `<p>${spot.note}</p>` : ""}
+                  <div class="timeline-links">
+                    ${spot.url ? `<a class="timeline-link" href="${spot.url}" target="_blank" rel="noreferrer">매장 정보</a>${copyButton(spot.url)}` : ""}
+                    ${spot.from && spot.to ? `<a class="timeline-link" href="${mapRouteUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 지도 루트</a>${copyButton(mapRouteUrl(spot.from, spot.to))}` : ""}
+                    ${spot.from && spot.to ? `<a class="timeline-link" href="${transitUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>${copyButton(transitUrl(spot.from, spot.to))}` : ""}
+                  </div>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  root.innerHTML = items
     .map(
       (item) => `
         <article class="ops-card">
@@ -595,7 +658,12 @@ function renderOpsCards(data, key, targetId) {
           <p>${item.summary}</p>
           ${renderTrace(item)}
           ${item.priority ? `<div class="timeline-meta"><span>우선순위: ${item.priority}</span></div>` : ""}
-          ${item.items ? (key === "reservationOps" ? renderOpsChecklist(key, item.label, item.items) : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`) : ""}
+          ${item.priceNote ? `<div class="timeline-meta"><span>${item.priceNote}</span></div>` : ""}
+          ${item.routeFit?.length ? renderSupportList("잘 맞는 일정 구간", item.routeFit, "support-strong") : ""}
+          ${item.categoryFit?.length ? renderSupportList("이 구간에서 보기 좋은 카테고리", item.categoryFit, "support-strong") : ""}
+          ${item.items ? (item._group === "reservationOps" ? renderOpsChecklist(item._group, item.label, item.items) : `<ul>${item.items.map((line) => `<li>${line}</li>`).join("")}</ul>`) : ""}
+          ${item._group === "shoppingHighlights" ? renderShoppingProducts(item.products) : ""}
+          ${(item._group === "shoppingHighlights" || item._group === "shoppingOps") ? renderShoppingDestinations(item.destinations) : ""}
           ${item.watchouts?.length ? renderSupportList("주의할 점", item.watchouts) : ""}
           ${item.buyIf?.length ? renderSupportList("이럴 때 담기", item.buyIf) : ""}
           ${item.skipIf?.length ? renderSupportList("이럴 때 보류", item.skipIf) : ""}
@@ -612,10 +680,23 @@ function renderOpsCards(data, key, targetId) {
     )
     .join("");
 
-  if (key === "reservationOps") {
+  if (items.some((item) => item._group === "reservationOps")) {
     attachOpsHandlers();
   }
   attachTimelineHandlers();
+}
+
+function renderOpsCards(data, key, targetId) {
+  const items = (data[key] || []).map((item) => ({ ...item, _group: key }));
+  renderOpsItems(items, targetId);
+}
+
+function renderPrepAndReservationOps(data, targetId) {
+  const items = [
+    ...(data.travelPrepOps || []).map((item) => ({ ...item, _group: "travelPrepOps" })),
+    ...(data.reservationOps || []).map((item) => ({ ...item, _group: "reservationOps" }))
+  ];
+  renderOpsItems(items, targetId);
 }
 
 function renderBudgetSwitch(data) {
@@ -678,6 +759,37 @@ function renderFoodPlanCards(data) {
   const root = document.getElementById("day-meal-grid");
   if (!root) return;
 
+  const renderMealSlot = (slot) => `
+    <div class="support-box support-strong">
+      <strong>${slot.label}</strong>
+      <div class="micro-list">
+        <span>${slot.title}</span>
+        <span>장르: ${slot.genre}</span>
+        <span>${slot.why}</span>
+      </div>
+      <div class="support-box">
+        <strong>우선 후보</strong>
+        <div class="micro-list">
+          ${slot.choices.map((line) => `<span>${line}</span>`).join("")}
+        </div>
+      </div>
+      <div class="support-box">
+        <strong>대기 길 때 대체</strong>
+        <div class="micro-list">
+          ${slot.fallbacks.map((line) => `<span>${line}</span>`).join("")}
+        </div>
+      </div>
+      ${slot.links?.length ? `<div class="timeline-links">${slot.links
+        .map(
+          (link) => `
+            <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+            ${copyButton(link.url)}
+          `
+        )
+        .join("")}</div>` : ""}
+    </div>
+  `;
+
   root.innerHTML = data.dayMealPlans
     .map(
       (item) => `
@@ -692,6 +804,7 @@ function renderFoodPlanCards(data) {
               <span>${item.primary}</span>
             </div>
           </div>
+          ${item.meals?.length ? item.meals.map(renderMealSlot).join("") : ""}
           <div class="support-box">
             <strong>대기 길 때 대체</strong>
             <div class="micro-list">
@@ -928,11 +1041,11 @@ async function main() {
     renderPhotos(data);
     renderWeatherSwitch(data);
     renderItinerary(data);
-    renderOpsCards(data, "travelPrepOps", "travel-prep-grid");
-    renderOpsCards(data, "reservationOps", "reservation-grid");
+    renderPrepAndReservationOps(data, "travel-prep-grid");
     renderOpsCards(data, "familyComfortOps", "comfort-grid");
     renderOpsCards(data, "memoryMissions", "memory-grid");
     renderOpsCards(data, "weatherFallbacks", "weather-grid");
+    renderOpsCards(data, "fujiqOps", "fujiq-grid");
     renderOptions(data);
     renderMaps(data);
     initMap(data);
