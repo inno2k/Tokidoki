@@ -256,6 +256,60 @@ body::before {
   color: white;
 }
 
+.section-jumpbar {
+  position: sticky;
+  top: calc(10px + 74px);
+  z-index: 5;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 20px;
+  background: rgba(250, 246, 236, 0.88);
+  border: 1px solid rgba(33, 48, 41, 0.08);
+  box-shadow: 0 12px 28px rgba(69, 74, 49, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.section-jumpbar[hidden] {
+  display: none;
+}
+
+.section-jumpbar-track {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.section-jumpbar button {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(60, 93, 83, 0.08);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.94rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.section-jumpbar button:hover {
+  background: rgba(60, 93, 83, 0.16);
+  transform: translateY(-1px);
+}
+
+.section-jumpbar button.active {
+  background: rgba(210, 106, 66, 0.16);
+  color: var(--accent-deep);
+  box-shadow: inset 0 0 0 1px rgba(210, 106, 66, 0.18);
+}
+
+.section-jumpbar button:focus-visible {
+  outline: 3px solid rgba(210, 106, 66, 0.32);
+  outline-offset: 2px;
+}
+
 .tab-panel-hidden {
   display: none;
 }
@@ -884,6 +938,34 @@ body::before {
   margin-top: 12px;
 }
 
+.product-grid,
+.destination-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.product-card,
+.destination-card {
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(31, 36, 48, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.product-card h4,
+.destination-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.98rem;
+}
+
+.product-card p,
+.destination-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .budget-line {
   display: flex;
   justify-content: space-between;
@@ -917,6 +999,8 @@ body::before {
   .comm-body { grid-column: 2; }
   .ops-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .phrase-grid { grid-template-columns: 1fr; }
+  .product-grid,
+  .destination-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #trip-map,
   .map-frame iframe { min-height: 440px; }
 }
@@ -941,6 +1025,16 @@ body::before {
     font-size: 0.92rem;
   }
 
+  .section-jumpbar {
+    top: calc(10px + 72px);
+    padding: 9px 10px;
+  }
+
+  .section-jumpbar button {
+    padding: 9px 12px;
+    font-size: 0.9rem;
+  }
+
   .section {
     padding: 24px;
   }
@@ -948,6 +1042,11 @@ body::before {
   .ops-grid,
   .team-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .product-grid,
+  .destination-grid {
+    grid-template-columns: 1fr;
   }
 
   .trace-line {
@@ -982,6 +1081,15 @@ body::before {
   }
   .content-tabs button {
     min-width: max-content;
+  }
+  .section-jumpbar {
+    top: calc(8px + 74px);
+    padding: 8px 10px;
+    border-radius: 18px;
+  }
+  .section-jumpbar button {
+    padding: 8px 11px;
+    font-size: 0.88rem;
   }
   .team-grid { grid-template-columns: 1fr; }
   .ops-grid { grid-template-columns: 1fr; }
@@ -1037,6 +1145,10 @@ body::before {
 
   .content-tabs {
     border-radius: 18px;
+  }
+
+  .section-jumpbar {
+    top: calc(8px + 70px);
   }
 
   .content-tabs button {

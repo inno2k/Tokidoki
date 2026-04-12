@@ -6,6 +6,7 @@ let routeLine;
 let currentWeatherMode = localStorage.getItem("tokidoki-weather-mode") || "clear";
 let currentContentTab = localStorage.getItem("tokidoki-content-tab") || "overview";
 let tabObserver;
+let sectionObserver;
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -180,9 +181,26 @@ function scrollToTabPanel(tab) {
     return;
   }
 
+  const targetTop = panel.getBoundingClientRect().top + window.scrollY - currentStickyOffset();
+  window.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior: "smooth"
+  });
+}
+
+function currentStickyOffset() {
   const tabBar = document.querySelector(".content-tabs");
-  const offset = (tabBar?.offsetHeight || 0) + 24;
-  const targetTop = panel.getBoundingClientRect().top + window.scrollY - offset;
+  const jumpBar = document.querySelector(".section-jumpbar");
+  return (tabBar?.offsetHeight || 0) + (jumpBar?.offsetHeight || 0) + 34;
+}
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (!section) {
+    return;
+  }
+
+  const targetTop = section.getBoundingClientRect().top + window.scrollY - currentStickyOffset();
   window.scrollTo({
     top: Math.max(targetTop, 0),
     behavior: "smooth"
@@ -193,6 +211,108 @@ function revealAllTabPanels() {
   document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
     panel.hidden = false;
   });
+}
+
+function panelSectionsFor(tab) {
+  const panel = document.querySelector(`[data-tab-panel="${tab}"]`);
+  if (!panel) {
+    return [];
+  }
+
+  return Array.from(panel.querySelectorAll(":scope > .section")).map((section, index) => {
+    if (!section.id) {
+      section.id = `${tab}-section-${index + 1}`;
+    }
+
+    const customLabel = section.dataset.navLabel?.trim();
+    const heading = section.querySelector(".section-head h2")?.textContent?.trim();
+    const label = customLabel || heading || `섹션 ${index + 1}`;
+
+    return {
+      id: section.id,
+      label,
+      element: section
+    };
+  });
+}
+
+function setActiveSectionChip(sectionId) {
+  document.querySelectorAll(".section-jumpbar button").forEach((button) => {
+    const active = button.dataset.sectionTarget === sectionId;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-current", active ? "true" : "false");
+  });
+}
+
+function initSectionObserver(tab) {
+  if (sectionObserver) {
+    sectionObserver.disconnect();
+  }
+
+  const sections = panelSectionsFor(tab);
+  if (!sections.length) {
+    return;
+  }
+
+  sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible?.target?.id) {
+        return;
+      }
+
+      setActiveSectionChip(visible.target.id);
+    },
+    {
+      root: null,
+      threshold: [0.2, 0.45, 0.7],
+      rootMargin: `-${currentStickyOffset()}px 0px -45% 0px`
+    }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section.element));
+}
+
+function renderSectionJumpbar(tab) {
+  const root = document.getElementById("section-jumpbar");
+  if (!root) {
+    return;
+  }
+
+  const sections = panelSectionsFor(tab);
+  if (!sections.length) {
+    root.innerHTML = "";
+    root.hidden = true;
+    return;
+  }
+
+  root.hidden = false;
+  root.innerHTML = `
+    <div class="section-jumpbar-track">
+      ${sections
+        .map(
+          (section, index) => `
+            <button type="button" data-section-target="${section.id}" ${index === 0 ? 'aria-current="true"' : 'aria-current="false"'}>
+              ${section.label}
+            </button>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+
+  root.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      setActiveSectionChip(button.dataset.sectionTarget);
+      scrollToSection(button.dataset.sectionTarget);
+    });
+  });
+
+  setActiveSectionChip(sections[0].id);
+  initSectionObserver(tab);
 }
 
 function setContentTab(tab, focusButton = false, shouldScroll = false) {
@@ -208,6 +328,8 @@ function setContentTab(tab, focusButton = false, shouldScroll = false) {
       button.focus();
     }
   });
+
+  renderSectionJumpbar(currentContentTab);
 
   if (shouldScroll) {
     scrollToTabPanel(tab);
