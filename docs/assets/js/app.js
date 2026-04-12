@@ -770,8 +770,7 @@ function renderOpsItems(items, targetId) {
 
   const renderShoppingProducts = (products = []) => {
     if (!products.length) return "";
-    return `
-      <div class="support-box support-strong">
+    return       `<div class="support-box support-strong">
         <strong>대표 상품 리스트</strong>
         <div class="product-grid">
           ${products
@@ -780,24 +779,22 @@ function renderOpsItems(items, targetId) {
                 <article class="product-card">
                   <h4>${product.name}</h4>
                   <div class="timeline-meta">
-                    ${product.price ? `<span>대략 ${product.price}</span>` : ""}
-                    ${product.store ? `<span>구매처: ${product.store}</span>` : ""}
+                    ${product.price ? `<span>가격 ${product.price}</span>` : ""}
+                    ${product.store ? `<span>구매처 ${product.store}</span>` : ""}
                   </div>
                   ${product.note ? `<p>${product.note}</p>` : ""}
-                  ${product.link ? `<div class="timeline-links"><a class="timeline-link" href="${product.link}" target="_blank" rel="noreferrer">상품/브랜드 보기</a>${copyButton(product.link)}</div>` : ""}
+                  ${product.link ? `<div class="timeline-links"><a class="timeline-link" href="${product.link}" target="_blank" rel="noreferrer">상품·브랜드 보기</a>${copyButton(product.link)}</div>` : ""}
                 </article>
               `
             )
             .join("")}
         </div>
-      </div>
-    `;
+      </div>`;
   };
 
   const renderShoppingDestinations = (destinations = []) => {
     if (!destinations.length) return "";
-    return `
-      <div class="support-box">
+    return       `<div class="support-box">
         <strong>둘러볼 매장과 가는 방법</strong>
         <div class="destination-grid">
           ${destinations
@@ -807,7 +804,7 @@ function renderOpsItems(items, targetId) {
                   <h4>${spot.name}</h4>
                   <div class="timeline-meta">
                     ${spot.area ? `<span>${spot.area}</span>` : ""}
-                    ${spot.station ? `<span>하차역: ${spot.station}</span>` : ""}
+                    ${spot.station ? `<span>하차역 ${spot.station}</span>` : ""}
                   </div>
                   ${spot.note ? `<p>${spot.note}</p>` : ""}
                   <div class="timeline-links">
@@ -820,8 +817,7 @@ function renderOpsItems(items, targetId) {
             )
             .join("")}
         </div>
-      </div>
-    `;
+      </div>`;
   };
 
   root.innerHTML = items
@@ -832,7 +828,7 @@ function renderOpsItems(items, targetId) {
           <h3>${item.title}</h3>
           <p>${item.summary}</p>
           ${renderTrace(item)}
-          ${item.priority ? `<div class="timeline-meta"><span>우선순위: ${item.priority}</span></div>` : ""}
+          ${item.priority ? `<div class="timeline-meta"><span>우선순위 ${item.priority}</span></div>` : ""}
           ${item.priceNote ? `<div class="timeline-meta"><span>${item.priceNote}</span></div>` : ""}
           ${item.routeFit?.length ? renderSupportList("잘 맞는 일정 구간", item.routeFit, "support-strong") : ""}
           ${item.categoryFit?.length ? renderSupportList("이 구간에서 보기 좋은 카테고리", item.categoryFit, "support-strong") : ""}
@@ -1041,12 +1037,24 @@ function renderGuide(data) {
     .map(
       (item) => `
         <article class="guide-card">
+          ${item.label ? `<p class="section-label">${item.label}</p>` : ""}
           <h3>${item.title}</h3>
           <p>${item.text}</p>
+          ${item.owner ? `<div class="timeline-meta"><span>담당: ${item.owner}</span></div>` : ""}
+          ${item.items?.length ? `<div class="support-box"><strong>현장 운영 포인트</strong><div class="micro-list">${item.items.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${item.links?.length ? `<div class="timeline-links">${item.links
+            .map(
+              (link) => `
+                <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+                ${copyButton(link.url)}
+              `
+            )
+            .join("")}</div>` : ""}
         </article>
       `
     )
     .join("");
+  attachTimelineHandlers();
 }
 
 function renderMapToolbar(data) {
