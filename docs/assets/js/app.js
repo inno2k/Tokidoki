@@ -219,6 +219,24 @@ function panelSectionsFor(tab) {
     return [];
   }
 
+  if (tab === "itinerary") {
+    return Array.from(panel.querySelectorAll("#plan .day-card")).map((card, index) => {
+      if (!card.id) {
+        card.id = `itinerary-day-${index + 1}`;
+      }
+
+      const customLabel = card.dataset.navLabel?.trim();
+      const heading = card.querySelector(".day-label")?.textContent?.trim();
+      const label = customLabel || heading || `Day ${index + 1}`;
+
+      return {
+        id: card.id,
+        label,
+        element: card
+      };
+    });
+  }
+
   return Array.from(panel.querySelectorAll(":scope > .section")).map((section, index) => {
     if (!section.id) {
       section.id = `${tab}-section-${index + 1}`;
@@ -605,10 +623,10 @@ function renderTimelineItem(item, dayLabel, index) {
 
 function renderItinerary(data) {
   document.getElementById("itinerary-grid").innerHTML = data.itinerary
-    .map((item) => {
+    .map((item, dayIndex) => {
       const weatherVariant = weatherVariantFor(item);
       return `
-        <article class="day-card">
+        <article class="day-card" id="itinerary-day-${dayIndex + 1}" data-nav-label="${item.day}">
           <div class="day-top">
             <div>
               <div class="day-label">${item.day} · ${item.label}</div>
@@ -655,6 +673,9 @@ function renderItinerary(data) {
     .join("");
   attachTodoHandlers();
   attachTimelineHandlers();
+  if (currentContentTab === "itinerary") {
+    renderSectionJumpbar("itinerary");
+  }
 }
 
 function renderWeatherSwitch(data) {
