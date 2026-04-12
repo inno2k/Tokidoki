@@ -6,12 +6,12 @@
     <title>Tokyo Family Memory Trip 2026</title>
     <meta
       name="description"
-      content="아카바네의 추억을 다시 걷고, 11살 아들과 함께 도쿄를 설계하는 2026년 5월 가족 여행 운영 사이트"
+      content="아카바네의 추억을 다시 걷고, 11살 아들과 함께 도쿄를 여행하는 2026년 5월 가족 여행 운영 사이트"
     />
     <meta property="og:title" content="Tokyo Family Memory Trip 2026" />
     <meta
       property="og:description"
-      content="전문가 하네스가 협업해 만든 도쿄 가족여행 일정, 운영, 식사, 쇼핑 전략"
+      content="전문가 하네스를 바탕으로 만든 도쿄 가족여행 일정, 운영, 식사, 쇼핑 계획"
     />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -146,14 +146,14 @@
           aria-labelledby="tab-overview"
           data-tab-panel="overview"
         >
-          <section class="section intro-grid" data-nav-label="여행 시선">
+          <section class="section intro-grid" data-nav-label="여행 콘셉트">
             <article class="story-card">
-              <p class="section-label">여행 시선</p>
+              <p class="section-label">여행 콘셉트</p>
               <h2>이번 여행을 어떻게 읽어야 하는가</h2>
               <ul class="bullet-list" id="trip-lens"></ul>
             </article>
             <article class="story-card warm">
-              <p class="section-label">추억의 강도</p>
+              <p class="section-label">추억의 의미</p>
               <h2>이번 여행이 일반적인 도쿄 관광과 다른 이유</h2>
               <p id="memory-angle"></p>
             </article>
@@ -162,23 +162,23 @@
           <section class="section harness-bridge" data-nav-label="하네스 흐름">
             <div class="section-head">
               <p class="section-label">하네스 흐름</p>
-              <h2>팀의 판단이 실제 여행 운영으로 연결되는 방식</h2>
+              <h2>팀의 판단이 실제 여행 운영으로 연결되는 구조</h2>
               <p class="section-subcopy">
-                이 사이트는 단순한 여행 소개가 아니라, 전문가 에이전트가 판단하고 서로 검토한 결과를
-                실제 일정과 운영 카드에 연결해 보여주는 운영판입니다.
+                이 사이트는 단순한 여행 소개가 아니라, 전문가 에이전트의 판단과 운영 결론이 아래 카드에
+                직접 반영되도록 구성한 계획서입니다.
               </p>
             </div>
             <div class="harness-flow">
               <article class="bridge-card">
-                <strong>1. 팀 구성</strong>
-                <p>누가 어떤 관점으로 이번 여행을 설계했는지 먼저 보여줍니다.</p>
+                <strong>1. 팀 분석</strong>
+                <p>왜 이런 일정 구성이 나왔는지 여행 전문가 팀의 출발 가정을 먼저 보여줍니다.</p>
               </article>
               <article class="bridge-card">
                 <strong>2. 판단 로그</strong>
-                <p>에이전트가 무엇을 조정했고 왜 그렇게 판단했는지 핵심 흐름만 남겼습니다.</p>
+                <p>어떤 요청과 제약을 반영했고 왜 그런 결정을 했는지 흐름으로 설명합니다.</p>
               </article>
               <article class="bridge-card">
-                <strong>3. 실행 결과</strong>
+                <strong>3. 실제 반영</strong>
                 <p>일정, 운영, 식사, 쇼핑 카드에서 그 판단이 실제로 어떻게 반영됐는지 확인합니다.</p>
               </article>
             </div>
@@ -187,9 +187,9 @@
           <section class="section" data-nav-label="전문가 팀">
             <div class="section-head">
               <p class="section-label">전문가 팀</p>
-              <h2>이번 계획을 만든 에이전트 팀</h2>
+              <h2>이번 계획을 함께 설계한 에이전트 팀</h2>
               <p class="section-subcopy">
-                각 역할은 독립적으로 검토하지만, 최종 화면에서는 하나의 가족여행 운영안으로 통합됩니다.
+                각 전문가는 독립적으로 판단하되, 최종 화면에서는 하나의 운영계획으로 통합됩니다.
               </p>
             </div>
             <div class="team-grid" id="team-grid"></div>
@@ -198,21 +198,20 @@
           <section class="section" data-nav-label="통신 로그">
             <div class="section-head">
               <p class="section-label">작업 로그</p>
-              <h2>입력에서 조정, 결과까지 이어진 통신 흐름</h2>
+              <h2>입력에서 판단, 결과로 이어지는 팀 흐름</h2>
               <p class="section-subcopy">
-                장식용 로그가 아니라 실제 일정 조정의 근거가 된 통신만 남겼습니다.
+                마커용 로그가 아니라 실제 여행 설계가 어떻게 다듬어졌는지 보여주는 흐름입니다.
               </p>
             </div>
             <div class="comm-feed" id="comm-feed"></div>
           </section>
 
-          <section class="section" data-nav-label="무드보드">
+          <section class="section" data-nav-label="사진 보드">
             <div class="section-head">
-              <p class="section-label">무드보드</p>
-              <h2>사진으로 미리 보는 여행 분위기</h2>
+              <p class="section-label">사진 보드</p>
+              <h2>기억과 현재가 겹치는 시각적 단서</h2>
               <p class="section-subcopy">
-                아카바네의 기억, 도쿄 핵심 관광, 아들의 체험 축이 어떤 감정선으로 이어지는지 시각적으로
-                정리했습니다.
+                아카바네의 회상, 도쿄 재방문, 아들의 체험 포인트를 공간적으로 정리했습니다.
               </p>
             </div>
             <div class="photo-grid" id="photo-grid"></div>
@@ -227,13 +226,13 @@
           data-tab-panel="itinerary"
           hidden
         >
-          <section class="section" id="plan" data-nav-label="메인 일정">
+          <section class="section" id="plan" data-nav-label="핵심 일정">
             <div class="section-head split">
               <div>
                 <p class="section-label">핵심 일정</p>
-                <h2>메인 일정과 현장 체크포인트</h2>
+                <h2>날짜별 운영 카드와 체크리스트</h2>
                 <p class="section-subcopy">
-                  시간대별 타임라인, 복귀 컷라인, 저녁 대체안, 날씨 모드를 한 카드 안에서 같이 봅니다.
+                  시간대별 타임라인, 식사 흐름, 저녁 대체안, 날씨 모드를 한 카드 안에서 함께 봅니다.
                 </p>
               </div>
               <div class="weather-switch" id="weather-switch" aria-label="날씨 운영 모드 선택"></div>
@@ -244,9 +243,10 @@
           <section class="section alt-section" data-nav-label="후지큐 이동안">
             <div class="section-head">
               <p class="section-label">후지큐 이동안</p>
-              <h2>Day 4 후지큐 하이랜드 기본안과 백업안</h2>
+              <h2>Day 4 후지큐 하이랜드 기본안과 대체안</h2>
               <p class="section-subcopy">
-                직행 고속버스를 기본으로 두고, 좌석 부족이나 기상 변수에는 철도 대체안으로 전환할 수 있게 구성했습니다.
+                직행 고속버스를 기본으로 두고, 좌석 상황이나 피로도에 따라 철도 대체안도 볼 수 있게
+                정리했습니다.
               </p>
             </div>
             <div class="option-grid" id="option-grid"></div>
@@ -264,20 +264,20 @@
           <section class="section" data-nav-label="여행 준비">
             <div class="section-head">
               <p class="section-label">여행 준비와 재확인</p>
-              <h2>출발 전 준비, 출발 직전 재확인, 당일 아침 체크를 한 번에 보기</h2>
+              <h2>출발 전 준비, 출발 직전 재확인, 당일 아침 체크를 한 흐름으로</h2>
               <p class="section-subcopy">
-                입국 등록, 교통카드, 숙소 운영, 면세, 수하물, 운영시간 재확인까지 같은 흐름 안에서 관리합니다.
+                입국 준비, 교통카드, 숙소 운영, 면세, 필수 앱, 운영시간 재확인까지 한 번에 봅니다.
               </p>
             </div>
             <div class="ops-grid" id="travel-prep-grid"></div>
           </section>
 
-          <section class="section" data-nav-label="가족 컨디션">
+          <section class="section" data-nav-label="가족 편의">
             <div class="section-head">
-              <p class="section-label">가족 컨디션</p>
-              <h2>11살 아이와 부모가 버틸 수 있는 리듬 조절</h2>
+              <p class="section-label">가족 편의</p>
+              <h2>11살 아이와 부모 모두 버틸 수 있는 운영 장치</h2>
               <p class="section-subcopy">
-                휴식, 간식, 화장실, 코인로커, 환승 포기 기준까지 실제 현장에서 필요한 디테일을 모았습니다.
+                간식, 휴식, 화장실, 코인로커, 환승 완충 같은 현장 운영 포인트를 모았습니다.
               </p>
             </div>
             <div class="ops-grid" id="comfort-grid"></div>
@@ -286,9 +286,9 @@
           <section class="section" data-nav-label="추억 미션">
             <div class="section-head">
               <p class="section-label">추억 미션</p>
-              <h2>기억을 지금의 가족 여행으로 연결하는 장면</h2>
+              <h2>장소의 기억을 가족 여행으로 연결하는 장치</h2>
               <p class="section-subcopy">
-                관광 인증보다 가족 대화와 사진 미션을 남기는 데 초점을 둡니다.
+                예전 기억과 현재의 변화를 비교하고 사진 미션으로 남길 수 있도록 구성했습니다.
               </p>
             </div>
             <div class="ops-grid" id="memory-grid"></div>
@@ -297,9 +297,9 @@
           <section class="section" data-nav-label="날씨 대체안">
             <div class="section-head">
               <p class="section-label">날씨 대체안</p>
-              <h2>맑음, 비, 피곤 세 가지 운영 모드</h2>
+              <h2>맑음, 비, 피곤 모드에 따른 운영 변화</h2>
               <p class="section-subcopy">
-                같은 일정을 억지로 유지하기보다, 조건에 따라 무엇을 줄이고 남길지 먼저 정리했습니다.
+                일정을 새로 짜기보다, 상황에 맞춰 무엇을 줄이고 무엇을 남길지 바로 판단하게 돕습니다.
               </p>
             </div>
             <div class="ops-grid" id="weather-grid"></div>
@@ -307,10 +307,10 @@
 
           <section class="section" data-nav-label="후지큐 운영">
             <div class="section-head">
-              <p class="section-label">후지큐 원정</p>
-              <h2>티켓, 교통, 어트랙션, 식사·쇼핑까지 한 번에 보는 Day 4 운영판</h2>
+              <p class="section-label">후지큐 운영</p>
+              <h2>티켓, 교통, 패스트패스, 식사와 쇼핑까지 포함한 Day 4 운영안</h2>
               <p class="section-subcopy">
-                후지큐 하이랜드 전일 일정에 필요한 예약, 버스, 승차 전략, 파크 내 식사와 쇼핑 포인트를 따로 모았습니다.
+                후지큐 하이랜드 전일 일정에 필요한 예약, 이동, 탑승 우선순위와 식사 계획을 한곳에 모았습니다.
               </p>
             </div>
             <div class="ops-grid" id="fujiq-grid"></div>
@@ -328,14 +328,14 @@
           <section class="section" id="map" data-nav-label="지도">
             <div class="section-head">
               <p class="section-label">지도 흐름</p>
-              <h2>지도에서 보는 일자별 이동 축</h2>
+              <h2>오사키역 출발 기준 날짜별 이동 축</h2>
               <p class="section-subcopy">
-                날짜별 동선과 핵심 거점을 한눈에 확인하고, 개별 지도 링크로 바로 넘어갈 수 있습니다.
+                각 날짜에 어떤 축으로 이동하는지 한눈에 보고, 지도 링크로 바로 이동할 수 있습니다.
               </p>
             </div>
             <div class="map-shell">
               <div class="map-column">
-                <div class="map-toolbar" id="map-toolbar" aria-label="지도 날짜 필터"></div>
+                <div class="map-toolbar" id="map-toolbar" aria-label="지도 날짜 선택"></div>
                 <div class="map-frame">
                   <div id="trip-map" aria-label="도쿄 여행 지도"></div>
                 </div>
@@ -347,9 +347,9 @@
           <section class="section" data-nav-label="현지 가이드">
             <div class="section-head">
               <p class="section-label">현지 가이드</p>
-              <h2>현장에서 체감하는 실전 팁</h2>
+              <h2>현장에서 체감하는 운영 포인트</h2>
               <p class="section-subcopy">
-                교통, 식사, 결제, 비상 상황, 아이 동반 운영처럼 실제로 곧바로 체감되는 정보만 모았습니다.
+                교통, 식사, 날씨, 혼잡 상황, 결제 같은 현장 운영 정보를 모아 두었습니다.
               </p>
             </div>
             <div class="guide-grid" id="guide-grid"></div>
@@ -368,12 +368,12 @@
             <div class="section-head split">
               <div>
                 <p class="section-label">예산 운영</p>
-                <h2>가족 3인 기준 체류비 시나리오</h2>
+                <h2>가족 3인 기준 예산 시나리오</h2>
                 <p class="section-subcopy">
-                  식사, 교통, 쇼핑, 어트랙션을 함께 보며 어느 구간에서 지출 조절이 가능한지 확인합니다.
+                  식사, 교통, 쇼핑, 어트랙션을 포함한 전체 여행 비용의 감을 빠르게 확인합니다.
                 </p>
               </div>
-              <div class="budget-switch" id="budget-switch" aria-label="예산 모드 선택"></div>
+              <div class="budget-switch" id="budget-switch" aria-label="예산 수준 선택"></div>
             </div>
             <div class="budget-panel" id="budget-panel"></div>
           </section>
@@ -389,19 +389,19 @@
         >
           <section class="section" id="food" data-nav-label="식사 개요">
             <div class="section-head">
-              <p class="section-label">식사 전략</p>
-              <h2>추억 식당과 실패 확률이 낮은 운영형 식사</h2>
+              <p class="section-label">식사 개요</p>
+              <h2>추억 식사와 검증된 선택지를 함께 보는 구조</h2>
               <p class="section-subcopy">
-                추억의 체인, 지역별 안전지대, 데파치카와 마트 대체안까지 모두 포함해 식사 실패를 줄입니다.
+                추억의 체인, 장르별 선택권, 데파치카와 마트 대체안까지 함께 고려합니다.
               </p>
             </div>
             <div class="food-columns">
               <article class="food-card">
-                <h3>추억 복원 식사 라인업</h3>
+                <h3>추억 식사 라인업</h3>
                 <ul id="nostalgia-list" class="bullet-list compact"></ul>
               </article>
               <article class="food-card">
-                <h3>검증된 식사 거점</h3>
+                <h3>검증된 식사 후보</h3>
                 <div id="verified-list" class="verified-list"></div>
               </article>
             </div>
@@ -410,9 +410,9 @@
           <section class="section" data-nav-label="장르별 식당">
             <div class="section-head">
               <p class="section-label">장르별 식당</p>
-              <h2>라멘부터 스키야키까지 장르별 선택지</h2>
+              <h2>라멘부터 스시까지 장르별 선택권</h2>
               <p class="section-subcopy">
-                영상에서 반복 등장한 장르와 매장을 묶어, 그날 기분과 지역에 따라 빠르게 고를 수 있게 정리했습니다.
+                같은 지역에서도 취향과 상황에 따라 여러 선택지를 고를 수 있도록 구성했습니다.
               </p>
             </div>
             <div class="ops-grid" id="food-genre-grid"></div>
@@ -421,9 +421,9 @@
           <section class="section" data-nav-label="일자별 식사">
             <div class="section-head">
               <p class="section-label">일자별 식사 운영</p>
-              <h2>어디서 먹고, 막히면 어디로 빠질지</h2>
+              <h2>각 날짜의 1순위, 대기 시 대체안, 호텔 백업</h2>
               <p class="section-subcopy">
-                각 날짜별로 1순위, 대기 시 대체안, 아이 메뉴 안전지대, 호텔 복귀용 백업을 같이 정리했습니다.
+                일정 흐름에 맞게 점심과 저녁을 연결하고, 아이 메뉴와 복귀형 저녁까지 함께 봅니다.
               </p>
             </div>
             <div class="ops-grid meal-plan-grid" id="day-meal-grid"></div>
@@ -432,9 +432,9 @@
           <section class="section" data-nav-label="가성비 먹거리">
             <div class="section-head">
               <p class="section-label">가성비 먹거리</p>
-              <h2>백화점 식품관, 마트, 호텔 저녁 대체안</h2>
+              <h2>백화점 식품관, 마트, 호텔 복귀용 대체안</h2>
               <p class="section-subcopy">
-                외식만으로 채우지 않고, 피곤한 날과 대기 긴 날을 위한 고품질 대체안을 식사 전략에 편입했습니다.
+                외식만으로 버티지 않고, 좋은 품질의 대체 수단도 함께 계획에 넣었습니다.
               </p>
             </div>
             <div class="ops-grid" id="value-food-grid"></div>
@@ -452,9 +452,9 @@
           <section class="section" data-nav-label="쇼핑 카테고리">
             <div class="section-head">
               <p class="section-label">쇼핑 카테고리</p>
-              <h2>일본에서 보면 만족도가 높은 품목</h2>
+              <h2>일본에서 보기 좋은 쇼핑 품목</h2>
               <p class="section-subcopy">
-                기념품, 먹거리, 주류, 피규어, 미니카처럼 현지에서 사는 의미가 큰 품목을 우선순위와 리스크 기준으로 정리했습니다.
+                기념품, 먹거리, 주류, 피규어, 미니카처럼 일본에서 살 가치가 큰 품목을 정리했습니다.
               </p>
             </div>
             <div class="ops-grid" id="shopping-highlights-grid"></div>
@@ -465,7 +465,7 @@
               <p class="section-label">쇼핑 에이전트</p>
               <h2>동선에 맞춘 짧고 효율적인 쇼핑 정차</h2>
               <p class="section-subcopy">
-                Hands, 요도바시, 비쿠카메라, 돈키호테, 식품관을 일정 흐름 안에서 과몰입 없이 들르는 방식으로 설계했습니다.
+                Hands, 요도바시, 비쿠카메라, 돈키호테, 백화점 식품관을 여행 흐름 안에 짧게 섞었습니다.
               </p>
             </div>
             <div class="ops-grid" id="shopping-grid"></div>
@@ -482,10 +482,10 @@
         >
           <section class="section sources" id="verify" data-nav-label="출처와 재확인">
             <div class="section-head">
-              <p class="section-label">검증과 재확인</p>
-              <h2>어디까지 확인했고 무엇을 다시 봐야 하는가</h2>
+              <p class="section-label">출처와 재확인</p>
+              <h2>무엇을 확인했고 출발 전에 무엇을 다시 확인해야 하는가</h2>
               <p class="section-subcopy">
-                출발 직전에 다시 확인할 항목과, 현재 계획이 어떤 근거 위에 있는지 분리해서 보여줍니다.
+                최신 운영 정보와 재확인 포인트를 분리해서, 여행 직전 체크할 내용을 모았습니다.
               </p>
             </div>
             <div id="sources-list" class="sources-list"></div>
@@ -500,6 +500,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="./assets/js/app.js?v=fujiqdayflow2"></script>
+    <script src="./assets/js/app.js?v=encoding-fix-2"></script>
   </body>
 </html>

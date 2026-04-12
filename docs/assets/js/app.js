@@ -1,4 +1,4 @@
-const APP_VERSION = "west-east-fix-1";
+const APP_VERSION = "encoding-fix-2";
 
 let tripMap;
 let mapMarkers = [];
@@ -1124,15 +1124,31 @@ function drawMapPoints(data, selectedDay) {
   const originPoint = data.mapPoints.find((point) => point.name === "오사키");
   let points = selectedDay === "all" ? data.mapPoints : data.mapPoints.filter((point) => point.day === selectedDay);
 
-  if (selectedDay !== "all" && originPoint && !points.some((point) => point.name === originPoint.name)) {
-    points = [
-      {
-        ...originPoint,
-        day: selectedDay,
-        note: "오사키역 출발 기준"
-      },
-      ...points
-    ];
+  if (selectedDay !== "all" && originPoint) {
+    const hasOriginFirst = points[0]?.name === originPoint.name;
+    const hasOriginLast = points[points.length - 1]?.name === originPoint.name;
+
+    if (!hasOriginFirst) {
+      points = [
+        {
+          ...originPoint,
+          day: selectedDay,
+          note: "오사키역 출발 기준"
+        },
+        ...points
+      ];
+    }
+
+    if (!hasOriginLast) {
+      points = [
+        ...points,
+        {
+          ...originPoint,
+          day: selectedDay,
+          note: "오사키역 복귀 기준"
+        }
+      ];
+    }
   }
   const latlngs = [];
 
