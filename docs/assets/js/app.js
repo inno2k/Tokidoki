@@ -1,4 +1,4 @@
-const APP_VERSION = "fujiqdayflow2";
+const APP_VERSION = "west-east-fix-1";
 
 let tripMap;
 let mapMarkers = [];
