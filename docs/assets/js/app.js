@@ -928,6 +928,7 @@ async function main() {
     renderPhotos(data);
     renderWeatherSwitch(data);
     renderItinerary(data);
+    renderOpsCards(data, "travelPrepOps", "travel-prep-grid");
     renderOpsCards(data, "reservationOps", "reservation-grid");
     renderOpsCards(data, "familyComfortOps", "comfort-grid");
     renderOpsCards(data, "memoryMissions", "memory-grid");
@@ -938,6 +939,7 @@ async function main() {
     renderBudgetSwitch(data);
     renderBudgetPanel(data, data.budgets.balanced ? "balanced" : Object.keys(data.budgets)[0]);
     renderFood(data);
+    renderOpsCards(data, "foodGenreOps", "food-genre-grid");
     renderOpsCards(data, "valueFoodOps", "value-food-grid");
     renderOpsCards(data, "shoppingHighlights", "shopping-highlights-grid");
     renderOpsCards(data, "shoppingOps", "shopping-grid");
