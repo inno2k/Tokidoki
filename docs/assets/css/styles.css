@@ -369,6 +369,10 @@ body::before {
   line-height: 1.7;
 }
 
+.hero-summary {
+  white-space: pre-line;
+}
+
 .hero-meta { display: grid; gap: 14px; }
 .hero-meta strong {
   display: block;
