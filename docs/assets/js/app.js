@@ -1,4 +1,4 @@
-const APP_VERSION = "encoding-fix-2";
+const APP_VERSION = "schedule-sync-1";
 
 let tripMap;
 let mapMarkers = [];
