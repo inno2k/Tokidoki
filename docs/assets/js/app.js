@@ -1,4 +1,4 @@
-const APP_VERSION = "schedule-sync-1";
+const APP_VERSION = "schedule-sync-2";
 
 let tripMap;
 let mapMarkers = [];
