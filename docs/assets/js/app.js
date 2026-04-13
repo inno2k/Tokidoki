@@ -898,17 +898,33 @@ function renderBudgetPanel(data, key) {
   document.getElementById("budget-panel").innerHTML = `
     <div class="budget-summary">
       <div>
-        <p class="section-label">가족 체류비</p>
+        <p class="section-label">${budget.scopeLabel || "가족 체류비"}</p>
         <h3>${budget.name}</h3>
         <div class="price-display">
           <strong>${budget.total}</strong>
-          <span>가족 3인 기준 총예산</span>
+          <span>${budget.scope || "가족 3인 기준 총예산"}</span>
         </div>
         <p>${budget.description}</p>
         <p class="budget-line budget-line-note">
-          <span>운영 메모</span>
+          <span>${budget.noteLabel || "운영 메모"}</span>
           <strong>${budget.note}</strong>
         </p>
+        ${budget.assumptions?.length ? `
+          <div class="support-box">
+            <strong>산정 기준</strong>
+            <div class="micro-list">
+              ${budget.assumptions.map((line) => `<span>${line}</span>`).join("")}
+            </div>
+          </div>
+        ` : ""}
+        ${budget.watchouts?.length ? `
+          <div class="support-box">
+            <strong>주의할 비용 변수</strong>
+            <div class="micro-list">
+              ${budget.watchouts.map((line) => `<span>${line}</span>`).join("")}
+            </div>
+          </div>
+        ` : ""}
       </div>
       <div class="budget-lines">
         ${budget.lines
@@ -923,6 +939,35 @@ function renderBudgetPanel(data, key) {
           .join("")}
       </div>
     </div>
+    ${budget.detailGroups?.length ? `
+      <div class="guide-grid budget-detail-grid">
+        ${budget.detailGroups
+          .map(
+            (group) => `
+              <article class="guide-card">
+                <h3>${group.title}</h3>
+                <p>${group.summary}</p>
+                <div class="budget-lines">
+                  ${group.items
+                    .map(
+                      (item) => `
+                        <div class="budget-line budget-detail-line">
+                          <div>
+                            <span>${item.label}</span>
+                            ${item.note ? `<p class="budget-detail-note">${item.note}</p>` : ""}
+                          </div>
+                          <strong>${item.price}</strong>
+                        </div>
+                      `
+                    )
+                    .join("")}
+                </div>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    ` : ""}
   `;
 }
 
