@@ -13,6 +13,9 @@
   --gold: #ba9a52;
   --radius-xl: 32px;
   --radius-lg: 24px;
+  --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: "Hahmlet", "Noto Serif KR", serif;
+  --font-accent: "Cormorant Garamond", "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +23,9 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: "IBM Plex Sans KR", "Segoe UI", sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--ink);
   overflow-x: hidden;
   background:
@@ -147,8 +152,10 @@ body::before {
 }
 
 .brand {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 1.2rem;
+  font-family: var(--font-accent);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .topbar-links {
@@ -230,12 +237,15 @@ body::before {
   flex: 0 0 auto;
   border: 0;
   border-radius: 999px;
-  padding: 10px 14px;
+  padding: 10px 15px;
   background: rgba(31, 36, 48, 0.08);
   color: var(--ink);
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .content-tabs button:focus-visible,
@@ -254,6 +264,7 @@ body::before {
 .content-tabs button.active {
   background: var(--accent);
   color: white;
+  box-shadow: 0 10px 20px rgba(210, 106, 66, 0.18);
 }
 
 .section-jumpbar {
@@ -287,11 +298,13 @@ body::before {
   padding: 10px 14px;
   background: rgba(60, 93, 83, 0.08);
   color: var(--ink);
-  font: inherit;
-  font-size: 0.94rem;
+  font-family: var(--font-body);
+  font-size: 0.91rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .section-jumpbar button:hover {
@@ -323,23 +336,25 @@ body::before {
 .section-label,
 .meta-label {
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   font-size: 0.78rem;
   color: var(--accent-deep);
-  font-weight: 700;
+  font-family: var(--font-accent);
+  font-weight: 600;
 }
 
 .hero h1,
 .section h2 {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .hero h1 {
   margin: 10px 0 16px;
   font-size: clamp(2.4rem, 4.6vw, 4.7rem);
-  line-height: 0.97;
+  line-height: 1.02;
+  text-wrap: balance;
 }
 
 .hero-summary,
@@ -355,7 +370,12 @@ body::before {
 }
 
 .hero-meta { display: grid; gap: 14px; }
-.hero-meta strong { display: block; margin-top: 4px; font-size: 1rem; }
+.hero-meta strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+}
 .hero-panel { display: grid; gap: 14px; align-content: start; }
 
 .stat-card {
@@ -372,7 +392,12 @@ body::before {
   margin-bottom: 6px;
 }
 
-.stat-card strong { font-size: 1.35rem; }
+.stat-card strong {
+  font-family: var(--font-display);
+  font-size: 1.42rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 .stat-card.accent { background: linear-gradient(145deg, rgba(203, 93, 50, 0.14), rgba(191, 139, 46, 0.18)); }
 
 .section {
@@ -516,8 +541,10 @@ body::before {
   border-radius: 999px;
   background: rgba(210, 106, 66, 0.1);
   color: var(--accent-deep);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .phrase-list {
@@ -565,8 +592,10 @@ body::before {
   border-radius: 999px;
   background: rgba(111, 140, 97, 0.12);
   color: var(--accent-deep);
-  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-size: 0.81rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
   text-decoration: none;
 }
 
@@ -803,11 +832,14 @@ body::before {
 .timeline-link,
 .timeline-meta span {
   display: inline-flex;
-  padding: 7px 10px;
+  padding: 7px 11px;
   border-radius: 999px;
   background: rgba(111, 140, 97, 0.12);
   color: var(--navy);
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.81rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-decoration: none;
 }
 
@@ -828,10 +860,12 @@ body::before {
   padding: 8px 12px;
   background: rgba(60, 93, 83, 0.08);
   color: var(--navy);
-  font: inherit;
+  font-family: var(--font-body);
   font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .action-chip:hover {
@@ -842,6 +876,7 @@ body::before {
 .action-chip.active {
   background: var(--matcha);
   color: white;
+  box-shadow: 0 8px 18px rgba(111, 140, 97, 0.2);
 }
 
 .route-list span,
@@ -871,13 +906,17 @@ body::before {
   padding: 9px 13px;
   background: rgba(111, 140, 97, 0.12);
   color: var(--ink);
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
 }
 
 .map-toolbar button.active {
   background: var(--matcha);
   color: white;
+  box-shadow: 0 8px 18px rgba(111, 140, 97, 0.2);
 }
 
 .map-frame {
@@ -903,8 +942,12 @@ body::before {
   color: var(--ink);
   border-radius: 999px;
   padding: 10px 14px;
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 0.91rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .weather-switch button {
@@ -913,14 +956,18 @@ body::before {
   color: var(--ink);
   border-radius: 999px;
   padding: 10px 14px;
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 0.91rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .budget-switch button:hover,
-.budget-switch button.active { background: var(--accent); color: white; }
+.budget-switch button.active { background: var(--accent); color: white; box-shadow: 0 10px 20px rgba(210, 106, 66, 0.18); }
 .weather-switch button:hover,
-.weather-switch button.active { background: var(--matcha); color: white; }
+.weather-switch button.active { background: var(--matcha); color: white; box-shadow: 0 10px 20px rgba(111, 140, 97, 0.18); }
 
 .budget-summary { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; }
 .price-display { display: inline-flex; align-items: end; gap: 10px; margin: 8px 0 18px; }
