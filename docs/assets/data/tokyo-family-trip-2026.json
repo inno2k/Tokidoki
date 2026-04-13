@@ -1691,26 +1691,98 @@
     {
       "day": "Day 1",
       "area": "오사키 + 아카바네 + 신주쿠/시부야(선택)",
-      "summary": "첫날은 호텔 적응이 우선이라 정식집, 소바, 역 식당가처럼 실패 확률이 낮은 구성을 중심으로 잡는 편이 좋습니다.",
+      "summary": "첫날은 체크인과 컨디션 회복이 우선이라 오사키에서 안정적으로 시작하고, 저녁 확장분만 시부야 쪽 실제 식당 후보로 붙여두는 편이 안전합니다.",
       "owner": "현지 가이드 + 가족 컨디션 에이전트",
-      "decision": "입국일 피로와 서쪽 축 확장 가능성을 함께 고려해, 과식이나 긴 대기 없이 바로 먹을 수 있는 구조로 정리했습니다.",
-      "outcome": "첫날 컨디션을 해치지 않으면서도 저녁 동선 변화에 유연하게 대응할 수 있습니다.",
-      "primary": "오사키 정식 + 신주쿠 또는 시부야 역 식당가 선택",
+      "decision": "입국일 피로를 감안해 오사키는 정식집 중심, 저녁은 시부야에서 실패 확률이 낮은 회전초밥 후보로 단순화했습니다.",
+      "outcome": "첫날 체력을 과하게 쓰지 않으면서도 서쪽 도쿄 진입 시 저녁 선택지가 구체적으로 남습니다.",
+      "primary": "오사키 게이트시티 정식 + 시부야 회전초밥 후보",
       "backups": [
-        "오사키 소바 체인",
-        "오사키역 푸드코트 또는 델리",
-        "시부야 푸드쇼 또는 데파치카 + 호텔 복귀"
+        "오사키역권 소바 체인으로 즉시 전환",
+        "게이트시티 대기 길면 맥도날드 또는 델리로 축소",
+        "시부야는 도큐 푸드쇼 데파치카 구매 후 호텔 복귀"
       ],
       "childSafe": "우동, 소바, 돈부리, 햄버그처럼 먹기 쉬운 메뉴",
       "hotelFallback": "오사키 역권 슈퍼나 편의점에서 간단히 사서 호텔에서 정리",
+      "meals": [
+        {
+          "label": "도착 직후 안정 점심",
+          "title": "대戸屋ごはん処 게이트시티 오사키점",
+          "genre": "정식 / 가족식사",
+          "why": "체크인 전후에 바로 들르기 쉽고 밥, 생선, 고기 계열이 고르게 있어 입국 직후 첫 식사로 안전합니다.",
+          "detail": "공식 매장 기준 오사키역 도보 4분, 게이트시티 오사키 B1F입니다. 늦은 점심과 이른 저녁 사이 애매한 시간대에도 무난하게 대응하기 좋습니다.",
+          "priceNote": "1인 1,000~1,600엔, 가족 3인 약 3,300~4,800엔",
+          "ratingNote": "Uber Eats 4.6/5 (1,000+), Lavie Taste 3.07 스냅샷",
+          "accessNote": "Gate City Osaki B1F, 체크인 동선과 거의 겹침",
+          "station": "Osaki",
+          "from": "Osaki",
+          "to": "Gate City Osaki",
+          "choices": [
+            "숯불구이 닭 정식, 생강구이, 흑초앙카케 계열이 첫날 실패 확률이 낮음",
+            "아이와 함께면 정식 + 사이드 조합으로 밥/국/반찬 밸런스 잡기 좋음"
+          ],
+          "fallbacks": [
+            "대기 길면 게이트시티 내 패스트푸드나 델리로 바로 전환",
+            "컨디션이 내려가면 식사 후 바로 호텔 체크인으로 회복 우선"
+          ],
+          "links": [
+            {
+              "label": "오오토야 공식 매장",
+              "url": "https://store.ootoya.com/detail/27275/"
+            },
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp/store/%E5%A4%A7%E6%88%B8%E5%B1%8B%E3%81%93%E3%81%AF%E3%82%93%E5%87%A6-%E3%82%B1%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%A4%A7%E5%B4%8E%E5%BA%97-ootoya-gohan-dokoro-gate-city-osaki/tExp9QWWTmGDcL5aMrbk_Q"
+            },
+            {
+              "label": "Lavie Taste 스냅샷",
+              "url": "https://www.lavietaste.com/en/restaurant/119299"
+            }
+          ]
+        },
+        {
+          "label": "서쪽 축 저녁 후보",
+          "title": "우오베이 시부야 도겐자카점",
+          "genre": "회전초밥 / 빠른 저녁",
+          "why": "시부야에서 오래 줄 서지 않고 비교적 빠르게 저녁을 정리하기 좋고, 아이와 먹기 편한 메뉴 폭도 넓습니다.",
+          "detail": "도겐자카 초입에 있어 시부야 산책 후 진입하기 쉽고, 늦게까지 영업하는 편이라 첫날 시간 지연에도 대응이 됩니다.",
+          "priceNote": "접시당 약 205~248엔, 가족 3인 약 3,000~5,500엔",
+          "ratingNote": "Uber Eats 4.3/5 (360+), Yelp 4.2/5 (193 reviews) 스냅샷",
+          "accessNote": "시부야역 하치코권에서 도보권",
+          "station": "Shibuya",
+          "from": "Shibuya Station",
+          "to": "Uobei Shibuya Dogenzaka",
+          "choices": [
+            "연어, 하마치, 새우, 계란말이 같은 무난한 접시 위주로 구성하기 쉬움",
+            "입국일이라 양 조절이 중요하므로 1차 저녁으로 가볍게 끝내기 좋음"
+          ],
+          "fallbacks": [
+            "대기 길면 시부야 도큐 푸드쇼에서 도시락·샌드위치 구매 후 복귀",
+            "시부야가 버거우면 오사키로 바로 돌아가 역권 저녁으로 단순화"
+          ],
+          "links": [
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp/store/%E9%AD%9A%E3%81%B8%E3%81%84-%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97/TrefLIpMUzWSA2YyqBaK3g"
+            },
+            {
+              "label": "Yelp 리뷰 스냅샷",
+              "url": "https://www.yelp.com/biz/%E9%AD%9A%E3%81%B9%E3%81%84-%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97-%E6%B8%8B%E8%B0%B7%E5%8C%BA"
+            },
+            {
+              "label": "시부야 푸드쇼",
+              "url": "https://www.tokyu-dept.co.jp/shibuya_foodshow/"
+            }
+          ]
+        }
+      ],
       "links": [
         {
           "label": "오오토야",
-          "url": "https://www.ootoya.com/"
+          "url": "https://store.ootoya.com/detail/27275/"
         },
         {
-          "label": "야요이켄",
-          "url": "https://www.yayoiken.com/"
+          "label": "우오베이 시부야 도겐자카",
+          "url": "https://www.ubereats.com/jp/store/%E9%AD%9A%E3%81%B8%E3%81%84-%E6%B8%8B%E8%B0%B7%E9%81%93%E7%8E%84%E5%9D%82%E5%BA%97/TrefLIpMUzWSA2YyqBaK3g"
         },
         {
           "label": "시부야 푸드쇼",
@@ -1721,22 +1793,121 @@
     {
       "day": "Day 2",
       "area": "츠키지 + 아사쿠사 + 우에노 + 아키하바라 + 도쿄타워",
-      "summary": "초밥, 시장 간식, 우에노 점심, 아키하바라 간식, 야경 전 저녁까지 하루 내내 선택지가 많은 날입니다.",
+      "summary": "이날은 지역 성격이 계속 바뀌기 때문에 츠키지 아침, 우에노 점심, 아키하바라 이른 저녁 후보를 미리 정해두는 쪽이 훨씬 안정적입니다.",
       "owner": "현지 가이드 + 쇼핑 에이전트",
-      "decision": "긴 줄과 과식을 피하면서도 도쿄다운 식사 경험은 남기도록, 각 구간에 역할이 다른 식사를 배치했습니다.",
-      "outcome": "전통 구간과 전자상가 구간의 분위기가 다르더라도 식사 운영은 안정적으로 이어집니다.",
-      "primary": "츠키지 초밥 + 우에노 점심 + 도쿄타워 전후 저녁",
+      "decision": "츠키지에서는 대표성을, 우에노에서는 좌석 안정성을, 아키하바라에서는 속도와 아동 친화성을 우선해 후보를 골랐습니다.",
+      "outcome": "동쪽 도쿄 풀데이에서도 긴 대기와 시간 밀림을 줄이면서 각 구간의 성격은 살릴 수 있습니다.",
+      "primary": "츠키지 초밥 + 우에노 양식 점심 + 아키하바라 오므라이스 또는 도쿄타워 전후 가벼운 저녁",
       "backups": [
-        "츠키지 테이크아웃 조합",
-        "우에노 역 빌딩 식당가",
-        "요도바시 Akiba 식당가 또는 오사키 저녁"
+        "츠키지는 시장 간식 조합으로 줄 세이브",
+        "우에노는 아트레·에큐트 역내 식당가로 축소",
+        "아키하바라는 요도바시 8층 식당가에서 바로 결정 후 도쿄타워 이동"
       ],
       "childSafe": "우동, 카레, 덮밥, 돈카츠, 햄버그처럼 먹기 쉬운 메뉴",
       "hotelFallback": "도쿄타워 일정이 밀리면 오사키 복귀 후 역권 식당가에서 정리",
+      "meals": [
+        {
+          "label": "츠키지 대표 아침",
+          "title": "스시잔마이 츠키지역앞점",
+          "genre": "초밥 / 시장 아침",
+          "why": "츠키지 감성은 살리면서도 매장 규모와 회전이 좋아 첫 본격 식사로 운영하기 편합니다.",
+          "detail": "공식 페이지 기준 츠키지역 1번 출구 도보 1분, 어린이 의자와 캐시리스 결제도 지원합니다. 시장 산책 전에 대표 한 끼로 넣기 좋습니다.",
+          "priceNote": "1인 세트 약 3,800~6,200엔, 가족 3인 약 7,600~15,900엔",
+          "ratingNote": "Uber Eats 4.6/5 (290+) 스냅샷",
+          "accessNote": "츠키지혼간지 옆, 시장 진입 전후 연결이 쉬움",
+          "station": "Tsukiji",
+          "from": "Osaki",
+          "to": "Sushizanmai Tsukiji Ekimae",
+          "choices": [
+            "꽃 세트 1인 6,200엔, 월 세트 1인 5,300엔 수준으로 가족 단위 계산이 쉬움",
+            "시장 간식과 같이 섞을 거면 1인 세트 수를 줄이고 계란말이·꼬치류를 보충하는 방식이 효율적"
+          ],
+          "fallbacks": [
+            "줄이 길면 장외시장에서 계란말이·참치꼬치·덮밥 소량 조합으로 분산",
+            "과식하면 아사쿠사 구간이 무거워지므로 70~80% 포만감 선에서 끊기"
+          ],
+          "links": [
+            {
+              "label": "스시잔마이 공식 매장",
+              "url": "https://www.kiyomura.co.jp/store/detail/28"
+            },
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp-en/store/%E3%81%99%E3%81%97%E3%81%95%E3%82%93%E3%81%BE%E3%81%84-%E7%AF%89%E5%9C%B0%E9%A7%85%E5%89%8D%E5%BA%97/aL8rakfDRKuVmyzZaLwsuw"
+            }
+          ]
+        },
+        {
+          "label": "우에노 회복 점심",
+          "title": "GRILL1930 츠바메그릴 아트레 우에노점",
+          "genre": "함바그 / 양식",
+          "why": "아트레 우에노 2층이라 이동 손실이 적고 좌석형 식사로 오후 체력을 다시 세우기 좋습니다.",
+          "detail": "우에노역 직결이라 비나 혼잡에도 안전합니다. 함바그, 크로켓, 스프·라이스 세트가 안정적이라 가족 식사 회복 슬롯으로 잘 맞습니다.",
+          "priceNote": "1인 1,000~1,999엔, 대표 함바그 세트 약 1,580~2,080엔",
+          "ratingNote": "Lavie Taste 3.33/5 스냅샷",
+          "accessNote": "JR 우에노역 1분, 아트레 우에노 레트로관 2F",
+          "station": "Ueno",
+          "from": "Asakusa",
+          "to": "Atre Ueno",
+          "choices": [
+            "츠바메풍 함바그 스테이크가 대표 메뉴이고, 토마토 샐러드 세트 조합이 무난함",
+            "식사 시간이 늦으면 우에노 공원 산책보다 역내 회복을 우선하는 편이 오후 운영에 유리"
+          ],
+          "fallbacks": [
+            "대기 길면 에큐트·아트레 역내 다른 양식/우동계열로 바로 전환",
+            "아이 컨디션이 떨어지면 포만감보다 착석 휴식 시간을 확보"
+          ],
+          "links": [
+            {
+              "label": "Lavie Taste 스냅샷",
+              "url": "https://www.lavietaste.com/en/restaurant/70217"
+            },
+            {
+              "label": "식べログ 위치 정보",
+              "url": "https://tabelog.com/tokyo/A1311/A131101/13055834/dtlmap/"
+            }
+          ]
+        },
+        {
+          "label": "아키하바라 이른 저녁",
+          "title": "포무노키 요도바시Akiba점",
+          "genre": "오므라이스 / 아이친화",
+          "why": "도쿄타워로 넘어가기 전 빨리 앉아 먹고 나가기 좋고, 아이 메뉴가 있어 가족형 저녁 후보로 안정적입니다.",
+          "detail": "요도바시Akiba 8층 식당가라 쇼핑 동선과 바로 연결됩니다. 오므라이스 중심이라 저녁을 너무 무겁게 하지 않으면서도 만족도를 챙기기 좋습니다.",
+          "priceNote": "SS 오므라이스 약 1,078~1,408엔, 세트 1,760엔~, 가족 3인 약 3,500~6,000엔",
+          "ratingNote": "Lavie Taste 3.03/5 스냅샷",
+          "accessNote": "아키하바라역 직결, 요도바시 8F",
+          "station": "Akihabara",
+          "from": "Ueno",
+          "to": "Yodobashi Akiba",
+          "choices": [
+            "정통 오므라이스 1,100엔, 치즈·크림소스 계열 1,200~1,400엔대",
+            "어린이 오므라이스 세트 781엔으로 가족 조합 짜기 쉬움"
+          ],
+          "fallbacks": [
+            "도쿄타워 예약 시간이 촉박하면 요도바시 식당가에서 가장 대기 짧은 매장 선택",
+            "더 늦어지면 도쿄타워 후 오사키 복귀 저녁으로 미루기"
+          ],
+          "links": [
+            {
+              "label": "요도바시Akiba 포무노키",
+              "url": "https://www.yodobashi-akiba.com/restaurant/yy_pomu.html"
+            },
+            {
+              "label": "Lavie Taste 스냅샷",
+              "url": "https://www.lavietaste.com/zh-TW/restaurant/70763"
+            }
+          ]
+        }
+      ],
       "links": [
         {
-          "label": "요도바시 Akiba",
-          "url": "https://www.yodobashi.com/ec/store/0018/"
+          "label": "스시잔마이 츠키지역앞점",
+          "url": "https://www.kiyomura.co.jp/store/detail/28"
+        },
+        {
+          "label": "요도바시Akiba 식당가",
+          "url": "https://www.yodobashi-akiba.com/restaurant/"
         },
         {
           "label": "도쿄타워",
@@ -1747,18 +1918,117 @@
     {
       "day": "Day 3",
       "area": "오다이바 + 미나토미라이 + 추카가이",
-      "summary": "오다이바 점심으로 속도를 잡고, 저녁은 추카가이에서 정리하되 대기 길이에 따라 미나토미라이로 유연하게 돌리는 날입니다.",
+      "summary": "요코하마 구간은 실제 식당 후보를 미리 잡아두지 않으면 미나토미라이와 추카가이에서 바로 흔들리기 쉬워서, 점심·백업·메인 저녁을 분리해 두는 편이 좋습니다.",
       "owner": "현지 가이드 + 쇼핑 에이전트",
-      "decision": "오다이바에서는 체험 흐름을 해치지 않도록 빠른 점심을 두고, 요코하마에서는 분위기와 저녁 만족도를 함께 챙기도록 구성했습니다.",
-      "outcome": "광역 이동이 있는 날에도 식사 타이밍이 무너지지 않고 귀환 시간이 안정됩니다.",
-      "primary": "오다이바 점심 + 추카가이 이른 저녁",
+      "decision": "오다이바는 속도, 미나토미라이는 좌석 안정성, 추카가이는 분위기와 만족도를 기준으로 후보를 나눴습니다.",
+      "outcome": "광역 이동일에도 식사 타이밍이 무너지지 않고, 추카가이 대기가 길어도 바로 차선책으로 돌릴 수 있습니다.",
+      "primary": "오다이바 점심 + 미나토미라이 백업 + 추카가이 메인 저녁",
       "backups": [
-        "미나토미라이 푸드홀 또는 카페",
-        "요코하마역 식당가",
-        "오사키 복귀 후 가벼운 저녁"
+        "미나토미라이에서 좌석형 저녁으로 조기 종료",
+        "추카가이 대기 길면 요코하마역 식당가로 후퇴",
+        "오사키 복귀 후 편한 저녁으로 마감"
       ],
       "childSafe": "면, 밥, 딤섬, 카레, 햄버그처럼 먹기 쉬운 메뉴",
       "hotelFallback": "요코하마 일정이 늦어지면 추카가이를 생략하고 미나토미라이에서 조기 정리",
+      "meals": [
+        {
+          "label": "오다이바 속도 점심",
+          "title": "다이버시티 도쿄 플라자 푸드코트",
+          "genre": "푸드코트 / 빠른 점심",
+          "why": "오다이바 체험 흐름을 끊지 않고 40~50분 안에 정리하기 가장 쉽습니다.",
+          "detail": "정식 한 곳을 고집하기보다 푸드코트에서 면·덮밥·카레를 나눠 담는 방식이 가족 단위 효율이 높습니다. 이후 요코하마로 바로 넘어가도 부담이 적습니다.",
+          "priceNote": "1인 약 900~1,600엔, 가족 3인 약 3,800~6,500엔",
+          "ratingNote": "복수 매장형 푸드코트라 개별 평점 대신 대기 짧고 좌석 확보가 핵심",
+          "accessNote": "오다이바 체험 시설과 직접 연결",
+          "station": "Tokyo Teleport / Daiba",
+          "from": "Odaiba",
+          "to": "DiverCity Tokyo Plaza",
+          "choices": [
+            "라멘·돈부리·카레 조합으로 속도 우선 운영",
+            "오후 요코하마 이동이 길어 과식보다 적당한 포만감 유지가 중요"
+          ],
+          "fallbacks": [
+            "점심 대기가 길면 델리·베이커리로 간단히 조정",
+            "오다이바 체험 시간이 길어지면 미나토미라이 도착 후 첫 식사를 앞당기기"
+          ],
+          "links": [
+            {
+              "label": "다이버시티 도쿄 플라자",
+              "url": "https://mitsui-shopping-park.com/divercity-tokyo/"
+            }
+          ]
+        },
+        {
+          "label": "미나토미라이 좌석형 백업",
+          "title": "카프리쵸사 요코하마 미나토미라이점",
+          "genre": "이탈리안 / 좌석형 저녁 백업",
+          "why": "추카가이 대기가 길 때 바로 앉아 먹을 수 있는 미나토미라이권 백업으로 적합하고, 파스타·피자라 가족 대응이 쉽습니다.",
+          "detail": "공식 페이지와 Uber 스냅샷 기준 미나토미라이역 5번 출구 도보 5분권입니다. 추카가이까지 가지 않고도 저녁 만족도를 확보하기 좋은 카드입니다.",
+          "priceNote": "런치 501~1,000엔, 디너 1,501~2,000엔 수준, 가족 3인 약 4,500~7,500엔",
+          "ratingNote": "Uber Eats 4.6/5 (1,000+) 스냅샷",
+          "accessNote": "퀸즈스퀘어/미나토미라이 동선과 붙어 있어 후퇴가 쉬움",
+          "station": "Minatomirai",
+          "from": "Odaiba",
+          "to": "Capricciosa Yokohama Minatomirai",
+          "choices": [
+            "토마토소스 파스타, 마르게리타, 샐러드 공유형 주문이 운영상 편함",
+            "추카가이 진입 전 아이 피로가 보이면 여기서 저녁 확정하는 편이 더 안전"
+          ],
+          "fallbacks": [
+            "대기 길면 미나토미라이 푸드홀·카페로 즉시 축소",
+            "요코하마역 식당가로 이동해 좌석 확보 우선"
+          ],
+          "links": [
+            {
+              "label": "카프리쵸사 공식 매장",
+              "url": "https://capricciosa.com/restaurant/kanagawa/%E6%A8%AA%E6%B5%9C%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%84%E5%BA%97/"
+            },
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp-en/store/%E3%82%AB%E3%83%95%E3%83%AA%E3%83%81%E3%83%A7%E3%83%BC%E3%82%B5-%E6%A8%AA%E6%B5%9C%E3%81%BF%E3%81%AA%E3%81%A8%E3%81%BF%E3%82%89%E3%81%84%E5%BA%97-capricciosa-yokohama-minatomirai/pMfqnFFzRCSz_Enc73UWvQ"
+            }
+          ]
+        },
+        {
+          "label": "추카가이 메인 저녁",
+          "title": "七福 또는 龍海飯店 본점",
+          "genre": "딤섬 / 중화 / 오더식 뷔페",
+          "why": "추카가이의 분위기를 살리면서도 실제 접근성과 가격대가 확인되는 후보들입니다.",
+          "detail": "七福은 소룡포·딤섬 중심으로 평점 스냅샷이 좋고, 龍海飯店은 무제한 코스가 명확해 가족 예산 계산이 쉽습니다. 둘 다 모토마치·추카가이역에서 도보권입니다.",
+          "priceNote": "七福 낮 501~1,000엔 / 저녁 1,501~2,000엔대, 龍海飯店 프리미엄 무제한 약 3,980엔부터",
+          "ratingNote": "七福 TrustYou 4.6/5 (Hotpepper 2,711 reviews), 龍海飯店 Google 3.8/5 스냅샷",
+          "accessNote": "元町・中華街역 2번 출구 도보 5~6분, 石川町역 북구 도보 5~8분",
+          "station": "Motomachi-Chukagai",
+          "from": "Minatomirai",
+          "to": "Yokohama Chinatown",
+          "choices": [
+            "七福: 오더식 식べ放題와 소룡포 중심, 분위기와 평점 균형이 좋음",
+            "龍海飯店: 가격 구조가 명확해 많이 먹는 가족이면 예산 계산이 편함"
+          ],
+          "fallbacks": [
+            "추카가이 대기 과열이면 미나토미라이로 즉시 회귀",
+            "요코하마역 식당가에서 좌석 우선 확보 후 귀환 시간 사수"
+          ],
+          "links": [
+            {
+              "label": "七福 공식 상점 안내",
+              "url": "https://www.chinatown.or.jp/shop/%E4%B8%83%E7%A6%8F/"
+            },
+            {
+              "label": "七福 평점·예산 스냅샷",
+              "url": "https://www.hotpepper.jp/strJ001038621/yoyaku/"
+            },
+            {
+              "label": "龍海飯店 공식 상점 안내",
+              "url": "https://www.chinatown.or.jp/shop/%E9%BE%8D%E6%B5%B7%E9%A3%AF%E5%BA%97%E6%9C%AC%E5%BA%97/"
+            },
+            {
+              "label": "龍海飯店 가격 스냅샷",
+              "url": "https://ryukaihanten-honten.foodre.jp/"
+            }
+          ]
+        }
+      ],
       "links": [
         {
           "label": "다이버시티 도쿄 플라자",
@@ -1773,22 +2043,86 @@
     {
       "day": "Day 4",
       "area": "바스타 신주쿠 + 후지큐 하이랜드",
-      "summary": "원정일 특성상 오전 이동 후 점심 타이밍이 매우 중요하고, 저녁은 버스 시간에 맞춰 유연하게 처리해야 합니다.",
+      "summary": "후지큐는 공원 안에서 먹더라도 선택지가 넓어서, 어느 구간에서 빨리 먹고 어느 구간에서 만족도를 챙길지 미리 정해야 버스 시간을 지킬 수 있습니다.",
       "owner": "현지 가이드 + 예약 컨시어지",
-      "decision": "후지큐 체류 자체가 핵심이므로 식사는 빠르게, 단순하게, 귀환 시간을 흔들지 않는 방향으로 정리했습니다.",
-      "outcome": "놀이공원 만족도는 높이면서도 체력 저하와 귀환 지연 위험을 줄일 수 있습니다.",
-      "primary": "후지큐 점심 + 귀환 전 간식 또는 이른 저녁",
+      "decision": "오전 핵심 어트랙션 뒤에 점심 1회, 귀환 전 컨디션 회복용 1회로 나누고 둘 다 공원 안에서 해결 가능하게 구성했습니다.",
+      "outcome": "놀이공원 만족도를 해치지 않으면서도 버스 복귀 시각을 흔들지 않는 식사 운영이 됩니다.",
+      "primary": "후지큐 공원 내 점심 + 귀환 전 회복 간식 또는 이른 저녁",
       "backups": [
-        "후지큐 푸드코트 빠른 식사",
-        "간식 + 음료 + 버스 탑승",
-        "바스타 신주쿠 도착 후 간단 저녁"
+        "줄이 길면 가장 가까운 매장으로 바로 변경",
+        "음료·감자·간식 조합으로 버스 전 최소 회복",
+        "바스타 신주쿠 도착 후 간단 저녁으로 이월"
       ],
       "childSafe": "카레, 버거, 면류, 덮밥처럼 선택이 쉬운 메뉴",
       "hotelFallback": "바스타 도착 후 늦으면 오사키 복귀 후 간단히 정리",
+      "meals": [
+        {
+          "label": "공원 내 메인 점심",
+          "title": "VILLAGE VANGUARD DINER 후지큐 하이랜드",
+          "genre": "버거 / 공원 메인 점심",
+          "why": "FUJIYAMA 앞이라 핵심 어트랙션 구간과 연결이 좋고, 메뉴·가격이 공식 페이지에 명확히 공개돼 있어 현장 판단이 쉽습니다.",
+          "detail": "공식 안내 기준 100% 비프 패티 버거 전문점이며, 키즈 버거 세트도 있어 가족 점심 카드로 활용하기 좋습니다. 다만 양이 많아 오후 탑승 전 과식은 피하는 편이 좋습니다.",
+          "priceNote": "버거 1,490~2,690엔, 키즈세트 990엔, 가족 3인 약 4,500~7,500엔",
+          "ratingNote": "공식 페이지에 '식べログ 백명점' 언급, 개별 평점 대신 현장 인기·가격 공개가 강점",
+          "accessNote": "후지야마 앞 중앙 구역",
+          "station": "Fuji-Q Highland",
+          "from": "Fuji-Q Highland",
+          "to": "VILLAGE VANGUARD DINER Fuji-Q Highland",
+          "choices": [
+            "기본 햄버거 1,490엔, 치즈버거 1,690엔, 키즈버거 세트 990엔으로 구성 가능",
+            "오전 어트랙션 후 든든하게 먹되, 오후 강한 놀이기구가 남아 있으면 버거 1개 공유도 고려"
+          ],
+          "fallbacks": [
+            "주문 줄이 길면 바로 라멘·토마스랜드 식당으로 전환",
+            "폭우나 강풍이면 실내 좌석 확보가 쉬운 매장 우선"
+          ],
+          "links": [
+            {
+              "label": "후지큐 공식 매장",
+              "url": "https://www.fujiq.jp/en/restaurant/village_vanguard_diner.html"
+            },
+            {
+              "label": "후지큐 식당 전체 안내",
+              "url": "https://www.fujiq.jp/en/restaurant/?category=restaurant"
+            }
+          ]
+        },
+        {
+          "label": "회복용 대체 식사",
+          "title": "Ichiraku ramen 또는 Thomas Restaurant",
+          "genre": "라멘 / 키즈메뉴 / 회복 슬롯",
+          "why": "버거가 무겁거나 아이 컨디션이 내려가면 라멘·캐릭터 플레이트 쪽이 훨씬 운영이 쉽습니다.",
+          "detail": "Ichiraku ramen은 공식 메뉴 가격이 공개돼 있고, Thomas Restaurant는 아동 친화성이 높아 원정일 후반 회복 슬롯으로 무난합니다.",
+          "priceNote": "Ichiraku 라멘 1,100~1,500엔, Thomas 캐릭터 플레이트류 중심",
+          "ratingNote": "공식 메뉴 공개 중심, 평점보다 대기·아동 친화성이 우선인 후보",
+          "accessNote": "둘 다 공원 내 이동으로 해결 가능",
+          "station": "Fuji-Q Highland",
+          "from": "Fuji-Q Highland",
+          "to": "Ichiraku ramen Fuji-Q Highland",
+          "choices": [
+            "Ichiraku: 간장돈코츠·미소계열 1,100엔 전후로 속 편하게 마감 가능",
+            "Thomas Restaurant: 놀이 후 아이 기분을 살리며 쉬어가기 좋은 카드"
+          ],
+          "fallbacks": [
+            "버스 출발이 임박하면 음료와 감자류만 챙기고 탑승 우선",
+            "신주쿠 도착 후 역내 간단 저녁으로 마감"
+          ],
+          "links": [
+            {
+              "label": "Ichiraku ramen 공식 매장",
+              "url": "https://www.fujiq.jp/en/restaurant/ichiraku.html"
+            },
+            {
+              "label": "Thomas Restaurant 공식 매장",
+              "url": "https://www.fujiq.jp/en/restaurant/thomascafe.html"
+            }
+          ]
+        }
+      ],
       "links": [
         {
           "label": "후지큐 식음 안내",
-          "url": "https://www.fujiq.jp/en/restaurant/"
+          "url": "https://www.fujiq.jp/en/restaurant/?category=restaurant"
         },
         {
           "label": "고속버스 예약 안내",
@@ -1799,18 +2133,87 @@
     {
       "day": "Day 5",
       "area": "오사키 + 나리타 이동",
-      "summary": "출국일은 오사키에서 가볍고 빠르게 먹은 뒤 공항으로 이동하는 단순한 구성이 가장 안전합니다.",
+      "summary": "출국일은 오사키역권에서 바로 먹고 바로 이동하는 구조가 핵심이라, 역세권 내 실제 후보 두 개만 남겨두는 편이 가장 안전합니다.",
       "owner": "현지 가이드",
-      "decision": "마지막 날은 식사 만족도보다 수속 안정성을 우선해, 소화가 편하고 빨리 나오는 메뉴로 압축했습니다.",
-      "outcome": "귀국 전 피로를 줄이면서도 이동 중 배고픔과 급한 변수를 줄일 수 있습니다.",
-      "primary": "오사키역권 소바 또는 가벼운 정식",
+      "decision": "정식 1안과 패스트푸드 1안을 함께 두고, 공항 이동 시간에 따라 즉시 갈아탈 수 있게 구성했습니다.",
+      "outcome": "수속 안정성을 해치지 않으면서도 출국 전 마지막 한 끼를 무리 없이 정리할 수 있습니다.",
+      "primary": "오사키 게이트시티 정식 1안 + 패스트푸드 2안",
       "backups": [
-        "편의점 간단 식사",
-        "카페 + 샌드위치"
+        "편의점 샌드위치·주먹밥으로 즉시 축소",
+        "공항 도착 후 보안검색 전 간단 보충"
       ],
       "childSafe": "소바, 우동, 밥, 빵",
       "hotelFallback": "없음. 공항으로 바로 이동",
-      "links": []
+      "meals": [
+        {
+          "label": "출국일 1안",
+          "title": "대戸屋ごはん処 게이트시티 오사키점",
+          "genre": "정식 / 빠른 아침·브런치",
+          "why": "좌석이 안정적이고 밥·국 중심이라 출국일 아침에도 부담이 덜합니다.",
+          "detail": "Day 1과 같은 매장이라 낯설지 않고, 마지막 날에도 동선이 가장 간단합니다. 짐을 끌고 움직여도 게이트시티 접근이 편합니다.",
+          "priceNote": "1인 1,000~1,600엔, 가족 3인 약 3,300~4,800엔",
+          "ratingNote": "Uber Eats 4.6/5 (1,000+), Lavie Taste 3.07 스냅샷",
+          "accessNote": "오사키역 도보 4분",
+          "station": "Osaki",
+          "from": "Osaki",
+          "to": "Gate City Osaki",
+          "choices": [
+            "소화가 편한 생선정식·계란계열·가벼운 정식 위주 추천",
+            "공항 이동 전이라 튀김·과식은 피하고 수분 보충 우선"
+          ],
+          "fallbacks": [
+            "대기 발생 시 바로 맥도날드 또는 편의점으로 전환",
+            "체크아웃이 지연되면 식사 시간을 공항으로 넘기기"
+          ],
+          "links": [
+            {
+              "label": "오오토야 공식 매장",
+              "url": "https://store.ootoya.com/detail/27275/"
+            },
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp/store/%E5%A4%A7%E6%88%B8%E5%B1%8B%E3%81%93%E3%81%AF%E3%82%93%E5%87%A6-%E3%82%B1%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%A4%A7%E5%B4%8E%E5%BA%97-ootoya-gohan-dokoro-gate-city-osaki/tExp9QWWTmGDcL5aMrbk_Q"
+            }
+          ]
+        },
+        {
+          "label": "출국일 2안",
+          "title": "맥도날드 오사키 게이트시티점",
+          "genre": "패스트푸드 / 초고속 대체",
+          "why": "시간이 가장 빠듯할 때도 실패 확률이 낮고, 해피밀·버거·커피로 가족별 속도 조절이 쉽습니다.",
+          "detail": "정식집 대기가 생기거나 체크아웃이 밀릴 때 바로 갈아타기 좋은 카드입니다. 출국일에는 '빨리 먹고 바로 이동'이 중요할 때가 있어 실제 가치가 큽니다.",
+          "priceNote": "1인 약 600~1,200엔, 가족 3인 약 1,800~3,600엔",
+          "ratingNote": "Uber Eats 4.6/5 (7,000+) 스냅샷",
+          "accessNote": "게이트시티 오사키 내",
+          "station": "Osaki",
+          "from": "Osaki",
+          "to": "McDonald's Osaki Gate City",
+          "choices": [
+            "아침/브런치 시간대 해피밀·맥머핀·버거 조합으로 매우 빠르게 정리 가능",
+            "아이 중심이면 해피밀, 성인은 커피 포함 세트로 간단히 마감"
+          ],
+          "fallbacks": [
+            "더 촉박하면 편의점에서 탑승 전 간식만 확보",
+            "나리타 도착 후 보안검색 전 식사로 완전 이월"
+          ],
+          "links": [
+            {
+              "label": "Uber 평점 스냅샷",
+              "url": "https://www.ubereats.com/jp/store/%E3%83%9E%E3%82%AF%E3%83%88%E3%83%8A%E3%83%AB%E3%83%88-%E5%A4%A7%E5%B4%8E%E3%82%B1%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%BA%97-mcdonalds-osaki-gate-city/happk7U2QneOEJ-ARCYUNA"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "오오토야 오사키",
+          "url": "https://store.ootoya.com/detail/27275/"
+        },
+        {
+          "label": "맥도날드 오사키 게이트시티",
+          "url": "https://www.ubereats.com/jp/store/%E3%83%9E%E3%82%AF%E3%83%88%E3%83%8A%E3%83%AB%E3%83%88-%E5%A4%A7%E5%B4%8E%E3%82%B1%E3%83%BC%E3%83%88%E3%82%B7%E3%83%86%E3%82%A3%E5%BA%97-mcdonalds-osaki-gate-city/happk7U2QneOEJ-ARCYUNA"
+        }
+      ]
     }
   ],
   "valueFoodOps": [

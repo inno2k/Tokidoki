@@ -930,36 +930,60 @@ function renderFoodPlanCards(data) {
   const root = document.getElementById("day-meal-grid");
   if (!root) return;
 
-  const renderMealSlot = (slot) => `
-    <div class="support-box support-strong">
-      <strong>${slot.label}</strong>
-      <div class="micro-list">
-        <span>${slot.title}</span>
-        <span>장르: ${slot.genre}</span>
-        <span>${slot.why}</span>
-      </div>
-      <div class="support-box">
-        <strong>우선 후보</strong>
+  const renderMealSlot = (slot) => {
+    const meta = [];
+    if (slot.genre) meta.push(`장르: ${slot.genre}`);
+    if (slot.priceNote) meta.push(`가격대: ${slot.priceNote}`);
+    if (slot.ratingNote) meta.push(`평점: ${slot.ratingNote}`);
+    if (slot.accessNote) meta.push(`접근: ${slot.accessNote}`);
+    if (slot.station) meta.push(`하차역: ${slot.station}`);
+
+    const routeLinks =
+      slot.from && slot.to
+        ? `
+          <a class="timeline-link" href="${mapRouteUrl(slot.from, slot.to)}" target="_blank" rel="noreferrer">Yahoo 지도 루트</a>
+          ${copyButton(mapRouteUrl(slot.from, slot.to))}
+          <a class="timeline-link" href="${transitUrl(slot.from, slot.to)}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>
+          ${copyButton(transitUrl(slot.from, slot.to))}
+        `
+        : "";
+
+    const externalLinks = slot.links?.length
+      ? slot.links
+          .map(
+            (link) => `
+              <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+              ${copyButton(link.url)}
+            `
+          )
+          .join("")
+      : "";
+
+    return `
+      <div class="support-box support-strong">
+        <strong>${slot.label}</strong>
         <div class="micro-list">
-          ${slot.choices.map((line) => `<span>${line}</span>`).join("")}
+          <span>${slot.title}</span>
+          ${meta.map((line) => `<span>${line}</span>`).join("")}
+          <span>${slot.why}</span>
         </div>
-      </div>
-      <div class="support-box">
-        <strong>대기 길 때 대체</strong>
-        <div class="micro-list">
-          ${slot.fallbacks.map((line) => `<span>${line}</span>`).join("")}
+        ${slot.detail ? `<p>${slot.detail}</p>` : ""}
+        <div class="support-box">
+          <strong>우선 후보</strong>
+          <div class="micro-list">
+            ${slot.choices.map((line) => `<span>${line}</span>`).join("")}
+          </div>
         </div>
+        <div class="support-box">
+          <strong>대기 길 때 대체</strong>
+          <div class="micro-list">
+            ${slot.fallbacks.map((line) => `<span>${line}</span>`).join("")}
+          </div>
+        </div>
+        ${(routeLinks || externalLinks) ? `<div class="timeline-links">${routeLinks}${externalLinks}</div>` : ""}
       </div>
-      ${slot.links?.length ? `<div class="timeline-links">${slot.links
-        .map(
-          (link) => `
-            <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
-            ${copyButton(link.url)}
-          `
-        )
-        .join("")}</div>` : ""}
-    </div>
-  `;
+    `;
+  };
 
   root.innerHTML = data.dayMealPlans
     .map(
