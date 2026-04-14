@@ -1,4 +1,4 @@
-const APP_VERSION = "schedule-sync-2";
+const APP_VERSION = "festival-sync-1";
 
 let tripMap;
 let mapMarkers = [];
@@ -1077,6 +1077,140 @@ function renderFoodPlanCards(data) {
     .join("");
 }
 
+function injectFestivalTab() {
+  return;
+  const tabBar = document.querySelector(".content-tabs");
+  const foodPanel = document.getElementById("panel-food");
+  if (!tabBar || !foodPanel || document.getElementById("tab-festival")) {
+    return;
+  }
+
+  const festivalTab = document.createElement("button");
+  festivalTab.type = "button";
+  festivalTab.id = "tab-festival";
+  festivalTab.setAttribute("role", "tab");
+  festivalTab.setAttribute("aria-selected", "false");
+  festivalTab.setAttribute("aria-controls", "panel-festival");
+  festivalTab.tabIndex = -1;
+  festivalTab.dataset.contentTab = "festival";
+  festivalTab.textContent = "축제";
+
+  const shoppingTab = document.getElementById("tab-shopping");
+  tabBar.insertBefore(festivalTab, shoppingTab || null);
+
+  const festivalPanel = document.createElement("section");
+  festivalPanel.id = "panel-festival";
+  festivalPanel.className = "tab-panel";
+  festivalPanel.setAttribute("role", "tabpanel");
+  festivalPanel.setAttribute("aria-labelledby", "tab-festival");
+  festivalPanel.dataset.tabPanel = "festival";
+  festivalPanel.hidden = true;
+  festivalPanel.innerHTML = `
+    <section class="section" id="festival" data-nav-label="축제">
+      <div class="section-head">
+        <p class="section-label">축제</p>
+        <h2>5월 22일~24일 사이 공식 확인된 축제와 시즌 이벤트</h2>
+        <p class="section-subcopy">
+          Day 1 오사키권은 공식 축제가 확인되지 않아 제외했고, Day 2 아사쿠사 공연과 야간 쇼, Day 3 요코하마 행사만 공식 공지 기준으로 추렸습니다.
+        </p>
+      </div>
+      <div class="ops-grid festival-grid" id="festival-grid"></div>
+    </section>
+  `;
+
+  foodPanel.insertAdjacentElement("afterend", festivalPanel);
+}
+
+function renderFestival(data) {
+  return renderFestivals(data);
+  const root = document.getElementById("festival-grid");
+  if (!root) return;
+
+  const renderLinks = (links = []) =>
+    links
+      .map(
+        (link) => `
+          <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+          ${copyButton(link.url)}
+        `
+      )
+      .join("");
+
+  const renderRouteLinks = (from, to) => {
+    if (!from || !to) return "";
+    const routeUrl = mapRouteUrl(from, to);
+    const transit = transitUrl(from, to);
+    return `
+      <a class="timeline-link" href="${routeUrl}" target="_blank" rel="noreferrer">Yahoo 지도 경로</a>
+      ${copyButton(routeUrl)}
+      <a class="timeline-link" href="${transit}" target="_blank" rel="noreferrer">Yahoo 노선정보</a>
+      ${copyButton(transit)}
+    `;
+  };
+
+  root.innerHTML = (data.festivalEvents || [])
+    .map(
+      (event) => `
+        <article class="ops-card festival-card">
+          <span class="day-badge">${event.day}</span>
+          <h3>${event.title}</h3>
+          <p>${event.summary}</p>
+          <div class="support-box">
+            <strong>일자 / 시간</strong>
+            <div class="micro-list">
+              <span>${event.dateTime}</span>
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>장소</strong>
+            <div class="micro-list">
+              <span>${event.place}</span>
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>관람 추천 포인트</strong>
+            <div class="micro-list">
+              ${event.viewingPoints.map((line) => `<span>${line}</span>`).join("")}
+            </div>
+          </div>
+          <div class="support-box">
+            <strong>접근 역·노선</strong>
+            <div class="micro-list">
+              <span>${event.access}</span>
+              <span>${event.station}</span>
+            </div>
+          </div>
+          ${event.priceNote ? `
+            <div class="support-box">
+              <strong>가격</strong>
+              <div class="micro-list">
+                <span>${event.priceNote}</span>
+              </div>
+            </div>
+          ` : ""}
+          ${event.confidence ? `
+            <div class="support-box">
+              <strong>확실도</strong>
+              <div class="micro-list">
+                <span>${event.confidence}</span>
+              </div>
+            </div>
+          ` : ""}
+          ${event.caution ? `
+            <div class="support-box">
+              <strong>사용 시 주의점</strong>
+              <div class="micro-list">
+                <span>${event.caution}</span>
+              </div>
+            </div>
+          ` : ""}
+          ${(event.from && event.to) || event.links?.length ? `<div class="timeline-links">${renderRouteLinks(event.from, event.to)}${renderLinks(event.links)}</div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderFood(data) {
   document.getElementById("nostalgia-list").innerHTML = data.nostalgiaFoods.map((item) => `<li>${item}</li>`).join("");
   document.getElementById("verified-list").innerHTML = data.verifiedFoods
@@ -1123,6 +1257,42 @@ function renderGuide(data) {
       `
     )
     .join("");
+  attachTimelineHandlers();
+}
+
+function renderFestivals(data) {
+  const root = document.getElementById("festival-grid");
+  if (!root) return;
+
+  root.innerHTML = data.festivals
+    .map(
+      (item) => `
+        <article class="guide-card festival-card">
+          ${item.fitDay ? `<p class="section-label">${item.fitDay}</p>` : ""}
+          <h3>${item.name}</h3>
+          <p>${item.summary}</p>
+          <div class="timeline-meta">
+            ${item.category ? `<span>분류: ${item.category}</span>` : ""}
+            ${item.date ? `<span>일정: ${item.date}</span>` : ""}
+            ${item.place ? `<span>장소: ${item.place}</span>` : ""}
+            ${item.confidence ? `<span>확실도: ${item.confidence}</span>` : ""}
+          </div>
+          ${item.bestSpots?.length ? `<div class="support-box"><strong>관람 추천 장소</strong><div class="micro-list">${item.bestSpots.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${item.access?.length ? `<div class="support-box"><strong>접근 역 · 노선</strong><div class="micro-list">${item.access.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${item.watchouts?.length ? `<div class="support-box"><strong>현장 주의점</strong><div class="micro-list">${item.watchouts.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${item.links?.length ? `<div class="timeline-links">${item.links
+            .map(
+              (link) => `
+                <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+                ${copyButton(link.url)}
+              `
+            )
+            .join("")}</div>` : ""}
+        </article>
+      `
+    )
+    .join("");
+
   attachTimelineHandlers();
 }
 
@@ -1330,6 +1500,7 @@ async function main() {
     renderOptions(data);
     renderMaps(data);
     initMap(data);
+    renderFestivals(data);
     renderBudgetSwitch(data);
     renderBudgetPanel(data, data.budgets.balanced ? "balanced" : Object.keys(data.budgets)[0]);
     renderFood(data);

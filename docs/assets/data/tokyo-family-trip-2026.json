@@ -1717,6 +1717,189 @@
       ]
     }
   },
+  "festivals": [
+    {
+      "fitDay": "Day 1 야간 추천",
+      "category": "빛 축제 / 프로젝션 매핑",
+      "name": "TOKYO LIGHTS 2026",
+      "date": "2026년 5월 23일(토) ~ 5월 31일(일)",
+      "place": "도쿄도청 제1본청사 시민광장 + 신주쿠 중앙공원",
+      "summary": "신주쿠 서쪽 축으로 붙이기 가장 좋은 확정형 행사입니다. Day 1에 신주쿠까지 갔다면 시부야를 조금 줄이고 여기서 야간 마감을 하는 쪽이 축제 밀도는 더 좋습니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "도청 시민광장 정면: 프로젝션 매핑 메인 감상 포인트",
+        "신주쿠 중앙공원 쪽: 광장보다 조금 여유롭게 보행형 관람 가능",
+        "아이 동반이면 20:00 전후 1회만 보고 이동하는 편이 피로 관리에 유리"
+      ],
+      "access": [
+        "도에이 오에도선 도초마에역 A4-b 출구 도보 1분",
+        "JR 신주쿠역 서쪽 출구 도보 약 10분",
+        "마루노우치선 니시신주쿠역 E2 출구 도보 약 5분"
+      ],
+      "watchouts": [
+        "국제 프로젝션 매핑 경쟁 부문은 무료 사전 등록이 필요할 수 있습니다.",
+        "우천·강풍 시 취소 또는 변경 가능성이 있어 당일 공식 공지를 다시 보는 편이 안전합니다."
+      ],
+      "links": [
+        {
+          "label": "TOKYO LIGHTS 2026 공식",
+          "url": "https://tokyolights.jp/en/"
+        },
+        {
+          "label": "GO TOKYO 관련 안내",
+          "url": "https://www.gotokyo.org/en/index.html"
+        }
+      ]
+    },
+    {
+      "fitDay": "Day 2 아사쿠사 점심 전후",
+      "category": "전통 공연 / 아사쿠사 행사",
+      "name": "Asakusa Geisha's Ozashiki Odori Spring / Summer 2026",
+      "date": "2026년 4월 11일(토) ~ 7월 11일(토), 13:00 / 14:30",
+      "place": "아사쿠사 문화관광센터",
+      "summary": "Day 2 아사쿠사 구간에 가장 정통성 있게 붙는 전통 공연입니다. 센소지 산책 직후 시간을 맞출 수 있다면, 단순 관광보다 훨씬 '도쿄다운 장면'을 만들 수 있습니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "아사쿠사 문화관광센터 실내 좌석: 날씨 영향 없이 관람 가능",
+        "가미나리몬-센터 공연-점심 순으로 묶으면 이동이 자연스러움",
+        "전통 공연을 짧고 진하게 보고 싶은 가족에게 특히 잘 맞음"
+      ],
+      "access": [
+        "긴자선 아사쿠사역 2번 출구 도보 1분",
+        "도에이 아사쿠사선 아사쿠사역 A4 출구 도보 2분"
+      ],
+      "watchouts": [
+        "요금은 5,000~6,000엔대로 가족 3인이면 체험비 비중이 커집니다.",
+        "Day 2 전체 동선이 촘촘해서 넣으려면 우에노 체류 시간을 조금 줄이는 편이 안전합니다."
+      ],
+      "links": [
+        {
+          "label": "GO TOKYO 행사 안내",
+          "url": "https://www.gotokyo.org/en/event/tokyotouristinfo/20260411.html"
+        }
+      ]
+    },
+    {
+      "fitDay": "Day 3 미나토미라이",
+      "category": "음악 페스티벌",
+      "name": "GREENROOM FESTIVAL'26",
+      "date": "2026년 5월 23일(토) ~ 5월 24일(일)",
+      "place": "요코하마 레드브릭 웨어하우스",
+      "summary": "오다이바에서 요코하마로 넘어가는 Day 3와 가장 잘 맞는 대형 해변 문화 페스티벌입니다. 미나토미라이 산책을 레드브릭 중심으로 바꾸면 행사 분위기를 가장 진하게 느낄 수 있습니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "레드브릭 웨어하우스 외부 동선: 입장권 없이 주변 분위기 체감 가능",
+        "해질 무렵 레드브릭-오산바시 사이: 항만 야경과 페스티벌 공기가 같이 살아남",
+        "티켓 구매 시에는 Day 3 메인 체류 포인트를 레드브릭 기준으로 재배치하는 편이 좋음"
+      ],
+      "access": [
+        "미나토미라이선 바샤미치역 또는 니혼오도리역 도보권",
+        "미나토미라이 산책 후 컵누들뮤지엄·레드브릭 축으로 연결하기 쉬움"
+      ],
+      "watchouts": [
+        "정식 입장권은 성인 1일 17,000엔, U18 8,500엔으로 가족 동반 시 비용이 큽니다.",
+        "전자티켓·스마트폰 제시가 필요하고, 공연 아티스트 촬영은 금지입니다."
+      ],
+      "links": [
+        {
+          "label": "GREENROOM FESTIVAL 공식",
+          "url": "https://greenroom.jp/en/tickets/"
+        }
+      ]
+    },
+    {
+      "fitDay": "Day 3 추카가이 인접",
+      "category": "도심형 주말 축제",
+      "name": "Belgian Beer Weekend Yokohama 2026",
+      "date": "2026년 5월 21일(목) ~ 5월 24일(일)",
+      "place": "야마시타공원",
+      "summary": "추카가이 바로 옆 야마시타공원에서 열리는 주말형 행사라 Day 3 저녁 직전에 가장 붙이기 쉽습니다. 엄밀히는 맥주 중심 이벤트지만, 공원 분위기와 푸드 부스 때문에 현지 축제 같은 활기가 살아 있습니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "야마시타공원 바다 쪽 가장자리: 행사 부스와 항만 풍경을 함께 보기 좋음",
+        "추카가이 식사 전 20~30분 들르는 방식이 가장 무리 없음",
+        "아이 동반이면 먹는 것보다 분위기 스케치용 짧은 체류가 잘 맞음"
+      ],
+      "access": [
+        "미나토미라이선 모토마치·추카가이역에서 도보권",
+        "추카가이와 야마시타공원은 같은 저녁 동선으로 묶기 쉬움"
+      ],
+      "watchouts": [
+        "입장은 무료지만 맥주·푸드는 토큰과 공식 글라스 세트 구매가 필요합니다.",
+        "공식적으로 20세 미만 음주는 금지라, 가족 여행에서는 식음보다는 행사 분위기 관람용으로 보는 편이 좋습니다."
+      ],
+      "links": [
+        {
+          "label": "BBW 공식 시스템 안내",
+          "url": "https://belgianbeerweekend.jp/en/system"
+        },
+        {
+          "label": "요코하마 관광 공식 소개",
+          "url": "https://www.welcome.city.yokohama.jp/spring_special/event/ev_detail.php?bid=yw5894"
+        }
+      ]
+    },
+    {
+      "fitDay": "Day 3 산책형 추천",
+      "category": "꽃 축제 / 시즌 이벤트",
+      "name": "Garden Necklace Yokohama 2026",
+      "date": "2026년 3월 19일(목) ~ 6월 14일(일)",
+      "place": "미나토미라이 · 야마시타공원 · 요코하마공원 일대",
+      "summary": "요코하마 쪽 봄 분위기를 가장 안정적으로 살려주는 시즌 행사입니다. 별도 입장보다 '꽃 동선 위를 걷는다'는 감각에 가까워서 가족 일정과 충돌이 적습니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "랜드마크타워·대관람차를 배경으로 보는 미나토미라이 꽃길",
+        "요코하마공원과 니혼오도리: 추카가이 진입 전 걷기 좋은 구간",
+        "야마시타공원 장미 시즌이 겹치면 추카가이 전후 산책 만족도가 크게 올라감"
+      ],
+      "access": [
+        "미나토미라이선 니혼오도리역 / 모토마치·추카가이역 활용이 가장 편함",
+        "레드브릭-야마시타공원-추카가이를 도보로 잇는 식으로 붙이기 좋음"
+      ],
+      "watchouts": [
+        "축제형 공연보다 꽃 연출 중심이라, 화려한 무대 이벤트를 기대하면 다소 잔잔할 수 있습니다.",
+        "꽃 절정 시점은 종별로 달라 5월 말에는 장미·초여름 꽃 위주로 보는 편이 좋습니다."
+      ],
+      "links": [
+        {
+          "label": "Garden Necklace 공식",
+          "url": "https://gardennecklace.city.yokohama.lg.jp/"
+        },
+        {
+          "label": "2026 개최 안내",
+          "url": "https://gardennecklace.city.yokohama.lg.jp/news/2026031940601.html"
+        }
+      ]
+    },
+    {
+      "fitDay": "Day 2 아사쿠사 야간 대체",
+      "category": "무료 야간 공연",
+      "name": "Oiran Night Rock — The Pulse of Tradition",
+      "date": "2025년 12월 5일 ~ 2026년 9월 27일, 매주 금·토·일 21:00~21:30",
+      "place": "아사쿠사 롯쿠 브로드웨이 쇼핑가",
+      "summary": "센소지와 우에노, 아키하바라를 다 돈 뒤에 다시 넣기엔 시간이 늦지만, Day 2를 아사쿠사 중심으로 압축하는 날엔 꽤 강한 카드입니다. 밤의 아사쿠사를 '공연이 있는 거리'로 경험하게 해주는 무료 행사입니다.",
+      "confidence": "공식 확정",
+      "bestSpots": [
+        "아사쿠사 롯쿠 브로드웨이 거리 초입: 이동하며 보기 편함",
+        "무료 공연이라 좌석형보다 '짧게 보고 분위기 체감'이 잘 맞음",
+        "아사쿠사 밤 분위기를 느끼고 싶을 때 센소지 야간 조명과 같이 묶기 좋음"
+      ],
+      "access": [
+        "츠쿠바 익스프레스 아사쿠사역 A1 출구 인접",
+        "긴자선 아사쿠사역 3번 출구 도보 약 8분"
+      ],
+      "watchouts": [
+        "현재 Day 2 기본안 그대로는 시간상 빡빡해, 넣으려면 도쿄타워 또는 아키하바라 체류를 줄이는 편이 좋습니다.",
+        "금·토·일 밤 고정이라 요일은 맞지만 귀환 시간이 늦어질 수 있습니다."
+      ],
+      "links": [
+        {
+          "label": "GO TOKYO 행사 안내",
+          "url": "https://www.gotokyo.org/en/spot/ev325/index.html"
+        }
+      ]
+    }
+  ],
   "nostalgiaFoods": [
     "오오토야 정식",
     "야요이켄 정식",
@@ -1762,6 +1945,124 @@
       "use": "피곤한 날 호텔 저녁",
       "detail": "마트 반찬, 초밥, 샐러드, 디저트를 조합하면 외식보다 덜 피곤하게 좋은 저녁을 만들 수 있습니다.",
       "link": "https://www.tokyu-store.co.jp/"
+    }
+  ],
+  "festivalEvents": [
+    {
+      "title": "Asakusa Geisha's Ozashiki Odori Spring / Summer 2026",
+      "day": "Day 2",
+      "dateTime": "2026.4.11 ~ 2026.7.11 / 13:00~15:30 (Part 1 13:00, Part 2 14:30)",
+      "place": "Kaminarimon 2-18-9, Taito City, Tokyo / Asakusa",
+      "summary": "에도풍 전통예능을 2시간 반 안팎으로 압축해 볼 수 있는, Day 2 낮시간대에 가장 넣기 쉬운 아사쿠사 공연형 이벤트입니다.",
+      "viewingPoints": [
+        "아사쿠사 관광과 점심을 붙여 넣기 좋고, Ueno 이동 전후로 리듬이 끊기지 않습니다.",
+        "소규모 좌석형이라 어린이 동반 가족이 전통예능을 가까이 보기 좋습니다."
+      ],
+      "access": "Tokyo Metro Ginza Line Asakusa Station Exit 2 1 min / Toei Asakusa Line Asakusa Station Exit A4 2 min",
+      "station": "Asakusa Station",
+      "priceNote": "5,000~6,000 yen",
+      "confidence": "GO TOKYO 공식 등록 + e-asakusa.jp 주최자 정보",
+      "caution": "회차와 좌석 수가 변동될 수 있어 당일 직전 공식 사이트 재확인이 필요합니다.",
+      "from": "Tsukiji",
+      "to": "Asakusa Station",
+      "links": [
+        {
+          "label": "GO TOKYO 공식 안내",
+          "url": "https://www.gotokyo.org/en/event/tokyotouristinfo/20260411.html"
+        },
+        {
+          "label": "e-asakusa.jp 공식 사이트",
+          "url": "https://e-asakusa.jp/"
+        }
+      ]
+    },
+    {
+      "title": "Oiran Night Rock — The Pulse of Tradition",
+      "day": "Day 2",
+      "dateTime": "2025.12.5 ~ 2026.9.27 / Fri, Sat, Sun 21:00~21:30",
+      "place": "2-5-5 Asakusa, Taito City, Tokyo / Rokku Broadway",
+      "summary": "무료로 볼 수 있는 밤 아사쿠사 공연입니다. Day 2 저녁 식사 후 20~30분만 붙여도 충분한 짧은 문화 이벤트예요.",
+      "viewingPoints": [
+        "저녁 식사 후 가볍게 붙이기 좋고, 피로가 남아도 부담이 적습니다.",
+        "무료 관람이라 가족 일정 막판에 넣기 쉬운 편입니다."
+      ],
+      "access": "Tsukuba Express Asakusa Station Exit A1 beside station / Tokyo Metro Ginza Line Asakusa Station Exit 3 8 min walk",
+      "station": "Asakusa Station",
+      "priceNote": "Free",
+      "confidence": "GO TOKYO 공식 상시 등록 + asakusarokku.jp 공식 페이지",
+      "caution": "금·토·일 밤만 운영하며 회차가 바뀔 수 있으니 직전 확인이 필요합니다.",
+      "from": "Ueno",
+      "to": "Asakusa Station",
+      "links": [
+        {
+          "label": "GO TOKYO 공식 안내",
+          "url": "https://www.gotokyo.org/en/spot/ev325/index.html"
+        },
+        {
+          "label": "Asakusa Rock Area Management Association",
+          "url": "https://asakusarokku.jp/"
+        }
+      ]
+    },
+    {
+      "title": "GREENROOM FESTIVAL'26",
+      "day": "Day 3",
+      "dateTime": "2026.5.23 ~ 2026.5.24 / Open 11:00, Start 12:00",
+      "place": "Yokohama Red Brick Warehouse, 1-1 Shinko, Naka-ku, Yokohama",
+      "summary": "요코하마 오션 무드의 음악·아트 페스티벌입니다. Day 3의 미나토미라이 축을 가장 강하게 살리는 행사예요.",
+      "viewingPoints": [
+        "미나토미라이 산책과 함께 붙이면 동선이 가장 자연스럽습니다.",
+        "마켓 구역은 무료, 무대 구역은 유료라 가족 동선 분리가 쉽습니다."
+      ],
+      "access": "JR / Municipal Subway Sakuragicho 17 min via Kishamichi / JR Kannai 17 min / Minatomirai Line Bashamichi 11 min / Nihon-Odori 10 min / Minatomirai 19 min",
+      "station": "Bashamichi / Nihon-Odori / Sakuragicho",
+      "priceNote": "1DAY 17,000 yen / 2DAYS 28,000 yen (UNDER 18 별도)",
+      "confidence": "2026 공식 발표 + 티켓/액세스 공식 페이지",
+      "caution": "우산·레저시트 사용 제한이 있고, 마켓 외 유료 구역은 티켓이 필요합니다. 주말 혼잡도 높습니다.",
+      "from": "Minatomirai Station",
+      "to": "Yokohama Red Brick Warehouse",
+      "links": [
+        {
+          "label": "GREENROOM 공식 홈",
+          "url": "https://greenroom.jp/en/"
+        },
+        {
+          "label": "GREENROOM 티켓",
+          "url": "https://greenroom.jp/ticket"
+        },
+        {
+          "label": "GREENROOM FAQ",
+          "url": "https://greenroom.jp/en/faq/"
+        }
+      ]
+    },
+    {
+      "title": "Belgian Beer Weekend 2026 Yokohama",
+      "day": "Day 3",
+      "dateTime": "2026.5.21 ~ 2026.5.24 / Thu 16:00~21:00, Fri-Sat 11:00~21:00, Sun 11:00~20:00",
+      "place": "Yamashita Park, Yokohama",
+      "summary": "요코하마 바닷가에서 열리는 맥주·음식·라이브 뮤직 행사입니다. Chinatown과 붙이기 쉬워 Day 3 밤마무리용으로 좋습니다.",
+      "viewingPoints": [
+        "중화가이 식사 후 야간 가볍게 붙이기 좋습니다.",
+        "해안 산책 동선과 같아서 아이 동반 가족도 분위기를 즐기기 쉽습니다."
+      ],
+      "access": "Motomachi-Chukagai Station Exit 4 3 min / Kannai Station 20 min / Ishikawacho Station 20 min",
+      "station": "Motomachi-Chukagai Station",
+      "priceNote": "입장 무료, TRIAL SET 2,700 yen / STARTER SET 3,750 yen (advance)",
+      "confidence": "공식 Yokohama 페이지 + system/access FAQ",
+      "caution": "음식·음료 구매는 공식 글라스와 토큰이 필요하고, 주말 혼잡이 큽니다.",
+      "from": "Motomachi-Chukagai Station",
+      "to": "Yamashita Park",
+      "links": [
+        {
+          "label": "Yokohama 공식 페이지",
+          "url": "https://belgianbeerweekend.jp/en/yokohama"
+        },
+        {
+          "label": "BBW 시스템 안내",
+          "url": "https://belgianbeerweekend.jp/en/system"
+        }
+      ]
     }
   ],
   "foodGenreOps": [

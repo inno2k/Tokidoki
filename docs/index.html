@@ -93,6 +93,17 @@
           </button>
           <button
             type="button"
+            id="tab-festival"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-festival"
+            tabindex="-1"
+            data-content-tab="festival"
+          >
+            축제
+          </button>
+          <button
+            type="button"
             id="tab-budget"
             role="tab"
             aria-selected="false"
@@ -357,6 +368,26 @@
         </section>
 
         <section
+          id="panel-festival"
+          class="tab-panel"
+          role="tabpanel"
+          aria-labelledby="tab-festival"
+          data-tab-panel="festival"
+          hidden
+        >
+          <section class="section" data-nav-label="행사 캘린더">
+            <div class="section-head">
+              <p class="section-label">축제 · 이벤트</p>
+              <h2>Day 1~Day 3 사이에 끼워 넣을 수 있는 현지 행사</h2>
+              <p class="section-subcopy">
+                공식 공지와 현지 이벤트 페이지를 기준으로, 일정에 실제로 붙이기 쉬운 축제·계절 이벤트만 골라 정리했습니다.
+              </p>
+            </div>
+            <div class="ops-grid festival-grid" id="festival-grid"></div>
+          </section>
+        </section>
+
+        <section
           id="panel-budget"
           class="tab-panel"
           role="tabpanel"
@@ -500,6 +531,6 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
-    <script src="./assets/js/app.js?v=schedule-sync-2"></script>
+    <script src="./assets/js/app.js?v=festival-sync-1"></script>
   </body>
 </html>
