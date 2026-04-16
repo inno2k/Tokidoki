@@ -1,0 +1,253 @@
+[
+  {
+    "day": "Day 1",
+    "sortOrder": 10,
+    "videoRank": "28위",
+    "title": "串串香 麻辣湯 池袋店",
+    "area": "이케부쿠로",
+    "summary": "호텔 체크인 전후나 이케부쿠로 서브 루트에 붙이기 쉬운 마라탕 카드입니다.",
+    "location": "東京都豊島区西池袋1-33-6 1F",
+    "station": "JR·도쿄메트로 이케부쿠로역 북쪽 출구 도보 2분",
+    "lineNote": "야마노테선 / 사이쿄선 / 마루노우치선 / 유라쿠초선 / 후쿠토신선",
+    "routeFit": "오사키 출발 후 이케부쿠로를 먼저 들르는 Day 1 점심 또는 이른 저녁 후보",
+    "recommendedMenus": [
+      "재료 선택형 마라탕 한 그릇",
+      "매운맛을 낮춘 기본 국물 + 채소/버섯 위주 조합",
+      "고수나 내장류는 별도 선택으로 조절"
+    ],
+    "priceNote": "1인 1,000~1,999엔",
+    "ratingNote": "Tabelog 3.48 / 리뷰 341건 스냅샷",
+    "reviewNote": "최근 후기 기준으로 북쪽 출구 접근성이 좋고, 재료를 직접 고르는 방식이라 취향 조절이 쉽다는 평가가 많았습니다.",
+    "caution": "12석 규모라 피크 타임에는 대기 가능성이 높고, 어린이 기준으로는 맵기 레벨을 낮게 잡는 편이 안전합니다.",
+    "from": "Ikebukuro Station",
+    "to": "串串香 麻辣湯 池袋店",
+    "links": [
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1305/A130501/13175047/" },
+      { "label": "Tabelog 지도", "url": "https://tabelog.com/tokyo/A1305/A130501/13175047/dtlmap/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 1",
+    "sortOrder": 20,
+    "videoRank": "4위",
+    "title": "麺屋 Hulu-lu",
+    "area": "이케부쿠로",
+    "summary": "이케부쿠로 축에서 가장 강한 라멘 카드로, 식사 만족도가 높고 회전도 비교적 빠른 편입니다.",
+    "location": "공식 홈페이지 기준 이케부쿠로 서쪽 출구권",
+    "station": "JR 이케부쿠로역 서쪽 출구 도보 7분",
+    "lineNote": "야마노테선 / 사이쿄선 / 도부 토죠선 / 세이부 이케부쿠로선",
+    "routeFit": "Day 1 이케부쿠로 구간의 메인 점심 후보",
+    "recommendedMenus": [
+      "醤油SOBA",
+      "塩SOBA",
+      "스팸 세트"
+    ],
+    "priceNote": "공식·Tabelog 기준 SOBA 1,000엔대, 스팸 세트 1,380엔 전후",
+    "ratingNote": "Tabelog 3.77 / 리뷰 2,139건 스냅샷",
+    "reviewNote": "최근 후기에서는 특제 간장 SOBA와 하와이안 분위기, 카페처럼 들어가기 편한 점이 반복적으로 언급됐습니다.",
+    "caution": "화요일 휴무이고 요일별 제공 메뉴가 달라서 방문 요일에 맞춰 메뉴를 다시 보는 편이 좋습니다.",
+    "from": "Ikebukuro Station",
+    "to": "麺屋 Hulu-lu",
+    "links": [
+      { "label": "공식 사이트", "url": "https://www.hulu-lu.net/" },
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1305/A130501/13136428/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 1",
+    "sortOrder": 30,
+    "videoRank": "15위",
+    "title": "麗郷 渋谷店",
+    "area": "시부야",
+    "summary": "시부야 저녁 동선에서 술안주형 대만요리를 제대로 먹고 싶을 때 가장 영상 톤에 맞는 카드입니다.",
+    "location": "東京都渋谷区道玄坂2-25-18",
+    "station": "시부야역 도보권",
+    "lineNote": "JR 야마노테선 / 도큐 도요코선 / 도쿄메트로 긴자선·후쿠토신선",
+    "routeFit": "Day 1 시부야 저녁 식사 후보",
+    "recommendedMenus": [
+      "腸詰",
+      "汁ビーフン",
+      "青菜炒め"
+    ],
+    "priceNote": "Tabelog 저녁 예산 4,000~4,999엔",
+    "ratingNote": "Tabelog 3.54 / 리뷰 2,438건 스냅샷",
+    "reviewNote": "후기에서는 대기 가능성은 있지만 대표 메뉴인 소시지와 비훈 조합이 만족도가 높다는 반응이 많았습니다.",
+    "caution": "아이 기준으로는 향신료와 내장/대만식 소시지 취향 차이가 있을 수 있어 볶음밥 계열 백업을 같이 두는 편이 좋습니다.",
+    "from": "Shibuya Station",
+    "to": "麗郷 渋谷店",
+    "links": [
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1303/A130301/13001805/" },
+      { "label": "평점 분포", "url": "https://tabelog.com/tokyo/A1303/A130301/13001805/dtlratings/?type=0" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 1",
+    "sortOrder": 40,
+    "videoRank": "공동 11위",
+    "title": "THE RIGOLETTO",
+    "area": "시부야",
+    "summary": "시부야에서 가족 식사 안정성이 높은 서양식 백업 카드입니다.",
+    "location": "東京都渋谷区渋谷1-23-21 渋谷キャスト GF/1F",
+    "station": "시부야역 B1 출구 도보 1분",
+    "lineNote": "JR / 도큐 / 도쿄메트로 / 게이오 이노카시라선",
+    "routeFit": "Day 1 시부야에서 분위기와 안정적인 메뉴 구성을 같이 잡는 저녁 후보",
+    "recommendedMenus": [
+      "생파스타",
+      "피자",
+      "타파스"
+    ],
+    "priceNote": "Tabelog 기준 점심 1,000~1,999엔 / 저녁 4,000~4,999엔",
+    "ratingNote": "Tabelog 3.49 / 리뷰 1,100건대 스냅샷",
+    "reviewNote": "최근 후기에서는 미야시타파크 맞은편 접근성과 넓은 공간, 가족 단위로 고르기 쉬운 메뉴 폭이 장점으로 자주 언급됐습니다.",
+    "caution": "주말 저녁은 예약 선호도가 높고, 시부야 인파가 겹치면 대기 시간이 길어질 수 있습니다.",
+    "from": "Shibuya Station",
+    "to": "THE RIGOLETTO",
+    "links": [
+      { "label": "SHIBUYA CAST 안내", "url": "https://shibuyacast.jp/floor/detail/?scd=000034" },
+      { "label": "Tabelog", "url": "https://selection.tabelog.com/tokyo/A1303/A130301/13207146/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 1",
+    "sortOrder": 50,
+    "videoRank": "1위",
+    "title": "新宿 立吉",
+    "area": "신주쿠",
+    "summary": "영상 1위 식당으로, 신주쿠 밤 분위기를 제대로 느끼고 싶을 때 붙이기 좋은 체험형 저녁 카드입니다.",
+    "location": "東京都新宿区新宿3-5-3 高山ランド会館 9F",
+    "station": "신주쿠산초메역 도보권 / JR 신주쿠역 동쪽 축",
+    "lineNote": "JR 신주쿠역 + 도쿄메트로 마루노우치선·후쿠토신선",
+    "routeFit": "Day 1 밤을 신주쿠까지 확장할 경우의 대표 저녁 후보",
+    "recommendedMenus": [
+      "셰프 추천 순서의 꼬치튀김",
+      "제철 꼬치",
+      "식사 마무리용 밥/디저트"
+    ],
+    "priceNote": "Tabelog 기준 저녁 6,000~7,999엔",
+    "ratingNote": "Tabelog 3.57 / 리뷰 730건대 스냅샷",
+    "reviewNote": "후기에서는 원하는 만큼 먹다가 '스톱'을 외치는 방식과, 계속 손이 가는 꼬치 흐름이 인상적이라는 반응이 많았습니다.",
+    "caution": "아이와 함께 가면 긴 식사보다 12~15꼬치 안쪽에서 끊는 편이 피로도가 덜합니다.",
+    "from": "Shinjuku-sanchome Station",
+    "to": "新宿 立吉",
+    "links": [
+      { "label": "공식 사이트", "url": "https://www.shinjuku-tatsukichi.com/en/" },
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1304/A130401/13011911/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 2",
+    "sortOrder": 10,
+    "videoRank": "공동 9위",
+    "title": "きつねや",
+    "area": "츠키지",
+    "summary": "Day 2 츠키지 축과 가장 정확히 겹치는 영상 추천 맛집입니다.",
+    "location": "東京都中央区築地4-9-12",
+    "station": "도에이 오에도선 츠키지시장역 A1 도보 5분 / 히비야선 츠키지역 도보 5분",
+    "lineNote": "오에도선 / 히비야선",
+    "routeFit": "Day 2 츠키지 아침 메인 식사 후보",
+    "recommendedMenus": [
+      "ホルモン丼",
+      "肉豆腐",
+      "牛丼"
+    ],
+    "priceNote": "공식·Tabelog 기준 1인 999엔 이하~1,000엔대 초반",
+    "ratingNote": "Tabelog 3.49 / 리뷰 2,510건 스냅샷",
+    "reviewNote": "공식 소개와 최근 Tabelog 후기 모두 호르몬덮밥과 니쿠도후를 대표 메뉴로 밀고 있고, 오전 일찍 움직일수록 만족도가 높다는 흐름이 뚜렷했습니다.",
+    "caution": "수·일 휴무, 오전형 영업이라 Day 2 첫 타임에 넣는 편이 안정적입니다.",
+    "from": "Tsukiji Station",
+    "to": "きつねや",
+    "links": [
+      { "label": "츠키지 공식 안내", "url": "https://www.tsukiji.or.jp/shoplist/cat-d/cat-14/046/" },
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1313/A131301/13007656/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 2",
+    "sortOrder": 20,
+    "videoRank": "공동 17위",
+    "title": "GONPACHI Nishi-Azabu",
+    "area": "니시아자부 / 도쿄타워 축",
+    "summary": "도쿄타워 야경 전후에 붙이기 좋은 분위기형 저녁 카드입니다.",
+    "location": "東京都港区西麻布1-13-11 1F・2F",
+    "station": "롯폰기역·노기자카역·히로오역 각 도보 10분",
+    "lineNote": "도쿄메트로 히비야선 / 지요다선",
+    "routeFit": "Day 2 도쿄타워 야경 전후 저녁 후보",
+    "recommendedMenus": [
+      "수타 소바",
+      "꼬치구이",
+      "텐푸라"
+    ],
+    "priceNote": "Tabelog 기준 점심 1,000~1,999엔 / 저녁 4,000~4,999엔",
+    "ratingNote": "Tabelog 3.40 / 리뷰 약 1,000건 스냅샷",
+    "reviewNote": "공식·Tabelog 모두 내부 분위기와 관광객 접대력, 소바·꼬치·튀김의 무난한 조합을 강점으로 보여줍니다.",
+    "caution": "17시 이후 최소 주문 금액 조건이 있고, 현금 없는 완전 캐시리스 운영이라 결제 수단을 미리 맞춰두는 편이 안전합니다.",
+    "from": "Tokyo Tower",
+    "to": "GONPACHI Nishi-Azabu",
+    "links": [
+      { "label": "공식 사이트", "url": "https://gonpachi.jp/nishi-azabu/" },
+      { "label": "Tabelog", "url": "https://tabelog.com/en/tokyo/A1307/A130701/13005298/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 5",
+    "sortOrder": 10,
+    "videoRank": "공동 5위",
+    "title": "おにやんま 五反田本店",
+    "area": "고탄다",
+    "summary": "오사키 숙소 축과 가장 강하게 맞물리는 영상 추천 맛집으로, 출국일에도 부담이 적습니다.",
+    "location": "五反田駅高架脇エリア",
+    "station": "JR 고탄다역 도보권",
+    "lineNote": "JR 야마노테선 / 도에이 아사쿠사선 / 도큐 이케가미선",
+    "routeFit": "Day 5 오사키 체크아웃 후 빠른 점심 또는 귀국 전 한 끼",
+    "recommendedMenus": [
+      "とり天ぶっかけ",
+      "とり天ちくわ天ぶっかけ",
+      "온우동"
+    ],
+    "priceNote": "Tabelog 기준 1인 999엔 이하",
+    "ratingNote": "Tabelog 3.74 / 리뷰 4,700건대 스냅샷",
+    "reviewNote": "최근 후기에서는 줄은 길어도 회전이 빠르고, 닭튀김과 쫄깃한 면의 만족도가 매우 높다는 반응이 이어졌습니다.",
+    "caution": "입식에 가깝고 줄이 생기기 쉬워서 큰 짐을 든 출국일에는 식사 시간대를 앞당기는 편이 좋습니다.",
+    "from": "Osaki Station",
+    "to": "おにやんま 五反田本店",
+    "links": [
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1316/A131603/13111869/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  },
+  {
+    "day": "Day 5",
+    "sortOrder": 20,
+    "videoRank": "공동 17위",
+    "title": "広州市場 五反田店",
+    "area": "고탄다",
+    "summary": "오니야마보다 앉아서 먹기 편하고, 아이 메뉴 대응력이 좋아 Day 5 백업 카드로 특히 좋습니다.",
+    "location": "東京都品川区東五反田1-21-10",
+    "station": "JR 고탄다역 동쪽 출구 도보 2분",
+    "lineNote": "JR 야마노테선 / 도에이 아사쿠사선 / 도큐 이케가미선",
+    "routeFit": "Day 5 오사키·고탄다 축의 안정적인 좌석형 식사 백업",
+    "recommendedMenus": [
+      "雲呑麺",
+      "海老塩雲呑麺",
+      "汁なし雲呑坦々麺"
+    ],
+    "priceNote": "공식·Tabelog 기준 1인 1,000~1,999엔",
+    "ratingNote": "Tabelog 3.51 / 리뷰 1,293건 스냅샷",
+    "reviewNote": "후기에서는 와탄멘의 부드러운 식감, 간장/소금 선택지, 탁상 조미료로 맛 변주가 쉬운 점이 강점으로 보였습니다.",
+    "caution": "현금 결제는 불가이고 PayPay 중심이라 결제 수단을 미리 확인하는 편이 좋습니다.",
+    "from": "Osaki Station",
+    "to": "広州市場 五反田店",
+    "links": [
+      { "label": "공식 사이트", "url": "https://www.kosyuichiba.com/shop/gotanda.html" },
+      { "label": "Tabelog", "url": "https://tabelog.com/tokyo/A1316/A131603/13001555/" },
+      { "label": "영상 원본", "url": "https://www.youtube.com/watch?v=txYT7i-D_LU" }
+    ]
+  }
+]
