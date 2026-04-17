@@ -1,4 +1,4 @@
-const APP_VERSION = "video-food-2";
+const APP_VERSION = "video-place-1";
 
 let tripMap;
 let mapMarkers = [];
@@ -15,18 +15,28 @@ async function loadTrip() {
     throw new Error(`여행 데이터를 불러오지 못했습니다: ${response.status}`);
   }
   const trip = await response.json();
+  const [foodResult, placeResult] = await Promise.allSettled([
+    fetch(`./assets/data/video-food-picks-2026.json?v=${APP_VERSION}`),
+    fetch(`./assets/data/video-place-expansions-2026.json?v=${APP_VERSION}`)
+  ]);
 
-  try {
-    const picksResponse = await fetch(`./assets/data/video-food-picks-2026.json?v=${APP_VERSION}`);
-    if (!picksResponse.ok) {
-      return { ...trip, videoFoodPicks: [] };
-    }
+  let videoFoodPicks = [];
+  let itineraryExpansions = {};
 
-    const videoFoodPicks = await picksResponse.json();
-    return { ...trip, videoFoodPicks };
-  } catch {
-    return { ...trip, videoFoodPicks: [] };
+  if (foodResult.status === "fulfilled" && foodResult.value.ok) {
+    videoFoodPicks = await foodResult.value.json();
   }
+
+  if (placeResult.status === "fulfilled" && placeResult.value.ok) {
+    const placeData = await placeResult.value.json();
+    itineraryExpansions = placeData.itineraryExpansions || {};
+  }
+
+  return {
+    ...trip,
+    videoFoodPicks,
+    itineraryExpansions
+  };
 }
 
 function normalizeStationName(value) {
@@ -55,6 +65,14 @@ function opsKey(group, label, index) {
 
 function timelineKey(day, index, mode = currentWeatherMode) {
   return `tokidoki-timeline-${day}-${mode}-${index}`;
+}
+
+function timelineSkipKey(day, index, mode = currentWeatherMode) {
+  return `tokidoki-timeline-skip-${day}-${mode}-${index}`;
+}
+
+function optionalSpotKey(day, spotId) {
+  return `tokidoki-optional-spot-${day}-${spotId}`;
 }
 
 function escapeHtml(value) {
@@ -607,6 +625,7 @@ function renderPhotos(data) {
 function renderTimelineItem(item, dayLabel, index) {
   const typeLabel = item.type === "meal" ? "식사" : item.type === "attraction" ? "어트랙션" : "이동";
   const done = localStorage.getItem(timelineKey(dayLabel, index)) === "1";
+  const skipped = localStorage.getItem(timelineSkipKey(dayLabel, index)) === "1";
 
   const links =
     item.from && item.to
@@ -647,10 +666,13 @@ function renderTimelineItem(item, dayLabel, index) {
   }
 
   return `
-    <article class="timeline-item ${done ? "done" : ""}">
+    <article class="timeline-item ${done ? "done" : ""} ${skipped ? "skipped" : ""}">
       <div class="timeline-head">
         <span class="timeline-time">${item.time}</span>
-        <span class="timeline-type">${typeLabel}</span>
+        <div class="timeline-head-meta">
+          <span class="timeline-type">${typeLabel}</span>
+          ${skipped ? `<span class="skip-state">패스됨</span>` : ""}
+        </div>
       </div>
       <h4 class="timeline-title">${item.title}</h4>
       <p>${item.detail}</p>
@@ -659,6 +681,9 @@ function renderTimelineItem(item, dayLabel, index) {
       <div class="timeline-actions">
         <button class="action-chip ${done ? "active" : ""}" type="button" data-timeline-day="${dayLabel}" data-timeline-index="${index}">
           ${done ? "완료됨" : "완료 표시"}
+        </button>
+        <button class="action-chip action-chip-skip ${skipped ? "active" : ""}" type="button" data-timeline-skip-day="${dayLabel}" data-timeline-skip-index="${index}">
+          ${skipped ? "패스 취소" : "패스"}
         </button>
       </div>
     </article>
@@ -669,6 +694,7 @@ function renderItinerary(data) {
   document.getElementById("itinerary-grid").innerHTML = data.itinerary
     .map((item, dayIndex) => {
       const weatherVariant = weatherVariantFor(item);
+      const expansion = data.itineraryExpansions?.[item.day];
       return `
         <article class="day-card" id="itinerary-day-${dayIndex + 1}" data-nav-label="${item.day}">
           <div class="day-top">
@@ -703,6 +729,7 @@ function renderItinerary(data) {
               `
               : ""
           }
+          ${renderOptionalSpots(item.day, expansion)}
           ${renderTodoList(item.day, item.todos)}
           ${
             timelineFor(item).length
@@ -717,6 +744,7 @@ function renderItinerary(data) {
     .join("");
   attachTodoHandlers();
   attachTimelineHandlers();
+  attachOptionalSpotHandlers();
   if (currentContentTab === "itinerary") {
     renderSectionJumpbar("itinerary");
   }
@@ -980,6 +1008,92 @@ function renderBudgetPanel(data, key) {
           .join("")}
       </div>
     ` : ""}
+  `;
+}
+
+function renderOptionalSpots(dayLabel, expansion) {
+  if (!expansion?.spots?.length) {
+    return "";
+  }
+
+  const cards = [...expansion.spots]
+    .sort((left, right) => Number(left.sortOrder || 0) - Number(right.sortOrder || 0))
+    .map((spot) => {
+      const skipped = localStorage.getItem(optionalSpotKey(dayLabel, spot.id)) === "1";
+      const sourceLabel =
+        spot.sourceType === "video-description-explicit-theme"
+          ? "영상 설명 직접 반영"
+          : "영상 챕터 톤 + 현재 동선 확장";
+      const routeLinks =
+        spot.from && spot.to
+          ? `
+            <a class="timeline-link" href="${mapRouteUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 경로</a>
+            ${copyButton(mapRouteUrl(spot.from, spot.to))}
+            <a class="timeline-link" href="${transitUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 노선</a>
+            ${copyButton(transitUrl(spot.from, spot.to))}
+          `
+          : "";
+      const externalLinks = (spot.links || [])
+        .map(
+          (link) => `
+            <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+            ${copyButton(link.url)}
+          `
+        )
+        .join("");
+
+      return `
+        <article class="optional-spot-card ${skipped ? "skipped" : ""}">
+          <div class="optional-spot-top">
+            <div>
+              <div class="day-badge">${spot.area}</div>
+              <h4>${spot.title}</h4>
+            </div>
+            <div class="timeline-head-meta">
+              <span class="timeline-type">${spot.category}</span>
+              ${skipped ? `<span class="skip-state">패스됨</span>` : ""}
+            </div>
+          </div>
+          <p>${spot.summary}</p>
+          <div class="timeline-meta">
+            <span>근거: ${sourceLabel}</span>
+            <span>왜 붙였나: ${spot.whyFit}</span>
+            <span>가까운 역: ${spot.station}</span>
+            <span>노선: ${spot.lineNote}</span>
+            <span>체류 추천: ${spot.stay}</span>
+            <span>비용 감각: ${spot.budgetNote}</span>
+            <span>가족 메모: ${spot.familyNote}</span>
+            <span>패스 기준: ${spot.passRule}</span>
+          </div>
+          <div class="timeline-links">
+            ${routeLinks}
+            ${externalLinks}
+          </div>
+          <div class="timeline-actions">
+            <button
+              class="action-chip action-chip-skip ${skipped ? "active" : ""}"
+              type="button"
+              data-spot-day="${dayLabel}"
+              data-spot-id="${spot.id}"
+            >
+              ${skipped ? "패스 취소" : "패스"}
+            </button>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="optional-spot-section">
+      <div class="support-box optional-spot-summary">
+        <strong>${expansion.title || "영상 확장 스팟"}</strong>
+        <p>${expansion.summary || ""}</p>
+      </div>
+      <div class="optional-spot-grid">
+        ${cards}
+      </div>
+    </section>
   `;
 }
 
@@ -1611,8 +1725,26 @@ function attachTimelineHandlers() {
     button.addEventListener("click", () => {
       const { timelineDay, timelineIndex } = button.dataset;
       const key = timelineKey(timelineDay, timelineIndex);
+      const skipStorageKey = timelineSkipKey(timelineDay, timelineIndex);
       const next = localStorage.getItem(key) === "1" ? "0" : "1";
       localStorage.setItem(key, next);
+      if (next === "1") {
+        localStorage.removeItem(skipStorageKey);
+      }
+      renderItinerary(window.__TOKIDOKI_DATA__);
+    });
+  });
+
+  document.querySelectorAll("[data-timeline-skip-day]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const { timelineSkipDay, timelineSkipIndex } = button.dataset;
+      const key = timelineSkipKey(timelineSkipDay, timelineSkipIndex);
+      const doneStorageKey = timelineKey(timelineSkipDay, timelineSkipIndex);
+      const next = localStorage.getItem(key) === "1" ? "0" : "1";
+      localStorage.setItem(key, next);
+      if (next === "1") {
+        localStorage.removeItem(doneStorageKey);
+      }
       renderItinerary(window.__TOKIDOKI_DATA__);
     });
   });
@@ -1620,6 +1752,18 @@ function attachTimelineHandlers() {
   document.querySelectorAll("[data-copy]").forEach((button) => {
     button.addEventListener("click", () => {
       copyText(button.dataset.copy, button);
+    });
+  });
+}
+
+function attachOptionalSpotHandlers() {
+  document.querySelectorAll("[data-spot-day]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const { spotDay, spotId } = button.dataset;
+      const key = optionalSpotKey(spotDay, spotId);
+      const next = localStorage.getItem(key) === "1" ? "0" : "1";
+      localStorage.setItem(key, next);
+      renderItinerary(window.__TOKIDOKI_DATA__);
     });
   });
 }
