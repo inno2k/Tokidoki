@@ -1,4 +1,4 @@
-const APP_VERSION = "video-place-2";
+const APP_VERSION = "final-review-1";
 
 let tripMap;
 let mapMarkers = [];
