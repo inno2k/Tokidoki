@@ -8,6 +8,14 @@ let currentContentTab = localStorage.getItem("tokidoki-content-tab") || "overvie
 let tabObserver;
 let sectionObserver;
 let navSyncFrame = null;
+let stickyMetrics = {
+  safeTop: 0,
+  stickyTopGap: 10,
+  tabBarHeight: 0,
+  jumpBarHeight: 0,
+  stackOffset: 128,
+  scrollOffset: 162
+};
 
 async function loadTrip() {
   const response = await fetch(`./assets/data/tokyo-family-trip-2026.json?v=${APP_VERSION}`);
@@ -250,10 +258,40 @@ function scrollToTabPanel(tab) {
   });
 }
 
-function currentStickyOffset() {
+function syncStickyMetrics() {
+  const root = document.documentElement;
   const tabBar = document.querySelector(".content-tabs");
   const jumpBar = document.querySelector(".section-jumpbar");
-  return (tabBar?.offsetHeight || 0) + (jumpBar?.offsetHeight || 0) + 34;
+  const computedRoot = window.getComputedStyle(root);
+  const safeTop = Number.parseFloat(computedRoot.getPropertyValue("--safe-top")) || 0;
+  const stickyTopGap = Number.parseFloat(computedRoot.getPropertyValue("--sticky-top-gap")) || 10;
+  const tabBarHeight = Math.ceil(tabBar?.getBoundingClientRect().height || tabBar?.offsetHeight || 0);
+  const jumpBarHeight = jumpBar?.hidden ? 0 : Math.ceil(jumpBar?.getBoundingClientRect().height || jumpBar?.offsetHeight || 0);
+  const stackOffset = tabBarHeight + jumpBarHeight;
+  const scrollOffset = safeTop + stickyTopGap + tabBarHeight + jumpBarHeight + 28;
+
+  stickyMetrics = {
+    safeTop,
+    stickyTopGap,
+    tabBarHeight,
+    jumpBarHeight,
+    stackOffset,
+    scrollOffset
+  };
+
+  root.style.setProperty("--sticky-tabs-height", `${tabBarHeight}px`);
+  root.style.setProperty("--sticky-jumpbar-height", `${jumpBarHeight}px`);
+  root.style.setProperty("--sticky-stack-offset", `${stackOffset}px`);
+
+  return stickyMetrics;
+}
+
+function currentStickyOffset() {
+  if (!stickyMetrics.scrollOffset) {
+    syncStickyMetrics();
+  }
+
+  return stickyMetrics.scrollOffset || 162;
 }
 
 function scrollToSection(sectionId) {
@@ -315,12 +353,6 @@ function syncNavigationFromScroll() {
   });
 
   setActiveSectionChip(activeSection.id);
-}
-
-function revealAllTabPanels() {
-  document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
-    panel.hidden = false;
-  });
 }
 
 function panelSectionsFor(tab) {
@@ -440,6 +472,7 @@ function renderSectionJumpbar(tab) {
   });
 
   setActiveSectionChip(sections[0].id);
+  syncStickyMetrics();
   initSectionObserver(tab);
   scheduleNavigationSync();
 }
@@ -447,6 +480,11 @@ function renderSectionJumpbar(tab) {
 function setContentTab(tab, focusButton = false, shouldScroll = false) {
   currentContentTab = tab;
   localStorage.setItem("tokidoki-content-tab", currentContentTab);
+
+  document.querySelectorAll("[data-tab-panel]").forEach((panel) => {
+    const active = panel.dataset.tabPanel === currentContentTab;
+    panel.hidden = !active;
+  });
 
   document.querySelectorAll("[data-content-tab]").forEach((button) => {
     const active = button.dataset.contentTab === currentContentTab;
@@ -459,6 +497,7 @@ function setContentTab(tab, focusButton = false, shouldScroll = false) {
   });
 
   renderSectionJumpbar(currentContentTab);
+  syncStickyMetrics();
 
   if (shouldScroll) {
     scrollToTabPanel(tab);
@@ -475,10 +514,16 @@ function initScrollSpy() {
   }
 
   if (!window.__TOKIDOKI_SCROLL_SYNC_BOUND__) {
+    const syncStickyLayout = () => {
+      syncStickyMetrics();
+      scheduleNavigationSync();
+    };
     window.addEventListener("scroll", scheduleNavigationSync, { passive: true });
-    window.addEventListener("resize", scheduleNavigationSync);
+    window.addEventListener("resize", syncStickyLayout);
+    window.addEventListener("orientationchange", syncStickyLayout);
     window.__TOKIDOKI_SCROLL_SYNC_BOUND__ = true;
   }
+  syncStickyMetrics();
   scheduleNavigationSync();
 }
 
@@ -492,8 +537,6 @@ function initContentTabs() {
   if (!validTabs.has(currentContentTab)) {
     currentContentTab = "overview";
   }
-
-  revealAllTabPanels();
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -525,23 +568,6 @@ function initContentTabs() {
 
   setContentTab(currentContentTab, false, false);
   initScrollSpy();
-}
-
-function bindContentTabEvents() {
-  if (window.__TOKIDOKI_TABS_BOUND__) {
-    return;
-  }
-
-  document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-content-tab]");
-    if (!button) {
-      return;
-    }
-    event.preventDefault();
-    setContentTab(button.dataset.contentTab, false, true);
-  });
-
-  window.__TOKIDOKI_TABS_BOUND__ = true;
 }
 
 function createSakuraLayer() {
@@ -1700,6 +1726,31 @@ function renderMapToolbar(data) {
   });
 }
 
+function renderMapLegend(data) {
+  const root = document.getElementById("map-legend");
+  if (!root) {
+    return;
+  }
+
+  const coreCount = (data.mapPoints || []).filter((point) => !point.optional).length;
+  const optionalCount = (data.mapPoints || []).filter((point) => point.optional).length;
+
+  root.innerHTML = `
+    <span class="map-legend-item">
+      <span class="map-line-sample map-line-core" aria-hidden="true"></span>
+      <span class="map-dot map-dot-core" aria-hidden="true"></span>
+      <span>메인 동선</span>
+    </span>
+    <span class="map-legend-item">
+      <span class="map-dot map-dot-optional" aria-hidden="true"></span>
+      <span>선택형 보조 포인트</span>
+    </span>
+    <p class="map-legend-copy">
+      실선은 기본 동선이고, 점은 필요할 때만 선택하는 후보입니다. 메인 ${coreCount}곳, 선택형 ${optionalCount}곳으로 나뉘어 있습니다.
+    </p>
+  `;
+}
+
 function renderMaps(data) {
   document.getElementById("map-grid").innerHTML = data.mapAnchors
     .map(
@@ -1717,10 +1768,12 @@ function renderMaps(data) {
       `
     )
     .join("");
+  renderMapLegend(data);
 }
 
 function initMap(data) {
   if (!window.L) {
+    renderMapLegend(data);
     return;
   }
 
@@ -1735,6 +1788,7 @@ function initMap(data) {
   }).addTo(tripMap);
 
   renderMapToolbar(data);
+  renderMapLegend(data);
   drawMapPoints(data, "all");
 }
 
@@ -2013,11 +2067,18 @@ async function main() {
     renderGuide(data);
     renderSources(data);
     initContentTabs();
+    syncStickyMetrics();
+    if (document.fonts?.ready) {
+      document.fonts.ready
+        .then(() => {
+          syncStickyMetrics();
+          scheduleNavigationSync();
+        })
+        .catch(() => {});
+    }
   } catch (error) {
-    document.body.innerHTML = `<main style="padding:40px;font-family:'IBM Plex Sans KR',sans-serif;"><h1>여행 데이터를 불러오지 못했습니다.</h1><p>${error.message}</p></main>`;
+    document.body.innerHTML = `<main class="app-error-state"><h1>여행 데이터를 불러오지 못했습니다.</h1><p>${error.message}</p></main>`;
   }
 }
 
-bindContentTabEvents();
-initContentTabs();
 main();
