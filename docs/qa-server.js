@@ -18,12 +18,55 @@ const mimeTypes = {
   ".webp": "image/webp"
 };
 
-const server = http.createServer((req, res) => {
-  const requestPath = decodeURIComponent((req.url || "/").split("?")[0]);
-  const relativePath = requestPath === "/" ? "index.html" : requestPath.replace(/^\/+/, "");
-  const filePath = path.resolve(root, relativePath);
+/**
+ * Decode the request pathname while rejecting malformed escape sequences.
+ * @param {string | undefined} url
+ * @returns {{ ok: true, requestPath: string } | { ok: false }}
+ */
+function parseRequestPath(url) {
+  const rawPath = (url || "/").split("?")[0];
 
-  if (!filePath.startsWith(root)) {
+  try {
+    return {
+      ok: true,
+      requestPath: decodeURIComponent(rawPath)
+    };
+  } catch {
+    return { ok: false };
+  }
+}
+
+/**
+ * Resolve a request path against the docs root and report whether it stays inside.
+ * @param {string} rootDir
+ * @param {string} requestPath
+ * @returns {{ filePath: string, insideRoot: boolean }}
+ */
+function resolveRequestFile(rootDir, requestPath) {
+  const relativePath = requestPath === "/" ? "index.html" : requestPath.replace(/^\/+/, "");
+  const filePath = path.resolve(rootDir, relativePath);
+  const relativeToRoot = path.relative(rootDir, filePath);
+  const insideRoot =
+    relativeToRoot === "" || (!relativeToRoot.startsWith("..") && !path.isAbsolute(relativeToRoot));
+
+  return {
+    filePath,
+    insideRoot
+  };
+}
+
+const server = http.createServer((req, res) => {
+  const parsedPath = parseRequestPath(req.url);
+
+  if (!parsedPath.ok) {
+    res.writeHead(400);
+    res.end("Bad Request");
+    return;
+  }
+
+  const { filePath, insideRoot } = resolveRequestFile(root, parsedPath.requestPath);
+
+  if (!insideRoot) {
     res.writeHead(403);
     res.end("Forbidden");
     return;
