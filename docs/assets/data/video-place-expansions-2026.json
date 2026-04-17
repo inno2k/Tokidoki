@@ -1,589 +1,829 @@
 {
-  "teamAppend": [
+  "guideNotesAppend": [
     {
-      "role": "travel-agency-chief-admin",
-      "title": "여행사 최고관리자",
-      "summary": "영상 확장 스팟이 기존 일정의 체력, 이동, 저녁 복귀 흐름과 충돌하지 않는지 마지막에 점검하고, 넣을지 뺄지 판단하기 쉬운 선택형 구조로 정리합니다.",
-      "tags": [
-        "최종 검수",
-        "동선 정합성",
-        "선택형 운영",
-        "가족 리스크 관리"
+      "label": "선택형 운영",
+      "title": "확장 스팟은 메인 일정 뒤에 붙는 '한 장면 보강 카드'로 쓰는 것이 가장 안전합니다",
+      "text": "이번에 넣은 확장 스팟은 하루에 모두 넣으라는 뜻이 아니라, 현장 컨디션과 대기시간에 따라 장면 하나만 보강하는 카드입니다. 메인 일정과 식사축을 먼저 지키고, 남는 40~90분을 공원 산책, 실내 회복, 항만 야경, 후지 전망 같은 보조 장면에 쓰는 방식이 가장 운영이 안정적입니다.",
+      "owner": "여행 전무 검수 메모",
+      "items": [
+        "기본 Day 카드의 컷라인을 넘기면 확장 스팟보다 복귀 동선과 식사를 우선합니다.",
+        "같은 Day 안에서도 공원형 1곳 + 먹거리형 1곳 정도만 고르면 만족도가 높고 피로가 덜합니다.",
+        "확장 카드의 패스 체크는 '오늘은 안 간다'는 운영 표시로 쓰고, 실패처럼 느끼지 않는 것이 핵심입니다."
+      ],
+      "links": [
+        {
+          "label": "GO TOKYO 메인 가이드",
+          "url": "https://www.gotokyo.org/en/"
+        }
       ]
+    },
+    {
+      "label": "현장 판단",
+      "title": "탐색 지도는 '지금 붙여도 무리 없는가'를 빠르게 판단하는 운영판으로 쓰면 좋습니다",
+      "text": "이번에 추가한 탐색 포인트는 메인 목적지 자체보다, 각 Day의 근처에서 쉬거나 먹거나 짧게 들를 수 있는 지점을 덧댄 구조입니다. 그래서 지도에서는 예쁜 장소보다 먼저 '현 위치에서 1정거장 이내인가', '걸어서 10~15분 안에 가능한가', '실내 대체가 되는가'를 보고 결정하는 편이 실전에 강합니다.",
+      "owner": "현지 운영 관점",
+      "items": [
+        "Day 1은 야마노테 서쪽 축 안에서만 확장합니다.",
+        "Day 2는 아사쿠사-우에노-아키하바라 사이의 동쪽 축에만 붙입니다.",
+        "Day 3은 오다이바와 요코하마 항만 축을 벗어나지 않게, Day 4는 후지큐 복귀 시간을 침범하지 않게 쓰는 것이 기준입니다."
+      ],
+      "links": [
+        {
+          "label": "Yahoo Transit",
+          "url": "https://transit.yahoo.co.jp/"
+        }
+      ]
+    }
+  ],
+  "mapPointsAppend": [
+    {
+      "day": "Day 1",
+      "name": "신주쿠 교엔",
+      "note": "서쪽 Day의 회복형 공원 카드",
+      "optional": true,
+      "coords": [35.6852, 139.7101],
+      "google": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden"
+    },
+    {
+      "day": "Day 1",
+      "name": "메이지 신궁",
+      "note": "시부야 전후에 붙이기 좋은 숲길 산책",
+      "optional": true,
+      "coords": [35.6764, 139.6993],
+      "google": "https://www.google.com/maps/search/?api=1&query=Meiji+Jingu"
+    },
+    {
+      "day": "Day 1",
+      "name": "선샤인 아쿠아리움",
+      "note": "이케부쿠로 실내 회복형 옵션",
+      "optional": true,
+      "coords": [35.7299, 139.719],
+      "google": "https://www.google.com/maps/search/?api=1&query=Sunshine+Aquarium"
+    },
+    {
+      "day": "Day 1",
+      "name": "시모키타자와",
+      "note": "서쪽 로컬 거리 감성 보조 카드",
+      "optional": true,
+      "coords": [35.6617, 139.6689],
+      "google": "https://www.google.com/maps/search/?api=1&query=Shimokitazawa+Station"
+    },
+    {
+      "day": "Day 2",
+      "name": "캇파바시",
+      "note": "아사쿠사 근처 주방도구 거리",
+      "optional": true,
+      "coords": [35.7135, 139.7894],
+      "google": "https://www.google.com/maps/search/?api=1&query=Kappabashi+Kitchenware+Town"
+    },
+    {
+      "day": "Day 2",
+      "name": "아메요코",
+      "note": "우에노-오카치마치 활기형 상점가",
+      "optional": true,
+      "coords": [35.7099, 139.774],
+      "google": "https://www.google.com/maps/search/?api=1&query=Ameyoko"
+    },
+    {
+      "day": "Day 2",
+      "name": "야나카 긴자",
+      "note": "동쪽 Day의 레트로 산책 옵션",
+      "optional": true,
+      "coords": [35.7278, 139.7668],
+      "google": "https://www.google.com/maps/search/?api=1&query=Yanaka+Ginza"
+    },
+    {
+      "day": "Day 3",
+      "name": "오다이바 해변공원",
+      "note": "자유의 여신상과 레인보우 브리지 뷰",
+      "optional": true,
+      "coords": [35.6295, 139.7753],
+      "google": "https://www.google.com/maps/search/?api=1&query=Odaiba+Marine+Park"
+    },
+    {
+      "day": "Day 3",
+      "name": "오산바시",
+      "note": "요코하마 야경 대표 데크",
+      "optional": true,
+      "coords": [35.451, 139.6477],
+      "google": "https://www.google.com/maps/search/?api=1&query=Osanbashi+Yokohama"
+    },
+    {
+      "day": "Day 3",
+      "name": "야마시타공원",
+      "note": "중화가와 묶기 좋은 해변 산책",
+      "optional": true,
+      "coords": [35.443, 139.6498],
+      "google": "https://www.google.com/maps/search/?api=1&query=Yamashita+Park"
+    },
+    {
+      "day": "Day 3",
+      "name": "요코하마 아카렌가",
+      "note": "항만 감성 + 디저트/기념품 카드",
+      "optional": true,
+      "coords": [35.4528, 139.6425],
+      "google": "https://www.google.com/maps/search/?api=1&query=Yokohama+Red+Brick+Warehouse"
+    },
+    {
+      "day": "Day 3",
+      "name": "요코하마 해머헤드",
+      "note": "푸드홀과 디저트 보강 포인트",
+      "optional": true,
+      "coords": [35.4546, 139.6412],
+      "google": "https://www.google.com/maps/search/?api=1&query=Yokohama+Hammerhead"
+    },
+    {
+      "day": "Day 4",
+      "name": "후지야마 온센",
+      "note": "후지큐 후반 회복 카드",
+      "optional": true,
+      "coords": [35.4883, 138.7819],
+      "google": "https://www.google.com/maps/search/?api=1&query=Fujiyama+Onsen"
+    },
+    {
+      "day": "Day 4",
+      "name": "후지야마 뮤지엄",
+      "note": "실내 대체형 Mt.Fuji 감상",
+      "optional": true,
+      "coords": [35.4876, 138.7798],
+      "google": "https://www.google.com/maps/search/?api=1&query=Fujiyama+Museum"
+    },
+    {
+      "day": "Day 4",
+      "name": "가와구치코 로프웨이",
+      "note": "후지 전망 확장 옵션",
+      "optional": true,
+      "coords": [35.4987, 138.7709],
+      "google": "https://www.google.com/maps/search/?api=1&query=Mt+Fuji+Panoramic+Ropeway"
+    },
+    {
+      "day": "Day 4",
+      "name": "아라쿠라야마 센겐공원",
+      "note": "후지 사진 명소, 혼잡도 높은 후보",
+      "optional": true,
+      "coords": [35.5013, 138.8089],
+      "google": "https://www.google.com/maps/search/?api=1&query=Arakurayama+Sengen+Park"
+    }
+  ],
+  "mapAnchorsAppend": [
+    {
+      "day": "Day 1",
+      "name": "오사키 -> 아카바네 -> 이케부쿠로 -> 신주쿠/시부야 + 선택 확장",
+      "note": "서쪽 Day는 신주쿠 교엔, 메이지 신궁, 선샤인 아쿠아리움, 시모키타자와를 컨디션 따라 붙이는 구조가 가장 안정적입니다.",
+      "google": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden",
+      "osm": "https://www.openstreetmap.org/search?query=Shinjuku%20Gyoen%20National%20Garden"
+    },
+    {
+      "day": "Day 2",
+      "name": "오사키 -> 츠키지 -> 아사쿠사 -> 우에노/아키하바라 + 선택 확장",
+      "note": "동쪽 Day는 캇파바시, 아메요코, 야나카 긴자가 메인 흐름을 크게 해치지 않는 보조 축입니다.",
+      "google": "https://www.google.com/maps/search/?api=1&query=Ameyoko",
+      "osm": "https://www.openstreetmap.org/search?query=Ameyoko"
+    },
+    {
+      "day": "Day 3",
+      "name": "오사키 -> 오다이바 -> 미나토미라이 -> 추카가이 + 항만 확장",
+      "note": "Day 3는 오다이바 해변공원, 오산바시, 야마시타공원, 아카렌가, 해머헤드를 워터프런트 테마로 묶어 쓰면 흐름이 좋습니다.",
+      "google": "https://www.google.com/maps/search/?api=1&query=Osanbashi+Yokohama",
+      "osm": "https://www.openstreetmap.org/search?query=Osanbashi%20Yokohama"
+    },
+    {
+      "day": "Day 4",
+      "name": "오사키 -> 바스타 신주쿠 -> 후지큐 + 회복/전망 확장",
+      "note": "후지큐 Day는 후지야마 온센과 후지야마 뮤지엄이 현실적이고, 로프웨이·센겐공원은 시간과 날씨가 아주 좋을 때만 여는 것이 안전합니다.",
+      "google": "https://www.google.com/maps/search/?api=1&query=Fujiyama+Onsen",
+      "osm": "https://www.openstreetmap.org/search?query=Fujiyama%20Onsen"
     }
   ],
   "itineraryExpansions": {
     "Day 1": {
-      "title": "영상 확장 스팟",
-      "summary": "영상의 '가장 도쿄다운 순간들'과 '밤의 도쿄' 톤에 맞춰, 서쪽 도쿄 축에서 바로 붙일 수 있는 선택형 스팟을 모았습니다. 전부 소화할 필요는 없고, 컨디션에 따라 패스하기 쉽게 넣었습니다.",
+      "title": "서쪽 Day 확장 스팟",
+      "summary": "Day 1은 '아카바네·이케부쿠로 보조 카드'와 '신주쿠·시부야 보조 카드' 중에서 한 축만 여는 것이 가장 안정적입니다. 첫날은 많이 넣기보다 오전 실내/회복형 1곳 또는 오후 숲길/로컬형 1곳만 고르는 편이 전체 리듬에 좋습니다.",
       "spots": [
         {
           "id": "day1-shinjuku-gyoen",
-          "sortOrder": 10,
+          "sortOrder": 1,
           "title": "신주쿠 교엔",
           "area": "신주쿠",
-          "category": "정원 산책",
-          "summary": "서쪽 동선에서 가장 부담 없이 분위기를 바꿔주는 대형 정원입니다. 아카바네-이케부쿠로-신주쿠 흐름 안에서 도시 기억과 초여름 공기를 동시에 느끼기 좋습니다.",
-          "whyFit": "영상의 '도쿄다운 순간들' 중 차분한 도심 녹지 감성을 Day 1 서쪽축에 얹는 보조 카드입니다.",
-          "from": "Shinjuku Station",
-          "to": "Shinjuku Gyoenmae Station",
-          "station": "신주쿠교엔마에역 / JR 신주쿠역 남쪽권",
-          "lineNote": "도쿄메트로 마루노우치선 또는 JR 신주쿠역에서 도보 접근",
-          "stay": "45~75분",
-          "budgetNote": "입장료 소액 + 카페/음료 추가 여부만 판단",
-          "familyNote": "붐비는 시부야, 신주쿠 상업권 사이에서 쉬어가기 좋고 벤치/화장실 포인트가 분명합니다.",
-          "passRule": "비나 강풍이면 패스하고 실내 스팟으로 이동",
-          "sourceType": "video-theme-fit",
+          "category": "오후 분기 · 정원 회복형",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "네온과 상업시설만으로 서쪽 Day를 채우지 않고, 한 번 숨을 고를 수 있는 정원형 장면을 넣어주는 카드입니다. 첫날 걷기 피로를 완충하는 용도로 특히 좋습니다.",
+          "whyFit": "이케부쿠로 이후 신주쿠로 내려오는 흐름에 붙이기 쉽고, 이후 시부야로 넘어가도 무리가 적습니다.",
+          "from": "Ikebukuro Station",
+          "to": "Shinjuku Gyoen National Garden",
+          "station": "Shinjuku-gyoenmae Station / Shinjuku-sanchome Station",
+          "lineNote": "JR 야마노테선 + 도보 또는 도쿄메트로 마루노우치선",
+          "routeSummary": "이케부쿠로에서 신주쿠로 내려온 뒤 교엔 쪽으로 10~15분 빼는 방식이 가장 자연스럽습니다.",
+          "stay": "45~70분",
+          "budgetNote": "성인 500엔, 중학생 이하 무료",
+          "familyNote": "잔디와 그늘이 있어 아이가 과열되기 전에 쉬기 좋습니다.",
+          "passRule": "신주쿠 도착이 늦거나 비가 오면 바로 패스하고 실내 축으로 전환",
+          "doList": [
+            "정원 안 프렌치 포멀 가든과 일본정원 중 한 구역만 선택해 짧게 걷기",
+            "도심 빌딩과 나무 프레임이 함께 들어오는 사진 1컷 남기기",
+            "벤치나 그늘에서 물과 간식으로 첫날 체력 체크하기"
+          ],
+          "eatList": [
+            "신주쿠 교엔 인근 카페 테이크아웃 커피",
+            "신주쿠역 복귀 후 NEWoMan/데파치카 간식으로 연결",
+            "교엔 안에서는 가벼운 음료 위주로만 정리"
+          ],
+          "nearbySpots": [
+            "신주쿠 서던테라스",
+            "NEWoMan 신주쿠",
+            "도쿄도청 전망대"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
+              "label": "GO TOKYO 신주쿠 교엔",
               "url": "https://www.gotokyo.org/en/spot/75/"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
             }
           ]
         },
         {
           "id": "day1-meiji-jingu",
-          "sortOrder": 20,
+          "sortOrder": 2,
           "title": "메이지 신궁",
-          "area": "하라주쿠·요요기",
-          "category": "도심 숲·신사",
-          "summary": "시부야를 깊게 보기 전에 한 번 호흡을 낮춰주는 숲길 카드입니다. Day 1에 시부야를 길게 쓰는 경우 가장 자연스럽게 덧붙일 수 있습니다.",
-          "whyFit": "영상이 잡는 '도쿄다운 상징 장면'을 서쪽권에서 가장 무난하게 확장하는 선택지입니다.",
-          "from": "Shibuya Station",
-          "to": "Harajuku Station",
-          "station": "하라주쿠역 / 메이지진구마에역",
-          "lineNote": "JR 야마노테선 또는 도쿄메트로 후쿠토신·치요다선",
-          "stay": "40~70분",
-          "budgetNote": "무료 중심, 오모테산도 쪽 카페·간식만 추가 비용",
-          "familyNote": "시부야 소음에 지치기 전 넣으면 체감 피로가 내려갑니다.",
-          "passRule": "오후 시간이 밀리면 Day 1에서는 패스하고 Day 2 오전 대체 산책으로 넘겨도 무리 없습니다.",
-          "sourceType": "video-theme-fit",
-          "links": [
-            {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/spot/76/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
-            }
-          ]
-        },
-        {
-          "id": "day1-sunshine-city",
-          "sortOrder": 30,
-          "title": "선샤인시티",
-          "area": "이케부쿠로",
-          "category": "실내 복합시설",
-          "summary": "이케부쿠로 구간을 길게 쓰고 싶을 때 가장 안정적인 확장 카드입니다. 포켓몬센터, 수족관, 전망대, 캐릭터숍을 한 건물 안에서 조절할 수 있습니다.",
-          "whyFit": "서쪽 동선에서 아들과 함께 소화하기 쉬운 실내 선택지라, 영상의 '도쿄를 즐기는 방법'을 가족형으로 확장하기 좋습니다.",
-          "from": "Ikebukuro Station",
-          "to": "Sunshine City",
-          "station": "이케부쿠로역 동쪽권",
-          "lineNote": "JR·세이부·도부·도쿄메트로 이케부쿠로역에서 도보",
-          "stay": "60~120분",
-          "budgetNote": "무료 쇼핑 중심부터 수족관·전망대 유료 체험까지 폭 조절 가능",
-          "familyNote": "비·피곤 모드에서 특히 강하고, 캐릭터샵만 보고 빠져도 손해감이 적습니다.",
-          "passRule": "Day 1 후반 체력이 남아 있을 때만 확장, 아니면 이케부쿠로는 식사만 하고 정리",
-          "sourceType": "video-theme-fit",
-          "links": [
-            {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/spot/31/index.html"
-            },
-            {
-              "label": "Sunshine Aquarium",
-              "url": "https://www.gotokyo.org/en/spot/32/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
-            }
-          ]
-        },
-        {
-          "id": "day1-omoide-yokocho",
-          "sortOrder": 40,
-          "title": "오모이데 요코초",
-          "area": "신주쿠",
-          "category": "밤 거리",
-          "summary": "저녁의 도쿄 분위기를 짧게 찍고 빠질 수 있는 골목 카드입니다. 가족 여행에서는 식사보다 '사진 한 장 + 골목 공기' 정도로 쓰는 편이 안정적입니다.",
-          "whyFit": "영상의 '밤의 도쿄' 챕터 감성을 Day 1 신주쿠 마감에 가장 작게 붙일 수 있습니다.",
+          "area": "하라주쿠 · 시부야",
+          "category": "오후 분기 · 숲길 상징 스팟",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "시부야의 강한 상업 밀도 앞뒤로 넣으면 도쿄 첫날의 호흡을 정리해주는 숲길 카드입니다. 부모 세대의 도쿄 기억과도 잘 맞는 상징성 있는 스팟입니다.",
+          "whyFit": "신주쿠에서 시부야로 내려가기 전 하라주쿠 쪽으로 살짝 틀어 넣기 좋습니다.",
           "from": "Shinjuku Station",
-          "to": "Omoide Yokocho",
-          "station": "JR 신주쿠역 서쪽권",
-          "lineNote": "JR 신주쿠역 서쪽 출구 도보 2분권",
-          "stay": "15~30분",
-          "budgetNote": "사진 산책만 하면 무료, 간단한 꼬치·음료 추가 가능",
-          "familyNote": "흡연·주점 밀도가 있어 아이 동반이면 오래 머물기보다 스냅샷형 접근이 좋습니다.",
-          "passRule": "아이 피로도가 높거나 식사 후 바로 복귀하려면 패스",
-          "sourceType": "video-theme-fit",
+          "to": "Meiji Jingu",
+          "station": "Harajuku Station / Meiji-jingumae Station",
+          "lineNote": "JR 야마노테선 또는 도쿄메트로 후쿠토신선",
+          "routeSummary": "신주쿠 -> 하라주쿠 이동 후 신궁 참배, 이후 오모테산도나 시부야로 재진입하는 흐름입니다.",
+          "stay": "40~60분",
+          "budgetNote": "경내 입장 무료, 정원은 별도 시기 확인",
+          "familyNote": "아이와 걷기 좋지만 참배 공간이므로 템포를 낮춰 움직이는 편이 좋습니다.",
+          "passRule": "시부야 야경과 저녁이 우선이면 하라주쿠 구간 전체를 패스",
+          "doList": [
+            "도리이부터 본전까지 숲길 산책",
+            "에마/오미쿠지 구경 정도로 짧게 체험",
+            "시부야 전 진입 전에 소음 대비 템포 조절"
+          ],
+          "eatList": [
+            "하라주쿠 쪽 디저트나 음료로 가볍게 보충",
+            "오모테산도 베이커리 테이크아웃",
+            "시부야 본 식사는 따로 유지"
+          ],
+          "nearbySpots": [
+            "오모테산도",
+            "하라주쿠 캐트 스트리트",
+            "요요기공원"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/spot/63/index.html"
-            },
+              "label": "GO TOKYO 메이지 신궁",
+              "url": "https://www.gotokyo.org/en/spot/76/index.html"
+            }
+          ]
+        },
+        {
+          "id": "day1-sunshine-aquarium",
+          "sortOrder": 3,
+          "title": "선샤인 아쿠아리움",
+          "area": "이케부쿠로",
+          "category": "오전 분기 · 실내 가족 회복형",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "이케부쿠로를 지나가는 날에 붙이기 가장 쉬운 실내형 카드입니다. 아이의 첫날 텐션을 부드럽게 올리면서도 비나 바람에 강합니다.",
+          "whyFit": "이케부쿠로 구간에 이미 발을 들이기 때문에 메인 동선을 거의 흔들지 않습니다.",
+          "from": "Akabane Station",
+          "to": "Sunshine Aquarium",
+          "station": "Higashi-ikebukuro Station / Ikebukuro Station",
+          "lineNote": "JR 게이힌토호쿠선 + JR 야마노테선, 또는 유라쿠초선 접근",
+          "routeSummary": "아카바네 회상 뒤 이케부쿠로에서 실내 1곳만 보고 신주쿠로 내려가는 구성이 깔끔합니다.",
+          "stay": "50~80분",
+          "budgetNote": "성인 2,600~3,200엔, 일정 시기별 변동",
+          "familyNote": "펭귄·바다사자 전시는 아이 집중력이 좋아 첫날 초반 몰입 카드로 유리합니다.",
+          "passRule": "이미 쇼핑/가챠 시간이 길다면 실내 회복 카드는 생략",
+          "doList": [
+            "옥상형 펭귄 존 중심으로 짧게 보기",
+            "기념품 숍은 마지막 10분만 배정",
+            "이케부쿠로 실내 화장실/수유·휴식 인프라 활용"
+          ],
+          "eatList": [
+            "선샤인시티 푸드코트에서 빠른 점심",
+            "디저트형 보충 후 신주쿠 이동",
+            "본 식사가 이미 정해져 있으면 음료만"
+          ],
+          "nearbySpots": [
+            "선샤인시티",
+            "포켓몬센터 메가도쿄",
+            "난자타운"
+          ],
+          "links": [
             {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "GO TOKYO 선샤인 아쿠아리움",
+              "url": "https://www.gotokyo.org/en/spot/32/index.html"
             }
           ]
         },
         {
           "id": "day1-shimokitazawa",
-          "sortOrder": 50,
+          "sortOrder": 4,
           "title": "시모키타자와",
-          "area": "시부야 서남권",
-          "category": "로컬 거리",
-          "summary": "빈티지 숍, 소극장 감도, 작은 카페가 이어지는 서쪽 도쿄의 결이 강한 동네입니다. 메인 코스 바깥이지만 Day 1 서쪽축을 더 입체적으로 만들어 줍니다.",
-          "whyFit": "영상의 '도쿄 로컬 산책' 감성을 Day 1 서쪽권으로 넓히는 확장 카드입니다.",
+          "area": "시부야 서남측",
+          "category": "오후 분기 · 로컬 거리 산책",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "첫날 저녁이 예상보다 가볍게 풀릴 때만 여는 로컬 거리 카드입니다. 빈티지 숍보다 거리 분위기와 군것질 위주로 짧게 쓰는 편이 좋습니다.",
+          "whyFit": "시부야를 일찍 마치거나 신주쿠 대신 로컬 무드를 보고 싶을 때 대체값이 됩니다.",
           "from": "Shibuya Station",
           "to": "Shimokitazawa Station",
-          "station": "시모키타자와역",
+          "station": "Shimokitazawa Station",
           "lineNote": "게이오 이노카시라선 또는 오다큐선",
-          "stay": "45~75분",
-          "budgetNote": "카페 1회 + 소형 쇼핑 정도면 충분",
-          "familyNote": "어른 취향 비중이 약간 높지만, 골목 산책과 디저트 브레이크용으로는 좋습니다.",
-          "passRule": "아이 중심 일정이면 우선순위를 낮추고, 부모 취향 산책 시간 여유가 있을 때만 추가",
-          "sourceType": "video-theme-fit",
+          "routeSummary": "시부야에서 10분 남짓 이동해 한 블록만 걷고 바로 복귀하는 식으로 써야 무리가 없습니다.",
+          "stay": "35~60분",
+          "budgetNote": "산책 위주면 추가 비용 적음, 소품 쇼핑은 상한선 필요",
+          "familyNote": "아이 취향이 강한 지역은 아니라 디저트/레코드·소품 정도로 짧게 보는 편이 좋습니다.",
+          "passRule": "첫날 피곤함이 오면 가장 먼저 접을 후보",
+          "doList": [
+            "역 앞 상점가 한 블록만 보기",
+            "빈티지보다 베이커리·디저트 위주로 압축",
+            "사진 1~2컷만 남기고 장시간 체류 금지"
+          ],
+          "eatList": [
+            "베이커리/도넛/푸딩류 간식",
+            "카페 음료 한 잔",
+            "저녁 메인 식사는 시부야·신주쿠로 유지"
+          ],
+          "nearbySpots": [
+            "시부야 스크램블",
+            "하라주쿠",
+            "요요기우에하라"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/story/locals-go/guide-to-shimokitazawa/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "GO TOKYO 시모키타자와 가이드",
+              "url": "https://www.gotokyo.org/en/destinations/western-tokyo/shimokitazawa/index.html"
             }
           ]
         }
       ]
     },
     "Day 2": {
-      "title": "영상 확장 스팟",
-      "summary": "영상의 '도쿄 로컬 산책'과 설명란에 직접 나온 긴자·니혼바시 계열 감성을, Day 2 동쪽축에서 선택적으로 덧붙일 수 있게 묶었습니다.",
+      "title": "동쪽 Day 확장 스팟",
+      "summary": "Day 2는 '아사쿠사 생활감 보강'과 '우에노 주변 활기 보강' 중 한 갈래만 더하는 방식이 안전합니다. 캇파바시는 아사쿠사 보조 카드, 아메요코와 야나카 긴자는 우에노 이후 분기로 보면 판단이 쉬워집니다.",
       "spots": [
         {
-          "id": "day2-asakusa-culture-center",
-          "sortOrder": 10,
-          "title": "아사쿠사 문화관광센터 전망층",
-          "area": "아사쿠사",
-          "category": "전망·오리엔테이션",
-          "summary": "센소지 진입 전에 동선 정리와 첫 사진 포인트를 동시에 잡아주는 출발 카드입니다. 카미나리몬, 센소지 축을 위에서 한 번 훑어보면 이후 동선 판단이 쉬워집니다.",
-          "whyFit": "영상의 '도쿄를 제대로 즐기는 방법' 중 실제 현장 판단력을 올려주는 포인트로 의미가 큽니다.",
-          "from": "Asakusa Station",
-          "to": "Asakusa Culture Tourist Information Center",
-          "station": "아사쿠사역 카미나리몬권",
-          "lineNote": "긴자선·도에이 아사쿠사선·도부 스카이트리선",
-          "stay": "15~25분",
-          "budgetNote": "무료",
-          "familyNote": "엘리베이터·휴식 포인트가 있어 Day 2 시작 리듬을 잡기 좋습니다.",
-          "passRule": "도착이 늦거나 바로 센소지로 진입하고 싶으면 패스",
-          "sourceType": "video-theme-fit",
-          "links": [
-            {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/story/walks-and-tours/asakusa/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
-            }
-          ]
-        },
-        {
           "id": "day2-kappabashi",
-          "sortOrder": 20,
+          "sortOrder": 1,
           "title": "캇파바시 도구거리",
-          "area": "아사쿠사·우에노 사이",
-          "category": "생활·기념품 거리",
-          "summary": "아사쿠사에서 우에노로 넘어가는 중간 확장 카드입니다. 일본식 그릇, 모형 음식, 작은 생활도구가 많아 '관광지 아닌 도쿄' 느낌을 살리기 좋습니다.",
-          "whyFit": "영상의 '로컬 산책' 성격과 잘 맞고, Day 2 동쪽축에서 가장 무리 없는 우회로입니다.",
-          "from": "Asakusa Station",
-          "to": "Tawaramachi Station",
-          "station": "다와라마치역",
-          "lineNote": "긴자선 다와라마치역 도보 5분권 / 아사쿠사에서 도보 이동 가능",
-          "stay": "35~60분",
-          "budgetNote": "소품 쇼핑이 붙기 쉬워 예산 상한만 먼저 정하면 안정적",
-          "familyNote": "걷는 양이 늘지만 가게 밀도가 높아 지루하지 않습니다.",
-          "passRule": "아키하바라 비중을 높일 날이면 패스",
-          "sourceType": "video-theme-fit",
+          "area": "아사쿠사",
+          "category": "아사쿠사 분기 · 생활감 상점가",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "센소지 주변과 같은 날에 넣기 좋은 주방도구 거리입니다. 관광지스러운 화려함보다 '도쿄의 생활 상점가' 감도가 살아 있습니다.",
+          "whyFit": "아사쿠사에서 도보권이라 별도 환승 없이 붙일 수 있습니다.",
+          "from": "Senso-ji",
+          "to": "Kappabashi Kitchenware Town",
+          "station": "Tawaramachi Station / Asakusa Station",
+          "lineNote": "아사쿠사 도보권, 긴자선 타와라마치역 접근 가능",
+          "routeSummary": "센소지 뒤 골목을 본 뒤 북서쪽으로 10~15분 걸어 주방거리만 짧게 보는 흐름입니다.",
+          "stay": "30~50분",
+          "budgetNote": "구경 위주면 무료, 식기·소도구 쇼핑은 상한선 필요",
+          "familyNote": "아이보다 부모 취향 비중이 큰 스팟이라 짧게 쓰는 것이 좋습니다.",
+          "passRule": "아사쿠사 체류가 길어지면 바로 패스",
+          "doList": [
+            "음식 샘플, 젓가락, 작은 접시 위주로 빠르게 보기",
+            "큰 식기보다는 가볍고 부피 작은 품목만 체크",
+            "사진은 간판과 주방거리 분위기 정도로 끝내기"
+          ],
+          "eatList": [
+            "아사쿠사 멜론빵/당고 간식과 묶기",
+            "아사쿠사 점심 전후 소도시 간식처럼 활용",
+            "본 식사는 우에노로 넘기기"
+          ],
+          "nearbySpots": [
+            "센소지",
+            "아사쿠사 문화관광센터",
+            "합羽교 도구거리 입구"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
+              "label": "GO TOKYO 캇파바시",
               "url": "https://www.gotokyo.org/en/spot/59/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
             }
           ]
         },
         {
           "id": "day2-ameyoko",
-          "sortOrder": 30,
+          "sortOrder": 2,
           "title": "아메요코",
           "area": "우에노",
-          "category": "시장 거리",
-          "summary": "우에노 구간을 더 '도쿄다운 밀도'로 만들고 싶을 때 붙이는 카드입니다. 간식, 잡화, 활기 자체가 콘텐츠라 오래 보지 않아도 만족도가 높습니다.",
-          "whyFit": "영상의 로컬 산책 챕터와 가장 잘 맞는 동쪽권 체감형 거리입니다.",
-          "from": "Ueno Station",
-          "to": "Ameyoko",
-          "station": "우에노역 / 오카치마치역",
-          "lineNote": "JR 우에노역 중앙 개찰 또는 메트로 우에노역 시노바즈 출구",
-          "stay": "25~50분",
-          "budgetNote": "간식·소소한 쇼핑 위주",
-          "familyNote": "사람 밀도가 높아 손 놓치지 않기만 주의하면 짧게 즐기기 좋습니다.",
-          "passRule": "아사쿠사와 아키하바라 체류 시간이 길어졌으면 과감히 패스",
-          "sourceType": "video-theme-fit",
-          "links": [
-            {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/spot/71/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
-            }
-          ]
-        },
-        {
-          "id": "day2-nihonbashi-ginza-heritage",
-          "sortOrder": 40,
-          "title": "니혼바시·긴자 오래된 가게 산책",
-          "area": "니혼바시·긴자",
-          "category": "전통 상점가",
-          "summary": "영상 설명란에 직접 나온 '긴자의 100년 맛집' 감성을 따라, Day 2 말미에 니혼바시·긴자 쪽으로 짧게 확장하는 카드입니다.",
-          "whyFit": "영상 설명에 명시된 긴자 장면을 현재 메인 일정과 가장 덜 충돌하게 붙이는 방법입니다.",
-          "from": "Akihabara Station",
-          "to": "Nihombashi Station",
-          "station": "니혼바시역 / 긴자역",
-          "lineNote": "JR 아키하바라역에서 긴자선·히비야선·JR 조합으로 연결",
-          "stay": "45~90분",
-          "budgetNote": "카페 1회 또는 전통 간식 1회 정도로 상한을 두는 편이 안전",
-          "familyNote": "쇼핑보다 '옛 도쿄의 공기'를 보는 산책형 접근이 더 잘 맞습니다.",
-          "passRule": "도쿄타워 야경 시간을 우선하면 패스",
+          "category": "우에노 분기 · 시장형 먹거리",
           "sourceType": "video-description-explicit-theme",
+          "summary": "우에노와 오카치마치 사이의 활기 자체를 즐기는 거리입니다. 동쪽 Day의 에너지를 끌어올리면서도 이동 손실이 적습니다.",
+          "whyFit": "우에노 공원과 아키하바라 사이에 자연스럽게 이어지는 구간입니다.",
+          "from": "Ueno Park",
+          "to": "Ameyoko",
+          "station": "Ueno Station / Okachimachi Station",
+          "lineNote": "JR 우에노역-오카치마치역 사이 도보 이동",
+          "routeSummary": "우에노 공원 남쪽으로 빠져 아메요코를 훑고, 이후 아키하바라로 남하하는 흐름이 좋습니다.",
+          "stay": "35~55분",
+          "budgetNote": "길거리 간식 1인 500~1,500엔 정도",
+          "familyNote": "사람이 많아 손잡기와 정차 포인트를 먼저 정해두는 편이 좋습니다.",
+          "passRule": "주말 혼잡도가 높거나 아이가 지치면 우에노에서 바로 아키하바라로 이동",
+          "doList": [
+            "500m 상점가를 전부 보려 하지 말고 먹거리 구간만 압축",
+            "해산물/과일 컵/간식 중 하나만 선택",
+            "분위기 체험 후 빠르게 이탈"
+          ],
+          "eatList": [
+            "타코야키, 과일 컵, 군것질류",
+            "시장형 꼬치/튀김 간식",
+            "본 식사가 우선이면 음료 정도만"
+          ],
+          "nearbySpots": [
+            "우에노역",
+            "오카치마치역",
+            "아트레 우에노"
+          ],
           "links": [
             {
-              "label": "GO TOKYO Nihonbashi",
-              "url": "https://www.gotokyo.org/en/destinations/central-tokyo/nihombashi/index.html"
-            },
-            {
-              "label": "GO TOKYO Nihonbashi Bridge",
-              "url": "https://www.gotokyo.org/en/spot/44/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "GO TOKYO 아메요코",
+              "url": "https://www.gotokyo.org/en/spot/71/index.html"
             }
           ]
         },
         {
           "id": "day2-yanaka-ginza",
-          "sortOrder": 50,
+          "sortOrder": 3,
           "title": "야나카 긴자",
-          "area": "닛포리·야나카",
-          "category": "쇼텐가이 산책",
-          "summary": "전통적인 상점가의 결을 느끼고 싶을 때 가장 좋은 동쪽 확장 카드입니다. 관광지 밀도가 강한 아사쿠사와는 다른 생활형 도쿄 분위기를 보여줍니다.",
-          "whyFit": "영상의 '로컬 산책' 챕터를 Day 2 동쪽권에서 가장 선명하게 풀어내는 보조 루트입니다.",
+          "area": "야나카 · 닛포리",
+          "category": "우에노 북측 분기 · 레트로 산책",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "아사쿠사·우에노보다 더 생활적인 레트로 결을 원할 때 여는 카드입니다. 오래된 도쿄의 공기와 상점가 장면을 담기 좋습니다.",
+          "whyFit": "우에노 북측에서 짧게 꺾을 수 있지만, 메인 동선에서는 살짝 벗어나는 만큼 컨디션이 좋을 때만 추천됩니다.",
           "from": "Ueno Station",
-          "to": "Nippori Station",
-          "station": "닛포리역",
-          "lineNote": "JR 야마노테선·게이힌도호쿠선",
-          "stay": "40~70분",
-          "budgetNote": "고로케, 간식, 작은 기념품 위주",
-          "familyNote": "걷기 리듬이 편하고 붐비는 상업시설보다 피로가 덜합니다.",
-          "passRule": "도쿄타워 야경을 우선하거나 동쪽 핵심 코스가 길어지면 패스",
-          "sourceType": "video-theme-fit",
+          "to": "Yanaka Ginza",
+          "station": "Sendagi Station / Nippori Station",
+          "lineNote": "JR 우에노에서 닛포리 이동 또는 지요다선 센다기 접근",
+          "routeSummary": "우에노 이후 북쪽으로 한 번 올랐다가 다시 아키하바라로 내려오는 보조 루프입니다.",
+          "stay": "45~70분",
+          "budgetNote": "간식 중심이면 1,000~2,500엔 정도",
+          "familyNote": "빠른 관광보다 천천히 걷는 날에 맞고, 아이가 지쳐 있으면 흥미가 떨어질 수 있습니다.",
+          "passRule": "Day 2 전체가 길어지기 시작하면 가장 먼저 접을 후보",
+          "doList": [
+            "상점가 입구에서 끝까지 걷되 왕복은 하지 않기",
+            "와가시/고로케 같은 간식 하나만 고르기",
+            "옛 도쿄 분위기 사진 1컷 남기기"
+          ],
+          "eatList": [
+            "고로케, 와가시, 차",
+            "소형 베이커리 간식",
+            "간식 후 우에노/아키하바라 메인 식사 유지"
+          ],
+          "nearbySpots": [
+            "센다기",
+            "닛포리",
+            "야나카 묘지 주변 산책"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
+              "label": "GO TOKYO 야나카 긴자",
               "url": "https://www.gotokyo.org/en/spot/170/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
             }
           ]
         }
       ]
     },
     "Day 3": {
-      "title": "영상 확장 스팟",
-      "summary": "오다이바와 요코하마 구간은 항만 풍경과 야경, 바닷바람 산책이 핵심이라, 영상의 '도쿄다운 장면'과 '밤의 도쿄' 무드에 맞는 해변·부두·야경 스팟을 추가했습니다.",
+      "title": "오다이바·요코하마 확장 스팟",
+      "summary": "Day 3는 영상 감도가 가장 잘 살아나는 날입니다. 항만 풍경, 바닷바람, 야경, 디저트와 기념품을 묶을 수 있어서 '어디를 더 볼까'보다 '어디에서 마무리 장면을 만들까' 관점으로 선택하는 것이 좋습니다.",
       "spots": [
         {
           "id": "day3-odaiba-marine-park",
-          "sortOrder": 10,
+          "sortOrder": 1,
           "title": "오다이바 해변공원",
           "area": "오다이바",
-          "category": "워터프론트",
-          "summary": "레인보우브리지와 자유의 여신상 복제본까지 한 번에 보는 대표 풍경 카드입니다. Day 3 오다이바 체류가 길어질 때 가장 먼저 붙일 만한 선택지입니다.",
-          "whyFit": "영상의 '도쿄다운 순간들' 중 바닷가 도쿄 장면을 가장 선명하게 느끼게 해줍니다.",
-          "from": "Daiba Station",
-          "to": "Odaiba-kaihinkoen Station",
-          "station": "오다이바카이힌코엔역",
-          "lineNote": "유리카모메",
-          "stay": "20~40분",
+          "category": "워터프런트 · 포토 스팟",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "레인보우 브리지와 자유의 여신상 쪽 장면을 짧게 담기 좋은 카드입니다. 오다이바 실내 체험만 하고 떠나기 아쉬울 때 가장 부담이 적습니다.",
+          "whyFit": "오다이바 메인 체험과 점심 사이 또는 직후에 붙이기 쉽습니다.",
+          "from": "Odaiba",
+          "to": "Odaiba Marine Park",
+          "station": "Odaiba-kaihinkoen Station",
+          "lineNote": "유리카모메 오다이바카이힌코엔역 도보권",
+          "routeSummary": "다이버시티/실내 체험 후 바다 쪽으로 10분 내외 움직여 사진과 산책만 짧게 챙깁니다.",
+          "stay": "25~40분",
           "budgetNote": "무료",
-          "familyNote": "걷기 부담이 적고 사진 보상이 커서 Day 3 초반 워밍업에 좋습니다.",
-          "passRule": "날씨가 흐리거나 바람이 강하면 패스",
-          "sourceType": "video-theme-fit",
+          "familyNote": "바람이 강하면 체감 피로가 커져 체류를 짧게 잡는 것이 좋습니다.",
+          "passRule": "오다이바 체류가 길어지거나 비·강풍이면 바로 패스",
+          "doList": [
+            "자유의 여신상과 레인보우 브리지 배경 사진",
+            "해변 산책로 10~15분만 걷기",
+            "실내 체험 뒤 바깥 공기 환기용으로 사용"
+          ],
+          "eatList": [
+            "테이크아웃 음료 들고 짧게 걷기",
+            "다이버시티/아쿠아시티 디저트와 연결",
+            "주 식사는 오다이바 점심으로 유지"
+          ],
+          "nearbySpots": [
+            "다이버시티 도쿄 플라자",
+            "아쿠아시티 오다이바",
+            "데크스 도쿄 비치"
+          ],
           "links": [
             {
-              "label": "GO TOKYO",
+              "label": "GO TOKYO 오다이바 해변공원",
               "url": "https://www.gotokyo.org/en/spot/39/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
-            }
-          ]
-        },
-        {
-          "id": "day3-shiokaze-park",
-          "sortOrder": 20,
-          "title": "시오카제 공원",
-          "area": "오다이바",
-          "category": "공원 산책",
-          "summary": "다이버시티나 해변공원 사이에서 조금 더 넓게 쉬고 싶을 때 쓰는 카드입니다. 공식 안내에도 푸드코트와 베이 뷰가 함께 언급될 만큼 휴식형 동선에 잘 맞습니다.",
-          "whyFit": "오다이바 파트가 쇼핑몰 위주로 무거워질 때 균형을 잡아줍니다.",
-          "from": "Daiba Station",
-          "to": "Shiokaze Park",
-          "station": "다이바역",
-          "lineNote": "유리카모메 다이바역 도보 5분",
-          "stay": "20~35분",
-          "budgetNote": "무료",
-          "familyNote": "중간 휴식, 간식, 사진을 동시에 해결하기 좋습니다.",
-          "passRule": "미나토미라이로 빨리 넘어가야 하면 패스",
-          "sourceType": "video-theme-fit",
-          "links": [
-            {
-              "label": "GO TOKYO",
-              "url": "https://www.gotokyo.org/en/spot/856/index.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
             }
           ]
         },
         {
           "id": "day3-osanbashi",
-          "sortOrder": 30,
-          "title": "오산바시 국제여객터미널",
-          "area": "요코하마",
-          "category": "야경·전망",
-          "summary": "미나토미라이 야경을 한 장면으로 정리하기 좋은 데크형 스팟입니다. 추카가이와 야마시타공원 축을 걷는 날에 붙이면 흐름이 자연스럽습니다.",
-          "whyFit": "영상의 '밤의 도쿄' 감성을 Day 3 요코하마 항만 야경으로 치환하는 카드입니다.",
-          "from": "Motomachi-Chukagai Station",
-          "to": "Nihon-odori Station",
-          "station": "니혼오도리역",
+          "sortOrder": 2,
+          "title": "오산바시",
+          "area": "요코하마 항만",
+          "category": "야경 데크 · 핵심 장면",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "요코하마 구간에서 가장 '한 장면'이 잘 나오는 카드입니다. 고래등 같은 옥상 데크에서 항만과 미나토미라이 쪽 시야가 크게 열립니다.",
+          "whyFit": "미나토미라이에서 중화가로 내려가기 전후에 넣기 좋고, Day 3의 항만 감성을 크게 끌어올립니다.",
+          "from": "Minato Mirai",
+          "to": "Osanbashi Yokohama",
+          "station": "Nihon-odori Station",
           "lineNote": "미나토미라이선 니혼오도리역 도보 7분",
-          "stay": "20~40분",
-          "budgetNote": "데크는 무료, 카페 이용은 선택",
-          "familyNote": "밤바람이 강할 수 있어 얇은 겉옷을 남겨두는 편이 좋습니다.",
-          "passRule": "추카가이 식사 시간이 길어지면 패스",
-          "sourceType": "video-theme-fit",
+          "routeSummary": "미나토미라이에서 니혼오도리 쪽으로 이동해 데크를 보고, 이후 중화가/야마시타공원으로 이어집니다.",
+          "stay": "35~55분",
+          "budgetNote": "옥상 데크 무료, 카페 이용 시 별도",
+          "familyNote": "넓고 시야가 좋아 아이와 함께 걷기 쉽지만 바람이 강할 수 있습니다.",
+          "passRule": "해 지기 전 일정이 밀리면 야마시타공원만 남기고 패스 가능",
+          "doList": [
+            "옥상 데크에서 360도 파노라마 보기",
+            "미나토미라이 스카이라인 사진 남기기",
+            "중화가 진입 전 바닷바람 산책으로 리듬 전환"
+          ],
+          "eatList": [
+            "가벼운 카페 휴식",
+            "이후 중화가 메인 식사와 연결",
+            "저녁이 늦어지면 해머헤드/아카렌가 디저트로 전환"
+          ],
+          "nearbySpots": [
+            "야마시타공원",
+            "니혼오도리",
+            "요코하마 개항 자료관"
+          ],
           "links": [
             {
-              "label": "Yokohama Official",
+              "label": "요코하마 공식 오산바시",
               "url": "https://www.welcome.city.yokohama.jp/spot/details.php?bbid=179"
             },
             {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "오산바시 공식",
+              "url": "https://osanbashi.jp/"
             }
           ]
         },
         {
-          "id": "day3-yamashita-park-harbor",
-          "sortOrder": 40,
-          "title": "야마시타공원 항만 산책",
-          "area": "요코하마",
-          "category": "공원·항만 산책",
-          "summary": "추카가이 바로 옆이라 시간 압박이 적고, 히카와마루·마린타워까지 포함해 요코하마스러운 장면을 만들기 좋습니다.",
-          "whyFit": "영상이 강조하는 장면형 여행에 가장 잘 맞는 요코하마 보강 카드입니다.",
-          "from": "Motomachi-Chukagai Station",
+          "id": "day3-yamashita-park",
+          "sortOrder": 3,
+          "title": "야마시타공원",
+          "area": "중화가 인접",
+          "category": "공원 · 항만 산책",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "중화가 바로 옆에서 숨을 고르기 좋은 해변 공원입니다. 중화가의 밀도와 대비되는 열린 공기 덕분에 Day 3 후반 회복 카드로 좋습니다.",
+          "whyFit": "중화가 식사 전후 어느 쪽에도 붙이기 쉬운 위치입니다.",
+          "from": "Yokohama Chinatown",
           "to": "Yamashita Park",
-          "station": "모토마치·주카가이역",
-          "lineNote": "미나토미라이선 도보 1~5분권",
-          "stay": "25~45분",
+          "station": "Motomachi-Chukagai Station",
+          "lineNote": "미나토미라이선 모토마치·추카가이역 도보 3분",
+          "routeSummary": "중화가 남쪽 출구 쪽에서 바로 공원으로 빠져 20~30분 산책하는 흐름이 자연스럽습니다.",
+          "stay": "20~40분",
           "budgetNote": "무료",
-          "familyNote": "추카가이 식후 산책으로 체감이 좋고, 오래 걷지 않아도 장면이 잘 나옵니다.",
-          "passRule": "비가 오거나 피곤 모드면 바로 역으로 복귀",
-          "sourceType": "video-theme-fit",
+          "familyNote": "식사 대기 전후 아이가 바깥 공기를 쐬기 좋습니다.",
+          "passRule": "중화가 대기나 복귀 시간이 빡빡하면 패스",
+          "doList": [
+            "바다 쪽 벤치에서 잠깐 쉬기",
+            "배와 항만 풍경 보기",
+            "장미 시즌이면 정원 쪽 한 바퀴만"
+          ],
+          "eatList": [
+            "중화가 식사 후 소화 산책",
+            "공원 음료 테이크아웃",
+            "디저트는 아카렌가/해머헤드와 연결 가능"
+          ],
+          "nearbySpots": [
+            "모토마치·추카가이역",
+            "마린타워",
+            "요코하마 중화가"
+          ],
           "links": [
             {
-              "label": "Yokohama Official",
-              "url": "https://www.welcome.city.yokohama.jp/spot/area/area07.php"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "요코하마 공식 야마시타공원",
+              "url": "https://www.welcome.city.yokohama.jp/spot/details.php?bbid=190C"
             }
           ]
         },
         {
-          "id": "day3-red-brick-warehouse",
-          "sortOrder": 50,
-          "title": "요코하마 아카렌가 창고",
-          "area": "요코하마",
-          "category": "창고·이벤트 복합공간",
-          "summary": "항만 감성과 소규모 쇼핑, 야경 사진을 한 번에 묶을 수 있는 카드입니다. 미나토미라이와 추카가이 사이에서 가장 쓰기 쉬운 중간 정차지입니다.",
-          "whyFit": "영상의 장면 중심 여행법을 요코하마에서 가장 직관적으로 구현하는 장소입니다.",
-          "from": "Sakuragicho Station",
-          "to": "Yokohama Red Brick Warehouse",
-          "station": "바샤미치역 / 니혼오도리역",
-          "lineNote": "JR 사쿠라기초역 도보권 또는 미나토미라이선",
-          "stay": "30~60분",
-          "budgetNote": "입장 자체는 무료, 디저트·기념품 선택 지출",
-          "familyNote": "이동이 어렵지 않고 야외·실내를 섞어 쓸 수 있어 Day 3 후반 보조카드로 좋습니다.",
-          "passRule": "추카가이 식사와 야마시타공원 산책만으로도 충분하면 패스",
-          "sourceType": "video-theme-fit",
+          "id": "day3-redbrick-hammerhead",
+          "sortOrder": 4,
+          "title": "아카렌가 · 해머헤드",
+          "area": "신코 지구",
+          "category": "디저트 · 기념품 · 항만 감성",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "시간이 넉넉할 때 여는 '요코하마 감성 마무리' 카드입니다. 야경, 디저트, 가벼운 기념품이 한 번에 붙습니다.",
+          "whyFit": "미나토미라이와 중화가 사이의 항만 테마를 한층 풍성하게 만들 수 있습니다.",
+          "from": "Minato Mirai",
+          "to": "Yokohama Hammerhead",
+          "station": "Bashamichi Station / Minatomirai Station",
+          "lineNote": "미나토미라이선 + 도보, 신코 지구 이동",
+          "routeSummary": "미나토미라이에서 아카렌가/해머헤드 쪽으로 짧게 꺾고, 이후 중화가나 복귀로 넘어가는 선택형 분기입니다.",
+          "stay": "40~70분",
+          "budgetNote": "디저트/기념품 1,000~4,000엔 정도",
+          "familyNote": "아이와 함께 디저트, 부모는 항만 뷰를 챙기기 좋아 균형이 좋습니다.",
+          "passRule": "중화가 식사와 복귀를 우선해야 하면 과감히 패스",
+          "doList": [
+            "아카렌가 외관 사진",
+            "해머헤드 푸드홀/디저트 1곳 선택",
+            "항만 바람 쐬고 기념품은 소형만"
+          ],
+          "eatList": [
+            "해머헤드 디저트/베이커리",
+            "아카렌가 한정 구움과자",
+            "중화가 식사가 메인이면 후식만"
+          ],
+          "nearbySpots": [
+            "요코하마 아카렌가 창고",
+            "해머헤드 파크",
+            "컵누들 뮤지엄"
+          ],
           "links": [
             {
-              "label": "Official Site",
-              "url": "https://www.yokohama-akarenga.jp/en/"
+              "label": "요코하마 아카렌가 공식",
+              "url": "https://www.yokohama-akarenga.jp/about/"
             },
             {
-              "label": "Yokohama Official",
-              "url": "https://www.welcome.city.yokohama.jp/spot/details.php?bbid=190"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "요코하마 해머헤드 공식",
+              "url": "https://www.hammerhead.co.jp/"
             }
           ]
         }
       ]
     },
     "Day 4": {
-      "title": "영상 확장 스팟",
-      "summary": "후지큐 전일 원정은 놀이기구가 메인이지만, 영상의 '다양하게 즐기는 법'을 반영해 공원 인접의 회복형·전망형 보조 스팟을 붙였습니다. 전부 선택형이며, 실제로는 1곳만 넣어도 충분합니다.",
+      "title": "후지큐 Day 확장 스팟",
+      "summary": "Day 4는 '현실적 회복 카드'와 '고난도 대체 카드'를 분리해서 봐야 합니다. 후지야마 온센과 후지야마 뮤지엄은 실제로 붙일 수 있는 회복/실내 옵션이고, 로프웨이와 센겐공원은 후지큐를 줄일 때만 여는 고난도 대체안입니다.",
       "spots": [
         {
           "id": "day4-fujiyama-onsen",
-          "sortOrder": 10,
+          "sortOrder": 1,
           "title": "후지야마 온센",
           "area": "후지큐 인접",
-          "category": "온천 회복",
-          "summary": "후지큐에서 가장 실전적인 마무리 카드입니다. 공식 기준으로 아침/일반 영업이 분리돼 있고, 원데이패스 제시 할인도 있어 복귀 전 회복 포인트로 쓰기 좋습니다.",
-          "whyFit": "놀이공원 전일 원정의 피로를 가장 확실하게 정리하는 선택지입니다.",
+          "category": "현실적 우선 · 온천 회복형",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "후지큐 구간에서 가장 실전적인 확장 카드입니다. 놀이기구 밀도가 떨어지는 순간 여행 만족도를 지켜주는 회복 장치가 됩니다.",
+          "whyFit": "공원 바로 옆이라 이동 손실이 거의 없고, 후반 피로 회복 효과가 큽니다.",
           "from": "Fuji-Q Highland",
-          "to": "FUJIYAMA ONSEN",
-          "station": "후지큐 하이랜드권",
-          "lineNote": "공원 인접, 도보 또는 셔틀권 확인",
+          "to": "Fujiyama Onsen",
+          "station": "Fuji-Q Highland Station",
+          "lineNote": "공원 인접 도보 이동",
+          "routeSummary": "놀이기구 2~3개 후 체력이 떨어지면 바로 온천 카드로 전환하는 구조가 가장 현실적입니다.",
           "stay": "60~90분",
-          "budgetNote": "평일·주말 요금 차이와 패스 할인 여부 확인",
-          "familyNote": "과격한 놀이기구 후 몸을 진정시키는 데 효과가 커서 부모 만족도가 높습니다.",
-          "passRule": "복귀 버스 시간이 촉박하면 패스",
-          "sourceType": "video-theme-fit",
+          "budgetNote": "평일 성인 1,900엔, 주말/공휴일 성인 2,300엔 기준",
+          "familyNote": "아이 컨디션이 좋지 않거나 부모 피로가 누적될 때 여행 품질을 크게 살려줍니다.",
+          "passRule": "놀이기구 흐름이 너무 좋고 복귀 시간도 빠듯하면 패스",
+          "doList": [
+            "대욕장 중심으로 짧게 회복",
+            "수건 포함 여부와 할인 조건 확인",
+            "복귀 버스 전 갈아입기 시간을 포함해 역산"
+          ],
+          "eatList": [
+            "온천 후 간단한 식사 또는 음료",
+            "후지큐 안에서 늦은 점심이 어려웠을 때 보완",
+            "과식보다 회복용 메뉴 중심"
+          ],
+          "nearbySpots": [
+            "후지큐 하이랜드",
+            "후지야마 뮤지엄"
+          ],
           "links": [
             {
-              "label": "Fuji-Q Official",
+              "label": "후지야마 온센 공식",
               "url": "https://www.fujiq.jp/en/relate/fujiyamaonsen.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
             }
           ]
         },
         {
           "id": "day4-fujiyama-museum",
-          "sortOrder": 20,
+          "sortOrder": 2,
           "title": "후지야마 뮤지엄",
           "area": "후지큐 인접",
-          "category": "실내 전시",
-          "summary": "놀이기구 피로가 올라왔을 때 넣기 좋은 조용한 실내 카드입니다. 리사와 가스파르 타운 인접이라 공원 흐름을 깨지 않고 붙일 수 있습니다.",
-          "whyFit": "영상의 '깊은 취향' 챕터 감성을 후지산 주제 전시로 옮기는 보조 선택지입니다.",
+          "category": "현실적 우선 · 실내 대체형",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "날씨나 체력이 애매할 때 후지산 감상을 실내로 바꾸는 카드입니다. 놀이기구 전일 고정이라는 부담을 줄여줍니다.",
+          "whyFit": "후지큐 메인 구역을 크게 벗어나지 않으면서도 실내 전환이 가능합니다.",
           "from": "Fuji-Q Highland",
           "to": "Fujiyama Museum",
-          "station": "후지큐 하이랜드역권",
-          "lineNote": "리사와 가스파르 타운 인접",
+          "station": "Fuji-Q Highland Station",
+          "lineNote": "공원 인접 도보권",
+          "routeSummary": "비나 강풍, 피로 누적이 올 때 놀이기구 대신 미술관/실내 관람으로 방향을 틉니다.",
           "stay": "30~50분",
-          "budgetNote": "입장료 소액 + 카페 사용 선택",
-          "familyNote": "비·피곤 모드에서 강하고, 부모 세대 만족도가 높은 편입니다.",
-          "passRule": "놀이기구 우선일 때는 패스",
-          "sourceType": "video-theme-fit",
+          "budgetNote": "관련 시설 요금 별도 확인 필요",
+          "familyNote": "아이 흥미는 케이스 바이 케이스라 오래 보기보다는 빠른 대체 카드로 쓰는 편이 좋습니다.",
+          "passRule": "맑고 체력이 좋으면 패스 우선",
+          "doList": [
+            "후지산 회화/전시 짧게 보기",
+            "실내 휴식과 화장실, 냉난방 활용",
+            "다음 놀이기구 혹은 복귀 판단 시간으로 사용"
+          ],
+          "eatList": [
+            "근처 카페/스낵과 연결",
+            "본 식사는 후지큐 메인 식당가 유지"
+          ],
+          "nearbySpots": [
+            "후지야마 온센",
+            "후지큐 하이랜드"
+          ],
           "links": [
             {
-              "label": "Fuji-Q Official",
-              "url": "https://www.fujiq.jp/en/relate/fujiyama-museum.html"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "후지큐 관련시설 요금 안내",
+              "url": "https://www.fujiq.jp/en/ticket/relate.html"
             }
           ]
         },
         {
-          "id": "day4-panorama-ropeway",
-          "sortOrder": 30,
-          "title": "가와구치코 파노라마 로프웨이",
+          "id": "day4-kawaguchiko-ropeway",
+          "sortOrder": 3,
+          "title": "가와구치코 로프웨이",
           "area": "가와구치코",
-          "category": "후지산 전망",
-          "summary": "후지큐를 일찍 정리하거나 놀이공원 비중을 줄일 때 가장 시각 보상이 큰 카드입니다. 왕복 요금과 운영 시간이 명확해 의사결정이 쉽습니다.",
-          "whyFit": "영상의 '장면 중심 여행'을 후지산 파노라마로 확장하는 대표 옵션입니다.",
-          "from": "Fujikyu-Highland Station",
-          "to": "Kawaguchiko Station",
-          "station": "가와구치코역",
-          "lineNote": "후지큐선 + 역에서 로프웨이 접근",
-          "stay": "60~90분",
-          "budgetNote": "왕복 요금 기준으로 계산",
-          "familyNote": "놀이기구를 줄이고 풍경 만족도를 올리는 대체안으로 좋습니다.",
-          "passRule": "구름이 많아 후지산 시야가 막히면 패스",
-          "sourceType": "video-theme-fit",
+          "category": "고난도 대체 · 전망 확장",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "후지산 전망을 여행의 한 장면으로 강화하는 카드지만, 같은 날 후지큐와 함께 넣으면 과부하가 생길 가능성이 있습니다. 정말 컨디션이 좋을 때만 여는 후보입니다.",
+          "whyFit": "후지큐 인근 지역 테마와는 잘 맞지만, 메인 Day를 확장하는 카드이지 기본 코스는 아닙니다.",
+          "from": "Fuji-Q Highland",
+          "to": "Mt Fuji Panoramic Ropeway",
+          "station": "Kawaguchiko Station",
+          "lineNote": "후지큐 철도/버스 이동 후 도보 15분",
+          "routeSummary": "후지큐를 일찍 마치거나 놀이기구를 과감히 줄였을 때만 가와구치코 쪽으로 확장합니다.",
+          "stay": "60~100분",
+          "budgetNote": "왕복 로프웨이 요금 별도 확인",
+          "familyNote": "사진 만족도는 높지만 이동 추가로 피로가 확 올라갈 수 있습니다.",
+          "passRule": "후지큐 메인 일정이 조금이라도 밀리면 바로 패스",
+          "doList": [
+            "전망대에서 후지산 사진 1컷",
+            "정상 체류 짧게, 하산 후 즉시 복귀 판단",
+            "가와구치코역 복귀 시간 역산"
+          ],
+          "eatList": [
+            "가벼운 카페·디저트",
+            "식사는 후지큐나 바스타 신주쿠 복귀 쪽이 더 안전"
+          ],
+          "nearbySpots": [
+            "가와구치코역",
+            "유람선 아파레"
+          ],
           "links": [
             {
-              "label": "Official Site",
-              "url": "https://www.mtfujiropeway.jp/"
+              "label": "가와구치코 로프웨이 접근 안내",
+              "url": "https://www.mtfujiropeway.jp/en/access/index.html"
             },
             {
-              "label": "운영 정보",
-              "url": "https://www.guidoor.jp/en/places/1434"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "가와구치코 로프웨이 공식",
+              "url": "https://www.mtfujiropeway.jp/en/index.html"
             }
           ]
         },
         {
-          "id": "day4-arakurayama-sengen-park",
-          "sortOrder": 40,
+          "id": "day4-arakurayama-sengen",
+          "sortOrder": 4,
           "title": "아라쿠라야마 센겐공원",
           "area": "후지요시다",
-          "category": "후지산 전망",
-          "summary": "오층탑과 후지산 구도를 보는 대표 장면 카드입니다. 최근 과밀 이슈가 있었던 곳이라, 실제로는 아주 이른 시간대 아니면 후보 정도로만 두는 편이 현실적입니다.",
-          "whyFit": "영상의 '사진으로 남는 장면'을 후지 원정일에 가장 강하게 구현하는 후보입니다.",
-          "from": "Fujikyu-Highland Station",
-          "to": "Shimoyoshida Station",
-          "station": "시모요시다역",
-          "lineNote": "후지큐선 이동 후 계단 접근",
-          "stay": "45~80분",
-          "budgetNote": "무료 중심",
-          "familyNote": "계단과 오르막이 있어 놀이기구 전일 원정과 같은 날엔 우선순위를 낮게 두는 게 좋습니다.",
-          "passRule": "피로·혼잡·날씨 셋 중 하나라도 안 좋으면 패스",
-          "sourceType": "video-theme-fit",
+          "category": "고난도 대체 · 사진 명소",
+          "sourceType": "video-theme-plus-route-fit",
+          "summary": "상징 사진은 매우 강하지만, 후지큐 전일 원정과 같은 날엔 가장 현실성이 낮은 후보입니다. '좋아 보여도 접을 줄 아는' 카드로 남기는 것이 맞습니다.",
+          "whyFit": "후지산 상징 장면과는 잘 맞지만, 실제 운영에서는 별도 반나절 카드에 가깝습니다.",
+          "from": "Fuji-Q Highland",
+          "to": "Arakurayama Sengen Park",
+          "station": "Shimoyoshida Station",
+          "lineNote": "후지큐선 시모요시다역 + 계단/오르막",
+          "routeSummary": "후지큐 일정과 병행보다는 완전히 대체하는 정도의 각오가 필요합니다.",
+          "stay": "70~110분",
+          "budgetNote": "공원 자체 무료, 이동비 별도",
+          "familyNote": "계단과 오르막이 있어 피로 누적 시 만족도보다 부담이 큽니다.",
+          "passRule": "이번 여행에서는 기본값 패스, 아주 좋은 날씨·여유가 있을 때만 예외",
+          "doList": [
+            "전망대까지 올라가 후지산-오층탑 장면 보기",
+            "혼잡도 높으면 중간 지점에서 바로 회수",
+            "이동보다 사진 목적이 분명할 때만 선택"
+          ],
+          "eatList": [
+            "별도 먹거리 목적지는 아님",
+            "간식/음료만 챙기고 이동"
+          ],
+          "nearbySpots": [
+            "시모요시다역",
+            "후지요시다 시내"
+          ],
           "links": [
             {
-              "label": "Fujiyoshida Official",
-              "url": "https://fujiyoshida.net/en/spot/36"
+              "label": "후지요시다 공식 센겐공원",
+              "url": "https://fujiyoshida.net/en/see-and-do/12"
             },
             {
-              "label": "혼잡 참고 기사",
-              "url": "https://fujiyoshida.net/en/highlight/sakuraseason_info2"
-            },
-            {
-              "label": "영상 원본",
-              "url": "https://www.youtube.com/watch?v=9rpdxzOhb5E"
+              "label": "2026 혼잡 안내",
+              "url": "https://fujiyoshida.net/en/highlight/sakuraseason_info"
             }
           ]
         }

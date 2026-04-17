@@ -1,4 +1,4 @@
-const APP_VERSION = "video-place-1";
+const APP_VERSION = "video-place-2";
 
 let tripMap;
 let mapMarkers = [];
@@ -22,6 +22,9 @@ async function loadTrip() {
 
   let videoFoodPicks = [];
   let itineraryExpansions = {};
+  let guideNotesAppend = [];
+  let mapPointsAppend = [];
+  let mapAnchorsAppend = [];
 
   if (foodResult.status === "fulfilled" && foodResult.value.ok) {
     videoFoodPicks = await foodResult.value.json();
@@ -30,13 +33,41 @@ async function loadTrip() {
   if (placeResult.status === "fulfilled" && placeResult.value.ok) {
     const placeData = await placeResult.value.json();
     itineraryExpansions = placeData.itineraryExpansions || {};
+    guideNotesAppend = placeData.guideNotesAppend || [];
+    mapPointsAppend = placeData.mapPointsAppend || [];
+    mapAnchorsAppend = placeData.mapAnchorsAppend || [];
   }
+
+  const mergedMapPoints = [...(trip.mapPoints || []), ...mapPointsAppend].sort(compareDayObjects);
+  const mergedMapAnchors = [...(trip.mapAnchors || []), ...mapAnchorsAppend].sort(compareDayObjects);
 
   return {
     ...trip,
+    guideNotes: [...(trip.guideNotes || []), ...guideNotesAppend],
+    mapPoints: mergedMapPoints,
+    mapAnchors: mergedMapAnchors,
     videoFoodPicks,
     itineraryExpansions
   };
+}
+
+function dayRank(day) {
+  const match = String(day || "").match(/Day\s+(\d+)/i);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
+
+function compareDayObjects(left, right) {
+  const dayCompare = dayRank(left?.day) - dayRank(right?.day);
+  if (dayCompare !== 0) {
+    return dayCompare;
+  }
+
+  const leftOrder = Number(left?.sortOrder ?? 0);
+  const rightOrder = Number(right?.sortOrder ?? 0);
+  if (leftOrder !== rightOrder) {
+    return leftOrder - rightOrder;
+  }
+  return 0;
 }
 
 function normalizeStationName(value) {
@@ -1011,7 +1042,7 @@ function renderBudgetPanel(data, key) {
   `;
 }
 
-function renderOptionalSpots(dayLabel, expansion) {
+function renderOptionalSpotsLegacy(dayLabel, expansion) {
   if (!expansion?.spots?.length) {
     return "";
   }
@@ -1065,6 +1096,99 @@ function renderOptionalSpots(dayLabel, expansion) {
             <span>가족 메모: ${spot.familyNote}</span>
             <span>패스 기준: ${spot.passRule}</span>
           </div>
+          <div class="timeline-links">
+            ${routeLinks}
+            ${externalLinks}
+          </div>
+          <div class="timeline-actions">
+            <button
+              class="action-chip action-chip-skip ${skipped ? "active" : ""}"
+              type="button"
+              data-spot-day="${dayLabel}"
+              data-spot-id="${spot.id}"
+            >
+              ${skipped ? "패스 취소" : "패스"}
+            </button>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="optional-spot-section">
+      <div class="support-box optional-spot-summary">
+        <strong>${expansion.title || "영상 확장 스팟"}</strong>
+        <p>${expansion.summary || ""}</p>
+      </div>
+      <div class="optional-spot-grid">
+        ${cards}
+      </div>
+    </section>
+  `;
+}
+
+function renderOptionalSpots(dayLabel, expansion) {
+  if (!expansion?.spots?.length) {
+    return "";
+  }
+
+  const cards = [...expansion.spots]
+    .sort((left, right) => Number(left.sortOrder || 0) - Number(right.sortOrder || 0))
+    .map((spot) => {
+      const skipped = localStorage.getItem(optionalSpotKey(dayLabel, spot.id)) === "1";
+      const sourceLabel =
+        spot.sourceType === "video-description-explicit-theme"
+          ? "영상 설명란 직접 반영"
+          : "영상 테마 + 현재 동선 적합성 반영";
+      const routeLinks =
+        spot.from && spot.to
+          ? `
+            <a class="timeline-link" href="${mapRouteUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 경로</a>
+            ${copyButton(mapRouteUrl(spot.from, spot.to))}
+            <a class="timeline-link" href="${transitUrl(spot.from, spot.to)}" target="_blank" rel="noreferrer">Yahoo 노선</a>
+            ${copyButton(transitUrl(spot.from, spot.to))}
+          `
+          : "";
+      const externalLinks = (spot.links || [])
+        .map(
+          (link) => `
+            <a class="timeline-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+            ${copyButton(link.url)}
+          `
+        )
+        .join("");
+      const routeMeta = [
+        spot.routeSummary ? `동선: ${spot.routeSummary}` : "",
+        spot.station ? `가까운 역: ${spot.station}` : "",
+        spot.lineNote ? `노선: ${spot.lineNote}` : "",
+        spot.stay ? `체류 추천: ${spot.stay}` : "",
+        spot.budgetNote ? `비용 감각: ${spot.budgetNote}` : "",
+        spot.familyNote ? `가족 메모: ${spot.familyNote}` : "",
+        spot.passRule ? `패스 기준: ${spot.passRule}` : ""
+      ].filter(Boolean);
+
+      return `
+        <article class="optional-spot-card ${skipped ? "skipped" : ""}">
+          <div class="optional-spot-top">
+            <div>
+              <div class="day-badge">${spot.area}</div>
+              <h4>${spot.title}</h4>
+            </div>
+            <div class="timeline-head-meta">
+              <span class="timeline-type">${spot.category}</span>
+              ${skipped ? `<span class="skip-state">패스됨</span>` : ""}
+            </div>
+          </div>
+          <p>${spot.summary}</p>
+          <div class="timeline-meta">
+            <span>근거: ${sourceLabel}</span>
+            <span>잘 붙는 이유: ${spot.whyFit}</span>
+          </div>
+          ${routeMeta.length ? `<div class="support-box"><strong>동선 · 운영 포인트</strong><div class="micro-list">${routeMeta.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${spot.doList?.length ? `<div class="support-box"><strong>할 것</strong><div class="micro-list">${spot.doList.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${spot.eatList?.length ? `<div class="support-box"><strong>먹을 것</strong><div class="micro-list">${spot.eatList.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
+          ${spot.nearbySpots?.length ? `<div class="support-box"><strong>같이 묶기 좋은 스팟</strong><div class="micro-list">${spot.nearbySpots.map((line) => `<span>${line}</span>`).join("")}</div></div>` : ""}
           <div class="timeline-links">
             ${routeLinks}
             ${externalLinks}
@@ -1614,7 +1738,7 @@ function initMap(data) {
   drawMapPoints(data, "all");
 }
 
-function drawMapPoints(data, selectedDay) {
+function drawMapPointsLegacy(data, selectedDay) {
   if (!tripMap) {
     return;
   }
@@ -1687,6 +1811,96 @@ function drawMapPoints(data, selectedDay) {
     tripMap.fitBounds(routeLine.getBounds(), { padding: [30, 30] });
   } else if (latlngs.length === 1) {
     tripMap.setView(latlngs[0], 12);
+  }
+}
+
+function drawMapPoints(data, selectedDay) {
+  if (!tripMap) {
+    return;
+  }
+
+  mapMarkers.forEach((marker) => tripMap.removeLayer(marker));
+  mapMarkers = [];
+
+  if (routeLine) {
+    tripMap.removeLayer(routeLine);
+  }
+
+  const originPoint = data.mapPoints.find((point) => String(point.name || "").includes("오사키"));
+  const filteredPoints = selectedDay === "all" ? data.mapPoints : data.mapPoints.filter((point) => point.day === selectedDay);
+  const optionalPoints = filteredPoints.filter((point) => point.optional);
+  let corePoints = filteredPoints.filter((point) => !point.optional);
+
+  if (selectedDay !== "all" && originPoint) {
+    const hasOriginFirst = corePoints[0]?.name === originPoint.name;
+    const hasOriginLast = corePoints[corePoints.length - 1]?.name === originPoint.name;
+
+    if (!hasOriginFirst) {
+      corePoints = [
+        {
+          ...originPoint,
+          day: selectedDay,
+          note: "오사키역 출발 기준"
+        },
+        ...corePoints
+      ];
+    }
+
+    if (!hasOriginLast) {
+      corePoints = [
+        ...corePoints,
+        {
+          ...originPoint,
+          day: selectedDay,
+          note: "오사키역 복귀 기준"
+        }
+      ];
+    }
+  }
+
+  const fitLatlngs = [];
+  const routeLatlngs = [];
+
+  function renderMapMarker(point, isOptional = false) {
+    const marker = L.circleMarker(point.coords, {
+      radius: isOptional ? 6 : 8,
+      weight: 2,
+      color: isOptional ? "#7a5674" : "#944123",
+      fillColor: isOptional ? "#f1c7df" : point.highlight ? "#d26a42" : "#6f8c61",
+      fillOpacity: isOptional ? 0.78 : 0.9
+    }).addTo(tripMap);
+
+    marker.bindPopup(`
+      <strong>${point.name}</strong><br/>
+      ${point.day}<br/>
+      ${isOptional ? "선택형 보조 포인트<br/>" : ""}
+      ${point.note}<br/>
+      <a href="${point.google}" target="_blank" rel="noreferrer">Google 지도</a>
+    `);
+
+    mapMarkers.push(marker);
+    fitLatlngs.push(point.coords);
+    if (!isOptional) {
+      routeLatlngs.push(point.coords);
+    }
+  }
+
+  corePoints.forEach((point) => renderMapMarker(point, false));
+  optionalPoints.forEach((point) => renderMapMarker(point, true));
+
+  if (routeLatlngs.length > 1) {
+    routeLine = L.polyline(routeLatlngs, {
+      color: "#3c5d53",
+      weight: 4,
+      opacity: 0.7,
+      dashArray: "7 8"
+    }).addTo(tripMap);
+  }
+
+  if (fitLatlngs.length > 1) {
+    tripMap.fitBounds(L.latLngBounds(fitLatlngs), { padding: [30, 30] });
+  } else if (fitLatlngs.length === 1) {
+    tripMap.setView(fitLatlngs[0], 12);
   }
 }
 
